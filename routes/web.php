@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', 'HomeController@index');
+
+Route::group([ 'namespace' => 'Member',"middleware" => 'user-auth'], function () {
+    Route::get('/mem','MemController@index');
+});

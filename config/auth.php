@@ -70,6 +70,7 @@ return [
             'model'  => Anomaly\UsersModule\User\UserModel::class,
         ],
 
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
