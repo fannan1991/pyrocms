@@ -15,6 +15,7 @@ class MembersController extends AdminController
      */
     public function index(MemberTableBuilder $table)
     {
+
         return $table->render();
     }
 
@@ -37,6 +38,11 @@ class MembersController extends AdminController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function edit(MemberFormBuilder $form, $id)
+    {
+        return $form->render($id);
+    }
+
+    public function underling(MemberFormBuilder $form, $id)
     {
         return $form->render($id);
     }

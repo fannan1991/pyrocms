@@ -5,5 +5,8 @@ use Anomaly\Streams\Platform\Model\Members\MembersMembersEntryModel;
 
 class MemberModel extends MembersMembersEntryModel implements MemberInterface
 {
+    public function getName()
+    {
 
+    }
 }

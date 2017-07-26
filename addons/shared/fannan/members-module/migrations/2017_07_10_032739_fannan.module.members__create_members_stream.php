@@ -12,7 +12,7 @@ class FannanModuleMembersCreateMembersStream extends Migration
      */
     protected $stream = [
         'slug' => 'members',
-         /*'title_column' => 'name',*/
+         /*'title_column' => 'real_name',*/
          'translatable' => false,
          'trashable' => false,
          'searchable' => false,

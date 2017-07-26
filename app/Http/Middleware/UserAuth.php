@@ -22,6 +22,6 @@ class UserAuth
             return redirect('/member/login');
         }
         return $next($request);*/
-        var_dump(Auth::user());die;
+        var_dump(Auth::user()->real_name);die;
     }
 }

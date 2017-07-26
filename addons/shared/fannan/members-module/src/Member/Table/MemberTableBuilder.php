@@ -57,7 +57,8 @@ class MemberTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        'edit',
+        'underling',
     ];
 
     /**
@@ -74,7 +75,11 @@ class MemberTableBuilder extends TableBuilder
      *
      * @var array
      */
-    protected $options = [];
+    protected $options = [
+        'order_by' => [
+            'id' => 'DESC',
+        ],
+    ];
 
     /**
      * The table assets.

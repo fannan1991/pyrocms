@@ -16,7 +16,7 @@ class MemberFormFields
     {
         $builder->setFields(
             [
-                'mobile'     => [
+                /*'mobile'     => [
                     'disabled' => '*'
                 ],
                 'openid'     => [
@@ -25,7 +25,7 @@ class MemberFormFields
                 'invitation_code'     => [
                     'disabled' => '*'
                 ],
-                '*',
+                '*',*/
 
             ]
         );

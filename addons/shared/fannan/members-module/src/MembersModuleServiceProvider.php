@@ -1,6 +1,26 @@
 <?php namespace Fannan\MembersModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Fannan\MembersModule\Withdraw\Contract\WithdrawRepositoryInterface;
+use Fannan\MembersModule\Withdraw\WithdrawRepository;
+use Anomaly\Streams\Platform\Model\Members\MembersWithdrawEntryModel;
+use Fannan\MembersModule\Withdraw\WithdrawModel;
+use Fannan\MembersModule\Repayment\Contract\RepaymentRepositoryInterface;
+use Fannan\MembersModule\Repayment\RepaymentRepository;
+use Anomaly\Streams\Platform\Model\Members\MembersRepaymentEntryModel;
+use Fannan\MembersModule\Repayment\RepaymentModel;
+use Fannan\MembersModule\Loan\Contract\LoanRepositoryInterface;
+use Fannan\MembersModule\Loan\LoanRepository;
+use Anomaly\Streams\Platform\Model\Members\MembersLoanEntryModel;
+use Fannan\MembersModule\Loan\LoanModel;
+use Fannan\MembersModule\Gold\Contract\GoldRepositoryInterface;
+use Fannan\MembersModule\Gold\GoldRepository;
+use Anomaly\Streams\Platform\Model\Members\MembersGoldEntryModel;
+use Fannan\MembersModule\Gold\GoldModel;
+use Fannan\MembersModule\Integral\Contract\IntegralRepositoryInterface;
+use Fannan\MembersModule\Integral\IntegralRepository;
+use Anomaly\Streams\Platform\Model\Members\MembersIntegralEntryModel;
+use Fannan\MembersModule\Integral\IntegralModel;
 use Fannan\MembersModule\Member\Contract\MemberRepositoryInterface;
 use Fannan\MembersModule\Member\MemberRepository;
 use Anomaly\Streams\Platform\Model\Members\MembersMembersEntryModel;
@@ -44,9 +64,28 @@ class MembersModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
+        'admin/members/withdraw'           => 'Fannan\MembersModule\Http\Controller\Admin\WithdrawController@index',
+        'admin/members/withdraw/create'    => 'Fannan\MembersModule\Http\Controller\Admin\WithdrawController@create',
+        'admin/members/withdraw/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\WithdrawController@edit',
+        'admin/members/repayment'           => 'Fannan\MembersModule\Http\Controller\Admin\RepaymentController@index',
+        'admin/members/repayment/create'    => 'Fannan\MembersModule\Http\Controller\Admin\RepaymentController@create',
+        'admin/members/repayment/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\RepaymentController@edit',
+        'admin/members/loan'           => 'Fannan\MembersModule\Http\Controller\Admin\LoanController@index',
+        'admin/members/loan/create'    => 'Fannan\MembersModule\Http\Controller\Admin\LoanController@create',
+        'admin/members/loan/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\LoanController@edit',
+        'admin/members/gold'           => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@index',
+        'admin/members/gold/create'    => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@create',
+        'admin/members/gold/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@edit',
+        'admin/members/gold'           => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@index',
+        'admin/members/gold/create'    => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@create',
+        'admin/members/gold/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@edit',
+        'admin/members/integral'           => 'Fannan\MembersModule\Http\Controller\Admin\IntegralController@index',
+        'admin/members/integral/create'    => 'Fannan\MembersModule\Http\Controller\Admin\IntegralController@create',
+        'admin/members/integral/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\IntegralController@edit',
         'admin/members'           => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@index',
         'admin/members/create'    => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@create',
         'admin/members/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@edit',
+        'admin/members/underling/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@underling',
     ];
 
     /**
@@ -91,6 +130,12 @@ class MembersModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $bindings = [
+        MembersWithdrawEntryModel::class => WithdrawModel::class,
+        MembersRepaymentEntryModel::class => RepaymentModel::class,
+        MembersLoanEntryModel::class => LoanModel::class,
+        MembersGoldEntryModel::class => GoldModel::class,
+        MembersGoldEntryModel::class => GoldModel::class,
+        MembersIntegralEntryModel::class => IntegralModel::class,
         MembersMembersEntryModel::class => MemberModel::class,
     ];
 
@@ -100,6 +145,12 @@ class MembersModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $singletons = [
+        WithdrawRepositoryInterface::class => WithdrawRepository::class,
+        RepaymentRepositoryInterface::class => RepaymentRepository::class,
+        LoanRepositoryInterface::class => LoanRepository::class,
+        GoldRepositoryInterface::class => GoldRepository::class,
+        GoldRepositoryInterface::class => GoldRepository::class,
+        IntegralRepositoryInterface::class => IntegralRepository::class,
         MemberRepositoryInterface::class => MemberRepository::class,
     ];
 

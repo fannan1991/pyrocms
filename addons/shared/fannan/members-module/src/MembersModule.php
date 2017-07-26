@@ -30,6 +30,36 @@ class MembersModule extends Module
                 'new_member',
             ],
         ],
+        'integral' => [
+            'buttons' => [
+                'new_integral',
+            ],
+        ],
+        'gold' => [
+            'buttons' => [
+                'new_gold',
+            ],
+        ],
+        'gold' => [
+            'buttons' => [
+                'new_gold',
+            ],
+        ],
+        'loan' => [
+            'buttons' => [
+                'new_loan',
+            ],
+        ],
+        'repayment' => [
+            'buttons' => [
+                'new_repayment',
+            ],
+        ],
+        'withdraw' => [
+            'buttons' => [
+                'new_withdraw',
+            ],
+        ],
     ];
 
 }
