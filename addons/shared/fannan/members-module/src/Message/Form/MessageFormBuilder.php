@@ -1,8 +1,8 @@
-<?php namespace Fannan\MembersModule\Member\Form;
+<?php namespace Fannan\MembersModule\Message\Form;
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
-class MemberFormBuilder extends FormBuilder
+class MessageFormBuilder extends FormBuilder
 {
 
     /**
@@ -13,16 +13,18 @@ class MemberFormBuilder extends FormBuilder
     protected $fields = [];
 
     /**
+     * Additional validation rules.
+     *
+     * @var array|string
+     */
+    protected $rules = [];
+
+    /**
      * Fields to skip.
      *
      * @var array|string
      */
-    protected $skips = [
-        /*'password',
-        'parent_id',
-        'grand_id',
-        'great_grand_id'*/
-    ];
+    protected $skips = [];
 
     /**
      * The form actions.

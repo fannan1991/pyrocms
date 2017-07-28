@@ -60,6 +60,11 @@ class MembersModule extends Module
                 'new_withdraw',
             ],
         ],
+        'message' => [
+            'buttons' => [
+                'new_message',
+            ],
+        ],
     ];
 
 }

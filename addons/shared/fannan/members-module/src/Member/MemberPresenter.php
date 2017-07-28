@@ -33,28 +33,28 @@ class MemberPresenter extends EntryPresenter
         $color = 'default';
         $s = $this->object->grade;
         switch ($s) {
-            case 0:
+            case 1:
                 $color = 'success';
                 $status = '游客';
                 break;
-            case 1:
+            case 2:
                 $color = 'success';
                 $status = '普通会员';
                 break;
 
-            case 2:
+            case 3:
                 $color = 'success';
                 $status = '铜牌会员';
                 break;
-            case 3:
+            case 4:
                 $color = 'success';
                 $status = '银牌会员';
                 break;
-            case 4:
+            case 5:
                 $color = 'success';
                 $status = '金牌会员';
                 break;
-            case 5:
+            case 6:
                 $color = 'success';
                 $status = '钻石会员';
                 break;

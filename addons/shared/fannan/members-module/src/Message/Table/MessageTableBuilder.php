@@ -1,8 +1,8 @@
-<?php namespace Fannan\MembersModule\Member\Table;
+<?php namespace Fannan\MembersModule\Message\Table;
 
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
 
-class MemberTableBuilder extends TableBuilder
+class MessageTableBuilder extends TableBuilder
 {
 
     /**
@@ -20,19 +20,12 @@ class MemberTableBuilder extends TableBuilder
     protected $filters = [
         'search' => [
             'fields' => [
-                'mobile',
-                'real_name',
-                'invitation_code',
-                'nickname',
-                'id_card',
+                'message_title',
+                'message_content',
+                'message_mobile',
             ]
         ],
-        'is_verified',
-        'grade',
-        'parent_id',
-        'grand_id',
-        'great_grand_id'
-
+        'message_member_id',
     ];
 
     /**
@@ -42,14 +35,9 @@ class MemberTableBuilder extends TableBuilder
      */
     protected $columns = [
         'entry.id',
-        'mobile',
-        'nickname',
-        'real_name',
-        'integral',
-        'gold',
-        'entry.verified',
-        'invitation_code',
-        'entry.grade_value',
+        'message_title',
+        'message_member_id',
+        'message_mobile',
         'entry.created_at'
     ];
 
@@ -59,10 +47,7 @@ class MemberTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit',
-        'son',
-        'grandson',
-        'heavygrandson'
+        'edit'
     ];
 
     /**

@@ -64,12 +64,12 @@ class FannanModuleMembersCreateMembersFields extends Migration
             'type'   => 'anomaly.field_type.select',
             'config' => [
                 'options' => [
-                    '0' => '游客',
-                    '1' => '普通会员',
-                    '2' => '铜牌会员',
-                    '3' => '银牌会员',
-                    '4' => '金牌会员',
-                    '5' => '钻石会员',
+                    '1' => '游客',
+                    '2' => '普通会员',
+                    '3' => '铜牌会员',
+                    '4' => '银牌会员',
+                    '5' => '金牌会员',
+                    '6' => '钻石会员',
                 ],
             ]
         ],
@@ -139,40 +139,27 @@ class FannanModuleMembersCreateMembersFields extends Migration
                 'default_value' => 0,
             ]
         ],
-        //第一个上级会员id
+        //第一个上级会员id(父级)
         'parent_id' => [
-            'type'   => 'anomaly.field_type.integer',
+            'type' => 'anomaly.field_type.relationship',
             'config' => [
-                'separator'     => ',',
-                'min'           => 0,
-                'max'           => 12,
-                'step'          => 1,
-                'default_value' => 0,
+                'related' => 'Fannan\MembersModule\Member\MemberModel',
             ]
         ],
-        //第二个上级会员id
+        //第二个上级会员id（祖父级）
         'grand_id' => [
-            'type'   => 'anomaly.field_type.integer',
+            'type' => 'anomaly.field_type.relationship',
             'config' => [
-                'separator'     => ',',
-                'min'           => 0,
-                'max'           => 12,
-                'step'          => 1,
-                'default_value' => 0,
+                'related' => 'Fannan\MembersModule\Member\MemberModel',
             ]
         ],
         //第三个上级会员id
         'great_grand_id' => [
-            'type'   => 'anomaly.field_type.integer',
+            'type' => 'anomaly.field_type.relationship',
             'config' => [
-                'separator'     => ',',
-                'min'           => 0,
-                'max'           => 12,
-                'step'          => 1,
-                'default_value' => 0,
+                'related' => 'Fannan\MembersModule\Member\MemberModel',
             ]
         ],
-
 
         //积分记录
         //积分数
@@ -511,6 +498,39 @@ class FannanModuleMembersCreateMembersFields extends Migration
             ]
         ],
 
+        //消息记录
+        //标题
+        'message_title' => [
+            'type'   => 'anomaly.field_type.text',
+            'config' => [
+                'type'          => 'text',
+                'min'           => 2,
+            ]
+        ],
+        //内容
+        'message_content' => [
+            'type'   => 'anomaly.field_type.textarea',
+            'config' => [
+                'rows'          => 5,
+                'min'           => 10,
+                'max'           => 1000,
+            ]
+        ],
+        //会员id
+        'message_member_id' => [
+            'type' => 'anomaly.field_type.relationship',
+            'config' => [
+                'related' => 'Fannan\MembersModule\Member\MemberModel',
+            ]
+        ],
+        //手机号
+        'message_mobile' => [
+            'type'   => 'anomaly.field_type.text',
+            'config' => [
+                'type'          => 'text',
+                'min'           => 2,
+            ]
+        ],
     ];
 
 }

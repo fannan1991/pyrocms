@@ -42,8 +42,16 @@ class MembersController extends AdminController
         return $form->render($id);
     }
 
-    public function underling(MemberFormBuilder $form, $id)
+    public function son(MemberFormBuilder $form, $id)
     {
-        return $form->render($id);
+        return redirect('/admin/members?view=&page=1&filter_search=&filter_grade=0&filter_parent_id='.$id);
+    }
+    public function grandson(MemberFormBuilder $form, $id)
+    {
+        return redirect('/admin/members?view=&page=1&filter_search=&filter_grade=0&filter_grand_id='.$id);
+    }
+    public function heavygrandson(MemberFormBuilder $form, $id)
+    {
+        return redirect('/admin/members?view=&page=1&filter_search=&filter_grade=0&filter_great_grand_id='.$id);
     }
 }

@@ -9,7 +9,8 @@ return [
         'integral' => '积分记录',
         'gold'  => '金币记录',
         'loan'  => '贷款记录',
-        'repayment' =>'还款记录',
-        'withdraw' =>'提现记录'
+        'repayment' => '还款记录',
+        'withdraw' => '提现记录',
+        'message' => '消息记录',
     ]
 ];

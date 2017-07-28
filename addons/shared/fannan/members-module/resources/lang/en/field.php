@@ -56,13 +56,13 @@ return [
         'name' => '会员等级'
     ],
     'parent_id'  => [
-        'name' => '父级会员ID'
+        'name' => '查询一级会员'
     ],
     'grand_id'  => [
-        'name' => '第二个上级会员ID'
+        'name' => '查询二级会员'
     ],
     'great_grand_id'  => [
-        'name' => '第三个上级会员ID'
+        'name' => '查询三级会员'
     ],
     'integral_num'  => [
         'name' => '积分'
@@ -172,6 +172,18 @@ return [
     ],
     'withdraw_status'  => [
         'name' => '状态',
+    ],
+    'message_title'  => [
+        'name' => '消息标题',
+    ],
+    'message_content'  => [
+        'name' => '消息内容',
+    ],
+    'message_member_id'  => [
+        'name' => '会员',
+    ],
+    'message_mobile'  => [
+        'name' => '手机号',
     ],
 
 

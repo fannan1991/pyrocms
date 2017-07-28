@@ -1,6 +1,10 @@
 <?php namespace Fannan\MembersModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Fannan\MembersModule\Message\Contract\MessageRepositoryInterface;
+use Fannan\MembersModule\Message\MessageRepository;
+use Anomaly\Streams\Platform\Model\Members\MembersMessageEntryModel;
+use Fannan\MembersModule\Message\MessageModel;
 use Fannan\MembersModule\Withdraw\Contract\WithdrawRepositoryInterface;
 use Fannan\MembersModule\Withdraw\WithdrawRepository;
 use Anomaly\Streams\Platform\Model\Members\MembersWithdrawEntryModel;
@@ -64,6 +68,9 @@ class MembersModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
+        'admin/members/message'           => 'Fannan\MembersModule\Http\Controller\Admin\MessageController@index',
+        'admin/members/message/create'    => 'Fannan\MembersModule\Http\Controller\Admin\MessageController@create',
+        'admin/members/message/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MessageController@edit',
         'admin/members/withdraw'           => 'Fannan\MembersModule\Http\Controller\Admin\WithdrawController@index',
         'admin/members/withdraw/create'    => 'Fannan\MembersModule\Http\Controller\Admin\WithdrawController@create',
         'admin/members/withdraw/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\WithdrawController@edit',
@@ -85,7 +92,9 @@ class MembersModuleServiceProvider extends AddonServiceProvider
         'admin/members'           => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@index',
         'admin/members/create'    => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@create',
         'admin/members/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@edit',
-        'admin/members/underling/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@underling',
+        'admin/members/son/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@son',
+        'admin/members/grandson/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@grandson',
+        'admin/members/heavygrandson/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\MembersController@heavygrandson',
     ];
 
     /**
@@ -130,6 +139,7 @@ class MembersModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $bindings = [
+        MembersMessageEntryModel::class => MessageModel::class,
         MembersWithdrawEntryModel::class => WithdrawModel::class,
         MembersRepaymentEntryModel::class => RepaymentModel::class,
         MembersLoanEntryModel::class => LoanModel::class,
@@ -145,6 +155,7 @@ class MembersModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $singletons = [
+        MessageRepositoryInterface::class => MessageRepository::class,
         WithdrawRepositoryInterface::class => WithdrawRepository::class,
         RepaymentRepositoryInterface::class => RepaymentRepository::class,
         LoanRepositoryInterface::class => LoanRepository::class,
