@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d230ee19-34bf-4885-b8ac-fc0f840b6396" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_015653_fannan.module.members__create_members_fields.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_015653_fannan.module.members__create_members_fields.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_032739_fannan.module.members__create_members_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_032739_fannan.module.members__create_members_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/addon.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/addon.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/button.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/button.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/MembersController.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/MembersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Form/MemberFormBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Form/MemberFormBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/MemberPresenter.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/MemberPresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Table/MemberTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Table/MemberTableBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModule.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php" />
     </list>
     <ignored path="pyrocms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,73 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MemberFormBuilder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Form/MemberFormBuilder.php">
+      <file leaf-file-name="permissions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.333333">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state vertical-scroll-proportion="-23.8">
+              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MembersController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/MembersController.php">
+      <file leaf-file-name="permission.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4502315">
-              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-              <folding>
-                <element signature="e#61#116#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MembersModuleServiceProvider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.433332">
-              <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="button.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/anomaly/streams-platform/resources/lang/zh-cn/button.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.983334">
-              <caret line="59" column="18" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="field.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.133333">
-              <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ButtonRegistry.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Button/ButtonRegistry.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.433333">
-              <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MemberTableBuilder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Table/MemberTableBuilder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.8">
-              <caret line="64" column="22" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.5081019">
+              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -123,8 +61,6 @@
         <option value="$PROJECT_DIR$/config/auth.php" />
         <option value="$PROJECT_DIR$/vendor/anomaly/streams-platform/resources/lang/en/button.php" />
         <option value="$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Table/TableBuilder.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_24_023728_fannan.module.members__create_integral_stream.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/MemberModel.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Form/MemberFormFields.php" />
@@ -166,6 +102,8 @@
         <option value="$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Button/ButtonRegistry.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/MembersController.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php" />
       </list>
     </option>
   </component>
@@ -321,7 +259,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -351,79 +297,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fannan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="members-module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Member" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Table" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fannan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="members-module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,7 +360,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -514,20 +392,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/anomaly/posts-module/src/Post/Table/Filter/StatusFilterQuery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.08680555">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/anomaly/posts-module/src/Post/Table/PostTableBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7395833">
-          <caret line="88" column="10" selection-start-line="86" selection-start-column="8" selection-end-line="88" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_25_081234_fannan.module.members__create_loan_stream.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.3">
@@ -671,13 +535,6 @@
     <entry file="file://$PROJECT_DIR$/core/anomaly/textarea-field_type/src/TextareaFieldTypePresenter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.7745665">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../pyrocms-3.0.1/core/anomaly/textarea-field_type/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -862,17 +719,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Table/MemberTableBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.8">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.133333">
+        <state vertical-scroll-proportion="0.51318944">
           <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
           <folding />
         </state>
@@ -880,7 +729,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/anomaly/streams-platform/resources/lang/zh-cn/button.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.983334">
+        <state vertical-scroll-proportion="0.79016787">
           <caret line="59" column="18" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="18" />
           <folding />
         </state>
@@ -888,7 +737,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Button/ButtonRegistry.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.433333">
+        <state vertical-scroll-proportion="0.43171296">
           <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
           <folding />
         </state>
@@ -896,7 +745,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.433332">
+        <state vertical-scroll-proportion="0.6053241">
           <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
           <folding />
         </state>
@@ -904,11 +753,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/MembersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4502315">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.49189815">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#61#116#0#PHP" expanded="true" />
+            <element signature="e#61#116#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Table/MemberTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4965278">
+          <caret line="64" column="22" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.8">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5081019">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
