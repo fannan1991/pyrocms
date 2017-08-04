@@ -71,6 +71,7 @@ class FannanModuleMembersCreateMembersFields extends Migration
                     '5' => '金牌会员',
                     '6' => '钻石会员',
                 ],
+                'default_value' => '1',
             ]
         ],
         "is_verified" => [
@@ -161,6 +162,7 @@ class FannanModuleMembersCreateMembersFields extends Migration
             ]
         ],
 
+
         //积分记录
         //积分数
         'integral_num' => [
@@ -193,7 +195,14 @@ class FannanModuleMembersCreateMembersFields extends Migration
                 'related' => 'Fannan\MembersModule\Member\MemberModel',
             ]
         ],
-
+        'access_token' => [
+            'type'   => 'anomaly.field_type.text',
+            'config' => [
+                'type'          => 'text',
+                'min'           => 2,
+                'max'           => 255,
+            ]
+        ],
         //金币记录
         //金币数
         'gold_num' => [

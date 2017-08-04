@@ -77,7 +77,8 @@
         "anomaly/sitemap-extension": "~2.1.0",
         "pyrocms/starter-theme": "~1.0.0",
         "pyrocms/accelerant-theme": "~1.0.0",
-        "kbwebs/multiauth": "~1.0"
+        "kbwebs/multiauth": "~1.0",
+        "dingo/api": "1.0.*dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

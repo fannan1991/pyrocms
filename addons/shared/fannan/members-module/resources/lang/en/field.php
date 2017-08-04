@@ -64,6 +64,9 @@ return [
     'great_grand_id'  => [
         'name' => '查询三级会员'
     ],
+    'access_token'  => [
+        'name' => 'Token'
+    ],
     'integral_num'  => [
         'name' => '积分'
     ],

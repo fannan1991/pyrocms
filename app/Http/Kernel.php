@@ -28,7 +28,6 @@ class Kernel extends HttpKernel
         'user-auth' => \App\Http\Middleware\UserAuth::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'wechat.oauth' => \Overtrue\LaravelWechat\Middleware\OAuthAuthenticate::class,
 
     ];
 }
