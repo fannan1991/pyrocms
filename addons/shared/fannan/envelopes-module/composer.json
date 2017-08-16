@@ -1,0 +1,9 @@
+{
+    "name": "fannan/envelopes-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Fannan\\EnvelopesModule\\": "src/"
+        }
+    }
+}

@@ -78,7 +78,8 @@
         "pyrocms/starter-theme": "~1.0.0",
         "pyrocms/accelerant-theme": "~1.0.0",
         "kbwebs/multiauth": "~1.0",
-        "dingo/api": "1.0.*dev"
+        "dingo/api": "1.0.*dev",
+        "simplesoftwareio/simple-qrcode": "1.3.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

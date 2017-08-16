@@ -17,23 +17,23 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index');
-Route::post('/home/test', 'HomeController@test');
-Route::post('/home/register', 'HomeController@register');
-Route::post('/home/register-client', 'HomeController@registerClient');
-Route::post('/home/access-token', 'HomeController@accessToken');
-Route::post('/home/login', 'HomeController@login');
-Route::post('/home/forget-password', 'HomeController@forgetPassword');
+
+
+
+
+
+
+
+
 
 Route::group(["middleware" => 'user-auth'], function () {
-    Route::post('/home/change-password', 'HomeController@changePassword');
-    Route::POST('/home/personal-information', 'HomeController@personalInformation');
-    Route::post('/home/verified', 'HomeController@verified');
-    Route::post('/home/first-customer', 'HomeController@firstCustomer');
-    Route::post('/home/second-customer', 'HomeController@secondCustomer');
-    Route::post('/home/three-customer', 'HomeController@threeCustomer');
+
+
+
+
     Route::post('/home/grade', 'HomeController@grade');
-    Route::post('/home/integral', 'HomeController@integral');
-    Route::post('/home/gold', 'HomeController@gold');
+    Route::post('/home/first-customer', 'HomeController@firstCustomer');
+
 });
 
 
@@ -43,7 +43,45 @@ Route::group(["middleware" => 'user-auth'], function () {
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
-    $api->get('/hello/', function () {
-        return "hello";
+    $api->group(['namespace' => 'App\Http\Controllers'], function ($api) {
+        $api->get('/test','HomeController@test');
+        $api->post('/register','HomeController@register');
+        $api->post('/register-client','HomeController@registerClient');
+        $api->post('/access-token','HomeController@accessToken');
+        $api->post('/login','HomeController@login');
+        $api->post('/forget-password','HomeController@forgetPassword');
+        $api->get('/about','HomeController@aboutUs');
+        $api->get('/loan-notice','HomeController@loanNotice');
+        $api->get('/news','HomeController@news');
+        $api->get('/new-detail','HomeController@newsDetail');
+        $api->get('/test-qrcode','HomeController@testQrcode');
+
+
     });
+
+    $api->group(["middleware" => 'user-auth','namespace' => 'App\Http\Controllers'], function ($api) {
+        $api->post('/change-password','HomeController@changePassword');
+        $api->post('/personal-information','HomeController@personalInformation');
+        $api->post('/verified','HomeController@verified');
+        $api->post('/first-customer','HomeController@firstCustomer');
+        $api->post('/second-customer','HomeController@secondCustomer');
+        $api->post('/three-customer','HomeController@threeCustomer');
+        $api->post('/integral','HomeController@integral');
+        $api->post('/gold','HomeController@gold');
+        $api->post('/withdraw','HomeController@withdraw');
+        $api->post('/withdraw-log','HomeController@withdrawLog');
+        $api->post('/message','HomeController@message');
+        $api->post('/loan','HomeController@loan');
+        $api->post('/loan-log','HomeController@loanLog');
+        $api->post('/loan-detail','HomeController@loanDetail');
+        $api->post('/loan-amount','HomeController@loanAmount');
+        $api->post('/repayment','HomeController@repayment');
+        $api->post('/winning-log','HomeController@winningLog');
+        $api->post('/ticket-use','HomeController@ticketUse');
+        $api->post('/ticket-used','HomeController@ticketUsed');
+        $api->post('/ticket-expired','HomeController@ticketExpired');
+        $api->post('/red-envelopes','HomeController@redEnvelopes');
+        $api->post('/personal-center','HomeController@personalCenter');
+    });
+
 });

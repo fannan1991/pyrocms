@@ -26,19 +26,15 @@ class FannanModuleMembersCreateIntegralStream extends Migration
      */
     protected $assignments = [
         'integral_num' => [
-            'unique' => true,
             'required' => true,
         ],
         'integral_summary' => [
-            'unique' => true,
             'required' => true,
         ],
         'integral_mobile' => [
-            'unique' => true,
             'required' => true,
         ],
         'integral_member_id' => [
-            'unique' => true,
             'required' => true,
         ],
     ];

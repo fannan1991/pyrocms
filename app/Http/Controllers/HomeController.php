@@ -3,16 +3,38 @@
 namespace App\Http\Controllers;
 
 use Anomaly\FilesModule\File\FileModel;
+use Anomaly\PostsModule\Post\PostModel;
 use Anomaly\Streams\Platform\Model\Files\FilesFilesEntryModel;
 use App\AccessToken;
+use App\Api\Transformers\AccessTokenTransformer;
+use App\Api\Transformers\ClientTransformer;
+use App\Api\Transformers\GoldTransformer;
+use App\Api\Transformers\IntegralTransformer;
+use App\Api\Transformers\LoanTransformer;
 use App\Api\Transformers\MemberTransformer;
+use App\Api\Transformers\MessageTransformer;
+use App\Api\Transformers\PostTransformer;
+use App\Api\Transformers\RepaymentTransformer;
+use App\Api\Transformers\WithdrasTransformer;
+use App\Api\Transformers\WithdrawTransformer;
 use App\OauthClients;
+use Carbon\Carbon;
+use Fannan\EnvelopesModule\Envelope\EnvelopeModel;
+use Fannan\EnvelopesModule\Log\LogModel;
+use Fannan\LotteryModule\Ticket\TicketModel;
+use Fannan\LotteryModule\Winning\WinningModel;
 use Fannan\MembersModule\Gold\GoldModel;
 use Fannan\MembersModule\Integral\IntegralModel;
+use Fannan\MembersModule\Loan\LoanModel;
 use Fannan\MembersModule\Member\MemberModel;
+use Fannan\MembersModule\Message\MessageModel;
+use Fannan\MembersModule\Repayment\RepaymentModel;
+use Fannan\MembersModule\Withdraw\WithdrawModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
+use Monolog\Formatter\GelfMessageFormatterTest;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 
 class HomeController extends Controller
@@ -24,20 +46,18 @@ class HomeController extends Controller
     }
 
     public function test(Request $request){
-        $array = array();
-        $array[] = $request->name;
-        return $this->response->array($array);
-
+        $first_customers = MemberModel::all();
+        return $this->response->collection($first_customers,new MemberTransformer());
     }
 
     //注册
-    public function register(){
-        $captcha = $_POST['captcha'];
-        $mobile = $_POST['mobile'];
-        $password = $_POST['password'];
-        $invitation_code = $_POST['invitation_code'];
+    public function register(Request $request){
+        $captcha = $request->captcha;
+        $mobile = $request->mobile;
+        $password = $request->password;
+        $invitation_code = $request->invitation_code;
         if(MemberModel::where('mobile',$mobile)->first()){
-            return Response::make(['error' => '您的手机号已注册！'], 401);
+            return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
         }else{
             $str_time = $this->dec62($this->msectime());
             $code = $this->randChar().$str_time;
@@ -47,26 +67,41 @@ class HomeController extends Controller
             $member->invitation_code = $code;
             if($invitation_code){
                 $father = MemberModel::where('invitation_code',$invitation_code)->first();
-                $member->parent_id_id = $father->id;
-                $member->grand_id_id = $father->parent_id_id;
-                $member->great_grand_id_id = $father->grand_id_id;
+                if($father){
+                    $member->parent_id_id = $father->id;
+                    $member->grand_id_id = $father->parent_id_id;
+                    $member->great_grand_id_id = $father->grand_id_id;
+                }
             }
             $member->save();
             $member = MemberModel::find($member->id);
-            return $this->response->item($member ,null);
-
+            if($member){
+                $result = array(
+                    'code' => 100,
+                    'status' => 'success',
+                    'data' => $member
+                );
+                return $this->response->array($result);
+            }else{
+                return $this->response->array(['status'=>'error','msg' => '注册失败','code'=>401]);
+            }
         }
     }
 
     //注册客户端
-    public function registerClient(){
-        $imsi = $_POST['imsi'];
-        $member_id = $_POST['member_id'];
+    public function registerClient(Request $request){
+        $imsi = $request->imsi;
+        $member_id = $request->member_id;
         $secret = bcrypt($imsi+$member_id);
         if(MemberModel::find($member_id)){
             $has_client = OauthClients::where('imsi',$imsi)->where('member_id',$member_id)->first();
             if($has_client){
-                return $this->response->item($has_client,null);
+                $result = array(
+                    'code' => 100,
+                    'status' => 'success',
+                    'data' => $has_client
+                );
+                return $this->response->array($result);
             }else{
                 $client = new OauthClients;
                 $client->member_id = $member_id;
@@ -74,18 +109,23 @@ class HomeController extends Controller
                 $client->secret = $secret;
                 $client->save();
                 $client = OauthClients::find($client->id);
-                return $this->response->item($client,null);
+                $result = array(
+                    'code' => 100,
+                    'status' => 'success',
+                    'data' => $client
+                );
+                return $this->response->array($result);
             }
         }else{
-            return Response::make(['error' => '用户不存在！'], 401);
+            return $this->response->array(['status'=>'error','msg' => '用户不存在','code'=>401]);
         }
 
     }
 
     //申请访问令牌access_token
-    public function accessToken(){
-        $client_id = $_POST['client_id'];
-        $secret = $_POST['secret'];
+    public function accessToken(Request $request){
+        $client_id = $request->client_id;
+        $secret = $request->secret;
         $client = OauthClients::find($client_id);
         if($client){
             if($secret == $client->secret){
@@ -94,50 +134,70 @@ class HomeController extends Controller
                     $access_token = AccessToken::find($has_token->id);
                     $access_token->access_token = bcrypt($client_id+$secret+time());
                     $access_token->save();
-                    return $this->response->item($access_token,null);
+                    $result = array(
+                        'code' => 100,
+                        'status' => 'success',
+                        'data' => $access_token
+                    );
+                    return $this->response->array($result);
                 }else{
                     $access_token = new AccessToken;
                     $access_token->member_id = $client->member_id;
                     $access_token->client_id = $client_id;
                     $access_token->access_token = bcrypt($client_id+$secret+time());
                     $access_token->save();
-                    return $this->response->item($access_token,null);
+                    $result = array(
+                        'code' => 100,
+                        'status' => 'success',
+                        'data' => $access_token
+                    );
+                    return $this->response->array($result);
                 }
             }
         }else{
-            return Response::make(['error' => '非法请求！'], 401);
+            return $this->response->array(['status'=>'error','msg' => '非法请求','code'=>401]);
         }
     }
 
     //登录
-    public function login(){
-        $mobile = $_POST['mobile'];
-        $password = $_POST['password'];
+    public function login(Request $request){
+        $mobile = $request->mobile;
+        $password = $request->password;
         $has_member = MemberModel::where('mobile',$mobile)->first();
         if($has_member){
             if(Hash::check($password, $has_member->password)){
-                return $this->response->item($has_member,null);
+                $result = array(
+                    'code' => 100,
+                    'status' => 'success',
+                    'data' => $has_member
+                );
+                return $this->response->array($result);
             }else{
-                return Response::make(['error' => '用户名密码不匹配'], 401);
+                return $this->response->array(['status'=>'error','msg' => '用户名密码不匹配','code'=>401]);
             }
         }else{
-            return Response::make(['error' => '用户不存在'], 401);
+            return $this->response->array(['status'=>'error','msg' => '用户不存在','code'=>401]);
         }
     }
 
     //忘记密码
-    public function forgetPassword(){
-        $mobile = $_POST['mobile'];
-        $captcha = $_POST['captcha'];
-        $password = $_POST['password'];
+    public function forgetPassword(Request $request){
+        $mobile = $request->mobile;
+        $captcha = $request->captcha;
+        $password = $request->password;
         $has_member = MemberModel::where('mobile',$mobile)->first();
         if($has_member){
             $member = MemberModel::find($has_member->id);
             $member->password = bcrypt($password);
             $member->save();
-            return $this->response->item($member,null);
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $member
+            );
+            return $this->response->array($result);
         }else{
-            return Response::make(['error' => '用户不存在'], 401);
+            return $this->response->array(['status'=>'error','msg' => '用户不存在','code'=>401]);
         }
     }
 
@@ -153,15 +213,20 @@ class HomeController extends Controller
                 if($new_password == $re_password){
                     $has_member->password = bcrypt($new_password);
                     $has_member->save();
-                    return $this->response->item($has_member,null);
+                    $result = array(
+                        'code' => 100,
+                        'status' => 'success',
+                        'data' => $has_member
+                    );
+                    return $this->response->array($result);
                 }else{
-                    return Response::make(['error' => '两次密码输入不一致'], 401);
+                    return $this->response->array(['status'=>'error','msg' => '两次密码输入不一致','code'=>401]);
                 }
             }else{
-                return Response::make(['error' => '当前密码错误'], 401);
+                return $this->response->array(['status'=>'error','msg' => '当前密码错误','code'=>401]);
             }
         }else{
-            return Response::make(['error' => '用户不存在'], 401);
+            return $this->response->array(['status'=>'error','msg' => '用户不存在','code'=>401]);
         }
     }
 
@@ -175,8 +240,7 @@ class HomeController extends Controller
             $image = $request->file('image');
             $allowed_extensions = ["png", "jpg", "gif", "bmp", "jpeg"];
             if ($image->getClientOriginalExtension() && !in_array($image->getClientOriginalExtension(), $allowed_extensions)) {
-                $msg = collect(['error' => 1, 'content' => '只允许上传文件格式为：png,jpg,gif,bmp,jpeg', 'url' => '/admin/advertising/create']);
-                return view('message')->withMsg($msg);
+                return $this->response->array(['status'=>'error','msg' => '图片格式错误','code'=>401]);
             }
             if($image->isValid()){
                 $clientName = $image->getClientOriginalName();
@@ -195,7 +259,12 @@ class HomeController extends Controller
         }
         $member->save();
         $member->avatar_path = $path;
-        return $this->response->item($member,null);
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $member
+        );
+        return $this->response->array($result);
     }
 
     //实名认证
@@ -210,7 +279,7 @@ class HomeController extends Controller
             $card_positive_pic = $request->file('card_positive_pic');
             $allowed_extensions = ["png", "jpg", "gif", "bmp", "jpeg"];
             if ($card_positive_pic->getClientOriginalExtension() && !in_array($card_positive_pic->getClientOriginalExtension(), $allowed_extensions)) {
-                return Response::make(['error' => '图片格式错误'], 401);
+                return $this->response->array(['status'=>'error','msg' => '图片格式错误','code'=>401]);
             }
             if($card_positive_pic->isValid()){
                 $clientName = $card_positive_pic->getClientOriginalName();
@@ -231,7 +300,7 @@ class HomeController extends Controller
             $card_negative_pic = $request->file('card_negative_pic');
             $allowed_extensions = ["png", "jpg", "gif", "bmp", "jpeg"];
             if ($card_negative_pic->getClientOriginalExtension() && !in_array($card_negative_pic->getClientOriginalExtension(), $allowed_extensions)) {
-                return Response::make(['error' => '图片格式错误'], 401);
+                return $this->response->array(['status'=>'error','msg' => '图片格式错误','code'=>401]);
             }
             if($card_negative_pic->isValid()){
                 $clientName = $card_negative_pic->getClientOriginalName();
@@ -251,68 +320,422 @@ class HomeController extends Controller
         $member->save();
         $member->card_positive_pic_path = $card_positive_pic_path;
         $member->card_negative_pic_path = $card_negative_pic_path;
-        return $this->response->item($member,null);
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $member
+        );
+        return $this->response->array($result);
     }
 
     //客户管理(一级)
     public function firstCustomer(Request $request){
         $member_id = $request->member_id;
         $first_customers = MemberModel::where('parent_id_id',$member_id)->get();
-        return $this->response->collection($first_customers,null);
+        $result = array(
+            'code' => 100,
+            'message' => 'success',
+            'data' => $first_customers
+        );
+        return $this->response->array($result);
     }
 
     //客户管理（二级）
     public function secondCustomer(Request $request){
         $member_id = $request->member_id;
         $second_customers = MemberModel::where('grand_id_id',$member_id)->get();
-        return $this->response->collection($second_customers,null);
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $second_customers
+        );
+        return $this->response->array($result);
     }
 
     //客户管理（三级）
     public function threeCustomer(Request $request){
         $member_id = $request->member_id;
         $three_customers = MemberModel::where('great_grand_id_id',$member_id)->get();
-        return $this->response->collection($three_customers,null);
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $three_customers
+        );
+        return $this->response->array($result);
     }
 
     //会员等级
     public function grade(Request $request){
         $member_id = $request->member_id;
         $member = MemberModel::find($member_id);
-        return $this->response->array(['integral' => $member->integral]);
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $member
+        );
+        return $this->response->array($result);
     }
 
     //积分记录
     public function integral(Request $request){
         $member_id = $request->member_id;
         $integral = IntegralModel::where('integral_member_id_id',$member_id)->get();
-        return $this->response->collection($integral,null);
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $integral
+        );
+        return $this->response->array($result);
     }
 
     //金币记录
     public function gold(Request $request){
         $member_id = $request->member_id;
         $gold = GoldModel::where('gold_member_id_id',$member_id)->get();
-        return $this->response->collection($gold,null);
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $gold
+        );
+        return $this->response->array($result);
     }
 
     //提现
     public function withdraw(Request $request){
         $member_id = $request->member_id;
-        $withdraw_amount = $request->withdraw_amount;
-        $withdraw_bank = $request->withdraw_bank;
-        $withdraw_name = $request->withdraw_name;
-        $withdraw_card = $request->withdraw_card;
-        $withdraw_bank_card = $request->withdraw_bank_card;
-        $withdraw_mobile = $request->withdraw_mobile;
         $captcha = $request->captcha;
-        
+        $member = MemberModel::find($member_id);
+        if($member->gold >= $request->withdraw_amount){
+            $withdraw = new WithdrawModel;
+            $withdraw->withdraw_amount = $request->withdraw_amount;
+            $withdraw->withdraw_bank = $request->withdraw_bank;
+            $withdraw->withdraw_name = $request->withdraw_name;
+            $withdraw->withdraw_card = $request->withdraw_card;
+            $withdraw->withdraw_bank_card = $request->withdraw_bank_card;
+            $withdraw->withdraw_mobile = $request->withdraw_mobile;
+            $withdraw->withdraw_member_id_id = $member_id;
+            $withdraw->withdraw_status = '0';
+            $withdraw = $withdraw->save();
+            if($withdraw){
+                return $this->response->array(['status'=>'success','msg' => '申请已提交','code'=>100]);
+            }
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '金额不能大于您的金币数量','code'=>401]);
+        }
 
+    }
+
+    //关于我们
+    public function aboutUs(Request $request){
+        $about = PostModel::find(1);
+        if($about){
+            $about->content = $about->entry->content;
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $about
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'success','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //提现记录
+    public function withdrawLog(Request $request){
+        $member_id = $request->member_id;
+        $withdraw = WithdrawModel::where('withdraw_member_id_id',$member_id)->get();
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $withdraw
+        );
+        return $this->response->array($result);
+    }
+
+    //消息记录
+    public function message(Request $request){
+        $member_id = $request->member_id;
+        $message = MessageModel::where('message_member_id_id',$member_id)->get();
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $message
+        );
+        return $this->response->array($result);
+    }
+
+    //申请贷款
+    public function loan(Request $request){
+        $loan = new LoanModel;
+        $member = MemberModel::find($request->member_id);
+        if($member->is_verified = 1){
+            $has_loan = LoanModel::where('loan_status','1')->get();
+            if($has_loan){
+                return $this->response->array(['status'=>'success','msg' => '您有正在进行的贷款记录，暂无法重复申请','code'=>401]);
+            }else{
+                $loan->loan_name = $member->real_name;
+                $loan->loan_id_card = $member->id_card;
+                $loan->loan_amount = $request->loan_amount;
+                $loan->loan_order_sn = $this->orderSn();
+                $loan->loan_status = '0';
+                $loan->loan_term_date = $request->term_date;
+                $loan->loan_member_id_id = $request->member_id;
+                $loan->save();
+                return $this->response->array(['status'=>'success','msg' => '申请已提交','code'=>100]);
+            }
+        }else{
+            return $this->response->array(['status'=>'success','msg' => '未实名认证','code'=>401]);
+        }
+    }
+
+    //贷款记录
+    public function loanLog(Request $request){
+        $member_id = $request->member_id;
+        $loans = LoanModel::where('loan_member_id_id',$member_id)->get();
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $loans
+        );
+        return $this->response->array($result);
+    }
+
+    //贷款须知
+    public function loanNotice(Request $request){
+        $post = PostModel::find(3);
+        if($post){
+            $post->content = $post->entry->content;
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $post
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //贷款记录详情
+    public function loanDetail(Request $request){
+        $loan_id = $request->loan_id;
+        $loan = LoanModel::find($loan_id);
+        $first_time = RepaymentModel::where('repayment_loan_id',$loan_id)->orderBy('id','ASC')->first();
+        $loan->first_time = $first_time->repayment_date;
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $loan
+        );
+        return $this->response->array($result);
+    }
+
+    // 贷款页面
+    public function loanAmount(Request $request){
+        $member_id = $request->member_id;
+        $loan = LoanModel::where('loan_member_id_id',$member_id)->where('loan_status',1)->first();
+        $loan_amount = LoanModel::where('loan_member_id_id',$member_id)->where('loan_status',1)->first();
+        $repayments = RepaymentModel::where('repayment_member_id_id',$member_id)
+            ->where('repayment_loan_id',$loan->id)
+            ->where('repayment_status',0)
+            ->orderBy('id','ASC')
+            ->get();
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'loan_amount' =>$loan_amount->loan_amount,
+            'data' => $repayments
+        );
+        return $this->response->array($result);
+    }
+
+
+    //还款页面
+    public function repayment(Request $request){
+        $member_id = $request->member_id;
+        $repayments = RepaymentModel::where('repayment_member_id_id',$member_id)->orderBy('id','ASC')->get();
+        $period_repayment = RepaymentModel::whereMonth('repayment_date', date('m')+1)->whereYear('repayment_date', date('Y'))->first();
+        if($period_repayment){
+            $period_amount = $period_repayment->repayment_amount;
+            $period_date = $period_repayment->repayment_date;
+        }else{
+            $period_amount = null;
+            $period_date = null;
+        }
+        $not_repayment_amount = RepaymentModel::where('repayment_status',0)->sum('repayment_amount');
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'period_amount' =>$period_amount,
+            'period_date' =>$period_date,
+            'not_repayment_amount' =>$not_repayment_amount,
+            'data' => $repayments
+        );
+        return $this->response->array($result);
+    }
+
+    //资讯列表
+    public function news(Request $request){
+        $news = PostModel::whereNull('deleted_at')->where('category_id',3)->where('enabled',1)->get();
+        foreach($news as $new){
+            $file = FileModel::find($new->entry->image_id);
+            $new->content = $new->entry->content;
+            $new->image_path = $file->name;
+            $new->url = 'http://x16311542j.51mypc.cn/api/new-detail?new_id='.$new->id;
+            $lists[] = $new;
+        }
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $lists
+        );
+        return $this->response->array($result);
+    }
+
+    //资讯详情
+    public function newsDetail(Request $request){
+        $new_id = $request->new_id;
+        $new = PostModel::find($new_id);
+        $file = FileModel::find($new->entry->image_id);
+        if($new){
+            $new->image_path = $file->name;
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $new
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //中奖记录
+    public function winningLog(Request $request){
+        $member_id = $request->member_id;
+        $winning = WinningModel::where('winning_member_id_id',$member_id)->orderBy('id','DESC')->get();
+        if($winning){
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $winning
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //抽奖券（可使用）
+    public function ticketUse(Request $request){
+        $member_id = $request->member_id;
+        $ticketUse = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',0)->orderBy('id','DESC')->get();
+        if($ticketUse){
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $ticketUse
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //抽奖券（已使用）
+    public function ticketUsed(Request $request){
+        $member_id = $request->member_id;
+        $ticketUsed = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',1)->orderBy('id','DESC')->get();
+        if($ticketUsed){
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $ticketUsed
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //已过期
+    public function ticketExpired(Request $request){
+        $member_id = $request->member_id;
+        $ticketExpired = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','<',Carbon::now())->orderBy('id','DESC')->get();
+        if($ticketExpired){
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $ticketExpired
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //红包记录
+    public function redEnvelopes(Request $request){
+        $member_id = $request->member_id;
+        $red_envelopes = LogModel::where('log_member_id_id',$member_id)->orderBy('id','DESC')->get();
+        if($red_envelopes){
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $red_envelopes
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
+        }
+    }
+
+    //个人中心首页
+    public function personalCenter(Request $request){
+        $member_id = $request->member_id;
+        $member = MemberModel::find($member_id);
+        $lottery_tickets = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','<',Carbon::now())->where('ticket_is_use',0)->count();
+        $first_customer = MemberModel::where('parent_id_id',$member_id)->count();
+        $second_customer = MemberModel::where('grand_id_id',$member_id)->count();
+        $three_customer = MemberModel::where('great_grand_id_id',$member_id)->count();
+        if($member){
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'lottery_tickets' => $lottery_tickets,
+                'first_customer' => $first_customer,
+                'second_customer' => $second_customer,
+                'three_customer' => $three_customer,
+                'data' => $member
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '无效用户','code'=>401]);
+        }
+
+    }
+
+    //邀请码
+    public function testQrcode(){
+        $image_name = md5(date('ymdhis')).'.png';
+        $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
     }
 
 
 
+    //生成二维码,size（二维码尺寸），margin(边距)，data(内容)，path(图片路径及名称)
+    public function qrcode($size,$margin,$data,$path){
+        if(!file_exists(public_path('qrcodes')))
+            mkdir(public_path('qrcodes'));
+        QrCode::format('png')->size($size)->margin($margin)->generate($data,public_path($path));
+    }
 
+    //生成单号
+    public function orderSn(){
+        $orderSn = strtoupper(dechex(date('m'))) . date('d') . substr(time(), -5) .substr(microtime(), 2, 5) . sprintf('%02d', rand(0, 99));
+        return $orderSn;
+    }
 
 
     // 当前的毫秒时间戳

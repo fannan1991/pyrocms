@@ -1,0 +1,9 @@
+{
+    "name": "fannan/lottery-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Fannan\\LotteryModule\\": "src/"
+        }
+    }
+}
