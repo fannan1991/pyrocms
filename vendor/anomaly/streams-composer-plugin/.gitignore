@@ -1,6 +1,0 @@
-.DS_Store
-.idea
-bin
-build
-vendor
-composer.lock
