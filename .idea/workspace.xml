@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d230ee19-34bf-4885-b8ac-fc0f840b6396" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/button.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/field.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pyrocms.iml" afterPath="$PROJECT_DIR$/.idea/pyrocms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gulpfile.js" afterPath="$PROJECT_DIR$/Gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE.md" afterPath="$PROJECT_DIR$/LICENSE.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_015653_fannan.module.members__create_members_fields.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_015653_fannan.module.members__create_members_fields.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_032739_fannan.module.members__create_members_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_032739_fannan.module.members__create_members_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_24_023728_fannan.module.members__create_integral_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_24_023728_fannan.module.members__create_integral_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_24_065556_fannan.module.members__create_gold_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_24_065556_fannan.module.members__create_gold_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_25_081234_fannan.module.members__create_loan_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_25_081234_fannan.module.members__create_loan_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_26_033448_fannan.module.members__create_repayment_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_26_033448_fannan.module.members__create_repayment_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_26_080916_fannan.module.members__create_withdraw_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_26_080916_fannan.module.members__create_withdraw_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_27_012006_fannan.module.members__create_message_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_27_012006_fannan.module.members__create_message_stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/artisan" afterPath="$PROJECT_DIR$/artisan" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nginx_app.conf" afterPath="$PROJECT_DIR$/nginx_app.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml" afterPath="$PROJECT_DIR$/phpunit.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.php" afterPath="$PROJECT_DIR$/server.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/.gitignore" afterPath="$PROJECT_DIR$/storage/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/app/.gitignore" afterPath="$PROJECT_DIR$/storage/app/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/debugbar/.gitignore" afterPath="$PROJECT_DIR$/storage/debugbar/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/.gitignore" afterPath="$PROJECT_DIR$/storage/framework/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/cache/.gitignore" afterPath="$PROJECT_DIR$/storage/framework/cache/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/.gitignore" afterPath="$PROJECT_DIR$/storage/framework/sessions/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/.gitignore" afterPath="$PROJECT_DIR$/storage/framework/views/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/.gitignore" afterPath="$PROJECT_DIR$/storage/logs/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/.gitignore" afterPath="$PROJECT_DIR$/storage/streams/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/views/twig/.gitignore" afterPath="$PROJECT_DIR$/storage/views/twig/.gitignore" />
-    </list>
+    <list default="true" id="d230ee19-34bf-4885-b8ac-fc0f840b6396" name="Default" comment="" />
     <ignored path="pyrocms.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
