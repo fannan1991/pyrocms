@@ -51,7 +51,7 @@ class FannanModuleMembersCreateMembersStream extends Migration
         'parent_id',
         'grand_id',
         'great_grand_id',
-        'access_token'
+        'qrcode',
     ];
 
 }

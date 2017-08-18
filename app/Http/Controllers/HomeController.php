@@ -39,15 +39,32 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class HomeController extends Controller
 {
-
     public function index()
     {
         return view('home');
     }
 
     public function test(Request $request){
-        $first_customers = MemberModel::all();
-        return $this->response->collection($first_customers,new MemberTransformer());
+        $sites = array
+        (
+            "runoob"=> "http://www.runoob.com",
+            "google"=>array
+            (
+                "Google 搜索",
+                "http://www.google.com"
+            ),
+            "taobao"=>array
+            (
+                "淘宝",
+                "http://www.taobao.com"
+            )
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $sites
+        );
+        return $this->response->array($result);
     }
 
     //注册
@@ -76,6 +93,10 @@ class HomeController extends Controller
             $member->save();
             $member = MemberModel::find($member->id);
             if($member){
+                $image_name = md5(date('ymdhis')).'.png';
+                $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+                $member->qrcode = 'qrcodes/'.$image_name;
+                $member->save();
                 $result = array(
                     'code' => 100,
                     'status' => 'success',
@@ -164,7 +185,15 @@ class HomeController extends Controller
         $mobile = $request->mobile;
         $password = $request->password;
         $has_member = MemberModel::where('mobile',$mobile)->first();
+
         if($has_member){
+            if($has_member->avatar_id){
+                $avatar = FileModel::find($has_member->avatar_id);
+                $has_member->avatar_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$avatar->name;
+            }else{
+                $has_member->avatar_path = null;
+            }
+
             if(Hash::check($password, $has_member->password)){
                 $result = array(
                     'code' => 100,
@@ -469,8 +498,8 @@ class HomeController extends Controller
     public function loan(Request $request){
         $loan = new LoanModel;
         $member = MemberModel::find($request->member_id);
-        if($member->is_verified = 1){
-            $has_loan = LoanModel::where('loan_status','1')->get();
+        if($member->is_verified == true){
+            $has_loan = LoanModel::where('loan_status','1')->count();
             if($has_loan){
                 return $this->response->array(['status'=>'success','msg' => '您有正在进行的贷款记录，暂无法重复申请','code'=>401]);
             }else{
@@ -522,13 +551,18 @@ class HomeController extends Controller
         $loan_id = $request->loan_id;
         $loan = LoanModel::find($loan_id);
         $first_time = RepaymentModel::where('repayment_loan_id',$loan_id)->orderBy('id','ASC')->first();
-        $loan->first_time = $first_time->repayment_date;
-        $result = array(
-            'code' => 100,
-            'status' => 'success',
-            'data' => $loan
-        );
-        return $this->response->array($result);
+        if($first_time){
+            $loan->first_time = $first_time->repayment_date;
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $loan
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '尚未审核','code'=>401]);
+        }
+
     }
 
     // 贷款页面
@@ -541,11 +575,16 @@ class HomeController extends Controller
             ->where('repayment_status',0)
             ->orderBy('id','ASC')
             ->get();
+        $data = array
+        (
+            'loan_amount' => $loan_amount->loan_amount,
+            "repayments"=> $repayments
+        );
         $result = array(
             'code' => 100,
             'status' => 'success',
             'loan_amount' =>$loan_amount->loan_amount,
-            'data' => $repayments
+            'data' => $data
         );
         return $this->response->array($result);
     }
@@ -564,13 +603,17 @@ class HomeController extends Controller
             $period_date = null;
         }
         $not_repayment_amount = RepaymentModel::where('repayment_status',0)->sum('repayment_amount');
-        $result = array(
-            'code' => 100,
-            'status' => 'success',
+        $data = array
+        (
             'period_amount' =>$period_amount,
             'period_date' =>$period_date,
             'not_repayment_amount' =>$not_repayment_amount,
-            'data' => $repayments
+            "repayments"=> $repayments
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $data
         );
         return $this->response->array($result);
     }
@@ -581,7 +624,7 @@ class HomeController extends Controller
         foreach($news as $new){
             $file = FileModel::find($new->entry->image_id);
             $new->content = $new->entry->content;
-            $new->image_path = $file->name;
+            $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
             $new->url = 'http://x16311542j.51mypc.cn/api/new-detail?new_id='.$new->id;
             $lists[] = $new;
         }
@@ -599,7 +642,7 @@ class HomeController extends Controller
         $new = PostModel::find($new_id);
         $file = FileModel::find($new->entry->image_id);
         if($new){
-            $new->image_path = $file->name;
+            $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
             $result = array(
                 'code' => 100,
                 'status' => 'success',
@@ -615,80 +658,64 @@ class HomeController extends Controller
     public function winningLog(Request $request){
         $member_id = $request->member_id;
         $winning = WinningModel::where('winning_member_id_id',$member_id)->orderBy('id','DESC')->get();
-        if($winning){
-            $result = array(
-                'code' => 100,
-                'status' => 'success',
-                'data' => $winning
-            );
-            return $this->response->array($result);
-        }else{
-            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
-        }
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $winning
+        );
+        return $this->response->array($result);
     }
 
     //抽奖券（可使用）
     public function ticketUse(Request $request){
         $member_id = $request->member_id;
         $ticketUse = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',0)->orderBy('id','DESC')->get();
-        if($ticketUse){
-            $result = array(
-                'code' => 100,
-                'status' => 'success',
-                'data' => $ticketUse
-            );
-            return $this->response->array($result);
-        }else{
-            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
-        }
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $ticketUse
+        );
+        return $this->response->array($result);
+
     }
 
     //抽奖券（已使用）
     public function ticketUsed(Request $request){
         $member_id = $request->member_id;
         $ticketUsed = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',1)->orderBy('id','DESC')->get();
-        if($ticketUsed){
-            $result = array(
-                'code' => 100,
-                'status' => 'success',
-                'data' => $ticketUsed
-            );
-            return $this->response->array($result);
-        }else{
-            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
-        }
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $ticketUsed
+        );
+        return $this->response->array($result);
+
     }
 
     //已过期
     public function ticketExpired(Request $request){
         $member_id = $request->member_id;
         $ticketExpired = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','<',Carbon::now())->orderBy('id','DESC')->get();
-        if($ticketExpired){
-            $result = array(
-                'code' => 100,
-                'status' => 'success',
-                'data' => $ticketExpired
-            );
-            return $this->response->array($result);
-        }else{
-            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
-        }
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $ticketExpired
+        );
+        return $this->response->array($result);
+
     }
 
     //红包记录
     public function redEnvelopes(Request $request){
         $member_id = $request->member_id;
         $red_envelopes = LogModel::where('log_member_id_id',$member_id)->orderBy('id','DESC')->get();
-        if($red_envelopes){
-            $result = array(
-                'code' => 100,
-                'status' => 'success',
-                'data' => $red_envelopes
-            );
-            return $this->response->array($result);
-        }else{
-            return $this->response->array(['status'=>'error','msg' => '无数据','code'=>401]);
-        }
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $red_envelopes
+        );
+        return $this->response->array($result);
+
     }
 
     //个人中心首页
@@ -700,14 +727,18 @@ class HomeController extends Controller
         $second_customer = MemberModel::where('grand_id_id',$member_id)->count();
         $three_customer = MemberModel::where('great_grand_id_id',$member_id)->count();
         if($member){
-            $result = array(
-                'code' => 100,
-                'status' => 'success',
+            $data = array
+            (
                 'lottery_tickets' => $lottery_tickets,
                 'first_customer' => $first_customer,
                 'second_customer' => $second_customer,
                 'three_customer' => $three_customer,
-                'data' => $member
+                "member"=> $member
+            );
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $data
             );
             return $this->response->array($result);
         }else{
@@ -717,9 +748,28 @@ class HomeController extends Controller
     }
 
     //邀请码
-    public function testQrcode(){
-        $image_name = md5(date('ymdhis')).'.png';
-        $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+    public function invitationCode(Request $request){
+        $member_id = $request->member_id;
+        $member = MemberModel::find($member_id);
+        if($member){
+            if(!$member->qrcode){
+                $image_name = md5(date('ymdhis')).'.png';
+                $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+                $member->qrcode = 'qrcodes/'.$image_name;
+                $member->save();
+            }
+            $data = array
+            (
+                'qrcode'    =>  'http://'.$_SERVER['HTTP_HOST'].'/'.$member->qrcode,
+                'invitation_code' => $member->invitation_code,
+            );
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data'    =>  $data,
+            );
+            return $this->response->array($result);
+        }
     }
 
 

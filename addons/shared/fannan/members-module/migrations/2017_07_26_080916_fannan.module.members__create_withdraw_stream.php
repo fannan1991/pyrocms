@@ -43,9 +43,7 @@ class FannanModuleMembersCreateWithdrawStream extends Migration
         'withdraw_mobile' => [
             'required' => true,
         ],
-        'withdraw_member_id' => [
-            'required' => true,
-        ],
+        'withdraw_member_id',
         'withdraw_status' => [
             'required' => true,
         ],

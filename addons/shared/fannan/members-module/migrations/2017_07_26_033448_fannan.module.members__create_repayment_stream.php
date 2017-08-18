@@ -37,9 +37,7 @@ class FannanModuleMembersCreateRepaymentStream extends Migration
         'repayment_loan' => [
             'required' => true,
         ],
-        'repayment_member_id' => [
-            'required' => true,
-        ],
+        'repayment_member_id',
         'repayment_sn' => [
             'required' => true,
         ],

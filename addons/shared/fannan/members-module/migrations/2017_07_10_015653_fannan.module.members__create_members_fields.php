@@ -124,7 +124,6 @@ class FannanModuleMembersCreateMembersFields extends Migration
             'config' => [
                 'separator'     => ',',
                 'min'           => 0,
-                'max'           => 12,
                 'step'          => 1,
                 'default_value' => 0,
             ]
@@ -135,7 +134,6 @@ class FannanModuleMembersCreateMembersFields extends Migration
             'config' => [
                 'separator'     => ',',
                 'min'           => 0,
-                'max'           => 12,
                 'step'          => 1,
                 'default_value' => 0,
             ]
@@ -160,6 +158,10 @@ class FannanModuleMembersCreateMembersFields extends Migration
             'config' => [
                 'related' => 'Fannan\MembersModule\Member\MemberModel',
             ]
+        ],
+        //二维码
+        'qrcode' => [
+            'type'   => 'anomaly.field_type.text',
         ],
 
 
@@ -195,22 +197,14 @@ class FannanModuleMembersCreateMembersFields extends Migration
                 'related' => 'Fannan\MembersModule\Member\MemberModel',
             ]
         ],
-        'access_token' => [
-            'type'   => 'anomaly.field_type.text',
-            'config' => [
-                'type'          => 'text',
-                'min'           => 2,
-                'max'           => 255,
-            ]
-        ],
         //金币记录
         //金币数
         'gold_num' => [
             'type'   => 'anomaly.field_type.integer',
             'config' => [
                 'separator'     => ',',
-                'min'           => -500,
-                'max'           => 1200,
+                'min'           => -500000,
+                'max'           => 1200000,
                 'step'          => 1,
                 'default_value' => 0,
             ]

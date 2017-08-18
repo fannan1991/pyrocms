@@ -31,9 +31,7 @@ class FannanModuleMembersCreateMessageStream extends Migration
         'message_content' => [
             'required' => true,
         ],
-        'message_member_id' => [
-            'required' => true,
-        ],
+        'message_member_id',
         'message_mobile' => [
             'required' => true,
         ],

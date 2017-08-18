@@ -34,9 +34,7 @@ class FannanModuleMembersCreateGoldStream extends Migration
         'gold_mobile' => [
             'required' => true,
         ],
-        'gold_member_id' => [
-            'required' => true,
-        ],
+        'gold_member_id'
     ];
 
 }

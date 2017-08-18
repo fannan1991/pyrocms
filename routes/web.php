@@ -82,6 +82,7 @@ $api->version('v1', function ($api) {
         $api->post('/ticket-expired','HomeController@ticketExpired');
         $api->post('/red-envelopes','HomeController@redEnvelopes');
         $api->post('/personal-center','HomeController@personalCenter');
+        $api->post('/invitation-code','HomeController@invitationCode');
     });
 
 });

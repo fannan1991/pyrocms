@@ -34,9 +34,7 @@ class FannanModuleMembersCreateIntegralStream extends Migration
         'integral_mobile' => [
             'required' => true,
         ],
-        'integral_member_id' => [
-            'required' => true,
-        ],
+        'integral_member_id'
     ];
 
 }
