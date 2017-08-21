@@ -4,6 +4,9 @@ return [
     'ad_title'  => [
         'name' => 'title'
     ],
+    'ad_slot'  => [
+        'name' => '广告位'
+    ],
     'ad_image'  => [
         'name' => '图片'
     ],
@@ -12,6 +15,9 @@ return [
     ],
     'ad_description'  => [
         'name' => '描述'
+    ],
+    'ad_sorting'  => [
+        'name' => '排序'
     ],
     'slot_name'  => [
         'name' => '广告位名称'

@@ -24,7 +24,14 @@ class AdvertisingTableBuilder extends TableBuilder
      *
      * @var array|string
      */
-    protected $columns = [];
+    protected $columns = [
+        'entry.id',
+        'ad_sorting',
+        'ad_title',
+        'ad_slot',
+        'entry.ad_image.preview',
+        'entry.created_at'
+    ];
 
     /**
      * The table buttons.
@@ -49,7 +56,11 @@ class AdvertisingTableBuilder extends TableBuilder
      *
      * @var array
      */
-    protected $options = [];
+    protected $options = [
+        'order_by' => [
+            'id' => 'ASC',
+        ],
+    ];
 
     /**
      * The table assets.

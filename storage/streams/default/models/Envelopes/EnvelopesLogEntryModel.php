@@ -38,7 +38,7 @@ class EnvelopesLogEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Envelopes\EnvelopesLogEntryTranslationsModel';
 
     protected $stream = [
-'id' => '234',
+'id' => '253',
 'namespace' => 'envelopes',
 'slug' => 'log',
 'prefix' => 'envelopes_',
@@ -53,16 +53,16 @@ class EnvelopesLogEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1893,
-'sort_order' => 234,
-'stream_id' => 234,
-'field_id' => 1886,
+'id' => 2001,
+'sort_order' => 243,
+'stream_id' => 253,
+'field_id' => 1996,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1886',
+'id' => '1996',
 'namespace' => 'envelopes',
 'slug' => 'log_name',
 'type' => 'anomaly.field_type.text',
@@ -70,8 +70,8 @@ class EnvelopesLogEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1886,
-'field_id' => 1886,
+'id' => 1996,
+'field_id' => 1996,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.log_name.name',
 'placeholder' => 'fannan.module.envelopes::field.log_name.placeholder',
@@ -82,8 +82,8 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1892,
-'assignment_id' => 1893,
+'id' => 2000,
+'assignment_id' => 2001,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.log_name.label.log',
 'warning' => 'fannan.module.envelopes::field.log_name.warning.log',
@@ -93,16 +93,16 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1894,
-'sort_order' => 235,
-'stream_id' => 234,
-'field_id' => 1887,
+'id' => 2002,
+'sort_order' => 244,
+'stream_id' => 253,
+'field_id' => 1997,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1887',
+'id' => '1997',
 'namespace' => 'envelopes',
 'slug' => 'log_mobile',
 'type' => 'anomaly.field_type.text',
@@ -110,8 +110,8 @@ class EnvelopesLogEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1887,
-'field_id' => 1887,
+'id' => 1997,
+'field_id' => 1997,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.log_mobile.name',
 'placeholder' => 'fannan.module.envelopes::field.log_mobile.placeholder',
@@ -122,8 +122,8 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1893,
-'assignment_id' => 1894,
+'id' => 2001,
+'assignment_id' => 2002,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.log_mobile.label.log',
 'warning' => 'fannan.module.envelopes::field.log_mobile.warning.log',
@@ -133,16 +133,16 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1895,
-'sort_order' => 236,
-'stream_id' => 234,
-'field_id' => 1888,
+'id' => 2003,
+'sort_order' => 245,
+'stream_id' => 253,
+'field_id' => 1998,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1888',
+'id' => '1998',
 'namespace' => 'envelopes',
 'slug' => 'log_amount',
 'type' => 'anomaly.field_type.integer',
@@ -150,8 +150,8 @@ class EnvelopesLogEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1888,
-'field_id' => 1888,
+'id' => 1998,
+'field_id' => 1998,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.log_amount.name',
 'placeholder' => 'fannan.module.envelopes::field.log_amount.placeholder',
@@ -162,8 +162,8 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1894,
-'assignment_id' => 1895,
+'id' => 2002,
+'assignment_id' => 2003,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.log_amount.label.log',
 'warning' => 'fannan.module.envelopes::field.log_amount.warning.log',
@@ -173,16 +173,16 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1896,
-'sort_order' => 237,
-'stream_id' => 234,
-'field_id' => 1885,
+'id' => 2004,
+'sort_order' => 246,
+'stream_id' => 253,
+'field_id' => 1995,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1885',
+'id' => '1995',
 'namespace' => 'envelopes',
 'slug' => 'log_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -190,8 +190,8 @@ class EnvelopesLogEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1885,
-'field_id' => 1885,
+'id' => 1995,
+'field_id' => 1995,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.log_member_id.name',
 'placeholder' => 'fannan.module.envelopes::field.log_member_id.placeholder',
@@ -202,8 +202,8 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1895,
-'assignment_id' => 1896,
+'id' => 2003,
+'assignment_id' => 2004,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.log_member_id.label.log',
 'warning' => 'fannan.module.envelopes::field.log_member_id.warning.log',
@@ -215,8 +215,8 @@ class EnvelopesLogEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 234,
-'stream_id' => 234,
+'id' => 253,
+'stream_id' => 253,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::stream.log.name',
 'description' => 'fannan.module.envelopes::stream.log.description',

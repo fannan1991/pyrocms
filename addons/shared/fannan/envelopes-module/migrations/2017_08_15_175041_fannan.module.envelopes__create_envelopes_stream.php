@@ -37,6 +37,9 @@ class FannanModuleEnvelopesCreateEnvelopesStream extends Migration
         'envelopes_ordinary_times' => [
             'required' => true,
         ],
+        'envelopes_bronze_times' => [
+            'required' => true,
+        ],
         'envelopes_silver_times' => [
             'required' => true,
         ],

@@ -19,6 +19,7 @@ use App\Api\Transformers\WithdrasTransformer;
 use App\Api\Transformers\WithdrawTransformer;
 use App\OauthClients;
 use Carbon\Carbon;
+use Fannan\AdvertisingModule\Advertising\AdvertisingModel;
 use Fannan\EnvelopesModule\Envelope\EnvelopeModel;
 use Fannan\EnvelopesModule\Log\LogModel;
 use Fannan\LotteryModule\Ticket\TicketModel;
@@ -39,8 +40,49 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class HomeController extends Controller
 {
+    //首页
     public function index()
     {
+        /*$banners = AdvertisingModel::where('ad_slot_id',1)->orderBy('ad_sorting','ASC')->get();
+        foreach($banners as $banner){
+            $fileBanner = FileModel::find($banner->ad_image_id);
+            $banner->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$fileBanner->name;
+            $bannerLists[] = $banner;
+        }
+
+        $activities = AdvertisingModel::where('ad_slot_id',2)->orderBy('ad_sorting','ASC')->get();
+        foreach($activities as $activity){
+            $fileActivity = FileModel::find($activity->ad_image_id);
+            $activity->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$fileActivity->name;
+            $activityLists[] = $activity;
+        }
+
+        $adsIndex = AdvertisingModel::where('ad_slot_id',3)->orderBy('ad_sorting','ASC')->first();
+        $fileAds = FileModel::find($adsIndex->ad_image_id);
+        $adsIndex->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$fileAds->name;
+
+        $news = PostModel::whereNull('deleted_at')->where('category_id',3)->where('enabled',1)->orderBy('id','DESC')->limit(2)->get();
+        foreach($news as $new){
+            $file = FileModel::find($new->entry->image_id);
+            $new->content = $new->entry->content;
+            $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
+            $new->url = 'http://x16311542j.51mypc.cn/api/new-detail?new_id='.$new->id;
+            $newLists[] = $new;
+        }
+
+        $data = array
+        (
+            "banner"=> $bannerLists,
+            'activity' => $activityLists,
+            'ads' => $adsIndex,
+            'news' => $newLists
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $data
+        );
+        return $this->response->array($result);*/
         return view('home');
     }
 
@@ -193,6 +235,18 @@ class HomeController extends Controller
             }else{
                 $has_member->avatar_path = null;
             }
+            if($has_member->card_positive_pic_id){
+                $card_positive_pic = FileModel::find($has_member->card_positive_pic_id);
+                $has_member->card_positive_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$card_positive_pic->name;
+            }else{
+                $has_member->card_positive_path = null;
+            }
+            if($has_member->card_negative_pic_id){
+                $card_negative_pic = FileModel::find($has_member->card_negative_pic_id);
+                $has_member->card_negative_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$card_negative_pic->name;
+            }else{
+                $has_member->card_negative_path = null;
+            }
 
             if(Hash::check($password, $has_member->password)){
                 $result = array(
@@ -287,7 +341,13 @@ class HomeController extends Controller
             }
         }
         $member->save();
-        $member->avatar_path = $path;
+        if($member->avatar_id){
+            $file = FileModel::find($member->avatar_id);
+            $member->avatar_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
+        }else{
+            $member->avatar_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/detault_avatar.png';
+        }
+
         $result = array(
             'code' => 100,
             'status' => 'success',
@@ -347,8 +407,8 @@ class HomeController extends Controller
             }
         }
         $member->save();
-        $member->card_positive_pic_path = $card_positive_pic_path;
-        $member->card_negative_pic_path = $card_negative_pic_path;
+        $member->card_positive_pic_path = 'http://'.$_SERVER['HTTP_HOST'].$card_positive_pic_path;
+        $member->card_negative_pic_path = 'http://'.$_SERVER['HTTP_HOST'].$card_negative_pic_path;
         $result = array(
             'code' => 100,
             'status' => 'success',
@@ -432,7 +492,7 @@ class HomeController extends Controller
     //提现
     public function withdraw(Request $request){
         $member_id = $request->member_id;
-        $captcha = $request->captcha;
+        $captcha = $request->verification_code;
         $member = MemberModel::find($member_id);
         if($member->gold >= $request->withdraw_amount){
             $withdraw = new WithdrawModel;
@@ -551,8 +611,10 @@ class HomeController extends Controller
         $loan_id = $request->loan_id;
         $loan = LoanModel::find($loan_id);
         $first_time = RepaymentModel::where('repayment_loan_id',$loan_id)->orderBy('id','ASC')->first();
+        $last_time = RepaymentModel::where('repayment_loan_id',$loan_id)->orderBy('id','DESC')->first();
         if($first_time){
             $loan->first_time = $first_time->repayment_date;
+            $loan->last_time = $last_time->repayment_date;
             $result = array(
                 'code' => 100,
                 'status' => 'success',
@@ -771,6 +833,119 @@ class HomeController extends Controller
             return $this->response->array($result);
         }
     }
+
+    //红包
+    public function envelopes(Request $request){
+        $member_id = $request->member_id;
+        $member = MemberModel::find($member_id);
+        if($member->is_verified == true){
+            $setting = EnvelopeModel::find(1);
+            $date = date('Y-m-d');
+            $log_num = LogModel::where('log_member_id_id',$member_id)->whereDate('created_at', $date)->count();
+            if($setting->envelopes_is_open == true){
+                if($member->grade == '0' && $setting->envelopes_visitor_times == 0){
+                    return $this->response->array(['status'=>'error','msg' => '游客不能参与活动','code'=>401]);
+                }elseif($member->grade == '0' && $setting->envelopes_visitor_times == $log_num){
+                    return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
+                }elseif($member->grade == '1' && $setting->envelopes_ordinary_times == 0){
+                    return $this->response->array(['status'=>'error','msg' => '普通会员暂不能参与活动','code'=>401]);
+                }elseif($member->grade == '1' && $setting->envelopes_ordinary_times == $log_num){
+                    return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
+                }elseif($member->grade == '2' && $setting->envelopes_bronze_times == 0){
+                    return $this->response->array(['status'=>'error','msg' => '铜牌会员暂不能参与活动','code'=>401]);
+                }elseif($member->grade == '2' && $setting->envelopes_bronze_times == $log_num){
+                    return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
+                }elseif($member->grade == '3' && $setting->envelopes_silver_times == 0){
+                    return $this->response->array(['status'=>'error','msg' => '银牌会员暂不能参与活动','code'=>401]);
+                }elseif($member->grade == '3' && $setting->envelopes_silver_times == $log_num){
+                    return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
+                }elseif($member->grade == '4' && $setting->envelopes_gold_times == 0){
+                    return $this->response->array(['status'=>'error','msg' => '金牌会员暂不能参与活动','code'=>401]);
+                }elseif($member->grade == '4' && $setting->envelopes_gold_times == $log_num){
+                    return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
+                }elseif($member->grade == '5' && $setting->envelopes_diamond_times == 0){
+                    return $this->response->array(['status'=>'error','msg' => '钻石会员暂不能参与活动','code'=>401]);
+                }elseif($member->grade == '5' && $setting->envelopes_diamond_times == $log_num){
+                    return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
+                }else{
+                    $log = new LogModel;
+                    $log->log_name = $member->real_name;
+                    $log->log_mobile = $member->mobile;
+                    $log->log_amount = rand($setting->envelopes_amount_min,$setting->envelopes_amount_max);
+                    $log->log_member_id_id = $member_id;
+                    if($log->save()){
+                        $member->gold += $log->log_amount;
+                        $member->save();
+                        $log = LogModel::find($log->id);
+                        if($member->grade == '0'){
+                            $remaining = $setting->envelopes_visitor_times - $log_num-1;
+                        }elseif($member->grade = '1'){
+                            $remaining = $setting->envelopes_ordinary_times - $log_num-1;
+                        }elseif($member->grade = '2'){
+                            $remaining = $setting->envelopes_bronze_times - $log_num-1;
+                        }elseif($member->grade = '3'){
+                            $remaining = $setting->envelopes_silver_times - $log_num-1;
+                        }elseif($member->grade = '4'){
+                            $remaining = $setting->envelopes_gold_times - $log_num-1;
+                        }elseif($member->grade = '5'){
+                            $remaining = $setting->envelopes_diamond_times - $log_num-1;
+                        }
+                        $data = array
+                        (
+                            'remaining' => $remaining,
+                            'log'    =>  $log,
+                        );
+                        $result = array(
+                            'code' => 100,
+                            'status' => 'success',
+                            'data'    =>  $data,
+                        );
+                        return $this->response->array($result);
+                    }
+                }
+
+            }else{
+                return $this->response->array(['status'=>'error','msg' => '活动已关闭','code'=>401]);
+            }
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '尚未认证，暂不能参与活动','code'=>401]);
+        }
+    }
+
+    //获取剩余抽取红包次数
+    public function remaining(Request $request){
+        $member_id = $request->member_id;
+        $member = MemberModel::find($member_id);
+        $setting = EnvelopeModel::find(1);
+        $date = date('Y-m-d');
+        $log_num = LogModel::where('log_member_id_id',$member_id)->whereDate('created_at', $date)->count();
+        if($member->grade == '0'){
+            $remaining = $setting->envelopes_visitor_times - $log_num;
+        }elseif($member->grade = '1'){
+            $remaining = $setting->envelopes_ordinary_times - $log_num;
+        }elseif($member->grade = '2'){
+            $remaining = $setting->envelopes_bronze_times - $log_num;
+        }elseif($member->grade = '3'){
+            $remaining = $setting->envelopes_silver_times - $log_num;
+        }elseif($member->grade = '4'){
+            $remaining = $setting->envelopes_gold_times - $log_num;
+        }elseif($member->grade = '5'){
+            $remaining = $setting->envelopes_diamond_times - $log_num;
+        }
+        $data = array
+        (
+            'remaining' => $remaining,
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data'    =>  $data,
+        );
+        return $this->response->array($result);
+
+    }
+
+
 
 
 

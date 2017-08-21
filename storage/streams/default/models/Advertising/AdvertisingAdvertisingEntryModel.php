@@ -19,6 +19,7 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'ad_image' => 'required',
 'ad_url' => '',
 'ad_description' => '',
+'ad_sorting' => '',
 ];
 
     protected $fields = [
@@ -27,6 +28,7 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'ad_image',
 'ad_url',
 'ad_description',
+'ad_sorting',
 ];
 
     protected $dates = ['created_at', 'updated_at'];
@@ -40,7 +42,7 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Advertising\AdvertisingAdvertisingEntryTranslationsModel';
 
     protected $stream = [
-'id' => '246',
+'id' => '250',
 'namespace' => 'advertising',
 'slug' => 'advertising',
 'prefix' => 'advertising_',
@@ -55,16 +57,16 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1970,
+'id' => 1984,
 'sort_order' => 238,
-'stream_id' => 246,
-'field_id' => 1964,
+'stream_id' => 250,
+'field_id' => 1978,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1964',
+'id' => '1978',
 'namespace' => 'advertising',
 'slug' => 'ad_title',
 'type' => 'anomaly.field_type.text',
@@ -72,8 +74,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1964,
-'field_id' => 1964,
+'id' => 1978,
+'field_id' => 1978,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::field.ad_title.name',
 'placeholder' => 'fannan.module.advertising::field.ad_title.placeholder',
@@ -84,8 +86,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1969,
-'assignment_id' => 1970,
+'id' => 1983,
+'assignment_id' => 1984,
 'locale' => 'en',
 'label' => 'fannan.module.advertising::field.ad_title.label.advertising',
 'warning' => 'fannan.module.advertising::field.ad_title.warning.advertising',
@@ -95,16 +97,16 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1971,
+'id' => 1985,
 'sort_order' => 239,
-'stream_id' => 246,
-'field_id' => 1965,
+'stream_id' => 250,
+'field_id' => 1979,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1965',
+'id' => '1979',
 'namespace' => 'advertising',
 'slug' => 'ad_slot',
 'type' => 'anomaly.field_type.relationship',
@@ -112,8 +114,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1965,
-'field_id' => 1965,
+'id' => 1979,
+'field_id' => 1979,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::field.ad_slot.name',
 'placeholder' => 'fannan.module.advertising::field.ad_slot.placeholder',
@@ -124,8 +126,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1970,
-'assignment_id' => 1971,
+'id' => 1984,
+'assignment_id' => 1985,
 'locale' => 'en',
 'label' => 'fannan.module.advertising::field.ad_slot.label.advertising',
 'warning' => 'fannan.module.advertising::field.ad_slot.warning.advertising',
@@ -135,16 +137,16 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1972,
+'id' => 1986,
 'sort_order' => 240,
-'stream_id' => 246,
-'field_id' => 1966,
+'stream_id' => 250,
+'field_id' => 1980,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1966',
+'id' => '1980',
 'namespace' => 'advertising',
 'slug' => 'ad_image',
 'type' => 'anomaly.field_type.file',
@@ -152,8 +154,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1966,
-'field_id' => 1966,
+'id' => 1980,
+'field_id' => 1980,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::field.ad_image.name',
 'placeholder' => 'fannan.module.advertising::field.ad_image.placeholder',
@@ -164,8 +166,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1971,
-'assignment_id' => 1972,
+'id' => 1985,
+'assignment_id' => 1986,
 'locale' => 'en',
 'label' => 'fannan.module.advertising::field.ad_image.label.advertising',
 'warning' => 'fannan.module.advertising::field.ad_image.warning.advertising',
@@ -175,16 +177,16 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1973,
+'id' => 1987,
 'sort_order' => 241,
-'stream_id' => 246,
-'field_id' => 1967,
+'stream_id' => 250,
+'field_id' => 1981,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1967',
+'id' => '1981',
 'namespace' => 'advertising',
 'slug' => 'ad_url',
 'type' => 'anomaly.field_type.url',
@@ -192,8 +194,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1967,
-'field_id' => 1967,
+'id' => 1981,
+'field_id' => 1981,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::field.ad_url.name',
 'placeholder' => 'fannan.module.advertising::field.ad_url.placeholder',
@@ -204,8 +206,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1972,
-'assignment_id' => 1973,
+'id' => 1986,
+'assignment_id' => 1987,
 'locale' => 'en',
 'label' => 'fannan.module.advertising::field.ad_url.label.advertising',
 'warning' => 'fannan.module.advertising::field.ad_url.warning.advertising',
@@ -215,16 +217,16 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1974,
+'id' => 1988,
 'sort_order' => 242,
-'stream_id' => 246,
-'field_id' => 1968,
+'stream_id' => 250,
+'field_id' => 1982,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1968',
+'id' => '1982',
 'namespace' => 'advertising',
 'slug' => 'ad_description',
 'type' => 'anomaly.field_type.textarea',
@@ -232,8 +234,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1968,
-'field_id' => 1968,
+'id' => 1982,
+'field_id' => 1982,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::field.ad_description.name',
 'placeholder' => 'fannan.module.advertising::field.ad_description.placeholder',
@@ -244,8 +246,8 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1973,
-'assignment_id' => 1974,
+'id' => 1987,
+'assignment_id' => 1988,
 'locale' => 'en',
 'label' => 'fannan.module.advertising::field.ad_description.label.advertising',
 'warning' => 'fannan.module.advertising::field.ad_description.warning.advertising',
@@ -254,11 +256,51 @@ class AdvertisingAdvertisingEntryModel extends EntryModel
 ],
 ],
 ],
+[
+'id' => 1989,
+'sort_order' => 243,
+'stream_id' => 250,
+'field_id' => 1983,
+'config' => 'a:0:{}',
+'unique' => 0,
+'required' => 0,
+'translatable' => 0,
+'field' => [
+'id' => '1983',
+'namespace' => 'advertising',
+'slug' => 'ad_sorting',
+'type' => 'anomaly.field_type.integer',
+'config' => 'a:3:{s:9:"separator";s:1:",";s:3:"min";i:0;s:4:"step";i:1;}',
+'locked' => '1',
+'translations' => [
+[
+'id' => 1983,
+'field_id' => 1983,
+'locale' => 'en',
+'name' => 'fannan.module.advertising::field.ad_sorting.name',
+'placeholder' => 'fannan.module.advertising::field.ad_sorting.placeholder',
+'warning' => 'fannan.module.advertising::field.ad_sorting.warning',
+'instructions' => 'fannan.module.advertising::field.ad_sorting.instructions',
+],
+],
 ],
 'translations' => [
 [
-'id' => 246,
-'stream_id' => 246,
+'id' => 1988,
+'assignment_id' => 1989,
+'locale' => 'en',
+'label' => 'fannan.module.advertising::field.ad_sorting.label.advertising',
+'warning' => 'fannan.module.advertising::field.ad_sorting.warning.advertising',
+'placeholder' => 'fannan.module.advertising::field.ad_sorting.placeholder.advertising',
+'instructions' => 'fannan.module.advertising::field.ad_sorting.instructions.advertising',
+],
+],
+],
+],
+'translations' => [
+[
+'id' => 250,
+'stream_id' => 250,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::stream.advertising.name',
 'description' => 'fannan.module.advertising::stream.advertising.description',

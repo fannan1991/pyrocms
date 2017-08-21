@@ -18,6 +18,7 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'envelopes_amount_max' => 'required',
 'envelopes_visitor_times' => 'required',
 'envelopes_ordinary_times' => 'required',
+'envelopes_bronze_times' => 'required',
 'envelopes_silver_times' => 'required',
 'envelopes_gold_times' => 'required',
 'envelopes_diamond_times' => 'required',
@@ -29,6 +30,7 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'envelopes_amount_max',
 'envelopes_visitor_times',
 'envelopes_ordinary_times',
+'envelopes_bronze_times',
 'envelopes_silver_times',
 'envelopes_gold_times',
 'envelopes_diamond_times',
@@ -46,7 +48,7 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Envelopes\EnvelopesEnvelopesEntryTranslationsModel';
 
     protected $stream = [
-'id' => '233',
+'id' => '252',
 'namespace' => 'envelopes',
 'slug' => 'envelopes',
 'prefix' => 'envelopes_',
@@ -61,16 +63,16 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1885,
-'sort_order' => 226,
-'stream_id' => 233,
-'field_id' => 1876,
+'id' => 1992,
+'sort_order' => 234,
+'stream_id' => 252,
+'field_id' => 1986,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1876',
+'id' => '1986',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_amount_min',
 'type' => 'anomaly.field_type.integer',
@@ -78,8 +80,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1876,
-'field_id' => 1876,
+'id' => 1986,
+'field_id' => 1986,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_amount_min.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_amount_min.placeholder',
@@ -90,8 +92,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1884,
-'assignment_id' => 1885,
+'id' => 1991,
+'assignment_id' => 1992,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_amount_min.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_amount_min.warning.envelopes',
@@ -101,16 +103,16 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1886,
-'sort_order' => 227,
-'stream_id' => 233,
-'field_id' => 1877,
+'id' => 1993,
+'sort_order' => 235,
+'stream_id' => 252,
+'field_id' => 1987,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1877',
+'id' => '1987',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_amount_max',
 'type' => 'anomaly.field_type.integer',
@@ -118,8 +120,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1877,
-'field_id' => 1877,
+'id' => 1987,
+'field_id' => 1987,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_amount_max.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_amount_max.placeholder',
@@ -130,8 +132,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1885,
-'assignment_id' => 1886,
+'id' => 1992,
+'assignment_id' => 1993,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_amount_max.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_amount_max.warning.envelopes',
@@ -141,16 +143,16 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1887,
-'sort_order' => 228,
-'stream_id' => 233,
-'field_id' => 1878,
+'id' => 1994,
+'sort_order' => 236,
+'stream_id' => 252,
+'field_id' => 1988,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1878',
+'id' => '1988',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_visitor_times',
 'type' => 'anomaly.field_type.integer',
@@ -158,8 +160,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1878,
-'field_id' => 1878,
+'id' => 1988,
+'field_id' => 1988,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_visitor_times.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_visitor_times.placeholder',
@@ -170,8 +172,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1886,
-'assignment_id' => 1887,
+'id' => 1993,
+'assignment_id' => 1994,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_visitor_times.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_visitor_times.warning.envelopes',
@@ -181,16 +183,16 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1888,
-'sort_order' => 229,
-'stream_id' => 233,
-'field_id' => 1879,
+'id' => 1995,
+'sort_order' => 237,
+'stream_id' => 252,
+'field_id' => 1989,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1879',
+'id' => '1989',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_ordinary_times',
 'type' => 'anomaly.field_type.integer',
@@ -198,8 +200,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1879,
-'field_id' => 1879,
+'id' => 1989,
+'field_id' => 1989,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_ordinary_times.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_ordinary_times.placeholder',
@@ -210,8 +212,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1887,
-'assignment_id' => 1888,
+'id' => 1994,
+'assignment_id' => 1995,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_ordinary_times.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_ordinary_times.warning.envelopes',
@@ -221,16 +223,56 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1889,
-'sort_order' => 230,
-'stream_id' => 233,
-'field_id' => 1881,
+'id' => 1996,
+'sort_order' => 238,
+'stream_id' => 252,
+'field_id' => 1990,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1881',
+'id' => '1990',
+'namespace' => 'envelopes',
+'slug' => 'envelopes_bronze_times',
+'type' => 'anomaly.field_type.integer',
+'config' => 'a:4:{s:9:"separator";s:1:",";s:3:"min";i:0;s:4:"step";i:1;s:13:"default_value";i:0;}',
+'locked' => '1',
+'translations' => [
+[
+'id' => 1990,
+'field_id' => 1990,
+'locale' => 'en',
+'name' => 'fannan.module.envelopes::field.envelopes_bronze_times.name',
+'placeholder' => 'fannan.module.envelopes::field.envelopes_bronze_times.placeholder',
+'warning' => 'fannan.module.envelopes::field.envelopes_bronze_times.warning',
+'instructions' => 'fannan.module.envelopes::field.envelopes_bronze_times.instructions',
+],
+],
+],
+'translations' => [
+[
+'id' => 1995,
+'assignment_id' => 1996,
+'locale' => 'en',
+'label' => 'fannan.module.envelopes::field.envelopes_bronze_times.label.envelopes',
+'warning' => 'fannan.module.envelopes::field.envelopes_bronze_times.warning.envelopes',
+'placeholder' => 'fannan.module.envelopes::field.envelopes_bronze_times.placeholder.envelopes',
+'instructions' => 'fannan.module.envelopes::field.envelopes_bronze_times.instructions.envelopes',
+],
+],
+],
+[
+'id' => 1997,
+'sort_order' => 239,
+'stream_id' => 252,
+'field_id' => 1991,
+'config' => 'a:0:{}',
+'unique' => 0,
+'required' => 1,
+'translatable' => 0,
+'field' => [
+'id' => '1991',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_silver_times',
 'type' => 'anomaly.field_type.integer',
@@ -238,8 +280,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1881,
-'field_id' => 1881,
+'id' => 1991,
+'field_id' => 1991,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_silver_times.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_silver_times.placeholder',
@@ -250,8 +292,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1888,
-'assignment_id' => 1889,
+'id' => 1996,
+'assignment_id' => 1997,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_silver_times.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_silver_times.warning.envelopes',
@@ -261,16 +303,16 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1890,
-'sort_order' => 231,
-'stream_id' => 233,
-'field_id' => 1882,
+'id' => 1998,
+'sort_order' => 240,
+'stream_id' => 252,
+'field_id' => 1992,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1882',
+'id' => '1992',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_gold_times',
 'type' => 'anomaly.field_type.integer',
@@ -278,8 +320,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1882,
-'field_id' => 1882,
+'id' => 1992,
+'field_id' => 1992,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_gold_times.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_gold_times.placeholder',
@@ -290,8 +332,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1889,
-'assignment_id' => 1890,
+'id' => 1997,
+'assignment_id' => 1998,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_gold_times.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_gold_times.warning.envelopes',
@@ -301,16 +343,16 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1891,
-'sort_order' => 232,
-'stream_id' => 233,
-'field_id' => 1883,
+'id' => 1999,
+'sort_order' => 241,
+'stream_id' => 252,
+'field_id' => 1993,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1883',
+'id' => '1993',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_diamond_times',
 'type' => 'anomaly.field_type.integer',
@@ -318,8 +360,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1883,
-'field_id' => 1883,
+'id' => 1993,
+'field_id' => 1993,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_diamond_times.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_diamond_times.placeholder',
@@ -330,8 +372,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1890,
-'assignment_id' => 1891,
+'id' => 1998,
+'assignment_id' => 1999,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_diamond_times.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_diamond_times.warning.envelopes',
@@ -341,16 +383,16 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1892,
-'sort_order' => 233,
-'stream_id' => 233,
-'field_id' => 1884,
+'id' => 2000,
+'sort_order' => 242,
+'stream_id' => 252,
+'field_id' => 1994,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1884',
+'id' => '1994',
 'namespace' => 'envelopes',
 'slug' => 'envelopes_is_open',
 'type' => 'anomaly.field_type.boolean',
@@ -358,8 +400,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1884,
-'field_id' => 1884,
+'id' => 1994,
+'field_id' => 1994,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::field.envelopes_is_open.name',
 'placeholder' => 'fannan.module.envelopes::field.envelopes_is_open.placeholder',
@@ -370,8 +412,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1891,
-'assignment_id' => 1892,
+'id' => 1999,
+'assignment_id' => 2000,
 'locale' => 'en',
 'label' => 'fannan.module.envelopes::field.envelopes_is_open.label.envelopes',
 'warning' => 'fannan.module.envelopes::field.envelopes_is_open.warning.envelopes',
@@ -383,8 +425,8 @@ class EnvelopesEnvelopesEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 233,
-'stream_id' => 233,
+'id' => 252,
+'stream_id' => 252,
 'locale' => 'en',
 'name' => 'fannan.module.envelopes::stream.envelopes.name',
 'description' => 'fannan.module.envelopes::stream.envelopes.description',

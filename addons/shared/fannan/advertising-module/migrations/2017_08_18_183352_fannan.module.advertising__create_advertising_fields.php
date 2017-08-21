@@ -32,6 +32,14 @@ class FannanModuleAdvertisingCreateAdvertisingFields extends Migration
                 'max'           => 250,
             ]
         ],
+        'ad_sorting' => [
+            'type'   => 'anomaly.field_type.integer',
+            'config' => [
+                'separator'     => ',',
+                'min'           => 0,
+                'step'          => 1,
+            ]
+        ],
 
         //广告位
         //名称

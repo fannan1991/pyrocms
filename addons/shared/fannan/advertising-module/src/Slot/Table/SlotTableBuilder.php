@@ -27,7 +27,8 @@ class SlotTableBuilder extends TableBuilder
     protected $columns = [
         'entry.id',
         'slot_name',
-        'slot_description'
+        'slot_description',
+        'entry.created_at'
     ];
 
     /**

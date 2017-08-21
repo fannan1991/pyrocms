@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index');
+
 
 
 
@@ -44,6 +44,7 @@ Route::group(["middleware" => 'user-auth'], function () {
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Http\Controllers'], function ($api) {
+        $api->get('/index', 'HomeController@index');
         $api->get('/test','HomeController@test');
         $api->post('/register','HomeController@register');
         $api->post('/register-client','HomeController@registerClient');
@@ -83,6 +84,8 @@ $api->version('v1', function ($api) {
         $api->post('/red-envelopes','HomeController@redEnvelopes');
         $api->post('/personal-center','HomeController@personalCenter');
         $api->post('/invitation-code','HomeController@invitationCode');
+        $api->post('/envelopes','HomeController@envelopes');
+        $api->post('/remaining','HomeController@remaining');
     });
 
 });

@@ -34,6 +34,7 @@ class FannanModuleAdvertisingCreateAdvertisingStream extends Migration
         ],
         'ad_url',
         'ad_description',
+        'ad_sorting'
     ];
 
 }

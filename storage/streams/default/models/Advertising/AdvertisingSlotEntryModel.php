@@ -34,7 +34,7 @@ class AdvertisingSlotEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Advertising\AdvertisingSlotEntryTranslationsModel';
 
     protected $stream = [
-'id' => '247',
+'id' => '251',
 'namespace' => 'advertising',
 'slug' => 'slot',
 'prefix' => 'advertising_',
@@ -49,16 +49,16 @@ class AdvertisingSlotEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1975,
-'sort_order' => 243,
-'stream_id' => 247,
-'field_id' => 1969,
+'id' => 1990,
+'sort_order' => 244,
+'stream_id' => 251,
+'field_id' => 1984,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1969',
+'id' => '1984',
 'namespace' => 'advertising',
 'slug' => 'slot_name',
 'type' => 'anomaly.field_type.text',
@@ -66,8 +66,8 @@ class AdvertisingSlotEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1969,
-'field_id' => 1969,
+'id' => 1984,
+'field_id' => 1984,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::field.slot_name.name',
 'placeholder' => 'fannan.module.advertising::field.slot_name.placeholder',
@@ -78,8 +78,8 @@ class AdvertisingSlotEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1974,
-'assignment_id' => 1975,
+'id' => 1989,
+'assignment_id' => 1990,
 'locale' => 'en',
 'label' => 'fannan.module.advertising::field.slot_name.label.slot',
 'warning' => 'fannan.module.advertising::field.slot_name.warning.slot',
@@ -89,16 +89,16 @@ class AdvertisingSlotEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1976,
-'sort_order' => 244,
-'stream_id' => 247,
-'field_id' => 1970,
+'id' => 1991,
+'sort_order' => 245,
+'stream_id' => 251,
+'field_id' => 1985,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1970',
+'id' => '1985',
 'namespace' => 'advertising',
 'slug' => 'slot_description',
 'type' => 'anomaly.field_type.textarea',
@@ -106,8 +106,8 @@ class AdvertisingSlotEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1970,
-'field_id' => 1970,
+'id' => 1985,
+'field_id' => 1985,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::field.slot_description.name',
 'placeholder' => 'fannan.module.advertising::field.slot_description.placeholder',
@@ -118,8 +118,8 @@ class AdvertisingSlotEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1975,
-'assignment_id' => 1976,
+'id' => 1990,
+'assignment_id' => 1991,
 'locale' => 'en',
 'label' => 'fannan.module.advertising::field.slot_description.label.slot',
 'warning' => 'fannan.module.advertising::field.slot_description.warning.slot',
@@ -131,8 +131,8 @@ class AdvertisingSlotEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 247,
-'stream_id' => 247,
+'id' => 251,
+'stream_id' => 251,
 'locale' => 'en',
 'name' => 'fannan.module.advertising::stream.slot.name',
 'description' => 'fannan.module.advertising::stream.slot.description',
