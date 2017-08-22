@@ -56,6 +56,8 @@ $api->version('v1', function ($api) {
         $api->get('/news','HomeController@news');
         $api->get('/new-detail','HomeController@newsDetail');
         $api->get('/test-qrcode','HomeController@testQrcode');
+        $api->get('/envelopes-winning','HomeController@envelopesWinning');
+        $api->get('/alipay-resonse','HomeController@alipayResonse');
 
 
     });

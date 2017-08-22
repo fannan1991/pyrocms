@@ -1,0 +1,316 @@
+1503393405a:5:{i:0;O:14:"SimplePie_Item":3:{s:4:"feed";O:9:"SimplePie":33:{s:4:"data";a:5:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:6:"
+    
+";s:7:"attribs";a:1:{s:0:"";a:1:{s:7:"version";s:3:"2.0";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:1:{s:7:"channel";a:1:{i:0;a:6:{s:4:"data";s:364:"
+        
+        
+        
+        
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:4:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:7:"PyroCMS";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:27:"The CMS built for everyone.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:19:"https://pyrocms.com";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"item";a:15:{i:0;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:17:"PyroCMS 3.4-beta1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:67:"Checkout what's new in Pyro 3.4 and what's up next in the pipeline!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sat, 19 Aug 2017 06:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/pyrocms-3-4-beta1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/pyrocms-3-4-beta1";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:1;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:32:"New Videos and Moving to YouTube";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:58:"Our new video approach is changing and moving to YouTube! ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 31 May 2017 09:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/new-videos-and-moving-to-youtube";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/new-videos-and-moving-to-youtube";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:2;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:21:"Editor Field Type 2.2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:70:"We've drastically improved the Editor field type. Come see what's new!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 24 May 2017 13:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:47:"https://pyrocms.com/posts/editor-field-type-2-2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:47:"https://pyrocms.com/posts/editor-field-type-2-2";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:3;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:16:"API Module: v1.0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:86:"The API module securely exposes your entire application's stream data via RESTful API.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 24 Mar 2017 23:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:41:"https://pyrocms.com/posts/api-module-v1-0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:41:"https://pyrocms.com/posts/api-module-v1-0";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:4;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:18:"Sites Module: v1.0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:59:"We are super excited to introduce Pyro's multisite manager!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 22 Mar 2017 00:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/sites-module-v1-0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/sites-module-v1-0";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:5;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"PyroCMS 3.3";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:123:"It's been less than a month since 3.2 and we have a feature packed 3.3 release for you and it is 100% backwards compatible.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 02 Feb 2017 07:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-3";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-3";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:6;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:20:"Introducing Pyro PRO";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:77:"We are excited to announce unlimited licensing for ALL of our private addons!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 16 Jan 2017 09:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:46:"https://pyrocms.com/posts/introducing-pyro-pro";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:46:"https://pyrocms.com/posts/introducing-pyro-pro";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:7;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:41:"Introducing Repeater and Grid Field Types";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:82:"Content management just stepped up a notch with the Repeater and Grid field types!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 16 Jan 2017 09:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:67:"https://pyrocms.com/posts/introducing-repeater-and-grid-field-types";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:67:"https://pyrocms.com/posts/introducing-repeater-and-grid-field-types";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:8;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"PyroCMS 3.2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:92:"Our biggest release yet! Version 3.2 introduces a new look and feel that's better than ever.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 09 Jan 2017 08:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-2";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:9;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:29:"Introducing the PyroCMS Store";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:65:"We've just launched our official addons store. Come check it out!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 Dec 2016 08:45:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:55:"https://pyrocms.com/posts/introducing-the-pyrocms-store";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:55:"https://pyrocms.com/posts/introducing-the-pyrocms-store";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:10;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:32:"A Practical Application of Hooks";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:95:"Hooks recently saved my life. Not really but saved me a ton of time! Let me share how with you.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 04 Nov 2016 13:23:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/a-practical-application-of-hooks";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/a-practical-application-of-hooks";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:11;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"PyroCMS 3.1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:59:"Take a look at what's new in the latest release of PyroCMS!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 01 Sep 2016 20:09:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-1";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:12;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:27:"PyroCMS: Naked and Unafraid";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:80:"Using PyroCMS as a platform. My experience with a naked installation of PyroCMS.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sat, 06 Aug 2016 20:43:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:52:"https://pyrocms.com/posts/pyrocms-naked-and-unafraid";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:52:"https://pyrocms.com/posts/pyrocms-naked-and-unafraid";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:13;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:23:"Translator Module: v1.0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:74:"The Translator module is a system and addons visual translation assistant.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 22 Jun 2016 14:28:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:48:"https://pyrocms.com/posts/translator-module-v1-0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:48:"https://pyrocms.com/posts/translator-module-v1-0";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:14;a:6:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:25:"PyroCMS 3 - Major Release";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:116:"Over 5,000 commits in the making, PyroCMS is officially back with it's newest and most powerful stable release ever!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Tue, 14 Jun 2016 14:45:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:49:"https://pyrocms.com/posts/pyrocms-3-major-release";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:49:"https://pyrocms.com/posts/pyrocms-3-major-release";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}s:27:"http://www.w3.org/2005/Atom";a:1:{s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:0:"";s:7:"attribs";a:1:{s:0:"";a:3:{s:4:"href";s:33:"https://pyrocms.com/posts/rss.xml";s:3:"rel";s:4:"self";s:4:"type";s:19:"application/rss+xml";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}}}}}}s:4:"type";i:128;s:5:"build";s:14:"20170818092227";s:5:"items";a:15:{i:0;r:2;i:1;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:32:"New Videos and Moving to YouTube";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:58:"Our new video approach is changing and moving to YouTube! ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 31 May 2017 09:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/new-videos-and-moving-to-youtube";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/new-videos-and-moving-to-youtube";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Wed, 31 May 2017 09:00:00 -0500";s:6:"parsed";i:1496239200;}}s:11:" * registry";O:18:"SimplePie_Registry":3:{s:10:" * default";a:19:{s:5:"Cache";s:15:"SimplePie_Cache";s:7:"Locator";s:17:"SimplePie_Locator";s:6:"Parser";s:16:"SimplePie_Parser";s:4:"File";s:14:"SimplePie_File";s:8:"Sanitize";s:18:"SimplePie_Sanitize";s:4:"Item";s:14:"SimplePie_Item";s:6:"Author";s:16:"SimplePie_Author";s:8:"Category";s:18:"SimplePie_Category";s:9:"Enclosure";s:19:"SimplePie_Enclosure";s:7:"Caption";s:17:"SimplePie_Caption";s:9:"Copyright";s:19:"SimplePie_Copyright";s:6:"Credit";s:16:"SimplePie_Credit";s:6:"Rating";s:16:"SimplePie_Rating";s:11:"Restriction";s:21:"SimplePie_Restriction";s:20:"Content_Type_Sniffer";s:30:"SimplePie_Content_Type_Sniffer";s:6:"Source";s:16:"SimplePie_Source";s:4:"Misc";s:14:"SimplePie_Misc";s:22:"XML_Declaration_Parser";s:32:"SimplePie_XML_Declaration_Parser";s:10:"Parse_Date";s:20:"SimplePie_Parse_Date";}s:10:" * classes";a:0:{}s:9:" * legacy";a:0:{}}}i:2;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:21:"Editor Field Type 2.2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:70:"We've drastically improved the Editor field type. Come see what's new!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 24 May 2017 13:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:47:"https://pyrocms.com/posts/editor-field-type-2-2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:47:"https://pyrocms.com/posts/editor-field-type-2-2";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Wed, 24 May 2017 13:00:00 -0500";s:6:"parsed";i:1495648800;}}s:11:" * registry";r:790;}i:3;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:16:"API Module: v1.0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:86:"The API module securely exposes your entire application's stream data via RESTful API.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 24 Mar 2017 23:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:41:"https://pyrocms.com/posts/api-module-v1-0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:41:"https://pyrocms.com/posts/api-module-v1-0";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Fri, 24 Mar 2017 23:00:00 -0500";s:6:"parsed";i:1490414400;}}s:11:" * registry";r:790;}i:4;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:18:"Sites Module: v1.0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:59:"We are super excited to introduce Pyro's multisite manager!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 22 Mar 2017 00:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/sites-module-v1-0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/sites-module-v1-0";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Wed, 22 Mar 2017 00:00:00 -0500";s:6:"parsed";i:1490158800;}}s:11:" * registry";r:790;}i:5;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"PyroCMS 3.3";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:123:"It's been less than a month since 3.2 and we have a feature packed 3.3 release for you and it is 100% backwards compatible.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 02 Feb 2017 07:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-3";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-3";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Thu, 02 Feb 2017 07:00:00 -0600";s:6:"parsed";i:1486040400;}}s:11:" * registry";r:790;}i:6;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:20:"Introducing Pyro PRO";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:77:"We are excited to announce unlimited licensing for ALL of our private addons!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 16 Jan 2017 09:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:46:"https://pyrocms.com/posts/introducing-pyro-pro";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:46:"https://pyrocms.com/posts/introducing-pyro-pro";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Mon, 16 Jan 2017 09:00:00 -0600";s:6:"parsed";i:1484578800;}}s:11:" * registry";r:790;}i:7;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:41:"Introducing Repeater and Grid Field Types";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:82:"Content management just stepped up a notch with the Repeater and Grid field types!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 16 Jan 2017 09:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:67:"https://pyrocms.com/posts/introducing-repeater-and-grid-field-types";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:67:"https://pyrocms.com/posts/introducing-repeater-and-grid-field-types";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Mon, 16 Jan 2017 09:00:00 -0600";s:6:"parsed";i:1484578800;}}s:11:" * registry";r:790;}i:8;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"PyroCMS 3.2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:92:"Our biggest release yet! Version 3.2 introduces a new look and feel that's better than ever.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 09 Jan 2017 08:00:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-2";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-2";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Mon, 09 Jan 2017 08:00:00 -0600";s:6:"parsed";i:1483970400;}}s:11:" * registry";r:790;}i:9;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:29:"Introducing the PyroCMS Store";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:65:"We've just launched our official addons store. Come check it out!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 Dec 2016 08:45:00 -0600";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:55:"https://pyrocms.com/posts/introducing-the-pyrocms-store";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:55:"https://pyrocms.com/posts/introducing-the-pyrocms-store";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Fri, 09 Dec 2016 08:45:00 -0600";s:6:"parsed";i:1481294700;}}s:11:" * registry";r:790;}i:10;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:32:"A Practical Application of Hooks";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:95:"Hooks recently saved my life. Not really but saved me a ton of time! Let me share how with you.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 04 Nov 2016 13:23:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/a-practical-application-of-hooks";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:58:"https://pyrocms.com/posts/a-practical-application-of-hooks";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Fri, 04 Nov 2016 13:23:00 -0500";s:6:"parsed";i:1478283780;}}s:11:" * registry";r:790;}i:11;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"PyroCMS 3.1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:59:"Take a look at what's new in the latest release of PyroCMS!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 01 Sep 2016 20:09:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:37:"https://pyrocms.com/posts/pyrocms-3-1";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Thu, 01 Sep 2016 20:09:00 -0500";s:6:"parsed";i:1472778540;}}s:11:" * registry";r:790;}i:12;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:27:"PyroCMS: Naked and Unafraid";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:80:"Using PyroCMS as a platform. My experience with a naked installation of PyroCMS.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sat, 06 Aug 2016 20:43:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:52:"https://pyrocms.com/posts/pyrocms-naked-and-unafraid";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:52:"https://pyrocms.com/posts/pyrocms-naked-and-unafraid";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Sat, 06 Aug 2016 20:43:00 -0500";s:6:"parsed";i:1470534180;}}s:11:" * registry";r:790;}i:13;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:23:"Translator Module: v1.0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:74:"The Translator module is a system and addons visual translation assistant.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 22 Jun 2016 14:28:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:48:"https://pyrocms.com/posts/translator-module-v1-0";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:48:"https://pyrocms.com/posts/translator-module-v1-0";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Wed, 22 Jun 2016 14:28:00 -0500";s:6:"parsed";i:1466623680;}}s:11:" * registry";r:790;}i:14;O:14:"SimplePie_Item":3:{s:4:"feed";r:3;s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:25:"PyroCMS 3 - Major Release";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:116:"Over 5,000 commits in the making, PyroCMS is officially back with it's newest and most powerful stable release ever!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Tue, 14 Jun 2016 14:45:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:49:"https://pyrocms.com/posts/pyrocms-3-major-release";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:49:"https://pyrocms.com/posts/pyrocms-3-major-release";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Tue, 14 Jun 2016 14:45:00 -0500";s:6:"parsed";i:1465933500;}}s:11:" * registry";r:790;}}s:13:"ordered_items";a:15:{i:0;r:2;i:1;r:740;i:2;r:813;i:3;r:864;i:4;r:915;i:5;r:966;i:6;r:1068;i:7;r:1017;i:8;r:1119;i:9;r:1170;i:10;r:1221;i:11;r:1272;i:12;r:1323;i:13;r:1374;i:14;r:1425;}}s:5:"error";N;s:8:"sanitize";O:18:"SimplePie_Sanitize":17:{s:4:"base";N;s:10:"remove_div";b:1;s:13:"image_handler";s:0:"";s:14:"strip_htmltags";a:19:{i:0;s:4:"base";i:1;s:5:"blink";i:2;s:4:"body";i:3;s:7:"doctype";i:4;s:5:"embed";i:5;s:4:"font";i:6;s:4:"form";i:7;s:5:"frame";i:8;s:8:"frameset";i:9;s:4:"html";i:10;s:6:"iframe";i:11;s:5:"input";i:12;s:7:"marquee";i:13;s:4:"meta";i:14;s:8:"noscript";i:15;s:6:"object";i:16;s:5:"param";i:17;s:6:"script";i:18;s:5:"style";}s:23:"encode_instead_of_strip";b:0;s:16:"strip_attributes";a:13:{i:0;s:7:"bgsound";i:1;s:4:"expr";i:2;s:2:"id";i:3;s:5:"style";i:4;s:7:"onclick";i:5;s:7:"onerror";i:6;s:8:"onfinish";i:7;s:11:"onmouseover";i:8;s:10:"onmouseout";i:9;s:7:"onfocus";i:10;s:6:"onblur";i:11;s:6:"lowsrc";i:12;s:6:"dynsrc";}s:14:"add_attributes";a:3:{s:5:"audio";a:1:{s:7:"preload";s:4:"none";}s:6:"iframe";a:1:{s:7:"sandbox";s:31:"allow-scripts allow-same-origin";}s:5:"video";a:1:{s:7:"preload";s:4:"none";}}s:14:"strip_comments";b:0;s:15:"output_encoding";s:5:"UTF-8";s:12:"enable_cache";b:0;s:14:"cache_location";s:7:"./cache";s:19:"cache_name_function";s:3:"md5";s:7:"timeout";s:2:"10";s:9:"useragent";s:90:"SimplePie/1.4.3 (Feed Parser; http://simplepie.org; Allow like Gecko) Build/20170818092227";s:15:"force_fsockopen";b:0;s:22:"replace_url_attributes";a:9:{s:1:"a";s:4:"href";s:4:"area";s:4:"href";s:10:"blockquote";s:4:"cite";s:3:"del";s:4:"cite";s:4:"form";s:6:"action";s:3:"img";a:2:{i:0;s:8:"longdesc";i:1;s:3:"src";}s:5:"input";s:3:"src";s:3:"ins";s:4:"cite";s:1:"q";s:4:"cite";}s:8:"registry";r:790;}s:9:"useragent";s:90:"SimplePie/1.4.3 (Feed Parser; http://simplepie.org; Allow like Gecko) Build/20170818092227";s:8:"feed_url";N;s:13:"permanent_url";N;s:4:"file";N;s:8:"raw_data";s:7403:"<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>PyroCMS</title>
+        <description>The CMS built for everyone.</description>
+        <link>https://pyrocms.com</link>
+        <atom:link href="https://pyrocms.com/posts/rss.xml" rel="self" type="application/rss+xml"/>
+                    <item>
+                <title>PyroCMS 3.4-beta1</title>
+                <description>Checkout what&#039;s new in Pyro 3.4 and what&#039;s up next in the pipeline!</description>
+                <pubDate>Sat, 19 Aug 2017 06:00:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/pyrocms-3-4-beta1</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/pyrocms-3-4-beta1</guid>
+            </item>
+                    <item>
+                <title>New Videos and Moving to YouTube</title>
+                <description>Our new video approach is changing and moving to YouTube! </description>
+                <pubDate>Wed, 31 May 2017 09:00:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/new-videos-and-moving-to-youtube</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/new-videos-and-moving-to-youtube</guid>
+            </item>
+                    <item>
+                <title>Editor Field Type 2.2</title>
+                <description>We&#039;ve drastically improved the Editor field type. Come see what&#039;s new!</description>
+                <pubDate>Wed, 24 May 2017 13:00:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/editor-field-type-2-2</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/editor-field-type-2-2</guid>
+            </item>
+                    <item>
+                <title>API Module: v1.0</title>
+                <description>The API module securely exposes your entire application&#039;s stream data via RESTful API.</description>
+                <pubDate>Fri, 24 Mar 2017 23:00:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/api-module-v1-0</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/api-module-v1-0</guid>
+            </item>
+                    <item>
+                <title>Sites Module: v1.0</title>
+                <description>We are super excited to introduce Pyro&#039;s multisite manager!</description>
+                <pubDate>Wed, 22 Mar 2017 00:00:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/sites-module-v1-0</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/sites-module-v1-0</guid>
+            </item>
+                    <item>
+                <title>PyroCMS 3.3</title>
+                <description>It&#039;s been less than a month since 3.2 and we have a feature packed 3.3 release for you and it is 100% backwards compatible.</description>
+                <pubDate>Thu, 02 Feb 2017 07:00:00 -0600</pubDate>
+                <link>https://pyrocms.com/posts/pyrocms-3-3</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/pyrocms-3-3</guid>
+            </item>
+                    <item>
+                <title>Introducing Pyro PRO</title>
+                <description>We are excited to announce unlimited licensing for ALL of our private addons!</description>
+                <pubDate>Mon, 16 Jan 2017 09:00:00 -0600</pubDate>
+                <link>https://pyrocms.com/posts/introducing-pyro-pro</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/introducing-pyro-pro</guid>
+            </item>
+                    <item>
+                <title>Introducing Repeater and Grid Field Types</title>
+                <description>Content management just stepped up a notch with the Repeater and Grid field types!</description>
+                <pubDate>Mon, 16 Jan 2017 09:00:00 -0600</pubDate>
+                <link>https://pyrocms.com/posts/introducing-repeater-and-grid-field-types</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/introducing-repeater-and-grid-field-types</guid>
+            </item>
+                    <item>
+                <title>PyroCMS 3.2</title>
+                <description>Our biggest release yet! Version 3.2 introduces a new look and feel that&#039;s better than ever.</description>
+                <pubDate>Mon, 09 Jan 2017 08:00:00 -0600</pubDate>
+                <link>https://pyrocms.com/posts/pyrocms-3-2</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/pyrocms-3-2</guid>
+            </item>
+                    <item>
+                <title>Introducing the PyroCMS Store</title>
+                <description>We&#039;ve just launched our official addons store. Come check it out!</description>
+                <pubDate>Fri, 09 Dec 2016 08:45:00 -0600</pubDate>
+                <link>https://pyrocms.com/posts/introducing-the-pyrocms-store</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/introducing-the-pyrocms-store</guid>
+            </item>
+                    <item>
+                <title>A Practical Application of Hooks</title>
+                <description>Hooks recently saved my life. Not really but saved me a ton of time! Let me share how with you.</description>
+                <pubDate>Fri, 04 Nov 2016 13:23:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/a-practical-application-of-hooks</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/a-practical-application-of-hooks</guid>
+            </item>
+                    <item>
+                <title>PyroCMS 3.1</title>
+                <description>Take a look at what&#039;s new in the latest release of PyroCMS!</description>
+                <pubDate>Thu, 01 Sep 2016 20:09:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/pyrocms-3-1</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/pyrocms-3-1</guid>
+            </item>
+                    <item>
+                <title>PyroCMS: Naked and Unafraid</title>
+                <description>Using PyroCMS as a platform. My experience with a naked installation of PyroCMS.</description>
+                <pubDate>Sat, 06 Aug 2016 20:43:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/pyrocms-naked-and-unafraid</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/pyrocms-naked-and-unafraid</guid>
+            </item>
+                    <item>
+                <title>Translator Module: v1.0</title>
+                <description>The Translator module is a system and addons visual translation assistant.</description>
+                <pubDate>Wed, 22 Jun 2016 14:28:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/translator-module-v1-0</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/translator-module-v1-0</guid>
+            </item>
+                    <item>
+                <title>PyroCMS 3 - Major Release</title>
+                <description>Over 5,000 commits in the making, PyroCMS is officially back with it&#039;s newest and most powerful stable release ever!</description>
+                <pubDate>Tue, 14 Jun 2016 14:45:00 -0500</pubDate>
+                <link>https://pyrocms.com/posts/pyrocms-3-major-release</link>
+                <guid isPermaLink="true">https://pyrocms.com/posts/pyrocms-3-major-release</guid>
+            </item>
+            </channel>
+</rss>
+";s:7:"timeout";i:10;s:12:"curl_options";a:0:{}s:15:"force_fsockopen";b:0;s:10:"force_feed";b:0;s:5:"cache";b:0;s:20:"force_cache_fallback";b:0;s:14:"cache_duration";i:3600;s:28:"autodiscovery_cache_duration";i:604800;s:14:"cache_location";s:7:"./cache";s:19:"cache_name_function";s:3:"md5";s:13:"order_by_date";b:1;s:14:"input_encoding";b:0;s:13:"autodiscovery";i:31;s:8:"registry";r:790;s:17:"max_checked_feeds";i:10;s:20:"all_discovered_feeds";a:0:{}s:13:"image_handler";s:0:"";s:13:"multifeed_url";a:0:{}s:17:"multifeed_objects";a:0:{}s:15:"config_settings";N;s:10:"item_limit";i:0;s:14:"check_modified";b:0;s:16:"strip_attributes";a:14:{i:0;s:7:"bgsound";i:1;s:5:"class";i:2;s:4:"expr";i:3;s:2:"id";i:4;s:5:"style";i:5;s:7:"onclick";i:6;s:7:"onerror";i:7;s:8:"onfinish";i:8;s:11:"onmouseover";i:9;s:10:"onmouseout";i:10;s:7:"onfocus";i:11;s:6:"onblur";i:12;s:6:"lowsrc";i:13;s:6:"dynsrc";}s:14:"add_attributes";a:3:{s:5:"audio";a:1:{s:7:"preload";s:4:"none";}s:6:"iframe";a:1:{s:7:"sandbox";s:31:"allow-scripts allow-same-origin";}s:5:"video";a:1:{s:7:"preload";s:4:"none";}}s:14:"strip_htmltags";a:19:{i:0;s:4:"base";i:1;s:5:"blink";i:2;s:4:"body";i:3;s:7:"doctype";i:4;s:5:"embed";i:5;s:4:"font";i:6;s:4:"form";i:7;s:5:"frame";i:8;s:8:"frameset";i:9;s:4:"html";i:10;s:6:"iframe";i:11;s:5:"input";i:12;s:7:"marquee";i:13;s:4:"meta";i:14;s:8:"noscript";i:15;s:6:"object";i:16;s:5:"param";i:17;s:6:"script";i:18;s:5:"style";}}s:4:"data";a:7:{s:4:"data";s:98:"
+                
+                
+                
+                
+                
+            ";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:17:"PyroCMS 3.4-beta1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:67:"Checkout what's new in Pyro 3.4 and what's up next in the pipeline!";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sat, 19 Aug 2017 06:00:00 -0500";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/pyrocms-3-4-beta1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:43:"https://pyrocms.com/posts/pyrocms-3-4-beta1";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:4:"true";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}s:4:"date";a:2:{s:3:"raw";s:31:"Sat, 19 Aug 2017 06:00:00 -0500";s:6:"parsed";i:1503140400;}}s:11:" * registry";r:790;}i:1;r:740;i:2;r:813;i:3;r:864;i:4;r:915;}

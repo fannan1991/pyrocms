@@ -43,7 +43,7 @@ class HomeController extends Controller
     //首页
     public function index()
     {
-        /*$banners = AdvertisingModel::where('ad_slot_id',1)->orderBy('ad_sorting','ASC')->get();
+        $banners = AdvertisingModel::where('ad_slot_id',1)->orderBy('ad_sorting','ASC')->get();
         foreach($banners as $banner){
             $fileBanner = FileModel::find($banner->ad_image_id);
             $banner->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$fileBanner->name;
@@ -82,8 +82,7 @@ class HomeController extends Controller
             'status' => 'success',
             'data' => $data
         );
-        return $this->response->array($result);*/
-        return view('home');
+        return $this->response->array($result);
     }
 
     public function test(Request $request){
@@ -615,6 +614,7 @@ class HomeController extends Controller
         if($first_time){
             $loan->first_time = $first_time->repayment_date;
             $loan->last_time = $last_time->repayment_date;
+            $loan->interest_rate = '零利率';
             $result = array(
                 'code' => 100,
                 'status' => 'success',
@@ -657,6 +657,7 @@ class HomeController extends Controller
         $member_id = $request->member_id;
         $repayments = RepaymentModel::where('repayment_member_id_id',$member_id)->orderBy('id','ASC')->get();
         $period_repayment = RepaymentModel::whereMonth('repayment_date', date('m')+1)->whereYear('repayment_date', date('Y'))->first();
+        $loan_id = $period_repayment->repayment_loan_id;
         if($period_repayment){
             $period_amount = $period_repayment->repayment_amount;
             $period_date = $period_repayment->repayment_date;
@@ -667,6 +668,7 @@ class HomeController extends Controller
         $not_repayment_amount = RepaymentModel::where('repayment_status',0)->sum('repayment_amount');
         $data = array
         (
+            'loan_id'   => $loan_id,
             'period_amount' =>$period_amount,
             'period_date' =>$period_date,
             'not_repayment_amount' =>$not_repayment_amount,
@@ -806,7 +808,6 @@ class HomeController extends Controller
         }else{
             return $this->response->array(['status'=>'error','msg' => '无效用户','code'=>401]);
         }
-
     }
 
     //邀请码
@@ -945,6 +946,41 @@ class HomeController extends Controller
 
     }
 
+    //红包动态
+    public function envelopesWinning(Request $request){
+        $wining = LogModel::orderBy('id','DESC')->limit(5)->get();
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data'    =>  $wining,
+        );
+        return $this->response->array($result);
+    }
+
+    public function alipayResonse(Request $request){
+        $aop = new \AopClient;
+        $aop->gatewayUrl = "https://openapi.alipay.com/gateway.do";
+        $aop->appId = "2017072807934470";
+        $aop->rsaPrivateKey = 'MIIEowIBAAKCAQEA2yZ1LPHfelu1Tawtuo+qxheMss4SSH6MkpvB4q6cHdhZSrfK9iS299owU+2U3M3tM2/JtNLQO+FRdaA2fC3rik+LwedBoDB9VMzFRU2iVt35bWttqrqmEpW3cWZwar2M9vjtNqA+D8d/cp6zg57G962OkMb8pH6n5jGP4PFFj478tUWXjsq/ThwBDRm38BkgCXmDsfeQtDfV7m8LA4YjY5c4PH9UK0QD7ZdH7F6AF+ntrXj0DvpW/HA6MX1B7vD76ndRklt/U5U+xCC/4zitZIEsMZFKAFgYUUpfoYvacBxVlXvfLNQ47P0eVTBpuRceRxtiXOj3cBqWgnTsvgrOzwIDAQABAoIBABSio2fvAocH+aNtsgSeIIt0jjgL9WbEG8J2TiRlIqggxg+mDMNuo5flAKX2egzsiwhL32dabmclCUGVK2w3+rTUVqmUd/Z4emSwv2aOL9oUHrdx5SqtVpPraxGPfshePtbGi7eYER/1Pgfx759WJRAPVJxHUGTA1Fh1lEGvFki1FnSd+WSyyHIQGZm3FV77usDKBb/v3FTqg0i+47W9dCfFuJ/kFLW8agtBW+vf8X97AcxPPglK/HBfWKkuynfLis7nD8U6RYu2qrWTzgBwIzBxdGMIY9c4/Mvjc/JMgxFHHN3eKy+499TInjoHNEpRZxltXJCFlY22cSSRV90hrSkCgYEA74jc082LF9C+CefFdNYqOMfqGSFlVV2PAOUuFsr0h2iGY5vORimghh4zxTXmfpm7Wkiw3oSJCBdlk2clQsIO3ONzYGLjlbFHZCoxXD4cY5VA0WtMD0O8jnz3D9+VEyWzEtXXjBFV1g6GARzkAw9QNcPl0wSxlPY7Mw796K+Lp80CgYEA6jbjD2T66KBmEZ7Zltr/TPRIvvyyFKSS1k+6e/kh5XCt1RmheSBqNe5xm6KadsBpWPh21+oQKbW3g/aMHZm84nu3YCTjXdUSeOU/2En2rW5RNExbbcdRUnPyaTKocNiSE0qSUXPZVqQz3hhrqsJD9175aG/l0sMNHDjTzGgJ/QsCgYBqCKjQbZWcBkCJu/qRnNh16DE9zKXB4zeRiuIbHt6eLmwHHgpyzqyLkkUSkKim9ECWV8VLy1mppknFtYwuAB96Mol5am0ab66NrYvKLIh+oKxfx+KUg0Stwq3PbgbcwfyCYv0WuPnJVwaE6ZgZrqawFjbfcZ12toVANeu6HDNzJQKBgBINFuTp2HizXAqBnq2ExWZt8Wle2m7C3FpOHMZPRjCDxbIF3q8SM31imjjviE4cuEHWLHqpnINKcRFnoBbr8WXXOSPc0/U4ZcsRiCEoWi21seaA+A727KqZKxa2g8rmtiNsfOhwMFEAKMs2QJ4RiOF43WoSLblXtRv2uUQoxJRPAoGBALri98ip+bopucEjGbqV2DAPPaeFy6hsd3VM7/wdXYLN55pu4gqkkw9zJkQklkTcZjmqp/qKU5av60/e1UtcNKLoPpb7bBlrTHaK7Kd29oUAgN4QKblIk2voVwWEv1FUWeUQRXZoX0M9/hFkk6cvyZe/oG/CRtWNlzUqda+4pCdR';
+        $aop->format = "json";
+        $aop->charset = "UTF-8";
+        $aop->signType = "RSA2";
+        $aop->alipayrsaPublicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl2qbdwLaC3146/j0gEXpnlTNd7MuknBhLAMUKygjHj18JreBGyDPIl7HvKMtx4zYGJP8cw4RhxlzMmPMB8STynHI3cfQkzZVVfPlzUJ9w0S07qLLJFeM/XaHbLTIZW2227oxA4rWMxvJWrk3e6GMIkJHJV2OjxUGQowooS73DEWP6pJ5eAPk4t7L9UN9pbOWlk/A+02TmJLhyntKvuZ7m5VDws7V4q7PgBU5EbxCMNInCCIezA0NNnB8UVByR0WqCiyKQRCtSx8xlz8X5DrbNb8ijNboOcsAiRlRnHMPykGi5rL3e/4Z7QejRMOkY/fx6SHyGuBjrct5qpbkR/BDuQIDAQAB';
+        //实例化具体API对应的request类,类名称和接口名称对应,当前调用接口名称：alipay.trade.app.pay
+        $request = new \AlipayTradeAppPayRequest();
+        //SDK已经封装掉了公共参数，这里只需要传入业务参数
+        $bizcontent = "{\"body\":\"购买会员\","
+            . "\"subject\": \"App支付测试\","
+            . "\"out_trade_no\": \"20170125test01\","
+            . "\"timeout_express\": \"30m\","
+            . "\"total_amount\": \"0.01\","
+            . "\"product_code\":\"QUICK_MSECURITY_PAY\""
+            . "}";
+        $request->setNotifyUrl("http//x16311542j.51mypc.cn");
+        $request->setBizContent($bizcontent);
+        $response = $aop->sdkExecute($request);
+        echo htmlspecialchars($response);
+    }
 
 
 
