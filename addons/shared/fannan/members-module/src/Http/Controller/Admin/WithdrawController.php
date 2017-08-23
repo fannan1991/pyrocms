@@ -1,8 +1,11 @@
 <?php namespace Fannan\MembersModule\Http\Controller\Admin;
 
+use Fannan\MembersModule\Member\MemberModel;
 use Fannan\MembersModule\Withdraw\Form\WithdrawFormBuilder;
 use Fannan\MembersModule\Withdraw\Table\WithdrawTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Fannan\MembersModule\Withdraw\WithdrawModel;
+use Illuminate\Http\Request;
 
 class WithdrawController extends AdminController
 {
@@ -36,8 +39,40 @@ class WithdrawController extends AdminController
      * @param        $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit(WithdrawFormBuilder $form, $id)
+    public function edit(WithdrawFormBuilder $form, $id ,Request $request)
     {
+        $withdraw = WithdrawModel::find($id);
+        $member = MemberModel::find($request->withdraw_member_id);
+        if(isset($request->withdraw_status) && $request->withdraw_status == 3){
+            if($withdraw->withdraw_status != 3)
+            //金币变动
+            $member->gold -= $request->withdraw_amount;
+            $member->save();
+        }
+        if($withdraw->withdraw_status == 1 && isset($request->withdraw_status) && $request->withdraw_status == 0){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
+        if($withdraw->withdraw_status == 1 && isset($request->withdraw_status) && $request->withdraw_status == 2){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
+        if($withdraw->withdraw_status == 2 && isset($request->withdraw_status) && $request->withdraw_status == 0){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
+        if($withdraw->withdraw_status == 2 && isset($request->withdraw_status) && $request->withdraw_status == 1){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
+        if($withdraw->withdraw_status == 2 && isset($request->withdraw_status) && $request->withdraw_status == 3){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
+        if($withdraw->withdraw_status == 3 && isset($request->withdraw_status) && $request->withdraw_status == 0){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
+        if($withdraw->withdraw_status == 3 && isset($request->withdraw_status) && $request->withdraw_status == 1){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
+        if($withdraw->withdraw_status == 3 && isset($request->withdraw_status) && $request->withdraw_status == 2){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;
+        }
         return $form->render($id);
     }
 }

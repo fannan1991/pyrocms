@@ -1,0 +1,9 @@
+{
+    "name": "fannan/transaction-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Fannan\\TransactionModule\\": "src/"
+        }
+    }
+}

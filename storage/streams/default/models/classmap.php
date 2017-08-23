@@ -76,6 +76,8 @@
   'Anomaly\\Streams\\Platform\\Model\\Settings\\SettingsSettingsEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Settings\\SettingsSettingsEntryModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Test\\TestTestEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Test\\TestTestEntryModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Test\\TestTestEntryTranslationsModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Test\\TestTestEntryTranslationsModel.php',
+  'Anomaly\\Streams\\Platform\\Model\\Transaction\\TransactionTransactionEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Transaction\\TransactionTransactionEntryModel.php',
+  'Anomaly\\Streams\\Platform\\Model\\Transaction\\TransactionTransactionEntryTranslationsModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Transaction\\TransactionTransactionEntryTranslationsModel.php',
   'Anomaly\\Streams\\Platform\\Model\\UrlLinkType\\UrlLinkTypeUrlsEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\UrlLinkType\\UrlLinkTypeUrlsEntryModel.php',
   'Anomaly\\Streams\\Platform\\Model\\UrlLinkType\\UrlLinkTypeUrlsEntryTranslationsModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\UrlLinkType\\UrlLinkTypeUrlsEntryTranslationsModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Users\\UsersRolesEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Users\\UsersRolesEntryModel.php',

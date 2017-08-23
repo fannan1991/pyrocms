@@ -57,7 +57,7 @@ $api->version('v1', function ($api) {
         $api->get('/new-detail','HomeController@newsDetail');
         $api->get('/test-qrcode','HomeController@testQrcode');
         $api->get('/envelopes-winning','HomeController@envelopesWinning');
-        $api->get('/alipay-resonse','HomeController@alipayResonse');
+        $api->post('/alipay-notify','HomeController@alipayNotify');
 
 
     });
@@ -88,6 +88,9 @@ $api->version('v1', function ($api) {
         $api->post('/invitation-code','HomeController@invitationCode');
         $api->post('/envelopes','HomeController@envelopes');
         $api->post('/remaining','HomeController@remaining');
+        $api->post('/alipay-resonse','HomeController@alipayResonse');
+        $api->post('/amount','HomeController@amount');
+
     });
 
 });

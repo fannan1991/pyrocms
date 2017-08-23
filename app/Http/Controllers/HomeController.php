@@ -31,6 +31,7 @@ use Fannan\MembersModule\Member\MemberModel;
 use Fannan\MembersModule\Message\MessageModel;
 use Fannan\MembersModule\Repayment\RepaymentModel;
 use Fannan\MembersModule\Withdraw\WithdrawModel;
+use Fannan\TransactionModule\Transaction\TransactionModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
@@ -126,6 +127,8 @@ class HomeController extends Controller
             if($invitation_code){
                 $father = MemberModel::where('invitation_code',$invitation_code)->first();
                 if($father){
+                    $father->integral += 10;
+                    $father->save();
                     $member->parent_id_id = $father->id;
                     $member->grand_id_id = $father->parent_id_id;
                     $member->great_grand_id_id = $father->grand_id_id;
@@ -957,7 +960,21 @@ class HomeController extends Controller
         return $this->response->array($result);
     }
 
+    //支付宝请求
     public function alipayResonse(Request $request){
+        $member_id = $request->member_id;
+        $member = MemberModel::find($member_id);
+        $amount = 0.01;
+        $order = new TransactionModel;
+        $order_sn = $this->orderSn();
+        $order->trade_out_no = $order_sn;
+        $order->trade_amount = $amount;
+        $order->trade_project = '购买会员';
+        $order->trade_member_id = $member_id;
+        $order->trade_mobile = $member->mobile;
+        $order->trade_status = '1';
+        $order->save();
+
         $aop = new \AopClient;
         $aop->gatewayUrl = "https://openapi.alipay.com/gateway.do";
         $aop->appId = "2017072807934470";
@@ -970,17 +987,68 @@ class HomeController extends Controller
         $request = new \AlipayTradeAppPayRequest();
         //SDK已经封装掉了公共参数，这里只需要传入业务参数
         $bizcontent = "{\"body\":\"购买会员\","
-            . "\"subject\": \"App支付测试\","
-            . "\"out_trade_no\": \"20170125test01\","
+            . "\"subject\": \"购买会员\","
+            . "\"out_trade_no\": \"$order_sn\","
             . "\"timeout_express\": \"30m\","
-            . "\"total_amount\": \"0.01\","
+            . "\"total_amount\": \"$amount\","
             . "\"product_code\":\"QUICK_MSECURITY_PAY\""
             . "}";
-        $request->setNotifyUrl("http//x16311542j.51mypc.cn");
+        $request->setNotifyUrl("http//x16311542j.51mypc.cn/api/alipay-notify");
         $request->setBizContent($bizcontent);
         $response = $aop->sdkExecute($request);
         echo htmlspecialchars($response);
     }
+
+    //支付宝接收异步通知
+    public function alipayNotify(){
+        $pid = '2088721571066306';
+        $app_id = '2017072807934470';
+        $aop = new \AopClient;
+        $aop->alipayrsaPublicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl2qbdwLaC3146/j0gEXpnlTNd7MuknBhLAMUKygjHj18JreBGyDPIl7HvKMtx4zYGJP8cw4RhxlzMmPMB8STynHI3cfQkzZVVfPlzUJ9w0S07qLLJFeM/XaHbLTIZW2227oxA4rWMxvJWrk3e6GMIkJHJV2OjxUGQowooS73DEWP6pJ5eAPk4t7L9UN9pbOWlk/A+02TmJLhyntKvuZ7m5VDws7V4q7PgBU5EbxCMNInCCIezA0NNnB8UVByR0WqCiyKQRCtSx8xlz8X5DrbNb8ijNboOcsAiRlRnHMPykGi5rL3e/4Z7QejRMOkY/fx6SHyGuBjrct5qpbkR/BDuQIDAQAB';
+        $flag = $aop->rsaCheckV1($_POST, NULL, "RSA");
+        if($flag == true){
+            //验证out_trade_no是否为该系统创建的单号
+            $transaction = TransactionModel::where('trade_out_no',$_POST['out_trade_no'])->first();
+            if($transaction){
+                //验证total_amount是否为该订单金额
+                if($transaction->trade_amount == $_POST['total_amount']){
+                    //验证seller_id会否为商户PID
+                    if($_POST['seller_id'] == $pid){
+                        //验证app_id是否正确
+                        if($_POST['app_id'] = $app_id){
+                            //验证支付状态是否成功
+                            if($_POST['trade_status'] == 'TRADE_SUCCESS'){
+                                $update_transaction = TransactionModel::find($transaction->id);
+                                $update_transaction->trade_payment_time = $_POST['gmt_payment'];
+                                $update_transaction->trade_status = '2';
+                                if($update_transaction->save()){
+                                    echo 'success';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //获取购买会员金额
+    public function amount(Request $request){
+        $amount = 0.01;
+        $data = array
+        (
+            'amount' => $amount,
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data'    =>  $data,
+        );
+        return $this->response->array($result);
+    }
+
+
+
 
 
 

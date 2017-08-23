@@ -45,6 +45,33 @@ class LoanController extends AdminController
     {
         $loan = LoanModel::find($id);
         $member = MemberModel::find($request->loan_member_id);
+        if($loan->loan_status == 0 && isset($request->loan_status) && $request->loan_status == 3 ){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 1 && isset($request->loan_status) && $request->loan_status == 2){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 1 && isset($request->loan_status) && $request->loan_status == 0){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 2 && isset($request->loan_status) && $request->loan_status == 0){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 2 && isset($request->loan_status) && $request->loan_status == 1){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 2 && isset($request->loan_status) && $request->loan_status == 3){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 3 && isset($request->loan_status) && $request->loan_status == 0){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 3 && isset($request->loan_status) && $request->loan_status == 1){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
+        if($loan->loan_status == 3 && isset($request->loan_status) && $request->loan_status == 2){
+            echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
         if(isset($request->loan_status) && $request->loan_status == 1){
             //如果原有状态是通过审核，则删除生成的还款记录，并根据修改的条件重新生成还款记录;如果原有状态不是通过审核，则直接生成还款记录
             if($loan->loan_status == 1){
@@ -52,7 +79,12 @@ class LoanController extends AdminController
                 foreach($repayments as $item){
                     RepaymentModel::destroy($item->id);
                 }
+            }else{
+                //发放金币
+                $member->gold += $request->loan_amount;
+                $member->save();
             }
+
             //生成还款记录
             if(empty($request->loan_repayment_date) || empty($request->loan_term_date) || empty($request->loan_date)){
                 echo("<script>alert('信息不完整');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/edit/".$id."'</script>");die;
