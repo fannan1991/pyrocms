@@ -70,6 +70,9 @@ class LotteryModuleServiceProvider extends AddonServiceProvider
         'admin/lottery/edit/{id}' => 'Fannan\LotteryModule\Http\Controller\Admin\LotteryController@edit',
         'admin/lottery/prize/{id}' => 'Fannan\LotteryModule\Http\Controller\Admin\LotteryController@prize',
         'admin/lottery/winning/{id}' => 'Fannan\LotteryModule\Http\Controller\Admin\LotteryController@winning',
+        'admin/lottery/grant'           => 'Fannan\LotteryModule\Http\Controller\Admin\GrantController@index',
+        'admin/lottery/grant/create'    => 'Fannan\LotteryModule\Http\Controller\Admin\GrantController@create',
+        'admin/lottery/grant/edit/{id}' => 'Fannan\LotteryModule\Http\Controller\Admin\GrantController@edit',
     ];
 
     /**

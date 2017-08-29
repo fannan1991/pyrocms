@@ -18,6 +18,7 @@ class LotteryWinningEntryModel extends EntryModel
 'winning_prize_id' => '',
 'winning_member_id' => '',
 'winning_mobile' => '',
+'winning_member_real_name' => '',
 'winning_prize_grade' => '',
 'winning_prize_name' => '',
 'winning_status' => '',
@@ -28,6 +29,7 @@ class LotteryWinningEntryModel extends EntryModel
 'winning_prize_id',
 'winning_member_id',
 'winning_mobile',
+'winning_member_real_name',
 'winning_prize_grade',
 'winning_prize_name',
 'winning_status',
@@ -44,7 +46,7 @@ class LotteryWinningEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Lottery\LotteryWinningEntryTranslationsModel';
 
     protected $stream = [
-'id' => '229',
+'id' => '299',
 'namespace' => 'lottery',
 'slug' => 'winning',
 'prefix' => 'lottery_',
@@ -59,16 +61,16 @@ class LotteryWinningEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1857,
-'sort_order' => 214,
-'stream_id' => 229,
-'field_id' => 1846,
+'id' => 2301,
+'sort_order' => 244,
+'stream_id' => 299,
+'field_id' => 2302,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1846',
+'id' => '2302',
 'namespace' => 'lottery',
 'slug' => 'winning_lottery_id',
 'type' => 'anomaly.field_type.relationship',
@@ -76,8 +78,8 @@ class LotteryWinningEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1846,
-'field_id' => 1846,
+'id' => 2302,
+'field_id' => 2302,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.winning_lottery_id.name',
 'placeholder' => 'fannan.module.lottery::field.winning_lottery_id.placeholder',
@@ -88,8 +90,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1856,
-'assignment_id' => 1857,
+'id' => 2300,
+'assignment_id' => 2301,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.winning_lottery_id.label.winning',
 'warning' => 'fannan.module.lottery::field.winning_lottery_id.warning.winning',
@@ -99,16 +101,16 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1858,
-'sort_order' => 215,
-'stream_id' => 229,
-'field_id' => 1847,
+'id' => 2302,
+'sort_order' => 245,
+'stream_id' => 299,
+'field_id' => 2303,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1847',
+'id' => '2303',
 'namespace' => 'lottery',
 'slug' => 'winning_prize_id',
 'type' => 'anomaly.field_type.relationship',
@@ -116,8 +118,8 @@ class LotteryWinningEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1847,
-'field_id' => 1847,
+'id' => 2303,
+'field_id' => 2303,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.winning_prize_id.name',
 'placeholder' => 'fannan.module.lottery::field.winning_prize_id.placeholder',
@@ -128,8 +130,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1857,
-'assignment_id' => 1858,
+'id' => 2301,
+'assignment_id' => 2302,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.winning_prize_id.label.winning',
 'warning' => 'fannan.module.lottery::field.winning_prize_id.warning.winning',
@@ -139,16 +141,16 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1859,
-'sort_order' => 216,
-'stream_id' => 229,
-'field_id' => 1848,
+'id' => 2303,
+'sort_order' => 246,
+'stream_id' => 299,
+'field_id' => 2304,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1848',
+'id' => '2304',
 'namespace' => 'lottery',
 'slug' => 'winning_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -156,8 +158,8 @@ class LotteryWinningEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1848,
-'field_id' => 1848,
+'id' => 2304,
+'field_id' => 2304,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.winning_member_id.name',
 'placeholder' => 'fannan.module.lottery::field.winning_member_id.placeholder',
@@ -168,8 +170,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1858,
-'assignment_id' => 1859,
+'id' => 2302,
+'assignment_id' => 2303,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.winning_member_id.label.winning',
 'warning' => 'fannan.module.lottery::field.winning_member_id.warning.winning',
@@ -179,16 +181,16 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1860,
-'sort_order' => 217,
-'stream_id' => 229,
-'field_id' => 1849,
+'id' => 2304,
+'sort_order' => 247,
+'stream_id' => 299,
+'field_id' => 2305,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1849',
+'id' => '2305',
 'namespace' => 'lottery',
 'slug' => 'winning_mobile',
 'type' => 'anomaly.field_type.text',
@@ -196,8 +198,8 @@ class LotteryWinningEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1849,
-'field_id' => 1849,
+'id' => 2305,
+'field_id' => 2305,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.winning_mobile.name',
 'placeholder' => 'fannan.module.lottery::field.winning_mobile.placeholder',
@@ -208,8 +210,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1859,
-'assignment_id' => 1860,
+'id' => 2303,
+'assignment_id' => 2304,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.winning_mobile.label.winning',
 'warning' => 'fannan.module.lottery::field.winning_mobile.warning.winning',
@@ -219,16 +221,56 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1861,
-'sort_order' => 218,
-'stream_id' => 229,
-'field_id' => 1850,
+'id' => 2305,
+'sort_order' => 248,
+'stream_id' => 299,
+'field_id' => 2306,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1850',
+'id' => '2306',
+'namespace' => 'lottery',
+'slug' => 'winning_member_real_name',
+'type' => 'anomaly.field_type.text',
+'config' => 'a:0:{}',
+'locked' => '1',
+'translations' => [
+[
+'id' => 2306,
+'field_id' => 2306,
+'locale' => 'en',
+'name' => 'fannan.module.lottery::field.winning_member_real_name.name',
+'placeholder' => 'fannan.module.lottery::field.winning_member_real_name.placeholder',
+'warning' => 'fannan.module.lottery::field.winning_member_real_name.warning',
+'instructions' => 'fannan.module.lottery::field.winning_member_real_name.instructions',
+],
+],
+],
+'translations' => [
+[
+'id' => 2304,
+'assignment_id' => 2305,
+'locale' => 'en',
+'label' => 'fannan.module.lottery::field.winning_member_real_name.label.winning',
+'warning' => 'fannan.module.lottery::field.winning_member_real_name.warning.winning',
+'placeholder' => 'fannan.module.lottery::field.winning_member_real_name.placeholder.winning',
+'instructions' => 'fannan.module.lottery::field.winning_member_real_name.instructions.winning',
+],
+],
+],
+[
+'id' => 2306,
+'sort_order' => 249,
+'stream_id' => 299,
+'field_id' => 2307,
+'config' => 'a:0:{}',
+'unique' => 0,
+'required' => 0,
+'translatable' => 0,
+'field' => [
+'id' => '2307',
 'namespace' => 'lottery',
 'slug' => 'winning_prize_grade',
 'type' => 'anomaly.field_type.text',
@@ -236,8 +278,8 @@ class LotteryWinningEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1850,
-'field_id' => 1850,
+'id' => 2307,
+'field_id' => 2307,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.winning_prize_grade.name',
 'placeholder' => 'fannan.module.lottery::field.winning_prize_grade.placeholder',
@@ -248,8 +290,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1860,
-'assignment_id' => 1861,
+'id' => 2305,
+'assignment_id' => 2306,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.winning_prize_grade.label.winning',
 'warning' => 'fannan.module.lottery::field.winning_prize_grade.warning.winning',
@@ -259,16 +301,16 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1862,
-'sort_order' => 219,
-'stream_id' => 229,
-'field_id' => 1851,
+'id' => 2307,
+'sort_order' => 250,
+'stream_id' => 299,
+'field_id' => 2308,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1851',
+'id' => '2308',
 'namespace' => 'lottery',
 'slug' => 'winning_prize_name',
 'type' => 'anomaly.field_type.text',
@@ -276,8 +318,8 @@ class LotteryWinningEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1851,
-'field_id' => 1851,
+'id' => 2308,
+'field_id' => 2308,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.winning_prize_name.name',
 'placeholder' => 'fannan.module.lottery::field.winning_prize_name.placeholder',
@@ -288,8 +330,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1861,
-'assignment_id' => 1862,
+'id' => 2306,
+'assignment_id' => 2307,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.winning_prize_name.label.winning',
 'warning' => 'fannan.module.lottery::field.winning_prize_name.warning.winning',
@@ -299,16 +341,16 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1863,
-'sort_order' => 220,
-'stream_id' => 229,
-'field_id' => 1852,
+'id' => 2308,
+'sort_order' => 251,
+'stream_id' => 299,
+'field_id' => 2309,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1852',
+'id' => '2309',
 'namespace' => 'lottery',
 'slug' => 'winning_status',
 'type' => 'anomaly.field_type.boolean',
@@ -316,8 +358,8 @@ class LotteryWinningEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1852,
-'field_id' => 1852,
+'id' => 2309,
+'field_id' => 2309,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.winning_status.name',
 'placeholder' => 'fannan.module.lottery::field.winning_status.placeholder',
@@ -328,8 +370,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1862,
-'assignment_id' => 1863,
+'id' => 2307,
+'assignment_id' => 2308,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.winning_status.label.winning',
 'warning' => 'fannan.module.lottery::field.winning_status.warning.winning',
@@ -341,8 +383,8 @@ class LotteryWinningEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 229,
-'stream_id' => 229,
+'id' => 299,
+'stream_id' => 299,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::stream.winning.name',
 'description' => 'fannan.module.lottery::stream.winning.description',

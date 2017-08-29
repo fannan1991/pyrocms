@@ -1,70 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php" line="240" mnemonic="4" />
+    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php" line="243" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d230ee19-34bf-4885-b8ac-fc0f840b6396" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/button.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/field.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2tPofTL11PehckIzoegootKutbX93vQr7F45QKYt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4niwA8Jxq7uzYC16wfvNSAVPDoX6lswwgChAuc8i" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/5vHsr8V5tZxmJxdtMHUKkkIV8092Qkvy32g1Iljn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/5y0XD4TjhxEhzqVPDKrgNpiqvgiIgS9SUti6MGYr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/758iZVWgW7pM5LVg86xEIo0idqWGxvsrYwFGBw5Y" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/8c5ev4dzCEEOBrrIUCnoAfprsAxypJIqGayHaPi7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/A5qOuND3ronkBa7QCNoBAAa1MvcNP5mO0jMnBjIi" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/D3BQZm1Znv8IeKS3BWNDGQsUfO7R0NpJL2A18ecE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/DT1Xqy3C5nqoNzDPRaxbVARHRLsYEPH5HSqiq0WM" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/Dn32X2708VeW67DSBRAhWfzMF84j15XIbpMKHIKx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/Fm23JamZZUeVNVeQriNloL4LMM7BS6JlFA1BvKC3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/GR7k4Dn8060YlUlDSMMyRj25eaW0ziWxJa45q9Xy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/IkDEAaH0cxVWuNBcEUafAIv8D1qdKmQVmnYluSua" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/LczkemKHVevrVUHGtQ6YpR5F0s3TDxrKmdgp504k" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/MnMDevQ4vMFqFrFnbEMjXyUoG6MWLvzojcDJ9XjW" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/P87WmtwGpIUqxxTx1chigliPb8mHMwYhdVNzuRzO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/QAZ9H9bPuXEspyX4ZaZZrd7VcDR7aatczqVMWnQc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/TV4v5RsGpc14S5c04cUFZY4RiXQhhvIM0A7UodPa" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/TiULI8tyEFE5GA9yXtE2dck11jVxUQRvlsyD9g0B" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/U4M6K8JpSwevhWUFBWIQcZ9OyJuyW3WlW79XF4Lu" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/UZoAKfPjjAzp9Onr3NoT72zZ4KaofbQ0SmSwPMmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/VMUGU3oZXdhS31nMZZE9hDxP7tbPP3VHBY6ltZIh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/XdimtFuw7QVwhIxJDNl451fiOhELz8zKByOgNwOb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/XqIjQQNfgsyrpmjfMaFuHLtkXjNlSyuKWkkeZoOQ" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/YL3alVY45OSe4CEmFQYZpONxnbN4UBIoBEpvoWFk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/fGA3w3Kp7zHDoXPLhpjfSB2aoLc2S9xyI6mKEkwS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/fifZ8DhI6pYnRdC0C0FJXLvc5dAT6ieoJIocFzHC" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/gKfxZDjLq6mZuPXLGdPxc24eQZBS9dOlg8KGYTjb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/lItiWdbiFVhQ9Kk27Ef00GC2VLdCEX0PWJPT5JkX" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/mU5att3J30QGxdleVUgk16BZ5gQotlIWe6ls08TG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/mtv0PV7y6PUIdxy53ez8Vcp9Z3JcLUJqVtOHLhMj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/n4lDt5vycjgQiCvNLl4ZpjsSIWFAMezNvArI2DOq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/ntYiRBIt9QQn7llUlP9JldMUa9AFahi2XgQyJy23" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/o3sah4YH1xqYoP2rfeBEQ4LnQwRtFDxqQTcX5W27" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/o57H5smdtPkzu9St0iRSqGujcGpOvPuspJNgiax3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/qLIuvHS5InSec76Y1kq5cZ9wwM47DQDwg6C6TQ2p" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/qMHaLx0GDJQ89osIRKyV50wHrWIc7sFALznqXuY3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/wh3CgxFgt9MBESgqTQ0XKzA5KRdox3Y08D56gioB" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/x85SH1fs3ghz9CM6wqWZC67IcYEzaKbTKduwDLuJ" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/xDIuIGOMOlWsegnabwk8PMYj3ymDhEFjJ5cpnhko" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/streams/default/cache/e5/01/e501d0d1218e6759d350baf0d29de985607445c4" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/config/permissions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/permission.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/config/permissions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/permission.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/config/permissions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/permission.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Loan/Form/LoanFormFields.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Withdraw/Form/WithdrawFormFields.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/config/permissions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/permission.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/LotteryLog.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/HomeController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/MemberController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/MemController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Member/OrderController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/oxezC6aEm0AAfot38vv9coVXxRSPlJn3IDdGNo5j" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/v215h93X3yLGGIvGkBkQUVmgJDT5s7TnoB164UoX" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/streams/default/cache/7c/0d/7c0d2af12318e0e556ae4ad39a95c45135aa6445" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/streams/default/cache/a8/f5/a8f50e5c245525ff25699bf6206a04a600433b11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/streams/default/cache/bc/40/bc40868b3d1eb8329e88b6210fc30131f01dec35" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/streams/default/cache/e5/2d/e52d631f3377bc02307539ede3945f8307c146a3" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/1c/0f/1c0f6339ce2107d3b0805f00f52b06a8dc450933" afterPath="$PROJECT_DIR$/storage/streams/default/cache/1c/0f/1c0f6339ce2107d3b0805f00f52b06a8dc450933" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/f6/2a/f62aba7f76861f48a82e79b52024240d74b4e289" afterPath="$PROJECT_DIR$/storage/streams/default/cache/f6/2a/f62aba7f76861f48a82e79b52024240d74b4e289" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/f8/fc/f8fc64042a5f28030f186772e1641db5161fb22e" afterPath="$PROJECT_DIR$/storage/streams/default/cache/f8/fc/f8fc64042a5f28030f186772e1641db5161fb22e" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/search/files_files.index" afterPath="$PROJECT_DIR$/storage/streams/default/search/files_files.index" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/search/users_users.index" afterPath="$PROJECT_DIR$/storage/streams/default/search/users_users.index" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/field.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/field.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/EnvelopesModule.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/EnvelopesModule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Log/Table/LogTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Log/Table/LogTableBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_14_112426_fannan.module.lottery__create_lottery_fields.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_14_112426_fannan.module.lottery__create_lottery_fields.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_15_105314_fannan.module.lottery__create_winning_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_15_105314_fannan.module.lottery__create_winning_stream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/addon.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/addon.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/button.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/button.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/field.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/field.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/LotteryController.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/LotteryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/WinningController.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/WinningController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModule.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModuleServiceProvider.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModuleServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Prize/Table/PrizeTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Prize/Table/PrizeTableBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Winning/Table/WinningTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Winning/Table/WinningTableBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Gold/Table/GoldTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Gold/Table/GoldTableBuilder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/LoanController.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/LoanController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/WithdrawController.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/WithdrawController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Integral/Table/IntegralTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Integral/Table/IntegralTableBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Loan/Table/LoanTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Loan/Table/LoanTableBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModule.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Repayment/Table/RepaymentTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Repayment/Table/RepaymentTableBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_091956_fannan.module.transaction__create_transaction_fields.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_091956_fannan.module.transaction__create_transaction_fields.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_094213_fannan.module.transaction__create_transaction_stream.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_094213_fannan.module.transaction__create_transaction_stream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/field.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/field.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/Table/TransactionTableBuilder.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/Table/TransactionTableBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/TransactionModule.php" afterPath="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/TransactionModule.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/65/5a/655adf85a53f1101e25a399172d42cb33c09999f" afterPath="$PROJECT_DIR$/storage/streams/default/cache/65/5a/655adf85a53f1101e25a399172d42cb33c09999f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/7c/0d/7c0d2af12318e0e556ae4ad39a95c45135aa6445" afterPath="$PROJECT_DIR$/storage/streams/default/cache/7c/0d/7c0d2af12318e0e556ae4ad39a95c45135aa6445" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/bc/40/bc40868b3d1eb8329e88b6210fc30131f01dec35" afterPath="$PROJECT_DIR$/storage/streams/default/cache/bc/40/bc40868b3d1eb8329e88b6210fc30131f01dec35" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/c3/d8/c3d840eecb3a62d97d3bfc8704e902ad5f2a6185" afterPath="$PROJECT_DIR$/storage/streams/default/cache/c3/d8/c3d840eecb3a62d97d3bfc8704e902ad5f2a6185" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/e5/2d/e52d631f3377bc02307539ede3945f8307c146a3" afterPath="$PROJECT_DIR$/storage/streams/default/cache/e5/2d/e52d631f3377bc02307539ede3945f8307c146a3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/ed/fb/edfb694fb4ee5f25ec496d352354acff7893051c" afterPath="$PROJECT_DIR$/storage/streams/default/cache/ed/fb/edfb694fb4ee5f25ec496d352354acff7893051c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/cache/f0/87/f0871e2f5a2c13f1d224efcc0fd587a8247e8d2e" afterPath="$PROJECT_DIR$/storage/streams/default/cache/f0/87/f0871e2f5a2c13f1d224efcc0fd587a8247e8d2e" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryLotteryEntryModel.php" afterPath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryLotteryEntryModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryPrizeEntryModel.php" afterPath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryPrizeEntryModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryTicketEntryModel.php" afterPath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryTicketEntryModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryWinningEntryModel.php" afterPath="$PROJECT_DIR$/storage/streams/default/models/Lottery/LotteryWinningEntryModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/models/Transaction/TransactionTransactionEntryModel.php" afterPath="$PROJECT_DIR$/storage/streams/default/models/Transaction/TransactionTransactionEntryModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/streams/default/models/classmap.php" afterPath="$PROJECT_DIR$/storage/streams/default/models/classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Button/ButtonRegistry.php" afterPath="$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Button/ButtonRegistry.php" />
     </list>
     <ignored path="pyrocms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,58 +95,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <file leaf-file-name="2017_08_14_112426_fannan.module.lottery__create_lottery_fields.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_14_112426_fannan.module.lottery__create_lottery_fields.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
-              <caret line="59" column="67" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.35971224">
+              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoanController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/LoanController.php">
+      <file leaf-file-name="2017_08_29_164314_fannan.module.lottery__create_grant_stream.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_29_164314_fannan.module.lottery__create_grant_stream.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.366667">
-              <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-              <folding>
-                <element signature="e#61#112#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-17.133333">
+              <caret line="31" column="27" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <file leaf-file-name="GrantTableBuilder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Grant/Table/GrantTableBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72302157">
-              <caret line="136" column="28" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
-              <folding>
-                <element signature="e#40#79#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-20.833334">
+              <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionTableBuilder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/Table/TransactionTableBuilder.php">
+      <file leaf-file-name="LotteryModuleServiceProvider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModuleServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.0">
+              <caret line="74" column="93" selection-start-line="74" selection-start-column="93" selection-end-line="74" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrantController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/GrantController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.133333">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LotteryController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/LotteryController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-12.5">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <caret line="34" column="124" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="124" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WithdrawController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/WithdrawController.php">
+      <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../langang/app/Http/Controllers/Admin/ArticleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4666667">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-              <folding>
-                <element signature="e#61#105#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-15.833333">
+              <caret line="290" column="37" selection-start-line="290" selection-start-column="37" selection-end-line="290" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="field.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/field.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.966667">
+              <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addon.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/addon.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.166667">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="button.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/button.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8333335">
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,57 +203,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/LotteryController.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/TransactionPresenter.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/WithdrawController.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Prize/Table/PrizeTableBuilder.php" />
+        <option value="$PROJECT_DIR$/app/LotteryLog.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_15_105314_fannan.module.lottery__create_winning_stream.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/WinningController.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/LotteryController.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2017-08-28.log" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/config/permissions.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/permission.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/config/permissions.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_094213_fannan.module.transaction__create_transaction_stream.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_091956_fannan.module.transaction__create_transaction_fields.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/field.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/Table/TransactionTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/config/permissions.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/permission.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/field.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/config/permissions.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/permission.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Log/Table/LogTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/EnvelopesModule.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/TransactionModule.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/config/permissions.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/permission.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Winning/Table/WinningTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Integral/Table/IntegralTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Gold/Table/GoldTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Form/MemberFormBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Loan/Form/LoanFormFields.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Repayment/Table/RepaymentTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Loan/Table/LoanTableBuilder.php" />
+        <option value="$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Button/ButtonRegistry.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/LoanController.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModule.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Withdraw/Form/WithdrawFormFields.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModule.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/addon.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/button.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_15_142609_fannan.module.lottery__create_ticket_stream.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Ticket/TicketPresenter.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/field.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Ticket/Table/TicketTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Grant/Table/GrantTableBuilder.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModuleServiceProvider.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_29_164314_fannan.module.lottery__create_grant_stream.php" />
+        <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/GrantController.php" />
         <option value="$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_14_112426_fannan.module.lottery__create_lottery_fields.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Envelope/Table/EnvelopeTableBuilder.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Http/Controller/Admin/EnvelopesController.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/EnvelopesModuleServiceProvider.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/migrations/2017_08_15_164410_fannan.module.envelopes__create_envelopes_fields.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/migrations/2017_08_16_101318_fannan.module.envelopes__create_log_stream.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/addon.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/button.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/field.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Log/Table/LogTableBuilder.php" />
-        <option value="C:/Windows/System32/drivers/etc/hosts" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/core/anomaly/users-module/src/Role/RoleModel.php" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel-2017-08-18.log" />
-        <option value="$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_015653_fannan.module.members__create_members_fields.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/migrations/2017_08_18_184443_fannan.module.advertising__create_slot_stream.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/addon.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/button.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/src/Slot/Table/SlotTableBuilder.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/migrations/2017_08_18_183352_fannan.module.advertising__create_advertising_fields.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/migrations/2017_08_18_183629_fannan.module.advertising__create_advertising_stream.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/field.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/advertising-module/src/Advertising/Table/AdvertisingTableBuilder.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel-2017-08-21.log" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/envelopes-module/migrations/2017_08_15_175041_fannan.module.envelopes__create_envelopes_stream.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Libs/Alipay/aop/AopEncrypt.php" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel-2017-08-22.log" />
-        <option value="$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayOpenPublicTemplateMessageIndustryModifyRequest.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/addon.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/button.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_091956_fannan.module.transaction__create_transaction_fields.php" />
-        <option value="$PROJECT_DIR$/app/Libs/Alipay/aop/AopClient.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_094213_fannan.module.transaction__create_transaction_stream.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/TransactionPresenter.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/field.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/LoanController.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/WithdrawController.php" />
-        <option value="$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/Table/TransactionTableBuilder.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       </list>
     </option>
   </component>
@@ -251,7 +304,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -280,20 +332,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="addons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -319,8 +357,30 @@
               <option name="myItemId" value="fannan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="transaction-module" />
+              <option name="myItemId" value="pyrocms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pyrocms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fannan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lottery-module" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -346,7 +406,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="transaction-module" />
+              <option name="myItemId" value="lottery-module" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -376,7 +436,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="transaction-module" />
+              <option name="myItemId" value="lottery-module" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -384,72 +444,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Transaction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fannan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transaction-module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Transaction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Table" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pyrocms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fannan" />
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -460,12 +469,13 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpstudy\WWW\pyrocms\addons\shared\fannan\envelopes-module\resources" />
+      <recent name="D:\phpstudy\WWW\pyrocms\app\Libs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\phpstudy\WWW\pyrocms\addons\shared\fannan\members-module\resources" />
       <recent name="D:\phpstudy\WWW\pyrocms\addons\shared\fannan\members-module\resources\lang\en" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\phpstudy\WWW\pyrocms\app\Libs" />
     </key>
   </component>
   <component name="RunManager">
@@ -512,14 +522,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28144988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -531,7 +542,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -548,396 +558,406 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/advertising-module/migrations/2017_08_18_183629_fannan.module.advertising__create_advertising_stream.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.0">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Log/Table/LogTableBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6786127">
-          <caret line="68" column="10" selection-start-line="66" selection-start-column="8" selection-end-line="68" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2017-08-21.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../langang/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4739885">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Tencent Files/1095515317/FileRecv/laravel.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22346368">
-          <caret line="8" column="147" selection-start-line="8" selection-start-column="147" selection-end-line="8" selection-end-column="147" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../langang/app/Http/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65317917">
-          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/migrations/2017_08_15_175041_fannan.module.envelopes__create_envelopes_stream.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6820809">
-          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/migrations/2017_08_15_164410_fannan.module.envelopes__create_envelopes_fields.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5699422">
-          <caret line="55" column="31" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/AopSdk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3599537">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/secret_key_tools_RSA256_win/rsa_public_key.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25167784">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/secret_key_tools_RSA256_win/rsa_private_key_pkcs8.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="37" selection-start-line="1" selection-start-column="0" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/secret_key_tools_RSA256_win/rsa_private_key.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69910514">
-          <caret line="25" column="52" selection-start-line="1" selection-start-column="0" selection-end-line="25" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/KoubeiItemModifyRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46296296">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/KoubeiItemCreateRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-2.125">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayTradeQueryRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayTradeCloseRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayPassTplAddRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/KoubeiItemStateRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayUserTestRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayTradePayRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayUserGetRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/test/TestImage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40694788">
-          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/mcrypt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3449074">
-          <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/AopEncrypt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2017-08-22.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayTradeAppPayRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/request/AlipayOpenPublicTemplateMessageIndustryModifyRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/advertising-module/migrations/2017_08_18_183352_fannan.module.advertising__create_advertising_fields.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39814815">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/addon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="9" column="5" selection-start-line="6" selection-start-column="4" selection-end-line="9" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/addon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2025463">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/button.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08680555">
-          <caret line="3" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/button.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08680555">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/advertising-module/resources/lang/en/field.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5208333">
-          <caret line="18" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_015653_fannan.module.members__create_members_fields.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8854167">
-          <caret line="298" column="10" selection-start-line="285" selection-start-column="8" selection-end-line="298" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_091956_fannan.module.transaction__create_transaction_fields.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4212963">
-          <caret line="47" column="27" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/AopClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2166667">
-          <caret line="675" column="33" selection-start-line="675" selection-start-column="33" selection-end-line="675" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="59" column="67" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Prize/PrizePresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/MemberPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.0">
-          <caret line="30" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_094213_fannan.module.transaction__create_transaction_stream.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.633333">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="21" />
+        <state vertical-scroll-proportion="-17.966667">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/migrations/2017_08_23_091956_fannan.module.transaction__create_transaction_fields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/Table/TransactionTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8969907">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7685185">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/permission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/config/permissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1736111">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/TransactionModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6527778">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/EnvelopesModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5081019">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Log/Table/LogTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4340278">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/permission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3472222">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/config/permissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26041666">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/resources/lang/en/field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6527778">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/TransactionPresenter.php">
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/permission.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6655093">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.7106481">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/config/permissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6365741">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Winning/Table/WinningTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1863426">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Integral/Table/IntegralTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9837963">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Form/MemberFormBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.012731481">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/advertising-module/src/Advertising/Table/AdvertisingTableBuilder.php">
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Gold/Table/GoldTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4976852">
-          <caret line="61" column="10" selection-start-line="59" selection-start-column="8" selection-end-line="61" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.18981482">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/envelopes-module/src/Envelope/Table/EnvelopeTableBuilder.php">
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Form/MemberFormFields.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8101852">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.36342594">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.633333">
+          <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Repayment/Table/RepaymentTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3761574">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Lottery/Table/LotteryTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5208333">
-          <caret line="24" column="25" selection-start-line="20" selection-start-column="8" selection-end-line="24" selection-end-column="25" />
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/resources/lang/en/field.php">
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Member/Table/MemberTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.3472222">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/MembersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.633333">
+          <caret line="46" column="107" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/LoanController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.366667">
-          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.5081019">
+          <caret line="119" column="42" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
           <folding>
             <element signature="e#61#112#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/transaction-module/src/Transaction/Table/TransactionTableBuilder.php">
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModuleServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.4050926">
+          <caret line="82" column="115" selection-start-line="82" selection-start-column="115" selection-end-line="82" selection-end-column="115" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Http/Controller/Admin/WithdrawController.php">
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Loan/Table/LoanTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4666667">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding>
-            <element signature="e#61#105#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.31828704">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/anomaly/streams-platform/src/Ui/Button/ButtonRegistry.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6655093">
+          <caret line="161" column="28" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/MembersModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5428241">
+          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Loan/Form/LoanFormFields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2824074">
+          <caret line="18" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Withdraw/Form/WithdrawFormFields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8263889">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/src/Withdraw/Table/WithdrawTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9259259">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/lang/en/permission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5671296">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/resources/config/permissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6296296">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.966666">
+          <caret line="59" column="64" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/aop/AopClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.266666">
+          <caret line="648" column="36" selection-start-line="648" selection-start-column="36" selection-end-line="648" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libs/Alipay/lotusphp_runtime/Logger/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72302157">
-          <caret line="136" column="28" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
+        <state vertical-scroll-proportion="-17.5">
+          <caret line="1169" column="17" selection-start-line="1169" selection-start-column="17" selection-end-line="1169" selection-end-column="17" />
           <folding>
             <element signature="e#40#79#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/members-module/migrations/2017_07_10_015653_fannan.module.members__create_members_fields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.6">
+          <caret line="75" column="10" selection-start-line="61" selection-start-column="8" selection-end-line="75" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.466667">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/addon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.166667">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/button.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8333335">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/resources/lang/en/field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.966667">
+          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../langang/app/Http/Controllers/Admin/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.833333">
+          <caret line="290" column="37" selection-start-line="290" selection-start-column="37" selection-end-line="290" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/LotteryModuleServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0">
+          <caret line="74" column="93" selection-start-line="74" selection-start-column="93" selection-end-line="74" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/LotteryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="34" column="124" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Http/Controller/Admin/GrantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.133333">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/src/Grant/Table/GrantTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.833334">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_29_164314_fannan.module.lottery__create_grant_stream.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.133333">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/shared/fannan/lottery-module/migrations/2017_08_14_112426_fannan.module.lottery__create_lottery_fields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35971224">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

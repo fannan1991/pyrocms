@@ -40,7 +40,7 @@ class LotteryTicketEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Lottery\LotteryTicketEntryTranslationsModel';
 
     protected $stream = [
-'id' => '230',
+'id' => '300',
 'namespace' => 'lottery',
 'slug' => 'ticket',
 'prefix' => 'lottery_',
@@ -55,16 +55,16 @@ class LotteryTicketEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1864,
-'sort_order' => 221,
-'stream_id' => 230,
-'field_id' => 1853,
+'id' => 2309,
+'sort_order' => 252,
+'stream_id' => 300,
+'field_id' => 2310,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1853',
+'id' => '2310',
 'namespace' => 'lottery',
 'slug' => 'ticket_name',
 'type' => 'anomaly.field_type.text',
@@ -72,8 +72,8 @@ class LotteryTicketEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1853,
-'field_id' => 1853,
+'id' => 2310,
+'field_id' => 2310,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.ticket_name.name',
 'placeholder' => 'fannan.module.lottery::field.ticket_name.placeholder',
@@ -84,8 +84,8 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1863,
-'assignment_id' => 1864,
+'id' => 2308,
+'assignment_id' => 2309,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.ticket_name.label.ticket',
 'warning' => 'fannan.module.lottery::field.ticket_name.warning.ticket',
@@ -95,16 +95,16 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1865,
-'sort_order' => 222,
-'stream_id' => 230,
-'field_id' => 1854,
+'id' => 2310,
+'sort_order' => 253,
+'stream_id' => 300,
+'field_id' => 2311,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1854',
+'id' => '2311',
 'namespace' => 'lottery',
 'slug' => 'ticket_valid_period',
 'type' => 'anomaly.field_type.datetime',
@@ -112,8 +112,8 @@ class LotteryTicketEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1854,
-'field_id' => 1854,
+'id' => 2311,
+'field_id' => 2311,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.ticket_valid_period.name',
 'placeholder' => 'fannan.module.lottery::field.ticket_valid_period.placeholder',
@@ -124,8 +124,8 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1864,
-'assignment_id' => 1865,
+'id' => 2309,
+'assignment_id' => 2310,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.ticket_valid_period.label.ticket',
 'warning' => 'fannan.module.lottery::field.ticket_valid_period.warning.ticket',
@@ -135,16 +135,16 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1866,
-'sort_order' => 223,
-'stream_id' => 230,
-'field_id' => 1855,
+'id' => 2311,
+'sort_order' => 254,
+'stream_id' => 300,
+'field_id' => 2312,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1855',
+'id' => '2312',
 'namespace' => 'lottery',
 'slug' => 'ticket_is_use',
 'type' => 'anomaly.field_type.boolean',
@@ -152,8 +152,8 @@ class LotteryTicketEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1855,
-'field_id' => 1855,
+'id' => 2312,
+'field_id' => 2312,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.ticket_is_use.name',
 'placeholder' => 'fannan.module.lottery::field.ticket_is_use.placeholder',
@@ -164,8 +164,8 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1865,
-'assignment_id' => 1866,
+'id' => 2310,
+'assignment_id' => 2311,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.ticket_is_use.label.ticket',
 'warning' => 'fannan.module.lottery::field.ticket_is_use.warning.ticket',
@@ -175,16 +175,16 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1867,
-'sort_order' => 224,
-'stream_id' => 230,
-'field_id' => 1856,
+'id' => 2312,
+'sort_order' => 255,
+'stream_id' => 300,
+'field_id' => 2313,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1856',
+'id' => '2313',
 'namespace' => 'lottery',
 'slug' => 'ticket_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -192,8 +192,8 @@ class LotteryTicketEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1856,
-'field_id' => 1856,
+'id' => 2313,
+'field_id' => 2313,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.ticket_member_id.name',
 'placeholder' => 'fannan.module.lottery::field.ticket_member_id.placeholder',
@@ -204,8 +204,8 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1866,
-'assignment_id' => 1867,
+'id' => 2311,
+'assignment_id' => 2312,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.ticket_member_id.label.ticket',
 'warning' => 'fannan.module.lottery::field.ticket_member_id.warning.ticket',
@@ -215,16 +215,16 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1868,
-'sort_order' => 225,
-'stream_id' => 230,
-'field_id' => 1857,
+'id' => 2313,
+'sort_order' => 256,
+'stream_id' => 300,
+'field_id' => 2314,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1857',
+'id' => '2314',
 'namespace' => 'lottery',
 'slug' => 'ticket_mobile',
 'type' => 'anomaly.field_type.text',
@@ -232,8 +232,8 @@ class LotteryTicketEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1857,
-'field_id' => 1857,
+'id' => 2314,
+'field_id' => 2314,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.ticket_mobile.name',
 'placeholder' => 'fannan.module.lottery::field.ticket_mobile.placeholder',
@@ -244,8 +244,8 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1867,
-'assignment_id' => 1868,
+'id' => 2312,
+'assignment_id' => 2313,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.ticket_mobile.label.ticket',
 'warning' => 'fannan.module.lottery::field.ticket_mobile.warning.ticket',
@@ -257,8 +257,8 @@ class LotteryTicketEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 230,
-'stream_id' => 230,
+'id' => 300,
+'stream_id' => 300,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::stream.ticket.name',
 'description' => 'fannan.module.lottery::stream.ticket.description',

@@ -27,37 +27,32 @@ class MembersModule extends Module
     protected $sections = [
         'members' => [
             'buttons' => [
-                'new_member',
+                /*'new_member',*/
             ],
         ],
         'integral' => [
             'buttons' => [
-                'new_integral',
+                /*'new_integral',*/
             ],
         ],
         'gold' => [
             'buttons' => [
-                'new_gold',
-            ],
-        ],
-        'gold' => [
-            'buttons' => [
-                'new_gold',
+                /*'new_gold',*/
             ],
         ],
         'loan' => [
             'buttons' => [
-                'new_loan',
+                /*'new_loan',*/
             ],
         ],
         'repayment' => [
             'buttons' => [
-                'new_repayment',
+                /*'new_repayment',*/
             ],
         ],
         'withdraw' => [
             'buttons' => [
-                'new_withdraw',
+                /*'new_withdraw',*/
             ],
         ],
         'message' => [

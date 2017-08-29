@@ -37,12 +37,17 @@ class LotteryModule extends Module
         ],
         'winning' => [
             'buttons' => [
-                'new_winning',
+                /*'new_winning',*/
             ],
         ],
         'ticket' => [
             'buttons' => [
                 'new_ticket',
+            ],
+        ],
+        'grant' => [
+            'buttons' => [
+                'new_grant',
             ],
         ],
     ];

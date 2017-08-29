@@ -101,7 +101,7 @@ return [
         'name' => '贷款金额'
     ],
     'loan_order_sn'  => [
-        'name' => '交易号'
+        'name' => '贷款单号'
     ],
     'loan_status'  => [
         'name' => '状态'

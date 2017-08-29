@@ -50,7 +50,8 @@ class LoanTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        'edit',
+        'repayment'
     ];
 
     /**

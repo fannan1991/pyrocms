@@ -8,13 +8,13 @@ return [
     ],
     'integral'  => [
         'read',
-        'write',
-        'delete'
+        /*'write',
+        'delete'*/
     ],
     'gold'  => [
         'read',
-        'write',
-        'delete'
+        /*'write',
+        'delete'*/
     ],
     'loan'  => [
         'read',
@@ -24,12 +24,12 @@ return [
     'repayment'  => [
         'read',
         'write',
-        'delete'
+        /*'delete'*/
     ],
     'withdraw'  => [
         'read',
         'write',
-        'delete'
+        /*'delete'*/
     ],
     'message'  => [
         'read',

@@ -13,6 +13,9 @@ return [
     'envelopes_ordinary_times'  => [
         'name' => '普通会员每天可参与次数'
     ],
+    'envelopes_bronze_times'  => [
+        'name' => '铜牌会员每天可参与次数'
+    ],
     'envelopes_silver_times'  => [
         'name' => '银牌会员每天可参与次数'
     ],
@@ -32,7 +35,7 @@ return [
         'name' => '手机号'
     ],
     'log_amount'  => [
-        'name' => '个红包金额（金币）'
+        'name' => '红包金额（金币）'
     ],
     'log_member_id'  => [
         'name' => '会员'

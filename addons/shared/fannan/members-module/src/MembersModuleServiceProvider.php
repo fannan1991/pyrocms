@@ -80,6 +80,7 @@ class MembersModuleServiceProvider extends AddonServiceProvider
         'admin/members/loan'           => 'Fannan\MembersModule\Http\Controller\Admin\LoanController@index',
         'admin/members/loan/create'    => 'Fannan\MembersModule\Http\Controller\Admin\LoanController@create',
         'admin/members/loan/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\LoanController@edit',
+        'admin/members/loan/repayment/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\LoanController@repayment',
         'admin/members/gold'           => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@index',
         'admin/members/gold/create'    => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@create',
         'admin/members/gold/edit/{id}' => 'Fannan\MembersModule\Http\Controller\Admin\GoldController@edit',

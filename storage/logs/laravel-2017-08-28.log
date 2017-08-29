@@ -1,0 +1,67 @@
+[2017-08-28 16:02:16] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\laravelcollective\html\src\FormBuilder.php:15
+Stack trace:
+#0 {main} {"identification":{"id":"29d2c8ae-1b07-45f3-9c09-7ee0d767b460"}} 
+[2017-08-28 16:38:24] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Method Illuminate\View\View::__toString() must not throw an exception, caught Twig_Error_Runtime: An exception has been thrown during the rendering of a template ("Undefined variable: status") in "D:\phpstudy\WWW\pyrocms\storage\streams/default//support/parsed/25ed1c47147a0e9789222dc1dcef665e.twig" at line 1. in D:\phpstudy\WWW\pyrocms\vendor\nicmart\string-template\src\StringTemplate\Engine.php:36
+Stack trace:
+#0 {main} {"identification":{"id":"925780a9-5cb1-472d-85e1-aa9197171d23"}} 
+[2017-08-28 16:38:31] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Method Illuminate\View\View::__toString() must not throw an exception, caught Twig_Error_Runtime: An exception has been thrown during the rendering of a template ("Undefined variable: status") in "D:\phpstudy\WWW\pyrocms\storage\streams/default//support/parsed/25ed1c47147a0e9789222dc1dcef665e.twig" at line 1. in D:\phpstudy\WWW\pyrocms\vendor\nicmart\string-template\src\StringTemplate\Engine.php:36
+Stack trace:
+#0 {main} {"identification":{"id":"83c332fd-9b2a-4338-92bc-aecd684e4fac"}} 
+[2017-08-28 16:41:09] local.ERROR: Exception: Addon could not be found. in D:\phpstudy\WWW\pyrocms\vendor\anomaly\streams-platform\src\Database\Migration\Console\Command\ConfigureMigrator.php:69
+Stack trace:
+#0 [internal function]: Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator->handle()
+#1 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Container\Container.php(508): call_user_func_array(Array, Array)
+#2 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(94): Illuminate\Container\Container->call(Array)
+#3 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(151): Illuminate\Bus\Dispatcher->Illuminate\Bus\{closure}(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#4 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#5 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(98): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#6 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(75): Illuminate\Bus\Dispatcher->dispatchNow(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#7 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Foundation\Bus\DispatchesJobs.php(17): Illuminate\Bus\Dispatcher->dispatch(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#8 D:\phpstudy\WWW\pyrocms\vendor\anomaly\streams-platform\src\Database\Migration\Console\ResetCommand.php(37): Anomaly\Streams\Platform\Database\Migration\Console\ResetCommand->dispatch(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#9 [internal function]: Anomaly\Streams\Platform\Database\Migration\Console\ResetCommand->fire()
+#10 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Container\Container.php(508): call_user_func_array(Array, Array)
+#11 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(169): Illuminate\Container\Container->call(Array)
+#12 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Command\Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+#13 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+#14 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(185): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+#15 D:\phpstudy\WWW\pyrocms\vendor\anomaly\streams-platform\src\Database\Migration\Console\RefreshCommand.php(39): Illuminate\Console\Command->call('migrate:reset', Array)
+#16 [internal function]: Anomaly\Streams\Platform\Database\Migration\Console\RefreshCommand->fire()
+#17 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Container\Container.php(508): call_user_func_array(Array, Array)
+#18 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(169): Illuminate\Container\Container->call(Array)
+#19 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Command\Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Anomaly\Streams\Platform\Database\Migration\Console\RefreshCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 D:\phpstudy\WWW\pyrocms\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 {main} {"identification":{"id":"bd5a2a4f-3537-478c-9f54-4a18c7b07927"}} 
+[2017-08-28 16:44:08] local.ERROR: Exception: Addon could not be found. in D:\phpstudy\WWW\pyrocms\vendor\anomaly\streams-platform\src\Database\Migration\Console\Command\ConfigureMigrator.php:69
+Stack trace:
+#0 [internal function]: Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator->handle()
+#1 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Container\Container.php(508): call_user_func_array(Array, Array)
+#2 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(94): Illuminate\Container\Container->call(Array)
+#3 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(151): Illuminate\Bus\Dispatcher->Illuminate\Bus\{closure}(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#4 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#5 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(98): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#6 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php(75): Illuminate\Bus\Dispatcher->dispatchNow(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#7 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Foundation\Bus\DispatchesJobs.php(17): Illuminate\Bus\Dispatcher->dispatch(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#8 D:\phpstudy\WWW\pyrocms\vendor\anomaly\streams-platform\src\Database\Migration\Console\ResetCommand.php(37): Anomaly\Streams\Platform\Database\Migration\Console\ResetCommand->dispatch(Object(Anomaly\Streams\Platform\Database\Migration\Console\Command\ConfigureMigrator))
+#9 [internal function]: Anomaly\Streams\Platform\Database\Migration\Console\ResetCommand->fire()
+#10 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Container\Container.php(508): call_user_func_array(Array, Array)
+#11 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(169): Illuminate\Container\Container->call(Array)
+#12 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Command\Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+#13 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+#14 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(185): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+#15 D:\phpstudy\WWW\pyrocms\vendor\anomaly\streams-platform\src\Database\Migration\Console\RefreshCommand.php(39): Illuminate\Console\Command->call('migrate:reset', Array)
+#16 [internal function]: Anomaly\Streams\Platform\Database\Migration\Console\RefreshCommand->fire()
+#17 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Container\Container.php(508): call_user_func_array(Array, Array)
+#18 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(169): Illuminate\Container\Container->call(Array)
+#19 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Command\Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Console\Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Anomaly\Streams\Platform\Database\Migration\Console\RefreshCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\phpstudy\WWW\pyrocms\vendor\symfony\console\Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 D:\phpstudy\WWW\pyrocms\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 {main} {"identification":{"id":"35cc88b1-3c5b-4186-a45c-a1251edcf5a8"}} 

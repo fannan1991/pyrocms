@@ -27,12 +27,12 @@ class EnvelopesModule extends Module
     protected $sections = [
         'envelopes' => [
             'buttons' => [
-                'new_envelope',
+                /*'new_envelope',*/
             ],
         ],
         'log' => [
             'buttons' => [
-                'new_log',
+                /*'new_log',*/
             ],
         ],
     ];

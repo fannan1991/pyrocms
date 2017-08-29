@@ -32,7 +32,12 @@ class FannanModuleTransactionCreateTransactionFields extends Migration
         'trade_no' => 'anomaly.field_type.text',
         //交易项目
         'trade_project' => 'anomaly.field_type.text',
-        'trade_member_id' => 'anomaly.field_type.integer',
+        'trade_member' => [
+            'type' => 'anomaly.field_type.relationship',
+            'config' => [
+                'related' => 'Fannan\MembersModule\Member\MemberModel',
+            ]
+        ],
         //手机号
         'trade_mobile' => 'anomaly.field_type.integer',
         'trade_status' => [

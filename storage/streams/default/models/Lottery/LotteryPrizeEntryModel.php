@@ -42,7 +42,7 @@ class LotteryPrizeEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Lottery\LotteryPrizeEntryTranslationsModel';
 
     protected $stream = [
-'id' => '228',
+'id' => '298',
 'namespace' => 'lottery',
 'slug' => 'prize',
 'prefix' => 'lottery_',
@@ -57,16 +57,16 @@ class LotteryPrizeEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1851,
-'sort_order' => 208,
-'stream_id' => 228,
-'field_id' => 1840,
+'id' => 2295,
+'sort_order' => 238,
+'stream_id' => 298,
+'field_id' => 2296,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1840',
+'id' => '2296',
 'namespace' => 'lottery',
 'slug' => 'prize_grade',
 'type' => 'anomaly.field_type.text',
@@ -74,8 +74,8 @@ class LotteryPrizeEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1840,
-'field_id' => 1840,
+'id' => 2296,
+'field_id' => 2296,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.prize_grade.name',
 'placeholder' => 'fannan.module.lottery::field.prize_grade.placeholder',
@@ -86,8 +86,8 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1850,
-'assignment_id' => 1851,
+'id' => 2294,
+'assignment_id' => 2295,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.prize_grade.label.prize',
 'warning' => 'fannan.module.lottery::field.prize_grade.warning.prize',
@@ -97,16 +97,16 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1852,
-'sort_order' => 209,
-'stream_id' => 228,
-'field_id' => 1841,
+'id' => 2296,
+'sort_order' => 239,
+'stream_id' => 298,
+'field_id' => 2297,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1841',
+'id' => '2297',
 'namespace' => 'lottery',
 'slug' => 'prize_name',
 'type' => 'anomaly.field_type.text',
@@ -114,8 +114,8 @@ class LotteryPrizeEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1841,
-'field_id' => 1841,
+'id' => 2297,
+'field_id' => 2297,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.prize_name.name',
 'placeholder' => 'fannan.module.lottery::field.prize_name.placeholder',
@@ -126,8 +126,8 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1851,
-'assignment_id' => 1852,
+'id' => 2295,
+'assignment_id' => 2296,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.prize_name.label.prize',
 'warning' => 'fannan.module.lottery::field.prize_name.warning.prize',
@@ -137,16 +137,16 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1853,
-'sort_order' => 210,
-'stream_id' => 228,
-'field_id' => 1842,
+'id' => 2297,
+'sort_order' => 240,
+'stream_id' => 298,
+'field_id' => 2298,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1842',
+'id' => '2298',
 'namespace' => 'lottery',
 'slug' => 'prize_probability',
 'type' => 'anomaly.field_type.decimal',
@@ -154,8 +154,8 @@ class LotteryPrizeEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1842,
-'field_id' => 1842,
+'id' => 2298,
+'field_id' => 2298,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.prize_probability.name',
 'placeholder' => 'fannan.module.lottery::field.prize_probability.placeholder',
@@ -166,8 +166,8 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1852,
-'assignment_id' => 1853,
+'id' => 2296,
+'assignment_id' => 2297,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.prize_probability.label.prize',
 'warning' => 'fannan.module.lottery::field.prize_probability.warning.prize',
@@ -177,25 +177,25 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1854,
-'sort_order' => 211,
-'stream_id' => 228,
-'field_id' => 1843,
+'id' => 2298,
+'sort_order' => 241,
+'stream_id' => 298,
+'field_id' => 2299,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1843',
+'id' => '2299',
 'namespace' => 'lottery',
 'slug' => 'prize_num',
 'type' => 'anomaly.field_type.integer',
-'config' => 'a:3:{s:9:"separator";s:1:",";s:3:"min";i:1;s:4:"step";i:1;}',
+'config' => 'a:4:{s:9:"separator";s:1:",";s:3:"min";i:1;s:4:"step";i:1;s:13:"default_value";i:1;}',
 'locked' => '1',
 'translations' => [
 [
-'id' => 1843,
-'field_id' => 1843,
+'id' => 2299,
+'field_id' => 2299,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.prize_num.name',
 'placeholder' => 'fannan.module.lottery::field.prize_num.placeholder',
@@ -206,8 +206,8 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1853,
-'assignment_id' => 1854,
+'id' => 2297,
+'assignment_id' => 2298,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.prize_num.label.prize',
 'warning' => 'fannan.module.lottery::field.prize_num.warning.prize',
@@ -217,16 +217,16 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1855,
-'sort_order' => 212,
-'stream_id' => 228,
-'field_id' => 1844,
+'id' => 2299,
+'sort_order' => 242,
+'stream_id' => 298,
+'field_id' => 2300,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1844',
+'id' => '2300',
 'namespace' => 'lottery',
 'slug' => 'prize_lottery_id',
 'type' => 'anomaly.field_type.relationship',
@@ -234,8 +234,8 @@ class LotteryPrizeEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1844,
-'field_id' => 1844,
+'id' => 2300,
+'field_id' => 2300,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.prize_lottery_id.name',
 'placeholder' => 'fannan.module.lottery::field.prize_lottery_id.placeholder',
@@ -246,8 +246,8 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1854,
-'assignment_id' => 1855,
+'id' => 2298,
+'assignment_id' => 2299,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.prize_lottery_id.label.prize',
 'warning' => 'fannan.module.lottery::field.prize_lottery_id.warning.prize',
@@ -257,16 +257,16 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1856,
-'sort_order' => 213,
-'stream_id' => 228,
-'field_id' => 1845,
+'id' => 2300,
+'sort_order' => 243,
+'stream_id' => 298,
+'field_id' => 2301,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1845',
+'id' => '2301',
 'namespace' => 'lottery',
 'slug' => 'prize_description',
 'type' => 'anomaly.field_type.textarea',
@@ -274,8 +274,8 @@ class LotteryPrizeEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1845,
-'field_id' => 1845,
+'id' => 2301,
+'field_id' => 2301,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.prize_description.name',
 'placeholder' => 'fannan.module.lottery::field.prize_description.placeholder',
@@ -286,8 +286,8 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1855,
-'assignment_id' => 1856,
+'id' => 2299,
+'assignment_id' => 2300,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.prize_description.label.prize',
 'warning' => 'fannan.module.lottery::field.prize_description.warning.prize',
@@ -299,8 +299,8 @@ class LotteryPrizeEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 228,
-'stream_id' => 228,
+'id' => 298,
+'stream_id' => 298,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::stream.prize.name',
 'description' => 'fannan.module.lottery::stream.prize.description',

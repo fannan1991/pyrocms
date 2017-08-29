@@ -34,6 +34,7 @@ class PrizeTableBuilder extends TableBuilder
      */
     protected $columns = [
         'entry.id',
+        'prize_name',
         'prize_grade',
         'prize_probability',
         'prize_num',

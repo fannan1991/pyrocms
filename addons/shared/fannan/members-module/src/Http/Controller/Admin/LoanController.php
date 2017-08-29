@@ -123,4 +123,8 @@ class LoanController extends AdminController
         }
         return $form->render($id);
     }
+
+    public function repayment(LoanFormBuilder $form, $id ,Request $request){
+        return redirect('/admin/members/repayment?view=&page=1&filter_search=&filter_repayment_loan'.$id);
+    }
 }

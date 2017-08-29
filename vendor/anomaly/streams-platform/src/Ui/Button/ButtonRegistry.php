@@ -131,6 +131,36 @@ class ButtonRegistry
             'type' => 'success',
             'icon' => 'check',
         ],
+        'son'      => [
+            'text' => '下属一级会员',
+            'type' => 'success',
+            'icon' => 'check',
+        ],
+        'grandson'      => [
+            'text' => '二级',
+            'type' => 'success',
+            'icon' => 'check',
+        ],
+        'heavygrandson'      => [
+            'text' => '三级',
+            'type' => 'success',
+            'icon' => 'check',
+        ],
+        'prize'      => [
+            'text' => '奖品',
+            'type' => 'success',
+            'icon' => 'check',
+        ],
+        'winning'      => [
+            'text' => '中奖记录',
+            'type' => 'success',
+            'icon' => 'check',
+        ],
+        'repayment'      => [
+            'text' => '还款记录',
+            'type' => 'success',
+            'icon' => 'check',
+        ],
         /*
          * Info Buttons
          */

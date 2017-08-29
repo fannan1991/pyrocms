@@ -11,7 +11,7 @@ return [
         'name' => '结束时间'
     ],
     'lottery_times'  => [
-        'name' => '参与次数'
+        'name' => '每日可参与次数'
     ],
     'lottery_is_ticket'  => [
         'name' => '是否需要抽奖券'
@@ -31,7 +31,6 @@ return [
     'open'  => [
         'name' => '是否开启'
     ],
-
     'prize_grade'  => [
         'name' => '等级说明'
     ],
@@ -42,7 +41,7 @@ return [
         'name' => '概率(%)'
     ],
     'prize_num'  => [
-        'name' => '数量'
+        'name' => '数量',
     ],
     'prize_lottery_id'  => [
         'name' => '抽奖活动'
@@ -91,6 +90,15 @@ return [
     ],
     'status'  => [
         'name' => '状态'
+    ],
+    'grant_grade'  => [
+        'name' => '会员等级'
+    ],
+    'grant_valid_period'  => [
+        'name' => '有效期至'
+    ],
+    'grant_num'  => [
+        'name' => '每人发放数量'
     ],
 
 ];

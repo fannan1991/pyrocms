@@ -26,6 +26,7 @@ class RepaymentTableBuilder extends TableBuilder
                 'repayment_mobile',
             ]
         ],
+        'repayment_loan'
     ];
 
     /**
@@ -59,7 +60,7 @@ class RepaymentTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete'
+        /*'delete'*/
     ];
 
     /**

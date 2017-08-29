@@ -58,7 +58,7 @@ class FannanModuleLotteryCreateLotteryFields extends Migration
         "lottery_is_ticket" => [
             "type"   => "anomaly.field_type.boolean",
             "config" => [
-                "default_value" => false,
+                "default_value" => true,
                 "on_color"      => "success",
                 "off_color"     => "danger",
                 "on_text"       => "YES",
@@ -70,7 +70,7 @@ class FannanModuleLotteryCreateLotteryFields extends Migration
         "lottery_is_open" => [
             "type"   => "anomaly.field_type.boolean",
             "config" => [
-                "default_value" => false,
+                "default_value" => true,
                 "on_color"      => "success",
                 "off_color"     => "danger",
                 "on_text"       => "YES",
@@ -115,6 +115,7 @@ class FannanModuleLotteryCreateLotteryFields extends Migration
                 'separator'     => ',',
                 'min'           => 1,
                 'step'          => 1,
+                "default_value" => 1,
             ]
         ],
         //抽奖活动ID
@@ -157,6 +158,7 @@ class FannanModuleLotteryCreateLotteryFields extends Migration
         ],
         //中奖人电话（会员账号）
         'winning_mobile' => 'anomaly.field_type.text',
+        'winning_member_real_name' => 'anomaly.field_type.text',
         //奖品等级说明
         'winning_prize_grade' => 'anomaly.field_type.text',
         'winning_prize_name' => 'anomaly.field_type.text',
@@ -208,6 +210,51 @@ class FannanModuleLotteryCreateLotteryFields extends Migration
             ]
         ],
         'ticket_mobile' => 'anomaly.field_type.text',
+
+        //发放抽奖券
+        //会员等级
+        'grant_grade' => [
+            'type'   => 'anomaly.field_type.select',
+            'config' => [
+                'options' => [
+                    '0' => '全部',
+                    '1' => '游客',
+                    '2' => '普通会员',
+                    '3' => '铜牌会员',
+                    '4' => '银牌会员',
+                    '5' => '金牌会员',
+                    '6' => '钻石会员',
+                ],
+                'default_value' => '1',
+            ]
+        ],
+        //有效期
+        "grant_valid_period" => [
+            "type"   => "anomaly.field_type.datetime",
+            "config" => [
+                "default_value" => null,
+                "mode"          => "datetime",
+                "date_format"   => "j F, Y",
+                "year_range"    => "-50:+50",
+                "time_format"   => "g:i A",
+                "timezone"      => null,
+                "step"          => 1,
+                "min"           => null,
+                "max"           => null
+            ]
+        ],
+        //每人发放数量
+        'grant_num' => [
+            'type'   => 'anomaly.field_type.integer',
+            'config' => [
+                'separator'     => ',',
+                'min'           => 1,
+                'step'          => 1,
+                "default_value" => 1,
+            ]
+        ],
+        //优惠券名称
+        'grant_ticket_name' => 'anomaly.field_type.text',
     ];
 
 }

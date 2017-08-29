@@ -31,4 +31,7 @@ return [
     'status'  => [
         'name' => '支付状态'
     ],
+    'trade_member'  => [
+        'name' => '会员'
+    ],
 ];

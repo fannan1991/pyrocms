@@ -46,7 +46,7 @@ class LogTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        /*'edit'*/
     ];
 
     /**
@@ -55,7 +55,7 @@ class LogTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete'
+        /*'delete'*/
     ];
 
     /**

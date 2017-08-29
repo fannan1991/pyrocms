@@ -19,7 +19,7 @@ class TransactionTransactionEntryModel extends EntryModel
 'trade_payment_method' => '',
 'trade_no' => '',
 'trade_project' => '',
-'trade_member_id' => '',
+'trade_member' => '',
 'trade_mobile' => '',
 'trade_status' => '',
 'trade_payment_time' => '',
@@ -31,7 +31,7 @@ class TransactionTransactionEntryModel extends EntryModel
 'trade_payment_method',
 'trade_no',
 'trade_project',
-'trade_member_id',
+'trade_member',
 'trade_mobile',
 'trade_status',
 'trade_payment_time',
@@ -39,7 +39,7 @@ class TransactionTransactionEntryModel extends EntryModel
 
     protected $dates = ['created_at', 'updated_at', 'trade_payment_time'];
 
-    protected $relationships = [];
+    protected $relationships = ['trade_member'];
 
     
 
@@ -48,7 +48,7 @@ class TransactionTransactionEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Transaction\TransactionTransactionEntryTranslationsModel';
 
     protected $stream = [
-'id' => '258',
+'id' => '266',
 'namespace' => 'transaction',
 'slug' => 'transaction',
 'prefix' => 'transaction_',
@@ -63,16 +63,16 @@ class TransactionTransactionEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 2035,
+'id' => 2097,
 'sort_order' => 247,
-'stream_id' => 258,
-'field_id' => 2036,
+'stream_id' => 266,
+'field_id' => 2098,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2036',
+'id' => '2098',
 'namespace' => 'transaction',
 'slug' => 'trade_out_no',
 'type' => 'anomaly.field_type.text',
@@ -80,8 +80,8 @@ class TransactionTransactionEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2036,
-'field_id' => 2036,
+'id' => 2098,
+'field_id' => 2098,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_out_no.name',
 'placeholder' => 'fannan.module.transaction::field.trade_out_no.placeholder',
@@ -92,8 +92,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2034,
-'assignment_id' => 2035,
+'id' => 2096,
+'assignment_id' => 2097,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_out_no.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_out_no.warning.transaction',
@@ -103,25 +103,25 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2036,
+'id' => 2098,
 'sort_order' => 248,
-'stream_id' => 258,
-'field_id' => 2037,
+'stream_id' => 266,
+'field_id' => 2099,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2037',
+'id' => '2099',
 'namespace' => 'transaction',
 'slug' => 'trade_amount',
 'type' => 'anomaly.field_type.decimal',
-'config' => 'a:6:{s:13:"default_value";N;s:9:"separator";s:1:",";s:5:"point";s:1:".";s:8:"decimals";i:2;s:3:"min";N;s:3:"max";N;}',
+'config' => 'a:6:{s:13:"default_value";N;s:9:"separator";s:1:",";s:5:"point";s:1:".";s:8:"decimals";i:2;s:3:"min";i:0;s:3:"max";d:9999999999999;}',
 'locked' => '1',
 'translations' => [
 [
-'id' => 2037,
-'field_id' => 2037,
+'id' => 2099,
+'field_id' => 2099,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_amount.name',
 'placeholder' => 'fannan.module.transaction::field.trade_amount.placeholder',
@@ -132,8 +132,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2035,
-'assignment_id' => 2036,
+'id' => 2097,
+'assignment_id' => 2098,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_amount.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_amount.warning.transaction',
@@ -143,16 +143,16 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2037,
+'id' => 2099,
 'sort_order' => 249,
-'stream_id' => 258,
-'field_id' => 2038,
+'stream_id' => 266,
+'field_id' => 2100,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2038',
+'id' => '2100',
 'namespace' => 'transaction',
 'slug' => 'trade_payment_method',
 'type' => 'anomaly.field_type.text',
@@ -160,8 +160,8 @@ class TransactionTransactionEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2038,
-'field_id' => 2038,
+'id' => 2100,
+'field_id' => 2100,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_payment_method.name',
 'placeholder' => 'fannan.module.transaction::field.trade_payment_method.placeholder',
@@ -172,8 +172,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2036,
-'assignment_id' => 2037,
+'id' => 2098,
+'assignment_id' => 2099,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_payment_method.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_payment_method.warning.transaction',
@@ -183,16 +183,16 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2038,
+'id' => 2100,
 'sort_order' => 250,
-'stream_id' => 258,
-'field_id' => 2039,
+'stream_id' => 266,
+'field_id' => 2101,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2039',
+'id' => '2101',
 'namespace' => 'transaction',
 'slug' => 'trade_no',
 'type' => 'anomaly.field_type.text',
@@ -200,8 +200,8 @@ class TransactionTransactionEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2039,
-'field_id' => 2039,
+'id' => 2101,
+'field_id' => 2101,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_no.name',
 'placeholder' => 'fannan.module.transaction::field.trade_no.placeholder',
@@ -212,8 +212,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2037,
-'assignment_id' => 2038,
+'id' => 2099,
+'assignment_id' => 2100,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_no.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_no.warning.transaction',
@@ -223,16 +223,16 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2039,
+'id' => 2101,
 'sort_order' => 251,
-'stream_id' => 258,
-'field_id' => 2040,
+'stream_id' => 266,
+'field_id' => 2102,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2040',
+'id' => '2102',
 'namespace' => 'transaction',
 'slug' => 'trade_project',
 'type' => 'anomaly.field_type.text',
@@ -240,8 +240,8 @@ class TransactionTransactionEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2040,
-'field_id' => 2040,
+'id' => 2102,
+'field_id' => 2102,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_project.name',
 'placeholder' => 'fannan.module.transaction::field.trade_project.placeholder',
@@ -252,8 +252,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2038,
-'assignment_id' => 2039,
+'id' => 2100,
+'assignment_id' => 2101,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_project.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_project.warning.transaction',
@@ -263,56 +263,56 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2040,
+'id' => 2102,
 'sort_order' => 252,
-'stream_id' => 258,
-'field_id' => 2041,
+'stream_id' => 266,
+'field_id' => 2103,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2041',
+'id' => '2103',
 'namespace' => 'transaction',
-'slug' => 'trade_member_id',
-'type' => 'anomaly.field_type.integer',
-'config' => 'a:0:{}',
+'slug' => 'trade_member',
+'type' => 'anomaly.field_type.relationship',
+'config' => 'a:1:{s:7:"related";s:39:"Fannan\MembersModule\Member\MemberModel";}',
 'locked' => '1',
 'translations' => [
 [
-'id' => 2041,
-'field_id' => 2041,
+'id' => 2103,
+'field_id' => 2103,
 'locale' => 'en',
-'name' => 'fannan.module.transaction::field.trade_member_id.name',
-'placeholder' => 'fannan.module.transaction::field.trade_member_id.placeholder',
-'warning' => 'fannan.module.transaction::field.trade_member_id.warning',
-'instructions' => 'fannan.module.transaction::field.trade_member_id.instructions',
+'name' => 'fannan.module.transaction::field.trade_member.name',
+'placeholder' => 'fannan.module.transaction::field.trade_member.placeholder',
+'warning' => 'fannan.module.transaction::field.trade_member.warning',
+'instructions' => 'fannan.module.transaction::field.trade_member.instructions',
 ],
 ],
 ],
 'translations' => [
 [
-'id' => 2039,
-'assignment_id' => 2040,
+'id' => 2101,
+'assignment_id' => 2102,
 'locale' => 'en',
-'label' => 'fannan.module.transaction::field.trade_member_id.label.transaction',
-'warning' => 'fannan.module.transaction::field.trade_member_id.warning.transaction',
-'placeholder' => 'fannan.module.transaction::field.trade_member_id.placeholder.transaction',
-'instructions' => 'fannan.module.transaction::field.trade_member_id.instructions.transaction',
+'label' => 'fannan.module.transaction::field.trade_member.label.transaction',
+'warning' => 'fannan.module.transaction::field.trade_member.warning.transaction',
+'placeholder' => 'fannan.module.transaction::field.trade_member.placeholder.transaction',
+'instructions' => 'fannan.module.transaction::field.trade_member.instructions.transaction',
 ],
 ],
 ],
 [
-'id' => 2041,
+'id' => 2103,
 'sort_order' => 253,
-'stream_id' => 258,
-'field_id' => 2042,
+'stream_id' => 266,
+'field_id' => 2104,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2042',
+'id' => '2104',
 'namespace' => 'transaction',
 'slug' => 'trade_mobile',
 'type' => 'anomaly.field_type.integer',
@@ -320,8 +320,8 @@ class TransactionTransactionEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2042,
-'field_id' => 2042,
+'id' => 2104,
+'field_id' => 2104,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_mobile.name',
 'placeholder' => 'fannan.module.transaction::field.trade_mobile.placeholder',
@@ -332,8 +332,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2040,
-'assignment_id' => 2041,
+'id' => 2102,
+'assignment_id' => 2103,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_mobile.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_mobile.warning.transaction',
@@ -343,16 +343,16 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2042,
+'id' => 2104,
 'sort_order' => 254,
-'stream_id' => 258,
-'field_id' => 2043,
+'stream_id' => 266,
+'field_id' => 2105,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2043',
+'id' => '2105',
 'namespace' => 'transaction',
 'slug' => 'trade_status',
 'type' => 'anomaly.field_type.select',
@@ -360,8 +360,8 @@ class TransactionTransactionEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2043,
-'field_id' => 2043,
+'id' => 2105,
+'field_id' => 2105,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_status.name',
 'placeholder' => 'fannan.module.transaction::field.trade_status.placeholder',
@@ -372,8 +372,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2041,
-'assignment_id' => 2042,
+'id' => 2103,
+'assignment_id' => 2104,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_status.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_status.warning.transaction',
@@ -383,16 +383,16 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2043,
+'id' => 2105,
 'sort_order' => 255,
-'stream_id' => 258,
-'field_id' => 2044,
+'stream_id' => 266,
+'field_id' => 2106,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2044',
+'id' => '2106',
 'namespace' => 'transaction',
 'slug' => 'trade_payment_time',
 'type' => 'anomaly.field_type.datetime',
@@ -400,8 +400,8 @@ class TransactionTransactionEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2044,
-'field_id' => 2044,
+'id' => 2106,
+'field_id' => 2106,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::field.trade_payment_time.name',
 'placeholder' => 'fannan.module.transaction::field.trade_payment_time.placeholder',
@@ -412,8 +412,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2042,
-'assignment_id' => 2043,
+'id' => 2104,
+'assignment_id' => 2105,
 'locale' => 'en',
 'label' => 'fannan.module.transaction::field.trade_payment_time.label.transaction',
 'warning' => 'fannan.module.transaction::field.trade_payment_time.warning.transaction',
@@ -425,8 +425,8 @@ class TransactionTransactionEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 258,
-'stream_id' => 258,
+'id' => 266,
+'stream_id' => 266,
 'locale' => 'en',
 'name' => 'fannan.module.transaction::stream.transaction.name',
 'description' => 'fannan.module.transaction::stream.transaction.description',
@@ -435,4 +435,10 @@ class TransactionTransactionEntryModel extends EntryModel
 ];
 
     
+public function tradeMember()
+{
+
+return $this->getFieldType('trade_member')->getRelation();
+}
+
 }

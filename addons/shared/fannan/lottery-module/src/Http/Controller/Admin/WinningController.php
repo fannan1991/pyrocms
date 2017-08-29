@@ -15,6 +15,7 @@ class WinningController extends AdminController
      */
     public function index(WinningTableBuilder $table)
     {
+
         return $table->render();
     }
 

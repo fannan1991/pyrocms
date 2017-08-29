@@ -25,6 +25,8 @@
   'Anomaly\\Streams\\Platform\\Model\\Files\\FilesVideoEntryTranslationsModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Files\\FilesVideoEntryTranslationsModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Files\\FilesVoiceEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Files\\FilesVoiceEntryModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Files\\FilesVoiceEntryTranslationsModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Files\\FilesVoiceEntryTranslationsModel.php',
+  'Anomaly\\Streams\\Platform\\Model\\Lottery\\LotteryGrantEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Lottery\\LotteryGrantEntryModel.php',
+  'Anomaly\\Streams\\Platform\\Model\\Lottery\\LotteryGrantEntryTranslationsModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Lottery\\LotteryGrantEntryTranslationsModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Lottery\\LotteryLotteryEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Lottery\\LotteryLotteryEntryModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Lottery\\LotteryLotteryEntryTranslationsModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Lottery\\LotteryLotteryEntryTranslationsModel.php',
   'Anomaly\\Streams\\Platform\\Model\\Lottery\\LotteryPrizeEntryModel' => 'D:\\phpstudy\\WWW\\pyrocms\\storage\\streams\\default\\models\\Lottery\\LotteryPrizeEntryModel.php',

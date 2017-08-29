@@ -27,7 +27,7 @@ class TransactionModule extends Module
     protected $sections = [
         'transaction' => [
             'buttons' => [
-                'new_transaction',
+                /*'new_transaction',*/
             ],
         ],
     ];

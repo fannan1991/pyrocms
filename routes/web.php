@@ -60,6 +60,7 @@ $api->version('v1', function ($api) {
         $api->post('/alipay-notify','HomeController@alipayNotify');
 
 
+
     });
 
     $api->group(["middleware" => 'user-auth','namespace' => 'App\Http\Controllers'], function ($api) {
@@ -90,7 +91,9 @@ $api->version('v1', function ($api) {
         $api->post('/remaining','HomeController@remaining');
         $api->post('/alipay-resonse','HomeController@alipayResonse');
         $api->post('/amount','HomeController@amount');
-
+        $api->post('/lottery','HomeController@lottery');
+        $api->post('/lottery-view','HomeController@lotteryView');
+        $api->post('/payment-confirmation','HomeController@paymentConfirmation');
     });
 
 });

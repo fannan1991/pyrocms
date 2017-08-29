@@ -5,4 +5,5 @@ return [
     'new_prize' => '添加',
     'new_winning' =>'添加',
     'new_ticket' => '添加',
+    'new_grant' => '添加'
 ];

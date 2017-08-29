@@ -30,7 +30,7 @@ class FannanModuleTransactionCreateTransactionStream extends Migration
         'trade_payment_method',
         'trade_no',
         'trade_project',
-        'trade_member_id',
+        'trade_member',
         'trade_mobile',
         'trade_status',
         'trade_payment_time',

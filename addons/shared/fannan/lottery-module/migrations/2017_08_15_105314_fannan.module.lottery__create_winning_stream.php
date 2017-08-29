@@ -29,6 +29,7 @@ class FannanModuleLotteryCreateWinningStream extends Migration
         'winning_prize_id',
         'winning_member_id',
         'winning_mobile',
+        'winning_member_real_name',
         'winning_prize_grade',
         'winning_prize_name',
         'winning_status',

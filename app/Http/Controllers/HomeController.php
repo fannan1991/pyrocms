@@ -17,11 +17,14 @@ use App\Api\Transformers\PostTransformer;
 use App\Api\Transformers\RepaymentTransformer;
 use App\Api\Transformers\WithdrasTransformer;
 use App\Api\Transformers\WithdrawTransformer;
+use App\LotteryLog;
 use App\OauthClients;
 use Carbon\Carbon;
 use Fannan\AdvertisingModule\Advertising\AdvertisingModel;
 use Fannan\EnvelopesModule\Envelope\EnvelopeModel;
 use Fannan\EnvelopesModule\Log\LogModel;
+use Fannan\LotteryModule\Lottery\LotteryModel;
+use Fannan\LotteryModule\Prize\PrizeModel;
 use Fannan\LotteryModule\Ticket\TicketModel;
 use Fannan\LotteryModule\Winning\WinningModel;
 use Fannan\MembersModule\Gold\GoldModel;
@@ -965,15 +968,8 @@ class HomeController extends Controller
         $member_id = $request->member_id;
         $member = MemberModel::find($member_id);
         $amount = 0.01;
-        $order = new TransactionModel;
         $order_sn = $this->orderSn();
-        $order->trade_out_no = $order_sn;
-        $order->trade_amount = $amount;
-        $order->trade_project = '购买会员';
-        $order->trade_member_id = $member_id;
-        $order->trade_mobile = $member->mobile;
-        $order->trade_status = '1';
-        $order->save();
+        $this->addTransaction($order_sn,$amount,'购买会员',$member_id,$member->mobile,'1');
 
         $aop = new \AopClient;
         $aop->gatewayUrl = "https://openapi.alipay.com/gateway.do";
@@ -993,10 +989,11 @@ class HomeController extends Controller
             . "\"total_amount\": \"$amount\","
             . "\"product_code\":\"QUICK_MSECURITY_PAY\""
             . "}";
-        $request->setNotifyUrl("http//x16311542j.51mypc.cn/api/alipay-notify");
+        $request->setNotifyUrl("http://x16311542j.51mypc.cn/api/alipay-notify");
         $request->setBizContent($bizcontent);
         $response = $aop->sdkExecute($request);
-        echo htmlspecialchars($response);
+        //return htmlspecialchars($response);
+        return $response;
     }
 
     //支付宝接收异步通知
@@ -1005,7 +1002,7 @@ class HomeController extends Controller
         $app_id = '2017072807934470';
         $aop = new \AopClient;
         $aop->alipayrsaPublicKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl2qbdwLaC3146/j0gEXpnlTNd7MuknBhLAMUKygjHj18JreBGyDPIl7HvKMtx4zYGJP8cw4RhxlzMmPMB8STynHI3cfQkzZVVfPlzUJ9w0S07qLLJFeM/XaHbLTIZW2227oxA4rWMxvJWrk3e6GMIkJHJV2OjxUGQowooS73DEWP6pJ5eAPk4t7L9UN9pbOWlk/A+02TmJLhyntKvuZ7m5VDws7V4q7PgBU5EbxCMNInCCIezA0NNnB8UVByR0WqCiyKQRCtSx8xlz8X5DrbNb8ijNboOcsAiRlRnHMPykGi5rL3e/4Z7QejRMOkY/fx6SHyGuBjrct5qpbkR/BDuQIDAQAB';
-        $flag = $aop->rsaCheckV1($_POST, NULL, "RSA");
+        $flag = $aop->rsaCheckV1($_POST, NULL, "RSA2");
         if($flag == true){
             //验证out_trade_no是否为该系统创建的单号
             $transaction = TransactionModel::where('trade_out_no',$_POST['out_trade_no'])->first();
@@ -1021,6 +1018,8 @@ class HomeController extends Controller
                                 $update_transaction = TransactionModel::find($transaction->id);
                                 $update_transaction->trade_payment_time = $_POST['gmt_payment'];
                                 $update_transaction->trade_status = '2';
+                                $update_transaction->trade_no = $_POST['trade_no'];
+                                $update_transaction->trade_payment_method = '支付宝';
                                 if($update_transaction->save()){
                                     echo 'success';
                                 }
@@ -1047,10 +1046,216 @@ class HomeController extends Controller
         return $this->response->array($result);
     }
 
+    //抽奖页面
+    public function lotteryView(Request $request){
+        $member_id = $request->member_id;
+        $lottery_acticity = LotteryModel::where('lottery_is_open',1)->orderBy('id','DESC')->first();
+        $date = date('Y-m-d');
+        $lottery_log = LotteryLog::where('member_id',$member_id)->where('lottery_id',$lottery_acticity->id)->whereDate('created_at', $date)->first();
+        if($lottery_log){
+            $lottery_times = $lottery_acticity->lottery_times - $lottery_log->num;
+        }else{
+            $lottery_times = $lottery_acticity->lottery_times;
+        }
+        $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_acticity->id)->get();
+        $winning = WinningModel::where('winning_lottery_id_id',$lottery_acticity->id)->orderBy('id','DESC')->get();
+        $data = array
+        (
+            'prize' => $prizes,
+            'lottery_times' => $lottery_times,
+            'winning' => $winning
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data'    =>  $data,
+        );
+        return $this->response->array($result);
+    }
 
 
+    //抽奖
+    public function lottery(Request $request){
+        $member_id = $request->member_id;
+        $lottery_id = $request->lottery_id;
+        $member = MemberModel::find($member_id);
+        $lottery_activity = LotteryModel::find($lottery_id);
+        $start_time = $lottery_activity->lottery_start;
+        $end_time = $lottery_activity->lottery_end;
+        $ticket = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',0)->orderBy('id','ASC')->first();
+        //验证抽奖活动是否开启
+        if($lottery_activity->lottery_is_open == true){
+            //验证活动时间
+            if($start_time->gt(Carbon::now())){
+                return $this->response->array(['status'=>'error','msg' => '活动还未开始','code'=>401]);
+            }elseif($end_time->lt(Carbon::now())){
+                return $this->response->array(['status'=>'error','msg' => '活动已经结束','code'=>401]);
+            }else{
+                //用户是否认证
+                if($member->is_verified == true){
+                    //抽奖券验证
+                    if($lottery_activity->lottery_is_ticket == true){
+                        if($ticket){
+                            //当日抽奖次数验证
+                            $date = date('Y-m-d');
+                            $lottery_log = LotteryLog::where('member_id',$member_id)->where('lottery_id',$lottery_id)->whereDate('created_at', $date)->first();
+                            if(!$lottery_log || $lottery_log->num < $lottery_activity->lottery_times){
+                                $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_id)->get();
+                                $array = $prizes->toArray();
+                                $win_percent = PrizeModel::where('prize_lottery_id_id',$lottery_id)->sum('prize_probability');
+                                $wei = array('id'=>99999,'prize_name'=>'幸运奖','prize_probability'=>100 - $win_percent);
+                                $array[] = $wei;
+                                $result = $this->get_rand1($array);
+                                //记录当日抽奖次数
+                                if(!$lottery_log){
+                                    $log = new LotteryLog;
+                                    $log->member_id = $member_id;
+                                    $log->lottery_id = $lottery_id;
+                                    $log->num = 1;
+                                    $log->save();
+                                }else{
+                                    $log = LotteryLog::find($lottery_log->id);
+                                    $log->num += 1;
+                                    $log->save();
+                                }
+                                $lottery_times = $lottery_activity->lottery_times - $log->num;
+                                //如果未抽中则直接返回未中奖提示
+                                if($result['id'] == 99999){
+                                    return $this->response->array(['status'=>'error','msg' => '未中奖','lottery_times' => $lottery_times,'code'=>401]);
+                                }else{
+                                    //抽中后，验证抽中的奖品数量，减少奖品数量
+                                    $winning_prize = PrizeModel::find($result['id']);
+                                    if($winning_prize->prize_num > 0){
+                                        $winning_prize->prize_num -= 1;
+                                        if($winning_prize->save()){
+                                            //添加中奖记录
+                                            $winning_log = new WinningModel;
+                                            $winning_log->winning_lottery_id_id = $lottery_id;
+                                            $winning_log->winning_prize_id_id = $result['id'];
+                                            $winning_log->winning_member_id_id = $member_id;
+                                            $winning_log->winning_mobile = $member->mobile;
+                                            $winning_log->winning_prize_grade = $result['prize_grade'];
+                                            $winning_log->winning_prize_name = $result['prize_name'];
+                                            $winning_log->winning_member_real_name = $member->real_name;
+                                            $winning_log->winning_status = 0;
+                                            if($winning_log->save()){
+                                                $data = array
+                                                (
+                                                    'lottery_times' => $lottery_times,
+                                                    'prize' => $result,
+                                                );
+                                                $result = array(
+                                                    'code' => 100,
+                                                    'status' => 'success',
+                                                    'data'    =>  $data,
+                                                );
+                                                return $this->response->array($result);
+                                            }
+                                        }
+                                    }else{
+                                        return $this->response->array(['status'=>'error','msg' => '未中奖','lottery_times' => $lottery_times,'code'=>401]);
+                                    }
+                                }
+                            }else{
+                                return $this->response->array(['status'=>'error','msg' => '今天不能再抽了','code'=>401]);
+                            }
+                        }else{
+                            return $this->response->array(['status'=>'error','msg' => '抽奖券不足','code'=>401]);
+                        }
+                    }else{
+                        //抽奖
+                    }
+                }else{
+                    return $this->response->array(['status'=>'error','msg' => '未实名认证','code'=>401]);
+                }
+            }
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '活动未开启','code'=>401]);
+        }
+    }
+
+    //订单支付确认
+    public function paymentConfirmation(Request $request){
+        $trade_out_no = $request->out_trade_no;
+        $transaction = TransactionModel::where('trade_out_no',$trade_out_no)->first();
+        if($transaction->trade_status == 2){
+            return $this->response->array(['status'=>'success','msg' => '支付成功','code'=>100]);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '未支付','code'=>100]);
+        }
+    }
 
 
+    public function addTransaction($order_sn,$amount,$trade_project,$member_id,$trade_mobile,$trade_status){
+        $order = new TransactionModel;
+        $order->trade_out_no = $order_sn;
+        $order->trade_amount = $amount;
+        $order->trade_project = $trade_project;
+        $order->trade_member_id = $member_id;
+        $order->trade_mobile = $trade_mobile;
+        $order->trade_status = $trade_status;
+        $order->save();
+    }
+
+    /*
+     * 不同概率的抽奖原理就是把0到*（比重总数）的区间分块
+     * 分块的依据是物品占整个的比重，再根据随机数种子来产生0-* 中的某个数
+     * 判断这个数是落在哪个区间上，区间对应的就是抽到的那个物品。
+     * 随机数理论上是概率均等的，那么相应的区间所含数的多少就体现了抽奖物品概率的不同。
+     */
+    public function get_rand($proArr)
+    {
+        $result = array();
+        foreach ($proArr as $key => $val) {
+            $arr[$key] = $val['v'];
+        }
+        $proSum = array_sum($arr);      // 计算总权重
+        $randNum = mt_rand(1, $proSum);
+        $d1 = 0;
+        $d2 = 0;
+        for ($i=0; $i < count($arr); $i++)
+        {
+            $d2 += $arr[$i];
+            if($i==0)
+            {
+                $d1 = 0;
+            }
+            else
+            {
+                $d1 += $arr[$i-1];
+            }
+            if($randNum >= $d1 && $randNum <= $d2)
+            {
+                $result = $proArr[$i];
+            }
+        }
+        unset ($arr);
+        return $result;
+    }
+
+    /*
+    * 使用较多的为这个方法
+    */
+    public function get_rand1($proArr) {
+        $result = array();
+        foreach ($proArr as $key => $val) {
+            $arr[$key] = $val['prize_probability'];
+        }
+        // 概率数组的总概率
+        $proSum = array_sum($arr);
+        asort($arr);
+        // 概率数组循环
+        foreach ($arr as $k => $v) {
+            $randNum = mt_rand(1, $proSum);
+            if ($randNum <= $v) {
+                $result = $proArr[$k];
+                break;
+            } else {
+                $proSum -= $v;
+            }
+        }
+        return $result;
+    }
 
 
     //生成二维码,size（二维码尺寸），margin(边距)，data(内容)，path(图片路径及名称)

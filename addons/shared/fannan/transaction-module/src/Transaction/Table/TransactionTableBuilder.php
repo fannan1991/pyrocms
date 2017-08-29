@@ -37,7 +37,7 @@ class TransactionTableBuilder extends TableBuilder
         'trade_out_no',
         'trade_amount',
         'trade_project',
-        'trade_member_id',
+        'trade_member',
         'entry.status',
         'trade_payment_method',
         'trade_no',
@@ -51,7 +51,7 @@ class TransactionTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        /*'edit'*/
     ];
 
     /**
@@ -60,7 +60,7 @@ class TransactionTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete'
+        /*'delete'*/
     ];
 
     /**
