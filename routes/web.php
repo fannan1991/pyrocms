@@ -92,7 +92,7 @@ $api->version('v1', function ($api) {
         $api->post('/alipay-resonse','HomeController@alipayResonse');
         $api->post('/amount','HomeController@amount');
         $api->post('/lottery','HomeController@lottery');
-        $api->post('/lottery-view','HomeController@lotteryView');
+        $api->get('/lottery-view','HomeController@lotteryView');
         $api->post('/payment-confirmation','HomeController@paymentConfirmation');
     });
 

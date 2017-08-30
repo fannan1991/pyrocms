@@ -58,9 +58,7 @@ class GrantController extends AdminController
                 $ticket->ticket_is_use = 0;
                 $ticket->ticket_member_id_id = $member->id;
                 $ticket->ticket_mobile = $member->mobile;
-                if($ticket->save()){
-                    echo("<script>alert('发放成功');</script>");
-                }
+                $ticket->save();
             }
         }
         return $form->render($id);

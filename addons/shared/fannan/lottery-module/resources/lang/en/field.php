@@ -100,5 +100,8 @@ return [
     'grant_num'  => [
         'name' => '每人发放数量'
     ],
+    'grant_ticket_name'  => [
+        'name' => '优惠券名称'
+    ],
 
 ];

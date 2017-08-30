@@ -65,7 +65,11 @@ class PrizeTableBuilder extends TableBuilder
      *
      * @var array
      */
-    protected $options = [];
+    protected $options = [
+        'order_by' => [
+            'id' => 'ASC',
+        ],
+    ];
 
     /**
      * The table assets.

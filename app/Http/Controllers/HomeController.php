@@ -1015,12 +1015,17 @@ class HomeController extends Controller
                         if($_POST['app_id'] = $app_id){
                             //验证支付状态是否成功
                             if($_POST['trade_status'] == 'TRADE_SUCCESS'){
+                                //修改订单状态
                                 $update_transaction = TransactionModel::find($transaction->id);
                                 $update_transaction->trade_payment_time = $_POST['gmt_payment'];
                                 $update_transaction->trade_status = '2';
                                 $update_transaction->trade_no = $_POST['trade_no'];
                                 $update_transaction->trade_payment_method = '支付宝';
                                 if($update_transaction->save()){
+                                    //修改会员等级
+                                    $member = MemberModel::find($update_transaction->trade_member_id);
+                                    $member->grade = 1;
+                                    $member->save();
                                     echo 'success';
                                 }
                             }
@@ -1057,9 +1062,9 @@ class HomeController extends Controller
         }else{
             $lottery_times = $lottery_acticity->lottery_times;
         }
-        $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_acticity->id)->get();
-        $winning = WinningModel::where('winning_lottery_id_id',$lottery_acticity->id)->orderBy('id','DESC')->get();
-        $data = array
+        $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_acticity->id)->orderBy('id','ASC')->get();
+        $winnings = WinningModel::where('winning_lottery_id_id',$lottery_acticity->id)->orderBy('id','DESC')->get();
+        /*$data = array
         (
             'prize' => $prizes,
             'lottery_times' => $lottery_times,
@@ -1070,7 +1075,8 @@ class HomeController extends Controller
             'status' => 'success',
             'data'    =>  $data,
         );
-        return $this->response->array($result);
+        return $this->response->array($result);*/
+        return view('lottery')->with('prizes',$prizes)->with('winnings',$winnings);
     }
 
 
@@ -1118,6 +1124,10 @@ class HomeController extends Controller
                                     $log->num += 1;
                                     $log->save();
                                 }
+                                //优惠券状态修改
+                                $ticket->ticket_is_use = 1;
+                                $ticket->save();
+
                                 $lottery_times = $lottery_activity->lottery_times - $log->num;
                                 //如果未抽中则直接返回未中奖提示
                                 if($result['id'] == 99999){
