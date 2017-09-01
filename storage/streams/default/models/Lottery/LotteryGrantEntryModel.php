@@ -38,7 +38,7 @@ class LotteryGrantEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Lottery\LotteryGrantEntryTranslationsModel';
 
     protected $stream = [
-'id' => '301',
+'id' => '306',
 'namespace' => 'lottery',
 'slug' => 'grant',
 'prefix' => 'lottery_',
@@ -53,16 +53,16 @@ class LotteryGrantEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 2314,
-'sort_order' => 257,
-'stream_id' => 301,
-'field_id' => 2318,
+'id' => 2346,
+'sort_order' => 258,
+'stream_id' => 306,
+'field_id' => 2350,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2318',
+'id' => '2350',
 'namespace' => 'lottery',
 'slug' => 'grant_ticket_name',
 'type' => 'anomaly.field_type.text',
@@ -70,8 +70,8 @@ class LotteryGrantEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2318,
-'field_id' => 2318,
+'id' => 2350,
+'field_id' => 2350,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.grant_ticket_name.name',
 'placeholder' => 'fannan.module.lottery::field.grant_ticket_name.placeholder',
@@ -82,8 +82,8 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2313,
-'assignment_id' => 2314,
+'id' => 2345,
+'assignment_id' => 2346,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.grant_ticket_name.label.grant',
 'warning' => 'fannan.module.lottery::field.grant_ticket_name.warning.grant',
@@ -93,16 +93,16 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2315,
-'sort_order' => 258,
-'stream_id' => 301,
-'field_id' => 2315,
+'id' => 2347,
+'sort_order' => 259,
+'stream_id' => 306,
+'field_id' => 2347,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2315',
+'id' => '2347',
 'namespace' => 'lottery',
 'slug' => 'grant_grade',
 'type' => 'anomaly.field_type.select',
@@ -110,8 +110,8 @@ class LotteryGrantEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2315,
-'field_id' => 2315,
+'id' => 2347,
+'field_id' => 2347,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.grant_grade.name',
 'placeholder' => 'fannan.module.lottery::field.grant_grade.placeholder',
@@ -122,8 +122,8 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2314,
-'assignment_id' => 2315,
+'id' => 2346,
+'assignment_id' => 2347,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.grant_grade.label.grant',
 'warning' => 'fannan.module.lottery::field.grant_grade.warning.grant',
@@ -133,16 +133,16 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2316,
-'sort_order' => 259,
-'stream_id' => 301,
-'field_id' => 2316,
+'id' => 2348,
+'sort_order' => 260,
+'stream_id' => 306,
+'field_id' => 2348,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2316',
+'id' => '2348',
 'namespace' => 'lottery',
 'slug' => 'grant_valid_period',
 'type' => 'anomaly.field_type.datetime',
@@ -150,8 +150,8 @@ class LotteryGrantEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2316,
-'field_id' => 2316,
+'id' => 2348,
+'field_id' => 2348,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.grant_valid_period.name',
 'placeholder' => 'fannan.module.lottery::field.grant_valid_period.placeholder',
@@ -162,8 +162,8 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2315,
-'assignment_id' => 2316,
+'id' => 2347,
+'assignment_id' => 2348,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.grant_valid_period.label.grant',
 'warning' => 'fannan.module.lottery::field.grant_valid_period.warning.grant',
@@ -173,16 +173,16 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2317,
-'sort_order' => 260,
-'stream_id' => 301,
-'field_id' => 2317,
+'id' => 2349,
+'sort_order' => 261,
+'stream_id' => 306,
+'field_id' => 2349,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2317',
+'id' => '2349',
 'namespace' => 'lottery',
 'slug' => 'grant_num',
 'type' => 'anomaly.field_type.integer',
@@ -190,8 +190,8 @@ class LotteryGrantEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2317,
-'field_id' => 2317,
+'id' => 2349,
+'field_id' => 2349,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::field.grant_num.name',
 'placeholder' => 'fannan.module.lottery::field.grant_num.placeholder',
@@ -202,8 +202,8 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2316,
-'assignment_id' => 2317,
+'id' => 2348,
+'assignment_id' => 2349,
 'locale' => 'en',
 'label' => 'fannan.module.lottery::field.grant_num.label.grant',
 'warning' => 'fannan.module.lottery::field.grant_num.warning.grant',
@@ -215,8 +215,8 @@ class LotteryGrantEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 301,
-'stream_id' => 301,
+'id' => 306,
+'stream_id' => 306,
 'locale' => 'en',
 'name' => 'fannan.module.lottery::stream.grant.name',
 'description' => 'fannan.module.lottery::stream.grant.description',

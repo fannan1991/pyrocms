@@ -63,4 +63,8 @@ class GrantController extends AdminController
         }
         return $form->render($id);
     }
+
+    public function send(GrantFormBuilder $form){
+        return $form->render(1);
+    }
 }

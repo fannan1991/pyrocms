@@ -22,14 +22,17 @@
     </header>
     <div class="g-content">
         <div class="g-lottery-case">
-            <p><a href="huodongGuize.html" class="guize fr">活动规则</a></p>
+            <p><a href="/api/lottery-route" class="guize fr">活动规则</a></p>
             <div class="g-left">
                 <div class="g-lottery-box">
                     <div class="g-lottery-img">
                         <a class="playbtn" href="javascript:;" title="开始抽奖"></a>
                     </div>
                 </div>
-                <p><a href="javascript:;" class="cishu">可抽取<span class="playnum"></span>次</a></p>
+                <p>
+                    <a href="javascript:;" class="cishu">可抽取<span class="playnum">{{$lottery_times}}</span>次</a>
+                    <span class="ticket_num" style="display: none;">{{$ticket_num}}</span>
+                </p>
             </div>
         </div>
     </div>
@@ -82,60 +85,93 @@
     //转盘
     $(function() {
         var $btn = $('.playbtn');
-        var playnum = 1; //初始次数，由后台传入
-        $('.playnum').html(playnum);
+         //初始次数，由后台传入
+        //$('.playnum').html(playnum);
         var isture = 0;
         var clickfunc = function() {
             var jun=25.7143;
-            var data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-            //data为随机出来的结果，根据概率后的结果
-            data = data[Math.floor(Math.random() * data.length)];
-            switch(data) {
-                case 1:
-                    rotateFunc(1, jun*0, '特等奖!');
-                    break;
-                case 2:
-                    rotateFunc(2, jun*1, '幸运奖');
-                    break;
-                case 3:
-                    rotateFunc(3, jun*2, '三等奖');
-                    break;
-                case 4:
-                    rotateFunc(4, jun*3, '幸运奖');
-                    break;
-                case 5:
-                    rotateFunc(5, jun*4, '一等奖');
-                    break;
-                case 6:
-                    rotateFunc(6, jun*5, '幸运奖!');
-                    break;
-                case 7:
-                    rotateFunc(7, jun*6, '二等奖');
-                    break;
-                case 8:
-                    rotateFunc(8, jun*7, '幸运奖');
-                    break;
-                case 9:
-                    rotateFunc(9, jun*8, '二等奖');
-                    break;
-                case 10:
-                    rotateFunc(10, jun*9, '幸运奖');
-                    break;
-                case 11:
-                    rotateFunc(11, jun*10, '二等奖');
-                    break;
-                case 12:
-                    rotateFunc(12, jun*11, '幸运奖');
-                    break;
-                case 13:
-                    rotateFunc(13, jun*12, '三等奖');
-                    break;
-                case 14:
-                    rotateFunc(14, jun*13, '幸运奖');
-                    break;
-            }
+            var area = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+            isture = true;
+            $btn.stopRotate();
+            $btn.rotate({
+                duration: 20000, //旋转时间
+                animateTo: 6440, //让它根据得出来的结果加上1440度旋转
+            });
+            $.ajax({
+                type : "POST",
+                url: 'http://pyrocms.local/api/lottery?client_id=20&access_token=$2y$10$DLDdjTccCEmeUOSZYuTXv.Z4zR.TRyGG3nmtEfKiNtcsbFqqALhnu&lottery_id=1',
+                dataType: "json",
+                success: function(data){
+                    if(data){
+                        if(data.status == 'success'){
+                            if(data.code == 100){
+                                if(data.data.prize.id == 1){
+                                    area = 1;
+                                }else if(data.data.prize.id == 2){
+                                    area = 5;
+                                }else if(data.data.prize.id == 3){
+                                    area = 11;
+                                }else if(data.data.prize.id == 4){
+                                    area = 13;
+                                }
+                            }else if(data.code == 101){
+                                area = 4;
+                            }
+                            switch(area) {
+                                case 1:
+                                    rotateFunc(1, jun*0, '特等奖!');
+                                    break;
+                                case 2:
+                                    rotateFunc(2, jun*1, '幸运奖');
+                                    break;
+                                case 3:
+                                    rotateFunc(3, jun*2, '三等奖');
+                                    break;
+                                case 4:
+                                    rotateFunc(4, jun*3, '幸运奖');
+                                    break;
+                                case 5:
+                                    rotateFunc(5, jun*4, '一等奖');
+                                    break;
+                                case 6:
+                                    rotateFunc(6, jun*5, '幸运奖!');
+                                    break;
+                                case 7:
+                                    rotateFunc(7, jun*6, '二等奖');
+                                    break;
+                                case 8:
+                                    rotateFunc(8, jun*7, '幸运奖');
+                                    break;
+                                case 9:
+                                    rotateFunc(9, jun*8, '二等奖');
+                                    break;
+                                case 10:
+                                    rotateFunc(10, jun*9, '幸运奖');
+                                    break;
+                                case 11:
+                                    rotateFunc(11, jun*10, '二等奖');
+                                    break;
+                                case 12:
+                                    rotateFunc(12, jun*11, '幸运奖');
+                                    break;
+                                case 13:
+                                    rotateFunc(13, jun*12, '三等奖');
+                                    break;
+                                case 14:
+                                    rotateFunc(14, jun*13, '幸运奖');
+                                    break;
+                            }
+                        }else{
+                            alert(data.msg);
+                        }
+                    }
+                }
+            });
+
         }
         $btn.click(function() {
+            var playnum = $('.playnum').html();
+            var ticket_num = $('.ticket_num').html();
             if(isture) return; // 如果在执行就退出
             isture = true; // 标志为 在执行
             //先判断是否登录,未登录则执行下面的函数
@@ -148,12 +184,18 @@
                     alert("没有次数了");
                     $('.playnum').html(0);
                     isture = false;
-                } else { //还有次数就执行
+                }else if(ticket_num <= 0){//当抽奖券为0的时候执行
+                    alert("没有抽奖券了");
+                    $('.ticket_num').html(0);
+                    isture = false;
+                }else{ //还有次数就执行
                     playnum = playnum - 1; //执行转盘了则次数减1
+                    ticket_num = ticket_num - 1;//抽奖券减1
                     if(playnum <= 0) {
                         playnum = 0;
                     }
                     $('.playnum').html(playnum);
+                    $('.ticket_num').html(ticket_num);
                     clickfunc();
                 }
             }
@@ -163,7 +205,7 @@
             $btn.stopRotate();
             $btn.rotate({
                 angle: 0,
-                duration: 4000, //旋转时间
+                duration: 10000, //旋转时间
                 animateTo: angle + 1440, //让它根据得出来的结果加上1440度旋转
                 callback: function() {
                     isture = false; // 标志为 执行完毕
@@ -172,6 +214,10 @@
             });
         };
     });
+
+    function zhixing(){
+
+    }
 
 </script>
 

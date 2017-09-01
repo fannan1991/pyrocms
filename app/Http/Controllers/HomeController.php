@@ -19,6 +19,7 @@ use App\Api\Transformers\WithdrasTransformer;
 use App\Api\Transformers\WithdrawTransformer;
 use App\LotteryLog;
 use App\OauthClients;
+use App\SendSMS;
 use Carbon\Carbon;
 use Fannan\AdvertisingModule\Advertising\AdvertisingModel;
 use Fannan\EnvelopesModule\Envelope\EnvelopeModel;
@@ -90,31 +91,13 @@ class HomeController extends Controller
     }
 
     public function test(Request $request){
-        $sites = array
-        (
-            "runoob"=> "http://www.runoob.com",
-            "google"=>array
-            (
-                "Google 搜索",
-                "http://www.google.com"
-            ),
-            "taobao"=>array
-            (
-                "淘宝",
-                "http://www.taobao.com"
-            )
-        );
-        $result = array(
-            'code' => 100,
-            'status' => 'success',
-            'data' => $sites
-        );
-        return $this->response->array($result);
+        $yanzheng = $request->session()->get('captcha.value');
+        var_dump($yanzheng);die;
     }
 
     //注册
     public function register(Request $request){
-        $captcha = $request->captcha;
+        //$captcha = $request->captcha;
         $mobile = $request->mobile;
         $password = $request->password;
         $invitation_code = $request->invitation_code;
@@ -710,6 +693,7 @@ class HomeController extends Controller
     public function newsDetail(Request $request){
         $new_id = $request->new_id;
         $new = PostModel::find($new_id);
+        $new->content = $new->entry->content;
         $file = FileModel::find($new->entry->image_id);
         if($new){
             $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
@@ -1064,21 +1048,18 @@ class HomeController extends Controller
         }
         $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_acticity->id)->orderBy('id','ASC')->get();
         $winnings = WinningModel::where('winning_lottery_id_id',$lottery_acticity->id)->orderBy('id','DESC')->get();
-        /*$data = array
-        (
-            'prize' => $prizes,
-            'lottery_times' => $lottery_times,
-            'winning' => $winning
-        );
-        $result = array(
-            'code' => 100,
-            'status' => 'success',
-            'data'    =>  $data,
-        );
-        return $this->response->array($result);*/
-        return view('lottery')->with('prizes',$prizes)->with('winnings',$winnings);
+        $ticket_num = $ticket = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',0)->orderBy('id','ASC')->count();
+        return view('lottery')->with('prizes',$prizes)->with('winnings',$winnings)->with('lottery_times',$lottery_times)->with('ticket_num',$ticket_num);
     }
 
+    //抽奖规则
+    public function lotteryRoute(Request $request){
+        $post = PostModel::find(6);
+        $post->content = $post->entry->content;
+        if($post){
+            return view('lotteryRoute')->with('post',$post);
+        }
+    }
 
     //抽奖
     public function lottery(Request $request){
@@ -1106,12 +1087,23 @@ class HomeController extends Controller
                             $date = date('Y-m-d');
                             $lottery_log = LotteryLog::where('member_id',$member_id)->where('lottery_id',$lottery_id)->whereDate('created_at', $date)->first();
                             if(!$lottery_log || $lottery_log->num < $lottery_activity->lottery_times){
-                                $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_id)->get();
+                                $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_id)->orderBy('id','ASC')->get();
                                 $array = $prizes->toArray();
-                                $win_percent = PrizeModel::where('prize_lottery_id_id',$lottery_id)->sum('prize_probability');
-                                $wei = array('id'=>99999,'prize_name'=>'幸运奖','prize_probability'=>100 - $win_percent);
-                                $array[] = $wei;
-                                $result = $this->get_rand1($array);
+                                $array1 = $prizes->toArray();
+                                foreach($array1 as $key=>$val){
+                                    $prize_winning_mobile = unserialize($array1[$key]['prize_winning_mobile']);
+                                    if(!in_array($member->mobile,$prize_winning_mobile)){
+                                        $array1 = array_except($array1, [$key, 'to', 'remove']);
+                                    }
+                                }
+                                if(count($array1) == 0){
+                                    $win_percent = PrizeModel::where('prize_lottery_id_id',$lottery_id)->sum('prize_probability');
+                                    $wei = array('id'=>99999,'prize_name'=>'幸运奖','prize_probability'=>100 - $win_percent);
+                                    $array[] = $wei;
+                                    $result = $this->get_rand1($array);
+                                }else{
+                                    $result = $this->get_rand1($array1);
+                                }
                                 //记录当日抽奖次数
                                 if(!$lottery_log){
                                     $log = new LotteryLog;
@@ -1131,10 +1123,16 @@ class HomeController extends Controller
                                 $lottery_times = $lottery_activity->lottery_times - $log->num;
                                 //如果未抽中则直接返回未中奖提示
                                 if($result['id'] == 99999){
-                                    return $this->response->array(['status'=>'error','msg' => '未中奖','lottery_times' => $lottery_times,'code'=>401]);
+                                    return $this->response->array(['status'=>'success','msg' => '未中奖','lottery_times' => $lottery_times,'code'=>101]);
                                 }else{
-                                    //抽中后，验证抽中的奖品数量，减少奖品数量
+                                    //抽中后，验证抽中的奖品数量，减少奖品数量，如果指定中奖人，则删除该中奖人
                                     $winning_prize = PrizeModel::find($result['id']);
+                                    if($result['prize_winning_mobile']){
+                                        $prize_winning_mobile = unserialize($result['prize_winning_mobile']);
+                                        $key = array_search($member->mobile, $prize_winning_mobile);
+                                        $prize_winning_mobile = array_except($prize_winning_mobile, [$key, 'to', 'remove']);
+                                        $winning_prize->prize_winning_mobile = $prize_winning_mobile;
+                                    }
                                     if($winning_prize->prize_num > 0){
                                         $winning_prize->prize_num -= 1;
                                         if($winning_prize->save()){
@@ -1163,7 +1161,7 @@ class HomeController extends Controller
                                             }
                                         }
                                     }else{
-                                        return $this->response->array(['status'=>'error','msg' => '未中奖','lottery_times' => $lottery_times,'code'=>401]);
+                                        return $this->response->array(['status'=>'success','msg' => '未中奖','lottery_times' => $lottery_times,'code'=>101]);
                                     }
                                 }
                             }else{
@@ -1205,6 +1203,62 @@ class HomeController extends Controller
         $order->trade_mobile = $trade_mobile;
         $order->trade_status = $trade_status;
         $order->save();
+    }
+
+    //发送验证码
+    public function sendCaptcha(Request $request){
+        $mobile = $request->mobile;
+        $private_key = '$2y$10$J5BKKdmVrJvllBRsW9f5i.dhjL/czDMns9F5wdpb.byrpDF72jwWG';
+        $token = $request->token;
+        //var_dump(md5($private_key.$mobile));die;
+        //验证token:
+        if(md5($private_key.$mobile) == $token){
+            //验证手机号
+            if(preg_match('/(^(13\d|14[57]|15[^4,\D]|17[678]|18\d)\d{8}|170[059]\d{7})$/',$mobile)){
+                $has_member = MemberModel::where('mobile',$mobile)->first();
+                if($has_member){
+                    return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
+                }else{
+                    //生成验证码
+                    $captcha = rand(100000, 1000000);
+                    session(
+                        [
+                            'captcha.mobile' => $mobile,
+                            'captcha.value' => $captcha,
+                            'captcha.lifetime' => 100,
+                        ]);
+                    $value = $request->session()->get('captcha.value');
+
+                    //发送短信
+                    $send = new SendSMS;
+                    $send->sendCodeSMS('【润丰网络】请输入验证码'.$value.'，请勿将验证码告诉他人！',$mobile,'106907722','');
+                    $data = array
+                    (
+                        'captcha' => $value,
+                    );
+                    $result = array(
+                        'code' => 100,
+                        'status' => 'success',
+                        'data'    =>  $data,
+                    );
+                    return $this->response->array($result);
+                }
+            }else{
+                return $this->response->array(['status'=>'error','msg' => '手机号格式错误','code'=>401]);
+            }
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '非法请求','code'=>401]);
+        }
+
+
+    }
+
+
+    //发送短信
+    public function sendSms(){
+        $send = new SendSMS;
+        $result = $send->sendCodeSMS('【润丰网络】请输入验证码234543，尽快完成注册！','15002983802','106907722','');
+        var_dump($result);die;
     }
 
     /*
@@ -1307,5 +1361,7 @@ class HomeController extends Controller
         $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         return $chars[mt_rand(1, $base) - 1];
     }
+
+
 
 }

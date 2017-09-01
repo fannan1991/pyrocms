@@ -38,6 +38,7 @@ class FannanModuleLotteryCreatePrizeStream extends Migration
             'required' => true,
         ],
         'prize_lottery_id',
+        'prize_winning_mobile',
         'prize_description',
     ];
 

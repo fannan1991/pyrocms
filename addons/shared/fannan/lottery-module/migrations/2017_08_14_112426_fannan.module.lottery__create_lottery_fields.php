@@ -125,6 +125,18 @@ class FannanModuleLotteryCreateLotteryFields extends Migration
                 'related' => 'Fannan\LotteryModule\Lottery\LotteryModel',
             ]
         ],
+        //指定中奖人
+        "prize_winning_mobile" => [
+            "type"   => "anomaly.field_type.tags",
+            "config" => [
+                "min"           => null,
+                "max"           => null,
+                "options"       => [],
+                "free_input"    => true,
+                "filter"        => null,
+                "default_value" => null,
+            ]
+        ],
         //奖品描述
         'prize_description' => [
             'type'   => 'anomaly.field_type.textarea',

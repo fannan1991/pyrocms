@@ -26,15 +26,14 @@ Route::get('/', function () {
 
 
 
-Route::group(["middleware" => 'user-auth'], function () {
+
 
 
 
 
     Route::post('/home/grade', 'HomeController@grade');
     Route::post('/home/first-customer', 'HomeController@firstCustomer');
-
-});
+    Route::get('/home/test','HomeController@test');
 
 
 
@@ -58,6 +57,9 @@ $api->version('v1', function ($api) {
         $api->get('/test-qrcode','HomeController@testQrcode');
         $api->get('/envelopes-winning','HomeController@envelopesWinning');
         $api->post('/alipay-notify','HomeController@alipayNotify');
+        $api->get('/lottery-route','HomeController@lotteryRoute');
+        $api->get('/send-sms','HomeController@sendSms');
+        $api->post('/send-captcha','HomeController@sendCaptcha');
 
 
 

@@ -64,4 +64,8 @@ class LotteryController extends AdminController
     {
         return redirect('/admin/lottery/winning?view=&page=1&filter_search=&filter_winning_lottery_id='.$id);
     }
+
+    public function setting(LotteryFormBuilder $form){
+        return $form->render(1);
+    }
 }

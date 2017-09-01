@@ -43,6 +43,10 @@ return [
     'prize_num'  => [
         'name' => '数量',
     ],
+    'prize_winning_mobile'  => [
+        'name' => '指定中奖人',
+        'instructions' => '请输入中奖人账号（手机号）',
+    ],
     'prize_lottery_id'  => [
         'name' => '抽奖活动'
     ],

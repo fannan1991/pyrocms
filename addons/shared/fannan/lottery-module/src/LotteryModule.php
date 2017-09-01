@@ -27,12 +27,12 @@ class LotteryModule extends Module
     protected $sections = [
         'lottery' => [
             'buttons' => [
-                'new_lottery',
+                /*'new_lottery',*/
             ],
         ],
         'prize' => [
             'buttons' => [
-                'new_prize',
+                /*'new_prize',*/
             ],
         ],
         'winning' => [
@@ -47,7 +47,7 @@ class LotteryModule extends Module
         ],
         'grant' => [
             'buttons' => [
-                'new_grant',
+                /*'new_grant',*/
             ],
         ],
     ];
