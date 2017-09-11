@@ -1,5 +1,6 @@
 <?php namespace Fannan\MembersModule\Http\Controller\Admin;
 
+use Fannan\MembersModule\Gold\GoldModel;
 use Fannan\MembersModule\Member\MemberModel;
 use Fannan\MembersModule\Withdraw\Form\WithdrawFormBuilder;
 use Fannan\MembersModule\Withdraw\Table\WithdrawTableBuilder;
@@ -48,6 +49,14 @@ class WithdrawController extends AdminController
             //金币变动
             $member->gold -= $request->withdraw_amount;
             $member->save();
+
+            //金币记录
+            $gold = new GoldModel;
+            $gold->gold_num = -$request->withdraw_amount;
+            $gold->gold_summary = '提现';
+            $gold->gold_mobile = $member->mobile;
+            $gold->gold_member_id_id = $member->id;
+            $gold->save();
         }
         if($withdraw->withdraw_status == 1 && isset($request->withdraw_status) && $request->withdraw_status == 0){
             echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/withdraw'</script>");die;

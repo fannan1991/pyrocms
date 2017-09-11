@@ -27,7 +27,7 @@ class MemberTableBuilder extends TableBuilder
                 'id_card',
             ]
         ],
-        'is_verified',
+        'verified_status',
         'grade',
         'parent_id',
         'grand_id',

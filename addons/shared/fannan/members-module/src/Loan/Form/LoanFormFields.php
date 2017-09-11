@@ -16,22 +16,16 @@ class LoanFormFields
     {
         $builder->setFields(
             [
-                'loan_name'     => [
+                /*'loan_name'     => [
                     'disabled' => '*'
                 ],
                 'loan_id_card'     => [
                     'disabled' => '*'
                 ],
-                'loan_amount'     => [
-                    'disabled' => '*'
-                ],
                 'loan_order_sn'     => [
                     'disabled' => '*'
                 ],
-                'loan_member_id'     => [
-                    'disabled' => '*'
-                ],
-                '*',
+                '*',*/
             ]
         );
     }

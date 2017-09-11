@@ -95,9 +95,8 @@ class HomeController extends Controller
         var_dump($yanzheng);die;
     }
 
-    //注册
+    //客户端注册
     public function register(Request $request){
-        //$captcha = $request->captcha;
         $mobile = $request->mobile;
         $password = $request->password;
         $invitation_code = $request->invitation_code;
@@ -121,6 +120,10 @@ class HomeController extends Controller
                 }
             }
             $member->save();
+
+            //积分记录
+            $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
+
             $member = MemberModel::find($member->id);
             if($member){
                 $image_name = md5(date('ymdhis')).'.png';
@@ -137,6 +140,16 @@ class HomeController extends Controller
                 return $this->response->array(['status'=>'error','msg' => '注册失败','code'=>401]);
             }
         }
+    }
+
+    //积分记录
+    public function integralLogAdd($num,$summary,$mobile,$member_id){
+        $integral = new IntegralModel;
+        $integral->integral_num = $num;
+        $integral->integral_summary = $summary;
+        $integral->integral_mobile = $mobile;
+        $integral->integral_member_id_id = $member_id;
+        $integral->save();
     }
 
     //注册客户端
@@ -394,6 +407,7 @@ class HomeController extends Controller
                 $member->card_negative_pic_id = $file->id;
             }
         }
+        $member->verified_status = 2;
         $member->save();
         $member->card_positive_pic_path = 'http://'.$_SERVER['HTTP_HOST'].$card_positive_pic_path;
         $member->card_negative_pic_path = 'http://'.$_SERVER['HTTP_HOST'].$card_negative_pic_path;
@@ -546,7 +560,7 @@ class HomeController extends Controller
     public function loan(Request $request){
         $loan = new LoanModel;
         $member = MemberModel::find($request->member_id);
-        if($member->is_verified == true){
+        if($member->verified_status == 1){
             $has_loan = LoanModel::where('loan_status','1')->count();
             if($has_loan){
                 return $this->response->array(['status'=>'success','msg' => '您有正在进行的贷款记录，暂无法重复申请','code'=>401]);
@@ -829,34 +843,34 @@ class HomeController extends Controller
     public function envelopes(Request $request){
         $member_id = $request->member_id;
         $member = MemberModel::find($member_id);
-        if($member->is_verified == true){
+        if($member->verified_status == 1){
             $setting = EnvelopeModel::find(1);
             $date = date('Y-m-d');
             $log_num = LogModel::where('log_member_id_id',$member_id)->whereDate('created_at', $date)->count();
             if($setting->envelopes_is_open == true){
-                if($member->grade == '0' && $setting->envelopes_visitor_times == 0){
+                if($member->grade == '1' && $setting->envelopes_visitor_times == 0){
                     return $this->response->array(['status'=>'error','msg' => '游客不能参与活动','code'=>401]);
-                }elseif($member->grade == '0' && $setting->envelopes_visitor_times == $log_num){
+                }elseif($member->grade == '1' && $setting->envelopes_visitor_times == $log_num){
                     return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
-                }elseif($member->grade == '1' && $setting->envelopes_ordinary_times == 0){
+                }elseif($member->grade == '2' && $setting->envelopes_ordinary_times == 0){
                     return $this->response->array(['status'=>'error','msg' => '普通会员暂不能参与活动','code'=>401]);
-                }elseif($member->grade == '1' && $setting->envelopes_ordinary_times == $log_num){
+                }elseif($member->grade == '2' && $setting->envelopes_ordinary_times == $log_num){
                     return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
-                }elseif($member->grade == '2' && $setting->envelopes_bronze_times == 0){
+                }elseif($member->grade == '3' && $setting->envelopes_bronze_times == 0){
                     return $this->response->array(['status'=>'error','msg' => '铜牌会员暂不能参与活动','code'=>401]);
-                }elseif($member->grade == '2' && $setting->envelopes_bronze_times == $log_num){
+                }elseif($member->grade == '3' && $setting->envelopes_bronze_times == $log_num){
                     return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
-                }elseif($member->grade == '3' && $setting->envelopes_silver_times == 0){
+                }elseif($member->grade == '4' && $setting->envelopes_silver_times == 0){
                     return $this->response->array(['status'=>'error','msg' => '银牌会员暂不能参与活动','code'=>401]);
-                }elseif($member->grade == '3' && $setting->envelopes_silver_times == $log_num){
+                }elseif($member->grade == '4' && $setting->envelopes_silver_times == $log_num){
                     return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
-                }elseif($member->grade == '4' && $setting->envelopes_gold_times == 0){
+                }elseif($member->grade == '5' && $setting->envelopes_gold_times == 0){
                     return $this->response->array(['status'=>'error','msg' => '金牌会员暂不能参与活动','code'=>401]);
-                }elseif($member->grade == '4' && $setting->envelopes_gold_times == $log_num){
+                }elseif($member->grade == '5' && $setting->envelopes_gold_times == $log_num){
                     return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
-                }elseif($member->grade == '5' && $setting->envelopes_diamond_times == 0){
+                }elseif($member->grade == '6' && $setting->envelopes_diamond_times == 0){
                     return $this->response->array(['status'=>'error','msg' => '钻石会员暂不能参与活动','code'=>401]);
-                }elseif($member->grade == '5' && $setting->envelopes_diamond_times == $log_num){
+                }elseif($member->grade == '6' && $setting->envelopes_diamond_times == $log_num){
                     return $this->response->array(['status'=>'error','msg' => '今日红包次数已用完','code'=>401]);
                 }else{
                     $log = new LogModel;
@@ -910,17 +924,17 @@ class HomeController extends Controller
         $setting = EnvelopeModel::find(1);
         $date = date('Y-m-d');
         $log_num = LogModel::where('log_member_id_id',$member_id)->whereDate('created_at', $date)->count();
-        if($member->grade == '0'){
+        if($member->grade == '1'){
             $remaining = $setting->envelopes_visitor_times - $log_num;
-        }elseif($member->grade = '1'){
-            $remaining = $setting->envelopes_ordinary_times - $log_num;
         }elseif($member->grade = '2'){
-            $remaining = $setting->envelopes_bronze_times - $log_num;
+            $remaining = $setting->envelopes_ordinary_times - $log_num;
         }elseif($member->grade = '3'){
-            $remaining = $setting->envelopes_silver_times - $log_num;
+            $remaining = $setting->envelopes_bronze_times - $log_num;
         }elseif($member->grade = '4'){
-            $remaining = $setting->envelopes_gold_times - $log_num;
+            $remaining = $setting->envelopes_silver_times - $log_num;
         }elseif($member->grade = '5'){
+            $remaining = $setting->envelopes_gold_times - $log_num;
+        }elseif($member->grade = '6'){
             $remaining = $setting->envelopes_diamond_times - $log_num;
         }
         $data = array
@@ -938,7 +952,7 @@ class HomeController extends Controller
 
     //红包动态
     public function envelopesWinning(Request $request){
-        $wining = LogModel::orderBy('id','DESC')->limit(5)->get();
+        $wining = LogModel::orderBy('id','DESC')->limit(10)->get();
         $result = array(
             'code' => 100,
             'status' => 'success',
@@ -1038,6 +1052,8 @@ class HomeController extends Controller
     //抽奖页面
     public function lotteryView(Request $request){
         $member_id = $request->member_id;
+        $client_id = $request->client_id;
+        $access_token = $request->access_token;
         $lottery_acticity = LotteryModel::where('lottery_is_open',1)->orderBy('id','DESC')->first();
         $date = date('Y-m-d');
         $lottery_log = LotteryLog::where('member_id',$member_id)->where('lottery_id',$lottery_acticity->id)->whereDate('created_at', $date)->first();
@@ -1049,7 +1065,14 @@ class HomeController extends Controller
         $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_acticity->id)->orderBy('id','ASC')->get();
         $winnings = WinningModel::where('winning_lottery_id_id',$lottery_acticity->id)->orderBy('id','DESC')->get();
         $ticket_num = $ticket = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',0)->orderBy('id','ASC')->count();
-        return view('lottery')->with('prizes',$prizes)->with('winnings',$winnings)->with('lottery_times',$lottery_times)->with('ticket_num',$ticket_num);
+        return view('lottery')
+            ->with('prizes',$prizes)
+            ->with('winnings',$winnings)
+            ->with('lottery_times',$lottery_times)
+            ->with('ticket_num',$ticket_num)
+            ->with('client_id',$client_id)
+            ->with('access_token',$access_token)
+            ->with('lottery_acticity',$lottery_acticity);
     }
 
     //抽奖规则
@@ -1079,7 +1102,7 @@ class HomeController extends Controller
                 return $this->response->array(['status'=>'error','msg' => '活动已经结束','code'=>401]);
             }else{
                 //用户是否认证
-                if($member->is_verified == true){
+                if($member->verified_status == 1){
                     //抽奖券验证
                     if($lottery_activity->lottery_is_ticket == true){
                         if($ticket){
@@ -1210,14 +1233,18 @@ class HomeController extends Controller
         $mobile = $request->mobile;
         $private_key = '$2y$10$J5BKKdmVrJvllBRsW9f5i.dhjL/czDMns9F5wdpb.byrpDF72jwWG';
         $token = $request->token;
-        //var_dump(md5($private_key.$mobile));die;
+        $type = $request->type;
         //验证token:
         if(md5($private_key.$mobile) == $token){
-            //验证手机号
+            //验证手机号格式
             if(preg_match('/(^(13\d|14[57]|15[^4,\D]|17[678]|18\d)\d{8}|170[059]\d{7})$/',$mobile)){
                 $has_member = MemberModel::where('mobile',$mobile)->first();
-                if($has_member){
+                if($type == 0 && $has_member){
                     return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
+                }elseif($type == 1 && !$has_member){
+                    return $this->response->array(['status'=>'error','msg' => '手机号不存在','code'=>401]);
+                }elseif($type == 2 && !$has_member){
+                    return $this->response->array(['status'=>'error','msg' => '手机号不存在','code'=>401]);
                 }else{
                     //生成验证码
                     $captcha = rand(100000, 1000000);
@@ -1249,13 +1276,35 @@ class HomeController extends Controller
         }else{
             return $this->response->array(['status'=>'error','msg' => '非法请求','code'=>401]);
         }
+    }
 
+    //h5注册
+    public function hRegister(){
+        return view('hRegister');
+    }
+
+    //认证状态
+    public function certificationStatus(Request $request){
+        $member_id = $request->member_id;
+        $member = MemberModel::find($member_id);
+        $data = array
+        (
+            'cert_status' => $member->verified_status,
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data'    =>  $data,
+        );
+        return $this->response->array($result);
+    }
+
+    //发送短信测试
+    public function sendSms(){
 
     }
 
-
-    //发送短信
-    public function sendSms(){
+    public function smsTest(){
         $send = new SendSMS;
         $result = $send->sendCodeSMS('【润丰网络】请输入验证码234543，尽快完成注册！','15002983802','106907722','');
         var_dump($result);die;

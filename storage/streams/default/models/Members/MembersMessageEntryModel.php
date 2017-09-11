@@ -38,7 +38,7 @@ class MembersMessageEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Members\MembersMessageEntryTranslationsModel';
 
     protected $stream = [
-'id' => '241',
+'id' => '313',
 'namespace' => 'members',
 'slug' => 'message',
 'prefix' => 'members_',
@@ -53,16 +53,16 @@ class MembersMessageEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1952,
-'sort_order' => 234,
-'stream_id' => 241,
-'field_id' => 1945,
+'id' => 2405,
+'sort_order' => 258,
+'stream_id' => 313,
+'field_id' => 2407,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1945',
+'id' => '2407',
 'namespace' => 'members',
 'slug' => 'message_title',
 'type' => 'anomaly.field_type.text',
@@ -70,8 +70,8 @@ class MembersMessageEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1945,
-'field_id' => 1945,
+'id' => 2407,
+'field_id' => 2407,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.message_title.name',
 'placeholder' => 'fannan.module.members::field.message_title.placeholder',
@@ -82,8 +82,8 @@ class MembersMessageEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1951,
-'assignment_id' => 1952,
+'id' => 2404,
+'assignment_id' => 2405,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.message_title.label.message',
 'warning' => 'fannan.module.members::field.message_title.warning.message',
@@ -93,16 +93,16 @@ class MembersMessageEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1953,
-'sort_order' => 235,
-'stream_id' => 241,
-'field_id' => 1946,
+'id' => 2406,
+'sort_order' => 259,
+'stream_id' => 313,
+'field_id' => 2408,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1946',
+'id' => '2408',
 'namespace' => 'members',
 'slug' => 'message_content',
 'type' => 'anomaly.field_type.textarea',
@@ -110,8 +110,8 @@ class MembersMessageEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1946,
-'field_id' => 1946,
+'id' => 2408,
+'field_id' => 2408,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.message_content.name',
 'placeholder' => 'fannan.module.members::field.message_content.placeholder',
@@ -122,8 +122,8 @@ class MembersMessageEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1952,
-'assignment_id' => 1953,
+'id' => 2405,
+'assignment_id' => 2406,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.message_content.label.message',
 'warning' => 'fannan.module.members::field.message_content.warning.message',
@@ -133,16 +133,16 @@ class MembersMessageEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1954,
-'sort_order' => 236,
-'stream_id' => 241,
-'field_id' => 1947,
+'id' => 2407,
+'sort_order' => 260,
+'stream_id' => 313,
+'field_id' => 2409,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1947',
+'id' => '2409',
 'namespace' => 'members',
 'slug' => 'message_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -150,8 +150,8 @@ class MembersMessageEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1947,
-'field_id' => 1947,
+'id' => 2409,
+'field_id' => 2409,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.message_member_id.name',
 'placeholder' => 'fannan.module.members::field.message_member_id.placeholder',
@@ -162,8 +162,8 @@ class MembersMessageEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1953,
-'assignment_id' => 1954,
+'id' => 2406,
+'assignment_id' => 2407,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.message_member_id.label.message',
 'warning' => 'fannan.module.members::field.message_member_id.warning.message',
@@ -173,16 +173,16 @@ class MembersMessageEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1955,
-'sort_order' => 237,
-'stream_id' => 241,
-'field_id' => 1948,
+'id' => 2408,
+'sort_order' => 261,
+'stream_id' => 313,
+'field_id' => 2410,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1948',
+'id' => '2410',
 'namespace' => 'members',
 'slug' => 'message_mobile',
 'type' => 'anomaly.field_type.text',
@@ -190,8 +190,8 @@ class MembersMessageEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1948,
-'field_id' => 1948,
+'id' => 2410,
+'field_id' => 2410,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.message_mobile.name',
 'placeholder' => 'fannan.module.members::field.message_mobile.placeholder',
@@ -202,8 +202,8 @@ class MembersMessageEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1954,
-'assignment_id' => 1955,
+'id' => 2407,
+'assignment_id' => 2408,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.message_mobile.label.message',
 'warning' => 'fannan.module.members::field.message_mobile.warning.message',
@@ -215,8 +215,8 @@ class MembersMessageEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 241,
-'stream_id' => 241,
+'id' => 313,
+'stream_id' => 313,
 'locale' => 'en',
 'name' => 'fannan.module.members::stream.message.name',
 'description' => 'fannan.module.members::stream.message.description',

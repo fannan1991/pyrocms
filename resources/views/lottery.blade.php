@@ -99,7 +99,7 @@
             });
             $.ajax({
                 type : "POST",
-                url: 'http://pyrocms.local/api/lottery?client_id=20&access_token=$2y$10$DLDdjTccCEmeUOSZYuTXv.Z4zR.TRyGG3nmtEfKiNtcsbFqqALhnu&lottery_id=1',
+                url: 'http://pyrocms.local/api/lottery?client_id={{$client_id}}&access_token={{$access_token}}&lottery_id={{$lottery_acticity->id}}',
                 dataType: "json",
                 success: function(data){
                     if(data){

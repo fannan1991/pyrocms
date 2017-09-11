@@ -34,6 +34,7 @@ Route::get('/', function () {
     Route::post('/home/grade', 'HomeController@grade');
     Route::post('/home/first-customer', 'HomeController@firstCustomer');
     Route::get('/home/test','HomeController@test');
+    Route::get('/home/h5-register','HomeController@hRegister');
 
 
 
@@ -96,6 +97,7 @@ $api->version('v1', function ($api) {
         $api->post('/lottery','HomeController@lottery');
         $api->get('/lottery-view','HomeController@lotteryView');
         $api->post('/payment-confirmation','HomeController@paymentConfirmation');
+        $api->post('/certification-status','HomeController@certificationStatus');
     });
 
 });

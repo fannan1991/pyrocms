@@ -46,7 +46,7 @@ class MembersWithdrawEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Members\MembersWithdrawEntryTranslationsModel';
 
     protected $stream = [
-'id' => '240',
+'id' => '312',
 'namespace' => 'members',
 'slug' => 'withdraw',
 'prefix' => 'members_',
@@ -61,16 +61,16 @@ class MembersWithdrawEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1944,
-'sort_order' => 226,
-'stream_id' => 240,
-'field_id' => 1937,
+'id' => 2397,
+'sort_order' => 250,
+'stream_id' => 312,
+'field_id' => 2399,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1937',
+'id' => '2399',
 'namespace' => 'members',
 'slug' => 'withdraw_amount',
 'type' => 'anomaly.field_type.decimal',
@@ -78,8 +78,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1937,
-'field_id' => 1937,
+'id' => 2399,
+'field_id' => 2399,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_amount.name',
 'placeholder' => 'fannan.module.members::field.withdraw_amount.placeholder',
@@ -90,8 +90,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1943,
-'assignment_id' => 1944,
+'id' => 2396,
+'assignment_id' => 2397,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_amount.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_amount.warning.withdraw',
@@ -101,16 +101,16 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1945,
-'sort_order' => 227,
-'stream_id' => 240,
-'field_id' => 1938,
+'id' => 2398,
+'sort_order' => 251,
+'stream_id' => 312,
+'field_id' => 2400,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1938',
+'id' => '2400',
 'namespace' => 'members',
 'slug' => 'withdraw_bank',
 'type' => 'anomaly.field_type.text',
@@ -118,8 +118,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1938,
-'field_id' => 1938,
+'id' => 2400,
+'field_id' => 2400,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_bank.name',
 'placeholder' => 'fannan.module.members::field.withdraw_bank.placeholder',
@@ -130,8 +130,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1944,
-'assignment_id' => 1945,
+'id' => 2397,
+'assignment_id' => 2398,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_bank.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_bank.warning.withdraw',
@@ -141,16 +141,16 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1946,
-'sort_order' => 228,
-'stream_id' => 240,
-'field_id' => 1939,
+'id' => 2399,
+'sort_order' => 252,
+'stream_id' => 312,
+'field_id' => 2401,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1939',
+'id' => '2401',
 'namespace' => 'members',
 'slug' => 'withdraw_name',
 'type' => 'anomaly.field_type.text',
@@ -158,8 +158,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1939,
-'field_id' => 1939,
+'id' => 2401,
+'field_id' => 2401,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_name.name',
 'placeholder' => 'fannan.module.members::field.withdraw_name.placeholder',
@@ -170,8 +170,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1945,
-'assignment_id' => 1946,
+'id' => 2398,
+'assignment_id' => 2399,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_name.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_name.warning.withdraw',
@@ -181,16 +181,16 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1947,
-'sort_order' => 229,
-'stream_id' => 240,
-'field_id' => 1940,
+'id' => 2400,
+'sort_order' => 253,
+'stream_id' => 312,
+'field_id' => 2402,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1940',
+'id' => '2402',
 'namespace' => 'members',
 'slug' => 'withdraw_card',
 'type' => 'anomaly.field_type.text',
@@ -198,8 +198,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1940,
-'field_id' => 1940,
+'id' => 2402,
+'field_id' => 2402,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_card.name',
 'placeholder' => 'fannan.module.members::field.withdraw_card.placeholder',
@@ -210,8 +210,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1946,
-'assignment_id' => 1947,
+'id' => 2399,
+'assignment_id' => 2400,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_card.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_card.warning.withdraw',
@@ -221,16 +221,16 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1948,
-'sort_order' => 230,
-'stream_id' => 240,
-'field_id' => 1941,
+'id' => 2401,
+'sort_order' => 254,
+'stream_id' => 312,
+'field_id' => 2403,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1941',
+'id' => '2403',
 'namespace' => 'members',
 'slug' => 'withdraw_bank_card',
 'type' => 'anomaly.field_type.text',
@@ -238,8 +238,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1941,
-'field_id' => 1941,
+'id' => 2403,
+'field_id' => 2403,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_bank_card.name',
 'placeholder' => 'fannan.module.members::field.withdraw_bank_card.placeholder',
@@ -250,8 +250,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1947,
-'assignment_id' => 1948,
+'id' => 2400,
+'assignment_id' => 2401,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_bank_card.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_bank_card.warning.withdraw',
@@ -261,16 +261,16 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1949,
-'sort_order' => 231,
-'stream_id' => 240,
-'field_id' => 1942,
+'id' => 2402,
+'sort_order' => 255,
+'stream_id' => 312,
+'field_id' => 2404,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1942',
+'id' => '2404',
 'namespace' => 'members',
 'slug' => 'withdraw_mobile',
 'type' => 'anomaly.field_type.text',
@@ -278,8 +278,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1942,
-'field_id' => 1942,
+'id' => 2404,
+'field_id' => 2404,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_mobile.name',
 'placeholder' => 'fannan.module.members::field.withdraw_mobile.placeholder',
@@ -290,8 +290,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1948,
-'assignment_id' => 1949,
+'id' => 2401,
+'assignment_id' => 2402,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_mobile.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_mobile.warning.withdraw',
@@ -301,16 +301,16 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1950,
-'sort_order' => 232,
-'stream_id' => 240,
-'field_id' => 1943,
+'id' => 2403,
+'sort_order' => 256,
+'stream_id' => 312,
+'field_id' => 2405,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1943',
+'id' => '2405',
 'namespace' => 'members',
 'slug' => 'withdraw_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -318,8 +318,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1943,
-'field_id' => 1943,
+'id' => 2405,
+'field_id' => 2405,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_member_id.name',
 'placeholder' => 'fannan.module.members::field.withdraw_member_id.placeholder',
@@ -330,8 +330,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1949,
-'assignment_id' => 1950,
+'id' => 2402,
+'assignment_id' => 2403,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_member_id.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_member_id.warning.withdraw',
@@ -341,16 +341,16 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1951,
-'sort_order' => 233,
-'stream_id' => 240,
-'field_id' => 1944,
+'id' => 2404,
+'sort_order' => 257,
+'stream_id' => 312,
+'field_id' => 2406,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1944',
+'id' => '2406',
 'namespace' => 'members',
 'slug' => 'withdraw_status',
 'type' => 'anomaly.field_type.select',
@@ -358,8 +358,8 @@ class MembersWithdrawEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1944,
-'field_id' => 1944,
+'id' => 2406,
+'field_id' => 2406,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.withdraw_status.name',
 'placeholder' => 'fannan.module.members::field.withdraw_status.placeholder',
@@ -370,8 +370,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1950,
-'assignment_id' => 1951,
+'id' => 2403,
+'assignment_id' => 2404,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.withdraw_status.label.withdraw',
 'warning' => 'fannan.module.members::field.withdraw_status.warning.withdraw',
@@ -383,8 +383,8 @@ class MembersWithdrawEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 240,
-'stream_id' => 240,
+'id' => 312,
+'stream_id' => 312,
 'locale' => 'en',
 'name' => 'fannan.module.members::stream.withdraw.name',
 'description' => 'fannan.module.members::stream.withdraw.description',

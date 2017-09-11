@@ -38,7 +38,7 @@ class MembersGoldEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Members\MembersGoldEntryTranslationsModel';
 
     protected $stream = [
-'id' => '237',
+'id' => '309',
 'namespace' => 'members',
 'slug' => 'gold',
 'prefix' => 'members_',
@@ -53,25 +53,25 @@ class MembersGoldEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1921,
-'sort_order' => 203,
-'stream_id' => 237,
-'field_id' => 1913,
+'id' => 2374,
+'sort_order' => 227,
+'stream_id' => 309,
+'field_id' => 2375,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1913',
+'id' => '2375',
 'namespace' => 'members',
 'slug' => 'gold_num',
 'type' => 'anomaly.field_type.integer',
-'config' => 'a:5:{s:9:"separator";s:1:",";s:3:"min";i:-500;s:3:"max";i:1200;s:4:"step";i:1;s:13:"default_value";i:0;}',
+'config' => 'a:5:{s:9:"separator";s:1:",";s:3:"min";i:-500000;s:3:"max";i:1200000;s:4:"step";i:1;s:13:"default_value";i:0;}',
 'locked' => '1',
 'translations' => [
 [
-'id' => 1913,
-'field_id' => 1913,
+'id' => 2375,
+'field_id' => 2375,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.gold_num.name',
 'placeholder' => 'fannan.module.members::field.gold_num.placeholder',
@@ -82,8 +82,8 @@ class MembersGoldEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1920,
-'assignment_id' => 1921,
+'id' => 2373,
+'assignment_id' => 2374,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.gold_num.label.gold',
 'warning' => 'fannan.module.members::field.gold_num.warning.gold',
@@ -93,16 +93,16 @@ class MembersGoldEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1922,
-'sort_order' => 204,
-'stream_id' => 237,
-'field_id' => 1914,
+'id' => 2375,
+'sort_order' => 228,
+'stream_id' => 309,
+'field_id' => 2376,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1914',
+'id' => '2376',
 'namespace' => 'members',
 'slug' => 'gold_summary',
 'type' => 'anomaly.field_type.text',
@@ -110,8 +110,8 @@ class MembersGoldEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1914,
-'field_id' => 1914,
+'id' => 2376,
+'field_id' => 2376,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.gold_summary.name',
 'placeholder' => 'fannan.module.members::field.gold_summary.placeholder',
@@ -122,8 +122,8 @@ class MembersGoldEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1921,
-'assignment_id' => 1922,
+'id' => 2374,
+'assignment_id' => 2375,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.gold_summary.label.gold',
 'warning' => 'fannan.module.members::field.gold_summary.warning.gold',
@@ -133,16 +133,16 @@ class MembersGoldEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1923,
-'sort_order' => 205,
-'stream_id' => 237,
-'field_id' => 1915,
+'id' => 2376,
+'sort_order' => 229,
+'stream_id' => 309,
+'field_id' => 2377,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1915',
+'id' => '2377',
 'namespace' => 'members',
 'slug' => 'gold_mobile',
 'type' => 'anomaly.field_type.text',
@@ -150,8 +150,8 @@ class MembersGoldEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1915,
-'field_id' => 1915,
+'id' => 2377,
+'field_id' => 2377,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.gold_mobile.name',
 'placeholder' => 'fannan.module.members::field.gold_mobile.placeholder',
@@ -162,8 +162,8 @@ class MembersGoldEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1922,
-'assignment_id' => 1923,
+'id' => 2375,
+'assignment_id' => 2376,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.gold_mobile.label.gold',
 'warning' => 'fannan.module.members::field.gold_mobile.warning.gold',
@@ -173,16 +173,16 @@ class MembersGoldEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1924,
-'sort_order' => 206,
-'stream_id' => 237,
-'field_id' => 1916,
+'id' => 2377,
+'sort_order' => 230,
+'stream_id' => 309,
+'field_id' => 2378,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1916',
+'id' => '2378',
 'namespace' => 'members',
 'slug' => 'gold_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -190,8 +190,8 @@ class MembersGoldEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1916,
-'field_id' => 1916,
+'id' => 2378,
+'field_id' => 2378,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.gold_member_id.name',
 'placeholder' => 'fannan.module.members::field.gold_member_id.placeholder',
@@ -202,8 +202,8 @@ class MembersGoldEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1923,
-'assignment_id' => 1924,
+'id' => 2376,
+'assignment_id' => 2377,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.gold_member_id.label.gold',
 'warning' => 'fannan.module.members::field.gold_member_id.warning.gold',
@@ -215,8 +215,8 @@ class MembersGoldEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 237,
-'stream_id' => 237,
+'id' => 309,
+'stream_id' => 309,
 'locale' => 'en',
 'name' => 'fannan.module.members::stream.gold.name',
 'description' => 'fannan.module.members::stream.gold.description',

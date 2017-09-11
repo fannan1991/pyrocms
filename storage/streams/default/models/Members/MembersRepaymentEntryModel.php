@@ -48,7 +48,7 @@ class MembersRepaymentEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Members\MembersRepaymentEntryTranslationsModel';
 
     protected $stream = [
-'id' => '239',
+'id' => '311',
 'namespace' => 'members',
 'slug' => 'repayment',
 'prefix' => 'members_',
@@ -63,16 +63,16 @@ class MembersRepaymentEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 1935,
-'sort_order' => 217,
-'stream_id' => 239,
-'field_id' => 1928,
+'id' => 2388,
+'sort_order' => 241,
+'stream_id' => 311,
+'field_id' => 2390,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1928',
+'id' => '2390',
 'namespace' => 'members',
 'slug' => 'repayment_amount',
 'type' => 'anomaly.field_type.decimal',
@@ -80,8 +80,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1928,
-'field_id' => 1928,
+'id' => 2390,
+'field_id' => 2390,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_amount.name',
 'placeholder' => 'fannan.module.members::field.repayment_amount.placeholder',
@@ -92,8 +92,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1934,
-'assignment_id' => 1935,
+'id' => 2387,
+'assignment_id' => 2388,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_amount.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_amount.warning.repayment',
@@ -103,16 +103,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1936,
-'sort_order' => 218,
-'stream_id' => 239,
-'field_id' => 1929,
+'id' => 2389,
+'sort_order' => 242,
+'stream_id' => 311,
+'field_id' => 2391,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1929',
+'id' => '2391',
 'namespace' => 'members',
 'slug' => 'repayment_date',
 'type' => 'anomaly.field_type.datetime',
@@ -120,8 +120,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1929,
-'field_id' => 1929,
+'id' => 2391,
+'field_id' => 2391,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_date.name',
 'placeholder' => 'fannan.module.members::field.repayment_date.placeholder',
@@ -132,8 +132,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1935,
-'assignment_id' => 1936,
+'id' => 2388,
+'assignment_id' => 2389,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_date.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_date.warning.repayment',
@@ -143,16 +143,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1937,
-'sort_order' => 219,
-'stream_id' => 239,
-'field_id' => 1930,
+'id' => 2390,
+'sort_order' => 243,
+'stream_id' => 311,
+'field_id' => 2392,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1930',
+'id' => '2392',
 'namespace' => 'members',
 'slug' => 'repayment_status',
 'type' => 'anomaly.field_type.select',
@@ -160,8 +160,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1930,
-'field_id' => 1930,
+'id' => 2392,
+'field_id' => 2392,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_status.name',
 'placeholder' => 'fannan.module.members::field.repayment_status.placeholder',
@@ -172,8 +172,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1936,
-'assignment_id' => 1937,
+'id' => 2389,
+'assignment_id' => 2390,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_status.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_status.warning.repayment',
@@ -183,16 +183,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1938,
-'sort_order' => 220,
-'stream_id' => 239,
-'field_id' => 1931,
+'id' => 2391,
+'sort_order' => 244,
+'stream_id' => 311,
+'field_id' => 2393,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1931',
+'id' => '2393',
 'namespace' => 'members',
 'slug' => 'repayment_loan',
 'type' => 'anomaly.field_type.relationship',
@@ -200,8 +200,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1931,
-'field_id' => 1931,
+'id' => 2393,
+'field_id' => 2393,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_loan.name',
 'placeholder' => 'fannan.module.members::field.repayment_loan.placeholder',
@@ -212,8 +212,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1937,
-'assignment_id' => 1938,
+'id' => 2390,
+'assignment_id' => 2391,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_loan.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_loan.warning.repayment',
@@ -223,16 +223,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1939,
-'sort_order' => 221,
-'stream_id' => 239,
-'field_id' => 1932,
+'id' => 2392,
+'sort_order' => 245,
+'stream_id' => 311,
+'field_id' => 2394,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '1932',
+'id' => '2394',
 'namespace' => 'members',
 'slug' => 'repayment_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -240,8 +240,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1932,
-'field_id' => 1932,
+'id' => 2394,
+'field_id' => 2394,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_member_id.name',
 'placeholder' => 'fannan.module.members::field.repayment_member_id.placeholder',
@@ -252,8 +252,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1938,
-'assignment_id' => 1939,
+'id' => 2391,
+'assignment_id' => 2392,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_member_id.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_member_id.warning.repayment',
@@ -263,16 +263,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1940,
-'sort_order' => 222,
-'stream_id' => 239,
-'field_id' => 1934,
+'id' => 2393,
+'sort_order' => 246,
+'stream_id' => 311,
+'field_id' => 2396,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1934',
+'id' => '2396',
 'namespace' => 'members',
 'slug' => 'repayment_sn',
 'type' => 'anomaly.field_type.text',
@@ -280,8 +280,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1934,
-'field_id' => 1934,
+'id' => 2396,
+'field_id' => 2396,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_sn.name',
 'placeholder' => 'fannan.module.members::field.repayment_sn.placeholder',
@@ -292,8 +292,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1939,
-'assignment_id' => 1940,
+'id' => 2392,
+'assignment_id' => 2393,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_sn.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_sn.warning.repayment',
@@ -303,16 +303,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1941,
-'sort_order' => 223,
-'stream_id' => 239,
-'field_id' => 1935,
+'id' => 2394,
+'sort_order' => 247,
+'stream_id' => 311,
+'field_id' => 2397,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1935',
+'id' => '2397',
 'namespace' => 'members',
 'slug' => 'repayment_loan_name',
 'type' => 'anomaly.field_type.text',
@@ -320,8 +320,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1935,
-'field_id' => 1935,
+'id' => 2397,
+'field_id' => 2397,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_loan_name.name',
 'placeholder' => 'fannan.module.members::field.repayment_loan_name.placeholder',
@@ -332,8 +332,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1940,
-'assignment_id' => 1941,
+'id' => 2393,
+'assignment_id' => 2394,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_loan_name.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_loan_name.warning.repayment',
@@ -343,16 +343,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1942,
-'sort_order' => 224,
-'stream_id' => 239,
-'field_id' => 1936,
+'id' => 2395,
+'sort_order' => 248,
+'stream_id' => 311,
+'field_id' => 2398,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1936',
+'id' => '2398',
 'namespace' => 'members',
 'slug' => 'repayment_loan_card',
 'type' => 'anomaly.field_type.text',
@@ -360,8 +360,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1936,
-'field_id' => 1936,
+'id' => 2398,
+'field_id' => 2398,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_loan_card.name',
 'placeholder' => 'fannan.module.members::field.repayment_loan_card.placeholder',
@@ -372,8 +372,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1941,
-'assignment_id' => 1942,
+'id' => 2394,
+'assignment_id' => 2395,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_loan_card.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_loan_card.warning.repayment',
@@ -383,16 +383,16 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 1943,
-'sort_order' => 225,
-'stream_id' => 239,
-'field_id' => 1933,
+'id' => 2396,
+'sort_order' => 249,
+'stream_id' => 311,
+'field_id' => 2395,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '1933',
+'id' => '2395',
 'namespace' => 'members',
 'slug' => 'repayment_mobile',
 'type' => 'anomaly.field_type.text',
@@ -400,8 +400,8 @@ class MembersRepaymentEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 1933,
-'field_id' => 1933,
+'id' => 2395,
+'field_id' => 2395,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.repayment_mobile.name',
 'placeholder' => 'fannan.module.members::field.repayment_mobile.placeholder',
@@ -412,8 +412,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 1942,
-'assignment_id' => 1943,
+'id' => 2395,
+'assignment_id' => 2396,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.repayment_mobile.label.repayment',
 'warning' => 'fannan.module.members::field.repayment_mobile.warning.repayment',
@@ -425,8 +425,8 @@ class MembersRepaymentEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 239,
-'stream_id' => 239,
+'id' => 311,
+'stream_id' => 311,
 'locale' => 'en',
 'name' => 'fannan.module.members::stream.repayment.name',
 'description' => 'fannan.module.members::stream.repayment.description',

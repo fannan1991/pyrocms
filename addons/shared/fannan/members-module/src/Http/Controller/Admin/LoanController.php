@@ -1,5 +1,6 @@
 <?php namespace Fannan\MembersModule\Http\Controller\Admin;
 
+use Fannan\MembersModule\Gold\GoldModel;
 use Fannan\MembersModule\Loan\Form\LoanFormBuilder;
 use Fannan\MembersModule\Loan\LoanModel;
 use Fannan\MembersModule\Loan\Table\LoanTableBuilder;
@@ -83,6 +84,14 @@ class LoanController extends AdminController
                 //发放金币
                 $member->gold += $request->loan_amount;
                 $member->save();
+
+                //金币记录
+                $gold = new GoldModel;
+                $gold->gold_num = $request->loan_amount;
+                $gold->gold_summary = '贷款';
+                $gold->gold_mobile = $member->mobile;
+                $gold->gold_member_id_id = $member->id;
+                $gold->save();
             }
 
             //生成还款记录

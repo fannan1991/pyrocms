@@ -1,0 +1,238 @@
+/*reset*/
+
+html{
+    font-size:62.5%; /* 10÷16=62.5% */
+}
+a{
+	text-decoration:none;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, header, hgroup, nav, section, article, aside, footer, figure, figcaption, menu, button {
+    margin: 0;
+    padding:0;
+}
+i{
+	font-style:normal;
+}
+li{
+	list-style: none;
+}
+body {
+    line-height: 1.5;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    outline: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+.clear{
+	clear:both;
+}
+.mui-fullscreen, 
+.mui-iframe-wrapper{  
+	min-width: 300px;
+    max-width: 640px;
+	margin: 0 auto;
+}
+.mui-content{
+	width: 100%;  
+	height: 100%;	  
+	min-width: 320px;
+    max-width: 768px;
+	margin: 0 auto;
+}
+/* 勤人公司自定义公用样式 */
+.qr-fl{
+	float: left;
+}
+.qr-fr{
+	float: right;
+}
+/* 颜色 */
+.cl-orange{
+	color: #ffa000!important;
+}
+.cl-red{
+	color: #f6301c!important;
+}
+.cl-yelloe{
+	color: #ffff00!important;	
+}
+.cl-3{
+	color: #333!important;
+}
+.cl-5{
+	color: #555!important;
+}
+.cl-7{
+	color: #777!important;
+}
+.cl-8{
+	color: #888!important;
+}
+.cl-9{
+	color: #999!important;
+}
+/* 按钮颜色 */
+.qr-btn-primary{
+	color: #fff;
+	border: 1px solid #ffa000!important;
+    background-color: #ffa000!important;
+}
+/* 对齐方式 */
+.qr-ac{
+	text-align: center;
+}
+.qr-ar{
+	text-align: right;
+}
+/* 外边距 */
+.martop15rem{
+	margin-top: 0.15rem;
+}
+.martop2rem{
+	margin-top: 0.2rem;
+}
+.martop25rem{
+	margin-top: 0.25rem;
+}
+.martop3rem{
+	margin-top: 0.3rem;
+}
+.martop35rem{
+	margin-top: 0.35rem;
+}
+.martop4rem{
+	margin-top: 0.4rem;
+}
+
+/* 验证码 */
+.qr-yzm{
+	width: auto;
+	padding-left: 0.15rem;	
+	height: 24px;
+	line-height: 24px;
+	color: #fb2931;
+	border-left: 1px solid #e5e5e5;
+	position: absolute;
+	right: 15px;
+	bottom: 8px;
+}
+/* 底部导航菜单 */
+.mui-bar-tab .mui-tab-item a{
+	color: #929292;
+}
+.mui-bar-tab .mui-tab-item.mui-active a{
+	color: #fb2931;
+}
+.in-foot .mui-icon{
+	display: inline-block;
+	width: 100%;
+	height: 0.2rem;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.in-foot .shouye{
+	background-image: url(../images/navicon1.png);
+	background-size: auto 85%;	
+}
+.in-foot .zdiangong{
+	background-image: url(../images/navicon2.png);
+	background-size: auto 95%;	
+}
+.in-foot .shangcheng{
+	background-image: url(../images/navicon3.png);
+	background-size: auto 83%;	
+}
+.in-foot .gouwuche{
+	background-image: url(../images/navicon4.png);
+	background-size: auto 87%;	
+}
+.in-foot .wode{
+	background-image: url(../images/navicon5.png);
+	background-size: auto 88%;	
+}
+.in-foot .mui-active .shouye{
+	background-image: url(../images/navicon1-h.png)!important;
+}
+.in-foot .mui-active .zdiangong{
+	background-image: url(../images/navicon2-h.png)!important;
+}
+.in-foot .mui-active .shangcheng{
+	background-image: url(../images/navicon3-h.png)!important;
+}
+.in-foot .mui-active .gouwuche{
+	background-image: url(../images/navicon4-h.png)!important;
+}
+.in-foot .mui-active .wode{
+	background-image: url(../images/navicon5-h.png)!important;
+}
+
+/* 暂无内容 */
+.qr-nocon{
+	padding: 35% 0.15rem 0 0.15rem;
+}
+.qr-nocon p{
+	text-align: center;
+}
+.qr-nocon p img{
+	width: 2.4rem;
+}
+
+/* 成功页面 */
+.qr-sucbox{
+	padding: 22% 0.15rem 0 0.15rem;
+}
+.qr-sucbox p{
+	color: #555;
+	line-height: 1.5;
+	text-align: center;
+}
+.qr-sucbox p img{
+	width: 2rem;
+	margin-bottom: 0.25rem;
+}
+.qr-sucbox p span{
+	font-size: 0.45rem;
+}
+
+/* 协议 */
+.qr-xieyibox{
+	padding: 0.3rem 0.55rem;
+}
+.qr-xieyibox p{
+	color: #444;
+	line-height: 2;
+	padding-bottom: 0.25rem;
+	text-indent: 2em;
+}
+.qr-xieyibox p b{
+	font-size: 0.27rem;
+}
+.qr-xieyibox header{
+	padding: 0.15rem 0;
+}
+.qr-xieyibox header h4{
+	line-height: 1.8;
+	color: #333;
+	font-size: 0.38rem;
+}
+.qr-xieyibox header p{
+	color: #999;
+	text-indent: 0;
+}
+.qr-xieyibox img{
+	display: block;
+	width: auto;
+	max-width: 100%;
+	margin: 0.05rem auto;
+}
+#xieyiBtn{ color: #555;}

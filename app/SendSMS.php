@@ -20,7 +20,7 @@ class SendSMS extends Model
 
     public function __construct($marketing = false)
     {
-//判断是否是营销短信如果为true 修改通道
+        //判断是否是营销短信如果为true 修改通道
         if($marketing)
         {
             $this->post_data = [
@@ -54,7 +54,7 @@ class SendSMS extends Model
         $this->post_data['mobile'] = $mobile;
         $this->post_data['sendtime'] = $sendtime;
 
-//组合发送字符串
+        //组合发送字符串
         $o='';
 
         foreach ($this->post_data as $k=>$v)
@@ -65,7 +65,7 @@ class SendSMS extends Model
         $send_data = substr($o,0,-1);
 
 
-//发送短信至网关
+        //发送短信至网关
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -73,7 +73,7 @@ class SendSMS extends Model
         curl_setopt($ch, CURLOPT_POSTFIELDS, $send_data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //如果需要将结果直接返回到变量里，那加上这句。
 
-//返回短信网关消息
+        //返回短信网关消息
         $result = curl_exec($ch);
 
 

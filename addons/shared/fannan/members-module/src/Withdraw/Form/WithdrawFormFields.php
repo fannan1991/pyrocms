@@ -16,9 +16,6 @@ class WithdrawFormFields
     {
         $builder->setFields(
             [
-                'withdraw_amount'     => [
-                    'disabled' => '*'
-                ],
                 'withdraw_bank'     => [
                     'disabled' => '*'
                 ],
@@ -32,9 +29,6 @@ class WithdrawFormFields
                     'disabled' => '*'
                 ],
                 'withdraw_mobile'     => [
-                    'disabled' => '*'
-                ],
-                'withdraw_member_id'     => [
                     'disabled' => '*'
                 ],
                 '*',

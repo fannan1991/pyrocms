@@ -1,0 +1,142 @@
+/* 勤人公司表单样式 */
+/* input, select, textarea{
+	font-size: 0.25rem;
+} */
+.mui-btn {
+	padding: 0.1rem;
+}
+.mui-btn-block{
+	font-size: 0.3rem;
+}
+.mui-input-row label{
+	text-align: right;
+	/* font-size: 0.25rem; 
+	margin-top: 0.03rem;*/
+}
+.link-area {
+	display: block;
+	margin-top: 0.2rem;
+	text-align: center;
+	line-height: 2.5;
+}
+/* 下拉菜单带右箭头 */
+/* .qr-selbox{
+	line-height: 0.4rem;
+} */
+.qr-selbox .mui-input{
+	width: 75%;
+	padding: 0 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.qr-selbox::after{
+	font-family: Muiicons;
+    color: #bbb;
+	content: '\e583';
+	position: absolute;
+	top: 12px;
+	right: 15px;	
+    line-height: 1;
+}
+/* 日期带显示控件 */
+.qr-datebox #datebtn,
+.qr-datebox #datebtn1{
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	width: 75%;
+	height: 40px;
+	background-color: #999;
+	opacity: 0;
+}
+.qr-datebox #dateinput,
+.qr-datebox #dateinput1{
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 0;
+	width: 75%;
+	line-height: 40px;
+ }
+ .qr-datebox #dateinput::after,
+ .qr-datebox #dateinput1::after{
+	font-family: Muiicons;
+    color: #bbb;
+	content: '\e583';
+	position: absolute;
+	top: 11px;
+	right: 15px;	
+    line-height: 1; 	
+ }
+
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	font-size: 0.25rem;
+}
+/* 重置表单输入样式 2、3、4、5表示3个字4个字5个字*/
+/* 2个字 */
+.mui-input-group2 label {
+	width: 16.5%;
+}
+
+.mui-input-row2 label~input,
+.mui-input-row2 label~select,
+.mui-input-row2 label~textarea {
+	width: 83.5%;
+}
+/* 3个字 */
+.mui-input-group3 label {
+	width: 21%;
+}
+
+.mui-input-row3 label~input,
+.mui-input-row3 label~select,
+.mui-input-row3 label~textarea {
+	width: 79%;
+}
+
+/* 4个字 */
+.mui-input-group4 label {
+	width: 24%;
+}
+
+.mui-input-row4 label~input,
+.mui-input-row4 label~select,
+.mui-input-row4 label~textarea {
+	width: 75%;
+}
+
+/* 5个字 */
+.mui-input-group5 label {
+	width: 29.5%;
+}
+
+.mui-input-row5 label~input,
+.mui-input-row5 label~select,
+.mui-input-row5 label~textarea {
+	width: 70.5%;
+}
+
+/* 7个字 */
+.mui-input-group7 label {
+	width: 33%;
+}
+
+.mui-input-row7 label~input,
+.mui-input-row7 label~select,
+.mui-input-row7 label~textarea {
+	width: 67%;
+}
+.span-s{line-height: 38px;
+    padding-left: 6px;}
+.dibucaozuobox {
+	text-align: center;
+    display: inline-table;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}

@@ -74,15 +74,15 @@ class FannanModuleMembersCreateMembersFields extends Migration
                 'default_value' => '1',
             ]
         ],
-        "is_verified" => [
-            "type"   => "anomaly.field_type.boolean",
-            "config" => [
-                "default_value" => false,
-                "on_color"      => "success",
-                "off_color"     => "danger",
-                "on_text"       => "YES",
-                "off_text"      => "NO",
-                "mode"          => null
+        'verified_status' => [
+            'type'   => 'anomaly.field_type.select',
+            'config' => [
+                'options' => [
+                    '0' => '未认证',
+                    '1' => '认证通过',
+                    '2' => '审核中',
+                    '3' => '认证失败',
+                ],
             ]
         ],
         //真实姓名

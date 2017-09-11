@@ -39,7 +39,7 @@ class FannanModuleMembersCreateMembersStream extends Migration
         'nickname',
         'avatar',
         'grade',
-        'is_verified',
+        'verified_status',
         'real_name',
         'id_card',
         'card_positive_pic',
