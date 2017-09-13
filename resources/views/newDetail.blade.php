@@ -18,31 +18,18 @@
 <div class="outer_wrap">
     <header class="content_wrap">
         <a href="javascript:;" class="hdleft" onclick="history.back();"></a>
-        {{$post->title}}
+        资讯详情
     </header>
     <div class="content_wrap">
         <div class="newsdetail">
-            @if($post)
-                {!! $post->content !!}
-            @endif
+            <div class="newtitle">
+                <h2>{{$post->title}}</h2>
+                <p class="date">{{$post->created_at}}</p>
+            </div>
+            {!! $post->content !!}
         </div>
     </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

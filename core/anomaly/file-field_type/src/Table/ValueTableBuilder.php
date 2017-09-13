@@ -40,7 +40,7 @@ class ValueTableBuilder extends TableBuilder
         'name'          => [
             'sort_column' => 'name',
             'wrapper'     => '
-                    <strong>{value.file}</strong>
+                    <strong><a href="/app/default/files-module/local/images/{value.file}" target="_blank">{value.file}</a></strong>
                     <br>
                     <small class="text-muted">{value.disk}://{value.folder}/{value.file}</small>
                     <br>

@@ -127,7 +127,7 @@ class HomeController extends Controller
             $member = MemberModel::find($member->id);
             if($member){
                 $image_name = md5(date('ymdhis')).'.png';
-                $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+                $this->qrcode(268,0,$_SERVER['HTTP_HOST'].'/home/h5-register-view?invitation_code='.$member->invitation_code,'qrcodes/'.$image_name);
                 $member->qrcode = 'qrcodes/'.$image_name;
                 $member->save();
                 $result = array(
@@ -154,7 +154,7 @@ class HomeController extends Controller
 
     //注册客户端
     public function registerClient(Request $request){
-        $imsi = $request->imsi;
+        $imsi = trim($request->imsi);
         $member_id = $request->member_id;
         $secret = bcrypt($imsi+$member_id);
         if(MemberModel::find($member_id)){
@@ -692,7 +692,7 @@ class HomeController extends Controller
             $file = FileModel::find($new->entry->image_id);
             $new->content = $new->entry->content;
             $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
-            $new->url = 'http://x16311542j.51mypc.cn/api/new-detail?new_id='.$new->id;
+            $new->url = 'http://'.$_SERVER['HTTP_HOST'].'/home/new-detail/'.$new->id;
             $lists[] = $new;
         }
         $result = array(
@@ -821,7 +821,7 @@ class HomeController extends Controller
         if($member){
             if(!$member->qrcode){
                 $image_name = md5(date('ymdhis')).'.png';
-                $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+                $this->qrcode(268,0,'http://'.$_SERVER['HTTP_HOST'].'/home/h5-register-view?invitation_code='.$member->invitation_code,'qrcodes/'.$image_name);
                 $member->qrcode = 'qrcodes/'.$image_name;
                 $member->save();
             }
@@ -1279,8 +1279,109 @@ class HomeController extends Controller
     }
 
     //h5注册
-    public function hRegister(){
-        return view('hRegister');
+    public function hRegisterView(Request $request){
+        $invitation_code = $request->invitation_code;
+        return view('hRegister')->with('invitation_code',$invitation_code);
+    }
+
+    public function hRegister(Request $request){
+        $mobile = $request->mobile;
+        $password = $request->password;
+        $invitation_code = $request->invitation_code;
+        $captcha = $request->captcha;
+        if(empty($mobile) || empty($password) || empty($captcha) || empty($invitation_code)){
+            var_dump('信息不能为空');die;
+        }else{
+            if($request->session()->get('captcha.value') == $captcha){
+                if(MemberModel::where('mobile',$mobile)->first()){
+                    return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
+                }else{
+                    $str_time = $this->dec62($this->msectime());
+                    $code = $this->randChar().$str_time;
+                    $member = new MemberModel;
+                    $member->mobile = $mobile;
+                    $member->password = bcrypt($password);
+                    $member->invitation_code = $code;
+                    if($invitation_code){
+                        $father = MemberModel::where('invitation_code',$invitation_code)->first();
+                        if($father){
+                            $father->integral += 10;
+                            $father->save();
+                            $member->parent_id_id = $father->id;
+                            $member->grand_id_id = $father->parent_id_id;
+                            $member->great_grand_id_id = $father->grand_id_id;
+                        }
+                    }
+                    $member->save();
+
+                    //积分记录
+                    $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
+
+                    $member = MemberModel::find($member->id);
+                    if($member){
+                        $image_name = md5(date('ymdhis')).'.png';
+                        $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+                        $member->qrcode = 'qrcodes/'.$image_name;
+                        $member->save();
+                        $msg = '注册成功';
+                        return view('success')->with('msg',$msg);
+                    }else{
+                        $msg = '注册失败';
+                        return view('error')->with('msg',$msg);
+                    }
+                }
+            }else{
+                $msg = '验证码错误';
+                return view('error')->with('msg',$msg);
+            }
+        }
+    }
+
+    //h5我的会员
+    public function myMember(Request $request){
+
+    }
+
+    //h5单页面
+    public function singlePage($id){
+        $post = PostModel::find($id);
+        $post->content = $post->entry->content;
+        if($post){
+            return view('singlePage')->with('post',$post);
+        }
+    }
+
+    //h5资讯详情
+    public function hNewDetail($id){
+        $post = PostModel::find($id);
+        $post->content = $post->entry->content;
+        if($post){
+            return view('newDetail')->with('post',$post);
+        }
+    }
+
+
+
+    //获取手机号是否存在，0不存在，1存在、
+    public function hasMobile(Request $request){
+        $mobile = $request->mobile;
+        $member = MemberModel::where('mobile',$mobile)->first();
+        if($member){
+            $has_mobile = 1;
+        }else{
+            $has_mobile = 0;
+        }
+        $data = array
+        (
+            'has_mobile' => $has_mobile,
+        );
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data'    =>  $data,
+        );
+        return $this->response->array($result);
+
     }
 
     //认证状态

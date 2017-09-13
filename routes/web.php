@@ -18,26 +18,13 @@ Route::get('/', function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     Route::post('/home/grade', 'HomeController@grade');
     Route::post('/home/first-customer', 'HomeController@firstCustomer');
     Route::get('/home/test','HomeController@test');
-    Route::get('/home/h5-register','HomeController@hRegister');
-
-
-
+    Route::get('/home/h5-register-view','HomeController@hRegisterView');
+    Route::post('/home/h5-register','HomeController@hRegister');
+    Route::get('/home/single-page/{id}','HomeController@singlePage');
+    Route::get('/home/new-detail/{id}','HomeController@hNewDetail');
 
 
 
@@ -61,6 +48,7 @@ $api->version('v1', function ($api) {
         $api->get('/lottery-route','HomeController@lotteryRoute');
         $api->get('/send-sms','HomeController@sendSms');
         $api->post('/send-captcha','HomeController@sendCaptcha');
+        $api->post('/has-mobile','HomeController@hasMobile');
 
 
 

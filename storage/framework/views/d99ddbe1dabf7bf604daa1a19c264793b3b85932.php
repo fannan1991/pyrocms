@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <title>{{$post->title}}</title>
     <link rel="stylesheet" type="text/css" href="/lottery/css/style.css" />
     <script type="text/javascript" src="/lottery/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/lottery/js/adaptive.js" ></script>
@@ -18,31 +17,19 @@
 <div class="outer_wrap">
     <header class="content_wrap">
         <a href="javascript:;" class="hdleft" onclick="history.back();"></a>
-        {{$post->title}}
+        资讯详情
     </header>
     <div class="content_wrap">
         <div class="newsdetail">
-            @if($post)
-                {!! $post->content !!}
-            @endif
+            <div class="newtitle">
+                <h2><?php echo e($post->title); ?></h2>
+                <p class="date"><?php echo e($post->created_at); ?></p>
+            </div>
+            <?php echo $post->content; ?>
+
         </div>
     </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

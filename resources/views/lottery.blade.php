@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <title>抽奖活动</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="/lottery/css/style.css" />
     <script type="text/javascript" src="/lottery/js/jquery-1.8.3.min.js"></script>
@@ -22,7 +23,7 @@
     </header>
     <div class="g-content">
         <div class="g-lottery-case">
-            <p><a href="/api/lottery-route" class="guize fr">活动规则</a></p>
+            <p><a href="/home/single-page/6" class="guize fr">活动规则</a></p>
             <div class="g-left">
                 <div class="g-lottery-box">
                     <div class="g-lottery-img">
@@ -99,7 +100,7 @@
             });
             $.ajax({
                 type : "POST",
-                url: 'http://pyrocms.local/api/lottery?client_id={{$client_id}}&access_token={{$access_token}}&lottery_id={{$lottery_acticity->id}}',
+                url: '/api/lottery?client_id={{$client_id}}&access_token={{$access_token}}&lottery_id={{$lottery_acticity->id}}',
                 dataType: "json",
                 success: function(data){
                     if(data){
