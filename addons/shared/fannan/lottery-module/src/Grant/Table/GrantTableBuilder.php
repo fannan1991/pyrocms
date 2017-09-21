@@ -25,6 +25,12 @@ class GrantTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $columns = [
+        'entry.id',
+        'grant_ticket_name',
+        'grant_grade',
+        'grant_valid_period',
+        'grant_num',
+        'entry.created_at'
     ];
 
     /**
@@ -33,7 +39,7 @@ class GrantTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        /*'edit'*/
     ];
 
     /**
@@ -42,7 +48,7 @@ class GrantTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete'
+        /*'delete'*/
     ];
 
     /**

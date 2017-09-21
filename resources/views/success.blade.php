@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>提示</title>
     <link href="/lottery/css/mui.min.css" rel="stylesheet" />
-    <link href="lottery/css/qrcommon.css" rel="stylesheet" />
+    <link href="/lottery/css/qrcommon.css" rel="stylesheet" />
     <link href="/lottery/css/form.css" rel="stylesheet" />
     <!-- js -->
     <script src="/lottery/js/mui.min.js"></script>

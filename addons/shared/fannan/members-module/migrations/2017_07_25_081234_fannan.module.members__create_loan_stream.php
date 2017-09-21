@@ -44,6 +44,7 @@ class FannanModuleMembersCreateLoanStream extends Migration
         'loan_repayment_date',
         'loan_term_date',
         'loan_bz',
+        'loan_mobile',
         'loan_member_id',
     ];
 

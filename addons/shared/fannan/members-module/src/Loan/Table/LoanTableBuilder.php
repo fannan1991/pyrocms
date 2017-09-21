@@ -20,7 +20,7 @@ class LoanTableBuilder extends TableBuilder
     protected $filters = [
         'search' => [
             'fields' => [
-                'loan_mobile',
+                'loan_name',
                 'loan_id_card',
                 'loan_order_sn',
                 'loan_bz',
@@ -37,10 +37,12 @@ class LoanTableBuilder extends TableBuilder
     protected $columns = [
         'entry.id',
         'loan_name',
+        'loan_member_id',
         'loan_id_card',
         'loan_order_sn',
         'loan_amount',
         'entry.status_value',
+        'entry.created_at'
 
     ];
 
@@ -69,7 +71,9 @@ class LoanTableBuilder extends TableBuilder
      * @var array
      */
     protected $options = [
-
+        'order_by' => [
+            'id' => 'DESC',
+        ],
     ];
 
     /**

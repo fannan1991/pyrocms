@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Anomaly\FilesModule\File\FileModel;
 use Anomaly\PostsModule\Post\PostModel;
+use Anomaly\SettingsModule\Setting\SettingModel;
 use Anomaly\Streams\Platform\Model\Files\FilesFilesEntryModel;
 use App\AccessToken;
 use App\Api\Transformers\AccessTokenTransformer;
@@ -37,8 +38,11 @@ use Fannan\MembersModule\Repayment\RepaymentModel;
 use Fannan\MembersModule\Withdraw\WithdrawModel;
 use Fannan\TransactionModule\Transaction\TransactionModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Session;
 use Monolog\Formatter\GelfMessageFormatterTest;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -71,7 +75,7 @@ class HomeController extends Controller
             $file = FileModel::find($new->entry->image_id);
             $new->content = $new->entry->content;
             $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
-            $new->url = 'http://x16311542j.51mypc.cn/api/new-detail?new_id='.$new->id;
+            $new->url = 'http://'.$_SERVER['HTTP_HOST'].'/home/new-detail/'.$new->id;
             $newLists[] = $new;
         }
 
@@ -90,9 +94,10 @@ class HomeController extends Controller
         return $this->response->array($result);
     }
 
+    //测试
     public function test(Request $request){
-        $yanzheng = $request->session()->get('captcha.value');
-        var_dump($yanzheng);die;
+        Redis::set('mobile','165555555');
+        //Redis::expire('mobile',30);
     }
 
     //客户端注册
@@ -112,44 +117,75 @@ class HomeController extends Controller
             if($invitation_code){
                 $father = MemberModel::where('invitation_code',$invitation_code)->first();
                 if($father){
-                    $father->integral += 10;
-                    $father->save();
+                    //邀请人积分记录
+                    $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
+
+                    //邀请人积分变化
+                    $this->updateIntegral($father->id,10);
+
+                    //被邀请人（注册人）层级获取
                     $member->parent_id_id = $father->id;
                     $member->grand_id_id = $father->parent_id_id;
                     $member->great_grand_id_id = $father->grand_id_id;
+
+
+                }/*else{
+                    return $this->response->array(['status'=>'error','msg' => '邀请码不正确','code'=>401]);
+                }*/
+                $member->save();
+                $member = MemberModel::find($member->id);
+                if($member){
+                    $image_name = md5(date('ymdhis')).'.png';
+                    $this->qrcode(268,0,$_SERVER['HTTP_HOST'].'/home/h5-register-view?invitation_code='.$member->invitation_code,'qrcodes/'.$image_name);
+                    $member->qrcode = 'qrcodes/'.$image_name;
+                    $member->save();
+                    $result = array(
+                        'code' => 100,
+                        'status' => 'success',
+                        'data' => $member
+                    );
+                    return $this->response->array($result);
+                }else{
+                    return $this->response->array(['status'=>'error','msg' => '注册失败','code'=>401]);
                 }
+            }else{
+                return $this->response->array(['status'=>'error','msg' => '邀请码不能为空','code'=>401]);
+            }
+
+        }
+    }
+
+    //用户积分变更及等级变更
+    public function updateIntegral($id,$num){
+        $member = MemberModel::find($id);
+        if($member->grade != '1'){
+            $member->integral += $num;
+            if(0<=$member->integral && $member->integral< 100){
+                $member->grade = 1;
+            }elseif(100<=$member->integral && $member->integral< 500){
+                $member->grade = 2;
+            }elseif(500<=$member->integral && $member->integral< 1000){
+                $member->grade = 3;
+            }elseif(1000<=$member->integral && $member->integral< 3000){
+                $member->grade = 4;
+            }elseif($member->integral>=3000){
+                $member->grade = 5;
             }
             $member->save();
-
-            //积分记录
-            $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
-
-            $member = MemberModel::find($member->id);
-            if($member){
-                $image_name = md5(date('ymdhis')).'.png';
-                $this->qrcode(268,0,$_SERVER['HTTP_HOST'].'/home/h5-register-view?invitation_code='.$member->invitation_code,'qrcodes/'.$image_name);
-                $member->qrcode = 'qrcodes/'.$image_name;
-                $member->save();
-                $result = array(
-                    'code' => 100,
-                    'status' => 'success',
-                    'data' => $member
-                );
-                return $this->response->array($result);
-            }else{
-                return $this->response->array(['status'=>'error','msg' => '注册失败','code'=>401]);
-            }
         }
     }
 
     //积分记录
     public function integralLogAdd($num,$summary,$mobile,$member_id){
-        $integral = new IntegralModel;
-        $integral->integral_num = $num;
-        $integral->integral_summary = $summary;
-        $integral->integral_mobile = $mobile;
-        $integral->integral_member_id_id = $member_id;
-        $integral->save();
+        $member = MemberModel::find($member_id);
+        if($member->grade != '1'){
+            $integral = new IntegralModel;
+            $integral->integral_num = $num;
+            $integral->integral_summary = $summary;
+            $integral->integral_mobile = $mobile;
+            $integral->integral_member_id_id = $member_id;
+            $integral->save();
+        }
     }
 
     //注册客户端
@@ -330,7 +366,7 @@ class HomeController extends Controller
                 $clientName = $image->getClientOriginalName();
                 $extension = $image->getClientOriginalExtension();
                 $newName = md5(date('ymdhis') . $clientName) . "." . $extension;
-                $path = '/'.$image->move('app\default\files-module\local\images', $newName);
+                $path = '/'.$image->move('app/default/files-module/local/images', $newName);
                 $file = new FilesFilesEntryModel;
                 $file->name = $newName;
                 $file->disk_id = 1;
@@ -375,7 +411,7 @@ class HomeController extends Controller
                 $clientName = $card_positive_pic->getClientOriginalName();
                 $extension = $card_positive_pic->getClientOriginalExtension();
                 $newName = md5(date('ymdhis') . $clientName) . "." . $extension;
-                $card_positive_pic_path = '/'.$card_positive_pic->move('app\default\files-module\local\images', $newName);
+                $card_positive_pic_path = '/'.$card_positive_pic->move('app/default/files-module/local/images', $newName);
                 $file = new FilesFilesEntryModel;
                 $file->name = $newName;
                 $file->disk_id = 1;
@@ -396,7 +432,7 @@ class HomeController extends Controller
                 $clientName = $card_negative_pic->getClientOriginalName();
                 $extension = $card_negative_pic->getClientOriginalExtension();
                 $newName = md5(date('ymdhis') . $clientName) . "." . $extension;
-                $card_negative_pic_path = '/'.$card_negative_pic->move('app\default\files-module\local\images', $newName);
+                $card_negative_pic_path = '/'.$card_negative_pic->move('app/default/files-module/local/images', $newName);
                 $file = new FilesFilesEntryModel;
                 $file->name = $newName;
                 $file->disk_id = 1;
@@ -583,7 +619,7 @@ class HomeController extends Controller
     //贷款记录
     public function loanLog(Request $request){
         $member_id = $request->member_id;
-        $loans = LoanModel::where('loan_member_id_id',$member_id)->get();
+        $loans = LoanModel::where('loan_member_id_id',$member_id)->whereIn('loan_status',[1,3])->get();
         $result = array(
             'code' => 100,
             'status' => 'success',
@@ -634,73 +670,123 @@ class HomeController extends Controller
     public function loanAmount(Request $request){
         $member_id = $request->member_id;
         $loan = LoanModel::where('loan_member_id_id',$member_id)->where('loan_status',1)->first();
-        $loan_amount = LoanModel::where('loan_member_id_id',$member_id)->where('loan_status',1)->first();
-        $repayments = RepaymentModel::where('repayment_member_id_id',$member_id)
-            ->where('repayment_loan_id',$loan->id)
-            ->where('repayment_status',0)
-            ->orderBy('id','ASC')
-            ->get();
-        $data = array
-        (
-            'loan_amount' => $loan_amount->loan_amount,
-            "repayments"=> $repayments
-        );
-        $result = array(
-            'code' => 100,
-            'status' => 'success',
-            'loan_amount' =>$loan_amount->loan_amount,
-            'data' => $data
-        );
-        return $this->response->array($result);
+        if($loan){
+            $loan_amount = LoanModel::where('loan_member_id_id',$member_id)->where('loan_status',1)->first();
+            $repayments = RepaymentModel::where('repayment_member_id_id',$member_id)
+                ->where('repayment_loan_id',$loan->id)
+                ->where('repayment_status',0)
+                ->orderBy('id','ASC')
+                ->get();
+            $data = array
+            (
+                'loan_amount' => $loan_amount->loan_amount,
+                "repayments"=> $repayments
+            );
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'loan_amount' =>$loan_amount->loan_amount,
+                'data' => $data
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '暂无审核通过的贷款','code'=>401]);
+        }
+
     }
 
 
     //还款页面
     public function repayment(Request $request){
         $member_id = $request->member_id;
-        $repayments = RepaymentModel::where('repayment_member_id_id',$member_id)->orderBy('id','ASC')->get();
-        $period_repayment = RepaymentModel::whereMonth('repayment_date', date('m')+1)->whereYear('repayment_date', date('Y'))->first();
-        $loan_id = $period_repayment->repayment_loan_id;
-        if($period_repayment){
-            $period_amount = $period_repayment->repayment_amount;
-            $period_date = $period_repayment->repayment_date;
+        $loan = LoanModel::where('loan_member_id_id',$member_id)->where('loan_status',1)->first();
+        if($loan){
+            $repayments = RepaymentModel::where('repayment_member_id_id',$member_id)->where('repayment_loan_id',$loan->id)->orderBy('id','ASC')->get();
+            if($repayments->count() > 0){
+                $period_repayment = RepaymentModel::whereMonth('repayment_date', date('m')+1)->whereYear('repayment_date', date('Y'))->first();
+                $loan_id = $period_repayment->repayment_loan_id;
+                if($period_repayment){
+                    $period_amount = $period_repayment->repayment_amount;
+                    $period_date = $period_repayment->repayment_date;
+                }else{
+                    $period_amount = null;
+                    $period_date = null;
+                }
+                $not_repayment_amount = RepaymentModel::where('repayment_status',0)->sum('repayment_amount');
+                $data = array
+                (
+                    'loan_id'   => $loan_id,
+                    'period_amount' =>$period_amount,
+                    'period_date' =>$period_date,
+                    'not_repayment_amount' =>$not_repayment_amount,
+                    "repayments"=> $repayments
+                );
+                $result = array(
+                    'code' => 100,
+                    'status' => 'success',
+                    'data' => $data
+                );
+                return $this->response->array($result);
+            }else{
+                return $this->response->array(['status'=>'error','msg' => '暂没有还款','code'=>401]);
+            }
         }else{
-            $period_amount = null;
-            $period_date = null;
+            return $this->response->array(['status'=>'error','msg' => '暂没有还款','code'=>401]);
         }
-        $not_repayment_amount = RepaymentModel::where('repayment_status',0)->sum('repayment_amount');
-        $data = array
-        (
-            'loan_id'   => $loan_id,
-            'period_amount' =>$period_amount,
-            'period_date' =>$period_date,
-            'not_repayment_amount' =>$not_repayment_amount,
-            "repayments"=> $repayments
-        );
-        $result = array(
-            'code' => 100,
-            'status' => 'success',
-            'data' => $data
-        );
-        return $this->response->array($result);
     }
 
     //资讯列表
-    public function news(Request $request){
-        $news = PostModel::whereNull('deleted_at')->where('category_id',3)->where('enabled',1)->get();
-        foreach($news as $new){
-            $file = FileModel::find($new->entry->image_id);
-            $new->content = $new->entry->content;
-            $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
-            $new->url = 'http://'.$_SERVER['HTTP_HOST'].'/home/new-detail/'.$new->id;
-            $lists[] = $new;
+    /*public function news(Request $request){
+        $news = PostModel::whereNull('deleted_at')->where('category_id',3)->where('enabled',1)->orderBy('id','DESC')->paginate(5);
+        if($news->count() > 0){
+            foreach($news as $new){
+                $file = FileModel::find($new->entry->image_id);
+                $new->content = $new->entry->content;
+                $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
+                $new->url = 'http://'.$_SERVER['HTTP_HOST'].'/home/new-detail/'.$new->id;
+                $lists[] = $new;
+            }
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'total' => $news->total(),
+                'per_page' => $news->perPage(),
+                'current_page' => $news->currentPage(),
+                'last_page' => $news->lastPage(),
+                'next_page_url' => $news->nextPageUrl(),
+                'prev_page_url' => $news->previousPageUrl(),
+                'data' => $lists
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '没有了','code'=>401]);
         }
-        $result = array(
-            'code' => 100,
-            'status' => 'success',
-            'data' => $lists
-        );
-        return $this->response->array($result);
+    }*/
+
+    public function news(Request $request){
+        $id = $request->id;
+        if(!$id){
+            $id = PostModel::max('id');
+            $id = $id + 1;
+        }
+        $news = PostModel::whereNull('deleted_at')->where('category_id',3)->where('enabled',1)->where('id','<',$id)->orderBy('id','DESC')->take(3)->get();
+        if($news->count() > 0){
+            foreach($news as $new){
+                $file = FileModel::find($new->entry->image_id);
+                /*$new->content = $new->entry->content;*/
+                $new->image_path = 'http://'.$_SERVER['HTTP_HOST'].'/app/default/files-module/local/images/'.$file->name;
+                $new->url = 'http://'.$_SERVER['HTTP_HOST'].'/home/new-detail/'.$new->id;
+                $lists[] = $new;
+            }
+            $result = array(
+                'code' => 100,
+                'status' => 'success',
+                'data' => $lists
+            );
+            return $this->response->array($result);
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '没有了','code'=>401]);
+        }
     }
 
     //资讯详情
@@ -783,7 +869,6 @@ class HomeController extends Controller
             'data' => $red_envelopes
         );
         return $this->response->array($result);
-
     }
 
     //个人中心首页
@@ -794,6 +879,7 @@ class HomeController extends Controller
         $first_customer = MemberModel::where('parent_id_id',$member_id)->count();
         $second_customer = MemberModel::where('grand_id_id',$member_id)->count();
         $three_customer = MemberModel::where('great_grand_id_id',$member_id)->count();
+        $tel = SettingModel::find(6);
         if($member){
             $data = array
             (
@@ -801,7 +887,8 @@ class HomeController extends Controller
                 'first_customer' => $first_customer,
                 'second_customer' => $second_customer,
                 'three_customer' => $three_customer,
-                "member"=> $member
+                "member"=> $member,
+                "tel" => $tel->value
             );
             $result = array(
                 'code' => 100,
@@ -882,18 +969,21 @@ class HomeController extends Controller
                         $member->gold += $log->log_amount;
                         $member->save();
                         $log = LogModel::find($log->id);
-                        if($member->grade == '0'){
+                        if($member->grade == '1'){
                             $remaining = $setting->envelopes_visitor_times - $log_num-1;
-                        }elseif($member->grade = '1'){
-                            $remaining = $setting->envelopes_ordinary_times - $log_num-1;
                         }elseif($member->grade = '2'){
-                            $remaining = $setting->envelopes_bronze_times - $log_num-1;
+                            $remaining = $setting->envelopes_ordinary_times - $log_num-1;
                         }elseif($member->grade = '3'){
-                            $remaining = $setting->envelopes_silver_times - $log_num-1;
+                            $remaining = $setting->envelopes_bronze_times - $log_num-1;
                         }elseif($member->grade = '4'){
-                            $remaining = $setting->envelopes_gold_times - $log_num-1;
+                            $remaining = $setting->envelopes_silver_times - $log_num-1;
                         }elseif($member->grade = '5'){
+                            $remaining = $setting->envelopes_gold_times - $log_num-1;
+                        }elseif($member->grade = '6'){
                             $remaining = $setting->envelopes_diamond_times - $log_num-1;
+                        }
+                        if($remaining < 0){
+                            $remaining = 0;
                         }
                         $data = array
                         (
@@ -936,6 +1026,9 @@ class HomeController extends Controller
             $remaining = $setting->envelopes_gold_times - $log_num;
         }elseif($member->grade = '6'){
             $remaining = $setting->envelopes_diamond_times - $log_num;
+        }
+        if($remaining < 0){
+            $remaining = 0;
         }
         $data = array
         (
@@ -987,7 +1080,7 @@ class HomeController extends Controller
             . "\"total_amount\": \"$amount\","
             . "\"product_code\":\"QUICK_MSECURITY_PAY\""
             . "}";
-        $request->setNotifyUrl("http://x16311542j.51mypc.cn/api/alipay-notify");
+        $request->setNotifyUrl('http://'.$_SERVER['HTTP_HOST']."/api/alipay-notify");
         $request->setBizContent($bizcontent);
         $response = $aop->sdkExecute($request);
         //return htmlspecialchars($response);
@@ -1022,7 +1115,7 @@ class HomeController extends Controller
                                 if($update_transaction->save()){
                                     //修改会员等级
                                     $member = MemberModel::find($update_transaction->trade_member_id);
-                                    $member->grade = 1;
+                                    $member->grade = 2;
                                     $member->save();
                                     echo 'success';
                                 }
@@ -1054,17 +1147,31 @@ class HomeController extends Controller
         $member_id = $request->member_id;
         $client_id = $request->client_id;
         $access_token = $request->access_token;
-        $lottery_acticity = LotteryModel::where('lottery_is_open',1)->orderBy('id','DESC')->first();
+        $lottery_activity = LotteryModel::orderBy('id','DESC')->first();
         $date = date('Y-m-d');
-        $lottery_log = LotteryLog::where('member_id',$member_id)->where('lottery_id',$lottery_acticity->id)->whereDate('created_at', $date)->first();
+        $lottery_log = LotteryLog::where('member_id',$member_id)->where('lottery_id',$lottery_activity->id)->whereDate('created_at', $date)->first();
+
         if($lottery_log){
-            $lottery_times = $lottery_acticity->lottery_times - $lottery_log->num;
+            $lottery_times = $lottery_activity->lottery_times - $lottery_log->num;
         }else{
-            $lottery_times = $lottery_acticity->lottery_times;
+            $lottery_times = $lottery_activity->lottery_times;
         }
-        $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_acticity->id)->orderBy('id','ASC')->get();
-        $winnings = WinningModel::where('winning_lottery_id_id',$lottery_acticity->id)->orderBy('id','DESC')->get();
+        $prizes = PrizeModel::where('prize_lottery_id_id',$lottery_activity->id)->orderBy('id','ASC')->get();
+        $winnings = WinningModel::where('winning_lottery_id_id',$lottery_activity->id)->orderBy('id','DESC')->get();
         $ticket_num = $ticket = TicketModel::where('ticket_member_id_id',$member_id)->where('ticket_valid_period','>',Carbon::now())->where('ticket_is_use',0)->orderBy('id','ASC')->count();
+        $start_time = $lottery_activity->lottery_start;
+        $end_time = $lottery_activity->lottery_end;
+        $member = MemberModel::find($member_id);
+
+        if($start_time->gt(Carbon::now())){
+            $period_status = 0;//活动未开始
+        }elseif($end_time->lt(Carbon::now())){
+            $period_status = 1;//活动结束
+        }else{
+            $period_status = 2;//正常
+        }
+
+
         return view('lottery')
             ->with('prizes',$prizes)
             ->with('winnings',$winnings)
@@ -1072,7 +1179,9 @@ class HomeController extends Controller
             ->with('ticket_num',$ticket_num)
             ->with('client_id',$client_id)
             ->with('access_token',$access_token)
-            ->with('lottery_acticity',$lottery_acticity);
+            ->with('lottery_activity',$lottery_activity)
+            ->with('period_status',$period_status)
+            ->with('member',$member);
     }
 
     //抽奖规则
@@ -1102,7 +1211,7 @@ class HomeController extends Controller
                 return $this->response->array(['status'=>'error','msg' => '活动已经结束','code'=>401]);
             }else{
                 //用户是否认证
-                if($member->verified_status == 1){
+                if($member->verified_status != 0){
                     //抽奖券验证
                     if($lottery_activity->lottery_is_ticket == true){
                         if($ticket){
@@ -1153,8 +1262,10 @@ class HomeController extends Controller
                                     if($result['prize_winning_mobile']){
                                         $prize_winning_mobile = unserialize($result['prize_winning_mobile']);
                                         $key = array_search($member->mobile, $prize_winning_mobile);
-                                        $prize_winning_mobile = array_except($prize_winning_mobile, [$key, 'to', 'remove']);
-                                        $winning_prize->prize_winning_mobile = $prize_winning_mobile;
+                                        if($key){
+                                            $prize_winning_mobile = array_except($prize_winning_mobile, [$key, 'to', 'remove']);
+                                            $winning_prize->prize_winning_mobile = $prize_winning_mobile;
+                                        }
                                     }
                                     if($winning_prize->prize_num > 0){
                                         $winning_prize->prize_num -= 1;
@@ -1248,20 +1359,14 @@ class HomeController extends Controller
                 }else{
                     //生成验证码
                     $captcha = rand(100000, 1000000);
-                    session(
-                        [
-                            'captcha.mobile' => $mobile,
-                            'captcha.value' => $captcha,
-                            'captcha.lifetime' => 100,
-                        ]);
-                    $value = $request->session()->get('captcha.value');
-
+                    Redis::set($mobile,$captcha);
+                    Redis::expire($mobile,1800);
                     //发送短信
                     $send = new SendSMS;
-                    $send->sendCodeSMS('【润丰网络】请输入验证码'.$value.'，请勿将验证码告诉他人！',$mobile,'106907722','');
+                    $send->sendCodeSMS('【润丰网络】请输入验证码'.$captcha.'，请勿将验证码告诉他人！',$mobile,'106907722','');
                     $data = array
                     (
-                        'captcha' => $value,
+                        'captcha' => $captcha,
                     );
                     $result = array(
                         'code' => 100,
@@ -1292,46 +1397,61 @@ class HomeController extends Controller
         if(empty($mobile) || empty($password) || empty($captcha) || empty($invitation_code)){
             var_dump('信息不能为空');die;
         }else{
-            if($request->session()->get('captcha.value') == $captcha){
-                if(MemberModel::where('mobile',$mobile)->first()){
-                    return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
-                }else{
-                    $str_time = $this->dec62($this->msectime());
-                    $code = $this->randChar().$str_time;
-                    $member = new MemberModel;
-                    $member->mobile = $mobile;
-                    $member->password = bcrypt($password);
-                    $member->invitation_code = $code;
-                    if($invitation_code){
-                        $father = MemberModel::where('invitation_code',$invitation_code)->first();
-                        if($father){
-                            $father->integral += 10;
-                            $father->save();
-                            $member->parent_id_id = $father->id;
-                            $member->grand_id_id = $father->parent_id_id;
-                            $member->great_grand_id_id = $father->grand_id_id;
+            if(Redis::exists($mobile) == 1){
+                if(Redis::get($mobile) == $captcha){
+                    Redis::del($mobile);
+                    if(MemberModel::where('mobile',$mobile)->first()){
+                        return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
+                    }else{
+                        $str_time = $this->dec62($this->msectime());
+                        $code = $this->randChar().$str_time;
+                        $member = new MemberModel;
+                        $member->mobile = $mobile;
+                        $member->password = bcrypt($password);
+                        $member->invitation_code = $code;
+                        if($invitation_code){
+                            $father = MemberModel::where('invitation_code',$invitation_code)->first();
+                            if($father){
+                                //邀请人积分记录
+                                $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
+
+                                //邀请人积分变化
+                                $this->updateIntegral($father->id,10);
+
+                                //被邀请人（注册人）层级获取
+                                $member->parent_id_id = $father->id;
+                                $member->grand_id_id = $father->parent_id_id;
+                                $member->great_grand_id_id = $father->grand_id_id;
+
+                                $member->save();
+
+                                $member = MemberModel::find($member->id);
+                                if($member){
+                                    $image_name = md5(date('ymdhis')).'.png';
+                                    $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+                                    $member->qrcode = 'qrcodes/'.$image_name;
+                                    $member->save();
+                                    $msg = '注册成功';
+                                    return view('success')->with('msg',$msg);
+                                }else{
+                                    $msg = '注册失败';
+                                    return view('error')->with('msg',$msg);
+                                }
+                            }else{
+                                $msg = '邀请码不正确';
+                                return view('error')->with('msg',$msg);
+                            }
+                        }else{
+                            $msg = '邀请码不能为空';
+                            return view('error')->with('msg',$msg);
                         }
                     }
-                    $member->save();
-
-                    //积分记录
-                    $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
-
-                    $member = MemberModel::find($member->id);
-                    if($member){
-                        $image_name = md5(date('ymdhis')).'.png';
-                        $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
-                        $member->qrcode = 'qrcodes/'.$image_name;
-                        $member->save();
-                        $msg = '注册成功';
-                        return view('success')->with('msg',$msg);
-                    }else{
-                        $msg = '注册失败';
-                        return view('error')->with('msg',$msg);
-                    }
+                }else{
+                    $msg = '验证码错误';
+                    return view('error')->with('msg',$msg);
                 }
             }else{
-                $msg = '验证码错误';
+                $msg = '验证码已失效';
                 return view('error')->with('msg',$msg);
             }
         }
@@ -1339,7 +1459,29 @@ class HomeController extends Controller
 
     //h5我的会员
     public function myMember(Request $request){
-
+        $client_id = $request->client_id;
+        $access_token = $request->access_token;
+        $has_client = OauthClients::find($client_id);
+        if($has_client){
+            $has_access_token = AccessToken::where('member_id',$has_client->member_id)->where('client_id',$client_id)->first();
+            if($has_access_token){
+                if($access_token == $has_access_token->access_token){
+                    $member = MemberModel::find($has_client->member_id);
+                    $post = PostModel::find(13);
+                    $post->content = $post->entry->content;
+                    return view('myMember')->with('member',$member)->with('post',$post);
+                }else{
+                    $msg = '非法访问';
+                    return view('clientError')->with('msg',$msg);
+                }
+            }else{
+                $msg = '非法访问';
+                return view('clientError')->with('msg',$msg);
+            }
+        }else{
+            $msg = '非法访问';
+            return view('clientError')->with('msg',$msg);
+        }
     }
 
     //h5单页面
@@ -1400,10 +1542,7 @@ class HomeController extends Controller
         return $this->response->array($result);
     }
 
-    //发送短信测试
-    public function sendSms(){
 
-    }
 
     public function smsTest(){
         $send = new SendSMS;

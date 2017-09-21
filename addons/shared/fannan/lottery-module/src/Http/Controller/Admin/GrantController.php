@@ -27,19 +27,7 @@ class GrantController extends AdminController
      * @param GrantFormBuilder $form
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function create(GrantFormBuilder $form)
-    {
-        return $form->render();
-    }
-
-    /**
-     * Edit an existing entry.
-     *
-     * @param GrantFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function edit(GrantFormBuilder $form, $id, Request $request)
+    public function create(GrantFormBuilder $form,Request $request)
     {
         $members = MemberModel::orderBy('id','ASC');
         if($request->grant_grade != 0){
@@ -61,6 +49,18 @@ class GrantController extends AdminController
                 $ticket->save();
             }
         }
+        return $form->render();
+    }
+
+    /**
+     * Edit an existing entry.
+     *
+     * @param GrantFormBuilder $form
+     * @param        $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function edit(GrantFormBuilder $form, $id, Request $request)
+    {
         return $form->render($id);
     }
 

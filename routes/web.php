@@ -25,6 +25,9 @@ Route::get('/', function () {
     Route::post('/home/h5-register','HomeController@hRegister');
     Route::get('/home/single-page/{id}','HomeController@singlePage');
     Route::get('/home/new-detail/{id}','HomeController@hNewDetail');
+    Route::get('/home/my-member','HomeController@myMember');
+
+
 
 
 
@@ -49,6 +52,7 @@ $api->version('v1', function ($api) {
         $api->get('/send-sms','HomeController@sendSms');
         $api->post('/send-captcha','HomeController@sendCaptcha');
         $api->post('/has-mobile','HomeController@hasMobile');
+        $api->get('/send-test-sms','HomeController@smsTest');//测试
 
 
 

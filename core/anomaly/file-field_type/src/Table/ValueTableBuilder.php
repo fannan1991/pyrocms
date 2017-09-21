@@ -39,12 +39,12 @@ class ValueTableBuilder extends TableBuilder
         ],
         'name'          => [
             'sort_column' => 'name',
-            'wrapper'     => '
-                    <strong><a href="/app/default/files-module/local/images/{value.file}" target="_blank">{value.file}</a></strong>
+            'wrapper'     => '<a href="/app/default/files-module/local/images/{value.file}" target="_blank">
+                    <strong>{value.file}</strong>
                     <br>
                     <small class="text-muted">{value.disk}://{value.folder}/{value.file}</small>
                     <br>
-                    <span>{value.size} {value.keywords}</span>',
+                    <span>{value.size} {value.keywords}</a></span>',
             'value'       => [
                 'file'     => 'entry.name',
                 'folder'   => 'entry.folder.slug',

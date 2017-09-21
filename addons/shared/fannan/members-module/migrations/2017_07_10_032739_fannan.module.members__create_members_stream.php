@@ -35,6 +35,7 @@ class FannanModuleMembersCreateMembersStream extends Migration
         'openid',
         'invitation_code' => [
             'required' => true,
+            'unique' => true
         ],
         'nickname',
         'avatar',

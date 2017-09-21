@@ -93,6 +93,7 @@ class ComposerStaticInit23d1abdc700eb65e8384ba716e08fc32
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Cache\\' => 10,
+            'Predis\\' => 7,
             'PhpParser\\' => 10,
             'Phive\\Twig\\Extensions\\Deferred\\' => 31,
             'Patchwork\\' => 10,
@@ -377,6 +378,10 @@ class ComposerStaticInit23d1abdc700eb65e8384ba716e08fc32
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'Predis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/predis/predis/src',
         ),
         'PhpParser\\' => 
         array (

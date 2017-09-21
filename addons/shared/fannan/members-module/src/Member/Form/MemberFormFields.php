@@ -16,16 +16,43 @@ class MemberFormFields
     {
         $builder->setFields(
             [
-                /*'mobile'     => [
-                    'disabled' => '*'
+                'mobile'     => [
+                    'enabled' => '*'
+                ],
+                'password'     => [
+                    'readonly' => '*'
                 ],
                 'openid'     => [
-                    'disabled' => '*'
+                    'readonly' => '*'
                 ],
                 'invitation_code'     => [
+                    'enabled' => '*'
+                ],
+                'nickname'     => [
+                    'readonly' => '*'
+                ],
+                'grade'     => [
                     'disabled' => '*'
                 ],
-                '*',*/
+                'integral'     => [
+                    'readonly' => '*'
+                ],
+                'gold'     => [
+                    'readonly' => '*'
+                ],
+                'qrcode'     => [
+                    'readonly' => '*'
+                ],
+                'parent_id'     => [
+                    'disabled' => '*'
+                ],
+                'grand_id'     => [
+                    'disabled' => '*'
+                ],
+                'great_grand_id'     => [
+                    'disabled' => '*'
+                ],
+                '*',
 
             ]
         );

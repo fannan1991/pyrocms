@@ -27,7 +27,7 @@ class MembersModule extends Module
     protected $sections = [
         'members' => [
             'buttons' => [
-                /*'new_member',*/
+                'new_member',
             ],
         ],
         'integral' => [

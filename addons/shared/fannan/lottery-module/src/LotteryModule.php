@@ -47,7 +47,7 @@ class LotteryModule extends Module
         ],
         'grant' => [
             'buttons' => [
-                /*'new_grant',*/
+                'new_grant',
             ],
         ],
     ];

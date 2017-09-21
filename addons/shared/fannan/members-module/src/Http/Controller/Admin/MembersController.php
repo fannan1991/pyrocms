@@ -3,6 +3,7 @@
 use Fannan\MembersModule\Member\Form\MemberFormBuilder;
 use Fannan\MembersModule\Member\Table\MemberTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Illuminate\Http\Request;
 
 class MembersController extends AdminController
 {
@@ -37,7 +38,7 @@ class MembersController extends AdminController
      * @param        $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit(MemberFormBuilder $form, $id)
+    public function edit(MemberFormBuilder $form, $id,Request $request)
     {
         return $form->render($id);
     }

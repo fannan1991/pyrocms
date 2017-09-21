@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>抽奖活动</title>
+    <title>{{$lottery_activity->title}}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="/lottery/css/style.css" />
     <script type="text/javascript" src="/lottery/js/jquery-1.8.3.min.js"></script>
@@ -16,23 +16,26 @@
 </head>
 <body class="yellowbg">
 <div class="outer_wrap">
-    <header class="content_wrap">
+    {{--<header class="content_wrap">
         <a href="javascript:;" class="hdleft" onclick="history.back();"></a>
         抽奖
         <a href="#zhongjiangJilu" class="hdright">中奖纪录</a>
-    </header>
+    </header>--}}
     <div class="g-content">
         <div class="g-lottery-case">
             <p><a href="/home/single-page/6" class="guize fr">活动规则</a></p>
             <div class="g-left">
                 <div class="g-lottery-box">
                     <div class="g-lottery-img">
-                        <a class="playbtn" href="javascript:;" title="开始抽奖"></a>
+                        <a class="playbtn" href="javascript:;" title="开始抽奖" style="-webkit-tap-highlight-color: transparent;"></a>
                     </div>
                 </div>
                 <p>
                     <a href="javascript:;" class="cishu">可抽取<span class="playnum">{{$lottery_times}}</span>次</a>
                     <span class="ticket_num" style="display: none;">{{$ticket_num}}</span>
+                    <span class="is_open" style="display: none;">{{$lottery_activity->lottery_is_open}}</span>
+                    <span class="period_status" style="display: none;">{{$period_status}}</span>
+                    <span class="verified_status" style="display: none;">{{$member->verified_status}}</span>
                 </p>
             </div>
         </div>
@@ -61,7 +64,7 @@
                 <a class="prev"></a>
                 <span class="pageState"></span>
             </div>
-            <div class="bd">
+            <div class="bd" id="marquee4" style="width:100%;height:300px; overflow:hidden;">
                 <ul class="infoList">
                     @foreach($winnings as $winning)
                     <li>
@@ -77,11 +80,22 @@
     </div>
 
 </div>
+<script type="text/javascript" src="/lottery/js/jquery.kxbdMarquee.js"></script>
 <script type="text/javascript" src="/lottery/js/jquery.rotate.min.js"></script>
 <script type="text/javascript" src="/lottery/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="/layer_mobile/layer.js"></script>
 <script>
     //文字滚动
-    jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:5});
+    (function(){
+
+        $("#marquee4").kxbdMarquee({direction:"up",isEqual:false});
+
+    })();
+
+</script>
+
+<script>
+
 
     //转盘
     $(function() {
@@ -100,7 +114,7 @@
             });
             $.ajax({
                 type : "POST",
-                url: '/api/lottery?client_id={{$client_id}}&access_token={{$access_token}}&lottery_id={{$lottery_acticity->id}}',
+                url: '/api/lottery?client_id={{$client_id}}&access_token={{$access_token}}&lottery_id={{$lottery_activity->id}}',
                 dataType: "json",
                 success: function(data){
                     if(data){
@@ -163,7 +177,11 @@
                                     break;
                             }
                         }else{
-                            alert(data.msg);
+                            layer.open({
+                                content: data.msg,
+                                skin: 'msg',
+                                time: 2 //2秒后自动关闭
+                            });
                         }
                     }
                 }
@@ -173,6 +191,9 @@
         $btn.click(function() {
             var playnum = $('.playnum').html();
             var ticket_num = $('.ticket_num').html();
+            var is_open = $('.is_open').html();
+            var period_status = $('.period_status').html();
+            var verified_status = $('.verified_status').html();
             if(isture) return; // 如果在执行就退出
             isture = true; // 标志为 在执行
             //先判断是否登录,未登录则执行下面的函数
@@ -180,13 +201,50 @@
                 $('.playnum').html('0');
                 alert("请先登录");
                 isture = false;
-            } else { //登录了就执行下面
-                if(playnum <= 0) { //当抽奖次数为0的时候执行
-                    alert("没有次数了");
+            } else {
+                if(is_open == 0){
+                    layer.open({
+                        content: '抽奖活动未开启'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                    isture = false;
+                }else if(period_status == 0 ){
+                    layer.open({
+                        content: '抽奖活动未开始'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                    isture = false;
+                }else if(period_status == 1 ){
+                    layer.open({
+                        content: '抽奖活动已结束'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                    isture = false;
+                }else if(verified_status != 1 ){
+                    layer.open({
+                        content: '尚未认证'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
+                    isture = false;
+                }
+                else if(playnum <= 0) { //当抽奖次数为0的时候执行
+                    layer.open({
+                        content: '没有抽奖次数了'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
                     $('.playnum').html(0);
                     isture = false;
                 }else if(ticket_num <= 0){//当抽奖券为0的时候执行
-                    alert("没有抽奖券了");
+                    layer.open({
+                        content: '没有抽奖券了'
+                        ,skin: 'msg'
+                        ,time: 2 //2秒后自动关闭
+                    });
                     $('.ticket_num').html(0);
                     isture = false;
                 }else{ //还有次数就执行
@@ -210,7 +268,11 @@
                 animateTo: angle + 1440, //让它根据得出来的结果加上1440度旋转
                 callback: function() {
                     isture = false; // 标志为 执行完毕
-                    alert(text);
+                    //信息框
+                    layer.open({
+                        content: text,
+                        btn: '我知道了'
+                    });
                 }
             });
         };

@@ -16,10 +16,6 @@
 </head>
 <body>
 <div class="outer_wrap">
-    <header class="content_wrap">
-        <a href="javascript:;" class="hdleft" onclick="history.back();"></a>
-        {{$post->title}}
-    </header>
     <div class="content_wrap">
         <div class="newsdetail">
             @if($post)

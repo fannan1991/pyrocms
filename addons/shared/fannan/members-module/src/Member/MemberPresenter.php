@@ -14,7 +14,7 @@ class MemberPresenter extends EntryPresenter
 
     public function verified($size = 'sm'){
         $color = 'default';
-        $s = $this->object->is_verified;
+        $s = $this->object->verified_status;
         switch ($s) {
             case 0:
                 $color = 'danger';
@@ -24,6 +24,14 @@ class MemberPresenter extends EntryPresenter
             case 1:
                 $color = 'success';
                 $status = '已认证';
+                break;
+            case 2:
+                $color = 'success';
+                $status = '审核中';
+                break;
+            case 3:
+                $color = 'success';
+                $status = '认证失败';
                 break;
         }
 

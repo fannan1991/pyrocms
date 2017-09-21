@@ -45,6 +45,7 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
+    'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Phive\\Twig\\Extensions\\Deferred\\' => array($vendorDir . '/phive/twig-extensions-deferred/src'),
     'Patchwork\\' => array($vendorDir . '/patchwork/jsqueeze/src'),

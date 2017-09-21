@@ -28,6 +28,7 @@ class FannanModuleMembersCreateMembersFields extends Migration
                 'type'          => 'text',
                 'min'           => 2,
                 'max'           => 64,
+                'default_value' => '$2y$10$8C/nkq7CqXPiFsZ1kescaugP5siF.UjrYQcUuyS1p593etHY5Lfmm',
             ]
         ],
         //第三方openid
@@ -39,13 +40,13 @@ class FannanModuleMembersCreateMembersFields extends Migration
                 'max'           => 64,
             ]
         ],
-        //6位唯一邀请码
+        //8位唯一邀请码
         'invitation_code' => [
             'type'   => 'anomaly.field_type.text',
             'config' => [
                 'type'          => 'text',
-                'min'           => 2,
-                'max'           => 12,
+                'min'           => 8,
+                'max'           => 8,
             ]
         ],
         //昵称

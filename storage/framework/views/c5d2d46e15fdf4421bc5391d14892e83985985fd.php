@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title></title>
+    <title>注册</title>
     <link href="/lottery/css/mui.min.css" rel="stylesheet" />
     <link href="/lottery/css/qrcommon.css" rel="stylesheet" />
     <link href="/lottery/css/form.css" rel="stylesheet" />
@@ -65,6 +65,7 @@
 </body>
 <script src="http://js.3conline.com/min/temp/v1/lib-jquery1.4.2.js"></script>
 <script src="/lottery/js/md5.js"></script>
+<script src="/layer_mobile/layer.js"></script>
 <script>
     /*获取验证码*/
     var isMobile = 1;
@@ -84,7 +85,11 @@
                                 resetCode(); //倒计时
                                 sendSms();
                             }else if(data.data.has_mobile == 1){
-                                alert('手机号已被注册，请勿重复注册');
+                                layer.open({
+                                    content: '手机号已被注册，请勿重复注册',
+                                    skin: 'msg',
+                                    time: 2 //2秒后自动关闭
+                                });
                                 return;
                             }
                         }
@@ -101,12 +106,20 @@
         var pattern = /^1[0-9]{10}$/;
         isMobile = 1;
         if(mobile == '') {
-            alert('请输入手机号码');
+            layer.open({
+                content: '请输入手机号码',
+                skin: 'msg',
+                time: 2 //2秒后自动关闭
+            });
             isMobile = 0;
             return;
         }
         if(!pattern.test(mobile)){
-            alert('请输入正确的手机号码');
+            layer.open({
+                content: '请输入正确的手机号码',
+                skin: 'msg',
+                time: 2 //2秒后自动关闭
+            });
             isMobile = 0;
             return;
         }
@@ -123,10 +136,18 @@
                     if(data.code == 100){
                         if(data.data.has_mobile == 0){
                             $('#N_r').val(1);
-                            alert('手机号可以注册');
+                            layer.open({
+                                content: '手机号可以注册',
+                                skin: 'msg',
+                                time: 2 //2秒后自动关闭
+                            });
                             return;
                         }else if(data.data.has_mobile == 1){
-                            alert('手机号已被注册，请勿重复注册');
+                            layer.open({
+                                content: '手机号已被注册，请勿重复注册',
+                                skin: 'msg',
+                                time: 2 //2秒后自动关闭
+                            });
                             return;
                         }
                     }
@@ -171,10 +192,18 @@
                 if(data){
                     if(data.status = 'success'){
                         if(data.code == 100){
-                            alert('发送成功');
+                            layer.open({
+                                content: '短信发送成功',
+                                skin: 'msg',
+                                time: 2 //2秒后自动关闭
+                            });
                         }
                     }else{
-                        alert(data.msg);
+                        layer.open({
+                            content: data.msg,
+                            skin: 'msg',
+                            time: 2 //2秒后自动关闭
+                        });
                     }
                 }
             }

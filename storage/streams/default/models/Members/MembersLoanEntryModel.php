@@ -23,6 +23,7 @@ class MembersLoanEntryModel extends EntryModel
 'loan_repayment_date' => '',
 'loan_term_date' => '',
 'loan_bz' => '',
+'loan_mobile' => '',
 'loan_member_id' => '',
 ];
 
@@ -36,6 +37,7 @@ class MembersLoanEntryModel extends EntryModel
 'loan_repayment_date',
 'loan_term_date',
 'loan_bz',
+'loan_mobile',
 'loan_member_id',
 ];
 
@@ -50,7 +52,7 @@ class MembersLoanEntryModel extends EntryModel
     protected $translationModel = 'Anomaly\Streams\Platform\Model\Members\MembersLoanEntryTranslationsModel';
 
     protected $stream = [
-'id' => '310',
+'id' => '324',
 'namespace' => 'members',
 'slug' => 'loan',
 'prefix' => 'members_',
@@ -65,16 +67,16 @@ class MembersLoanEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 2378,
+'id' => 2497,
 'sort_order' => 231,
-'stream_id' => 310,
-'field_id' => 2379,
+'stream_id' => 324,
+'field_id' => 2499,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2379',
+'id' => '2499',
 'namespace' => 'members',
 'slug' => 'loan_name',
 'type' => 'anomaly.field_type.text',
@@ -82,8 +84,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2379,
-'field_id' => 2379,
+'id' => 2499,
+'field_id' => 2499,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_name.name',
 'placeholder' => 'fannan.module.members::field.loan_name.placeholder',
@@ -94,8 +96,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2377,
-'assignment_id' => 2378,
+'id' => 2496,
+'assignment_id' => 2497,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_name.label.loan',
 'warning' => 'fannan.module.members::field.loan_name.warning.loan',
@@ -105,16 +107,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2379,
+'id' => 2498,
 'sort_order' => 232,
-'stream_id' => 310,
-'field_id' => 2380,
+'stream_id' => 324,
+'field_id' => 2500,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2380',
+'id' => '2500',
 'namespace' => 'members',
 'slug' => 'loan_id_card',
 'type' => 'anomaly.field_type.text',
@@ -122,8 +124,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2380,
-'field_id' => 2380,
+'id' => 2500,
+'field_id' => 2500,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_id_card.name',
 'placeholder' => 'fannan.module.members::field.loan_id_card.placeholder',
@@ -134,8 +136,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2378,
-'assignment_id' => 2379,
+'id' => 2497,
+'assignment_id' => 2498,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_id_card.label.loan',
 'warning' => 'fannan.module.members::field.loan_id_card.warning.loan',
@@ -145,16 +147,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2380,
+'id' => 2499,
 'sort_order' => 233,
-'stream_id' => 310,
-'field_id' => 2381,
+'stream_id' => 324,
+'field_id' => 2501,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2381',
+'id' => '2501',
 'namespace' => 'members',
 'slug' => 'loan_amount',
 'type' => 'anomaly.field_type.decimal',
@@ -162,8 +164,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2381,
-'field_id' => 2381,
+'id' => 2501,
+'field_id' => 2501,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_amount.name',
 'placeholder' => 'fannan.module.members::field.loan_amount.placeholder',
@@ -174,8 +176,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2379,
-'assignment_id' => 2380,
+'id' => 2498,
+'assignment_id' => 2499,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_amount.label.loan',
 'warning' => 'fannan.module.members::field.loan_amount.warning.loan',
@@ -185,16 +187,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2381,
+'id' => 2500,
 'sort_order' => 234,
-'stream_id' => 310,
-'field_id' => 2382,
+'stream_id' => 324,
+'field_id' => 2502,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2382',
+'id' => '2502',
 'namespace' => 'members',
 'slug' => 'loan_order_sn',
 'type' => 'anomaly.field_type.text',
@@ -202,8 +204,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2382,
-'field_id' => 2382,
+'id' => 2502,
+'field_id' => 2502,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_order_sn.name',
 'placeholder' => 'fannan.module.members::field.loan_order_sn.placeholder',
@@ -214,8 +216,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2380,
-'assignment_id' => 2381,
+'id' => 2499,
+'assignment_id' => 2500,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_order_sn.label.loan',
 'warning' => 'fannan.module.members::field.loan_order_sn.warning.loan',
@@ -225,16 +227,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2382,
+'id' => 2501,
 'sort_order' => 235,
-'stream_id' => 310,
-'field_id' => 2383,
+'stream_id' => 324,
+'field_id' => 2503,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2383',
+'id' => '2503',
 'namespace' => 'members',
 'slug' => 'loan_status',
 'type' => 'anomaly.field_type.select',
@@ -242,8 +244,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2383,
-'field_id' => 2383,
+'id' => 2503,
+'field_id' => 2503,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_status.name',
 'placeholder' => 'fannan.module.members::field.loan_status.placeholder',
@@ -254,8 +256,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2381,
-'assignment_id' => 2382,
+'id' => 2500,
+'assignment_id' => 2501,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_status.label.loan',
 'warning' => 'fannan.module.members::field.loan_status.warning.loan',
@@ -265,16 +267,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2383,
+'id' => 2502,
 'sort_order' => 236,
-'stream_id' => 310,
-'field_id' => 2384,
+'stream_id' => 324,
+'field_id' => 2504,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2384',
+'id' => '2504',
 'namespace' => 'members',
 'slug' => 'loan_date',
 'type' => 'anomaly.field_type.datetime',
@@ -282,8 +284,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2384,
-'field_id' => 2384,
+'id' => 2504,
+'field_id' => 2504,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_date.name',
 'placeholder' => 'fannan.module.members::field.loan_date.placeholder',
@@ -294,8 +296,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2382,
-'assignment_id' => 2383,
+'id' => 2501,
+'assignment_id' => 2502,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_date.label.loan',
 'warning' => 'fannan.module.members::field.loan_date.warning.loan',
@@ -305,16 +307,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2384,
+'id' => 2503,
 'sort_order' => 237,
-'stream_id' => 310,
-'field_id' => 2385,
+'stream_id' => 324,
+'field_id' => 2505,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2385',
+'id' => '2505',
 'namespace' => 'members',
 'slug' => 'loan_repayment_date',
 'type' => 'anomaly.field_type.integer',
@@ -322,8 +324,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2385,
-'field_id' => 2385,
+'id' => 2505,
+'field_id' => 2505,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_repayment_date.name',
 'placeholder' => 'fannan.module.members::field.loan_repayment_date.placeholder',
@@ -334,8 +336,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2383,
-'assignment_id' => 2384,
+'id' => 2502,
+'assignment_id' => 2503,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_repayment_date.label.loan',
 'warning' => 'fannan.module.members::field.loan_repayment_date.warning.loan',
@@ -345,16 +347,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2385,
+'id' => 2504,
 'sort_order' => 238,
-'stream_id' => 310,
-'field_id' => 2386,
+'stream_id' => 324,
+'field_id' => 2506,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2386',
+'id' => '2506',
 'namespace' => 'members',
 'slug' => 'loan_term_date',
 'type' => 'anomaly.field_type.integer',
@@ -362,8 +364,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2386,
-'field_id' => 2386,
+'id' => 2506,
+'field_id' => 2506,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_term_date.name',
 'placeholder' => 'fannan.module.members::field.loan_term_date.placeholder',
@@ -374,8 +376,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2384,
-'assignment_id' => 2385,
+'id' => 2503,
+'assignment_id' => 2504,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_term_date.label.loan',
 'warning' => 'fannan.module.members::field.loan_term_date.warning.loan',
@@ -385,16 +387,16 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2386,
+'id' => 2505,
 'sort_order' => 239,
-'stream_id' => 310,
-'field_id' => 2387,
+'stream_id' => 324,
+'field_id' => 2507,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2387',
+'id' => '2507',
 'namespace' => 'members',
 'slug' => 'loan_bz',
 'type' => 'anomaly.field_type.text',
@@ -402,8 +404,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2387,
-'field_id' => 2387,
+'id' => 2507,
+'field_id' => 2507,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_bz.name',
 'placeholder' => 'fannan.module.members::field.loan_bz.placeholder',
@@ -414,8 +416,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2385,
-'assignment_id' => 2386,
+'id' => 2504,
+'assignment_id' => 2505,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_bz.label.loan',
 'warning' => 'fannan.module.members::field.loan_bz.warning.loan',
@@ -425,16 +427,56 @@ class MembersLoanEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2387,
+'id' => 2506,
 'sort_order' => 240,
-'stream_id' => 310,
-'field_id' => 2389,
+'stream_id' => 324,
+'field_id' => 2508,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2389',
+'id' => '2508',
+'namespace' => 'members',
+'slug' => 'loan_mobile',
+'type' => 'anomaly.field_type.text',
+'config' => 'a:2:{s:4:"type";s:4:"text";s:3:"min";i:2;}',
+'locked' => '1',
+'translations' => [
+[
+'id' => 2508,
+'field_id' => 2508,
+'locale' => 'en',
+'name' => 'fannan.module.members::field.loan_mobile.name',
+'placeholder' => 'fannan.module.members::field.loan_mobile.placeholder',
+'warning' => 'fannan.module.members::field.loan_mobile.warning',
+'instructions' => 'fannan.module.members::field.loan_mobile.instructions',
+],
+],
+],
+'translations' => [
+[
+'id' => 2505,
+'assignment_id' => 2506,
+'locale' => 'en',
+'label' => 'fannan.module.members::field.loan_mobile.label.loan',
+'warning' => 'fannan.module.members::field.loan_mobile.warning.loan',
+'placeholder' => 'fannan.module.members::field.loan_mobile.placeholder.loan',
+'instructions' => 'fannan.module.members::field.loan_mobile.instructions.loan',
+],
+],
+],
+[
+'id' => 2507,
+'sort_order' => 241,
+'stream_id' => 324,
+'field_id' => 2509,
+'config' => 'a:0:{}',
+'unique' => 0,
+'required' => 0,
+'translatable' => 0,
+'field' => [
+'id' => '2509',
 'namespace' => 'members',
 'slug' => 'loan_member_id',
 'type' => 'anomaly.field_type.relationship',
@@ -442,8 +484,8 @@ class MembersLoanEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2389,
-'field_id' => 2389,
+'id' => 2509,
+'field_id' => 2509,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.loan_member_id.name',
 'placeholder' => 'fannan.module.members::field.loan_member_id.placeholder',
@@ -454,8 +496,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2386,
-'assignment_id' => 2387,
+'id' => 2506,
+'assignment_id' => 2507,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.loan_member_id.label.loan',
 'warning' => 'fannan.module.members::field.loan_member_id.warning.loan',
@@ -467,8 +509,8 @@ class MembersLoanEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 310,
-'stream_id' => 310,
+'id' => 324,
+'stream_id' => 324,
 'locale' => 'en',
 'name' => 'fannan.module.members::stream.loan.name',
 'description' => 'fannan.module.members::stream.loan.description',

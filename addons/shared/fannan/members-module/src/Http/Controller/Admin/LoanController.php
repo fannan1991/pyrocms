@@ -46,6 +46,10 @@ class LoanController extends AdminController
     {
         $loan = LoanModel::find($id);
         $member = MemberModel::find($request->loan_member_id);
+        $has_loan = LoanModel::where('loan_member_id_id',$request->loan_member_id)->first();
+        if($has_loan){
+            echo("<script>alert('该用户尚有未完成的贷款');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
+        }
         if($loan->loan_status == 0 && isset($request->loan_status) && $request->loan_status == 3 ){
             echo("<script>alert('状态修改有误');location.href= 'http://".$_SERVER['HTTP_HOST']."/admin/members/loan/'</script>");die;
         }

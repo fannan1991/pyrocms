@@ -1,0 +1,24 @@
+[2017-09-19 08:36:07] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\anomaly\streams-platform\src\Addon\AddonLoader.php:45
+Stack trace:
+#0 {main} {"identification":{"id":"69a614ac-79ef-4f2f-87fa-714f589e2a25"}} 
+[2017-09-19 08:36:39] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\composer\ClassLoader.php:384
+Stack trace:
+#0 {main} {"identification":{"id":"e2ad1fd8-c951-4616-a612-e924987f32f5"}} 
+[2017-09-19 08:36:43] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php:35
+Stack trace:
+#0 {main} {"identification":{"id":"4b93fd9c-0372-429b-88cd-fddcdf0f1b67"}} 
+[2017-09-19 08:36:46] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\core\anomaly\tags-field_type\src\TagsFieldTypePresenter.php:12
+Stack trace:
+#0 {main} {"identification":{"id":"7be8e9de-d462-4c26-8d4e-0ebf96742511"}} 
+[2017-09-19 08:37:03] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\laravelcollective\html\src\FormBuilder.php:15
+Stack trace:
+#0 {main} {"identification":{"id":"abd2efaa-de76-40f4-9db4-146c84c79e29"}} 
+[2017-09-19 10:49:16] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\core\anomaly\pages-module\src\Type\TypeModel.php:18
+Stack trace:
+#0 {main} {"identification":{"id":"aa2cb42e-77d4-4d7e-a38a-13e135b0791d"}} 
+[2017-09-19 13:59:21] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\View\View.php:17
+Stack trace:
+#0 {main} {"identification":{"id":"21b46163-c735-4b55-b18e-5e01e932fbfc"}} 
+[2017-09-19 16:29:47] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\symfony\routing\Route.php:20
+Stack trace:
+#0 {main} {"identification":{"id":"1c35581d-4019-46ba-b36a-f424780137e4"}} 

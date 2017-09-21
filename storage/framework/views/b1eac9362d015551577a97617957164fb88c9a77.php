@@ -3,8 +3,8 @@
 <!--修改个人资料-->
 <form action="/api/personal-information" method="post" enctype="multipart/form-data">
     <input name="nickname" type="text" value="fannan">
-    <input name="client_id" type="hidden" value="2">
-    <input name="access_token" type="hidden" value="$2y$10$udAINsxVcPwM9T7v3F4i0uljtm2utghMgBRUkezpbpbIGlGjf7Cj2">
+    <input name="client_id" type="hidden" value="1">
+    <input name="access_token" type="hidden" value="$2y$10$IxkUvoC1P6Znz3Wzh6QEOOieOpdXrjPqf2U86ebZOYre7p/IafFPy">
     <input name="image" type="file">
     <button type="submit">提交</button>
 </form>

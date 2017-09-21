@@ -17,7 +17,7 @@ class MembersMembersEntryModel extends EntryModel
 'mobile' => 'required|unique:members_members,mobile',
 'password' => 'required',
 'openid' => '',
-'invitation_code' => 'required',
+'invitation_code' => 'required|unique:members_members,invitation_code',
 'nickname' => '',
 'avatar' => '',
 'grade' => '',
@@ -70,7 +70,7 @@ class MembersMembersEntryModel extends EntryModel
     
 
     protected $stream = [
-'id' => '307',
+'id' => '321',
 'namespace' => 'members',
 'slug' => 'members',
 'prefix' => 'members_',
@@ -85,16 +85,16 @@ class MembersMembersEntryModel extends EntryModel
 'config' => 'a:0:{}',
 'assignments' => [
 [
-'id' => 2350,
+'id' => 2469,
 'sort_order' => 203,
-'stream_id' => 307,
-'field_id' => 2351,
+'stream_id' => 321,
+'field_id' => 2471,
 'config' => 'a:0:{}',
 'unique' => 1,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2351',
+'id' => '2471',
 'namespace' => 'members',
 'slug' => 'mobile',
 'type' => 'anomaly.field_type.text',
@@ -102,8 +102,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2351,
-'field_id' => 2351,
+'id' => 2471,
+'field_id' => 2471,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.mobile.name',
 'placeholder' => 'fannan.module.members::field.mobile.placeholder',
@@ -114,8 +114,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2349,
-'assignment_id' => 2350,
+'id' => 2468,
+'assignment_id' => 2469,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.mobile.label.members',
 'warning' => 'fannan.module.members::field.mobile.warning.members',
@@ -125,25 +125,25 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2351,
+'id' => 2470,
 'sort_order' => 204,
-'stream_id' => 307,
-'field_id' => 2352,
+'stream_id' => 321,
+'field_id' => 2472,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2352',
+'id' => '2472',
 'namespace' => 'members',
 'slug' => 'password',
 'type' => 'anomaly.field_type.text',
-'config' => 'a:3:{s:4:"type";s:4:"text";s:3:"min";i:2;s:3:"max";i:64;}',
+'config' => 'a:4:{s:4:"type";s:4:"text";s:3:"min";i:2;s:3:"max";i:64;s:13:"default_value";s:60:"$2y$10$8C/nkq7CqXPiFsZ1kescaugP5siF.UjrYQcUuyS1p593etHY5Lfmm";}',
 'locked' => '1',
 'translations' => [
 [
-'id' => 2352,
-'field_id' => 2352,
+'id' => 2472,
+'field_id' => 2472,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.password.name',
 'placeholder' => 'fannan.module.members::field.password.placeholder',
@@ -154,8 +154,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2350,
-'assignment_id' => 2351,
+'id' => 2469,
+'assignment_id' => 2470,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.password.label.members',
 'warning' => 'fannan.module.members::field.password.warning.members',
@@ -165,16 +165,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2352,
+'id' => 2471,
 'sort_order' => 205,
-'stream_id' => 307,
-'field_id' => 2353,
+'stream_id' => 321,
+'field_id' => 2473,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2353',
+'id' => '2473',
 'namespace' => 'members',
 'slug' => 'openid',
 'type' => 'anomaly.field_type.text',
@@ -182,8 +182,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2353,
-'field_id' => 2353,
+'id' => 2473,
+'field_id' => 2473,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.openid.name',
 'placeholder' => 'fannan.module.members::field.openid.placeholder',
@@ -194,8 +194,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2351,
-'assignment_id' => 2352,
+'id' => 2470,
+'assignment_id' => 2471,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.openid.label.members',
 'warning' => 'fannan.module.members::field.openid.warning.members',
@@ -205,25 +205,25 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2353,
+'id' => 2472,
 'sort_order' => 206,
-'stream_id' => 307,
-'field_id' => 2354,
+'stream_id' => 321,
+'field_id' => 2474,
 'config' => 'a:0:{}',
-'unique' => 0,
+'unique' => 1,
 'required' => 1,
 'translatable' => 0,
 'field' => [
-'id' => '2354',
+'id' => '2474',
 'namespace' => 'members',
 'slug' => 'invitation_code',
 'type' => 'anomaly.field_type.text',
-'config' => 'a:3:{s:4:"type";s:4:"text";s:3:"min";i:2;s:3:"max";i:12;}',
+'config' => 'a:3:{s:4:"type";s:4:"text";s:3:"min";i:8;s:3:"max";i:8;}',
 'locked' => '1',
 'translations' => [
 [
-'id' => 2354,
-'field_id' => 2354,
+'id' => 2474,
+'field_id' => 2474,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.invitation_code.name',
 'placeholder' => 'fannan.module.members::field.invitation_code.placeholder',
@@ -234,8 +234,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2352,
-'assignment_id' => 2353,
+'id' => 2471,
+'assignment_id' => 2472,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.invitation_code.label.members',
 'warning' => 'fannan.module.members::field.invitation_code.warning.members',
@@ -245,16 +245,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2354,
+'id' => 2473,
 'sort_order' => 207,
-'stream_id' => 307,
-'field_id' => 2355,
+'stream_id' => 321,
+'field_id' => 2475,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2355',
+'id' => '2475',
 'namespace' => 'members',
 'slug' => 'nickname',
 'type' => 'anomaly.field_type.text',
@@ -262,8 +262,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2355,
-'field_id' => 2355,
+'id' => 2475,
+'field_id' => 2475,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.nickname.name',
 'placeholder' => 'fannan.module.members::field.nickname.placeholder',
@@ -274,8 +274,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2353,
-'assignment_id' => 2354,
+'id' => 2472,
+'assignment_id' => 2473,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.nickname.label.members',
 'warning' => 'fannan.module.members::field.nickname.warning.members',
@@ -285,16 +285,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2355,
+'id' => 2474,
 'sort_order' => 208,
-'stream_id' => 307,
-'field_id' => 2356,
+'stream_id' => 321,
+'field_id' => 2476,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2356',
+'id' => '2476',
 'namespace' => 'members',
 'slug' => 'avatar',
 'type' => 'anomaly.field_type.file',
@@ -302,8 +302,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2356,
-'field_id' => 2356,
+'id' => 2476,
+'field_id' => 2476,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.avatar.name',
 'placeholder' => 'fannan.module.members::field.avatar.placeholder',
@@ -314,8 +314,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2354,
-'assignment_id' => 2355,
+'id' => 2473,
+'assignment_id' => 2474,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.avatar.label.members',
 'warning' => 'fannan.module.members::field.avatar.warning.members',
@@ -325,16 +325,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2356,
+'id' => 2475,
 'sort_order' => 209,
-'stream_id' => 307,
-'field_id' => 2357,
+'stream_id' => 321,
+'field_id' => 2477,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2357',
+'id' => '2477',
 'namespace' => 'members',
 'slug' => 'grade',
 'type' => 'anomaly.field_type.select',
@@ -342,8 +342,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2357,
-'field_id' => 2357,
+'id' => 2477,
+'field_id' => 2477,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.grade.name',
 'placeholder' => 'fannan.module.members::field.grade.placeholder',
@@ -354,8 +354,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2355,
-'assignment_id' => 2356,
+'id' => 2474,
+'assignment_id' => 2475,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.grade.label.members',
 'warning' => 'fannan.module.members::field.grade.warning.members',
@@ -365,16 +365,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2357,
+'id' => 2476,
 'sort_order' => 210,
-'stream_id' => 307,
-'field_id' => 2358,
+'stream_id' => 321,
+'field_id' => 2478,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2358',
+'id' => '2478',
 'namespace' => 'members',
 'slug' => 'verified_status',
 'type' => 'anomaly.field_type.select',
@@ -382,8 +382,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2358,
-'field_id' => 2358,
+'id' => 2478,
+'field_id' => 2478,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.verified_status.name',
 'placeholder' => 'fannan.module.members::field.verified_status.placeholder',
@@ -394,8 +394,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2356,
-'assignment_id' => 2357,
+'id' => 2475,
+'assignment_id' => 2476,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.verified_status.label.members',
 'warning' => 'fannan.module.members::field.verified_status.warning.members',
@@ -405,16 +405,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2358,
+'id' => 2477,
 'sort_order' => 211,
-'stream_id' => 307,
-'field_id' => 2359,
+'stream_id' => 321,
+'field_id' => 2479,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2359',
+'id' => '2479',
 'namespace' => 'members',
 'slug' => 'real_name',
 'type' => 'anomaly.field_type.text',
@@ -422,8 +422,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2359,
-'field_id' => 2359,
+'id' => 2479,
+'field_id' => 2479,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.real_name.name',
 'placeholder' => 'fannan.module.members::field.real_name.placeholder',
@@ -434,8 +434,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2357,
-'assignment_id' => 2358,
+'id' => 2476,
+'assignment_id' => 2477,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.real_name.label.members',
 'warning' => 'fannan.module.members::field.real_name.warning.members',
@@ -445,16 +445,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2359,
+'id' => 2478,
 'sort_order' => 212,
-'stream_id' => 307,
-'field_id' => 2360,
+'stream_id' => 321,
+'field_id' => 2480,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2360',
+'id' => '2480',
 'namespace' => 'members',
 'slug' => 'id_card',
 'type' => 'anomaly.field_type.text',
@@ -462,8 +462,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2360,
-'field_id' => 2360,
+'id' => 2480,
+'field_id' => 2480,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.id_card.name',
 'placeholder' => 'fannan.module.members::field.id_card.placeholder',
@@ -474,8 +474,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2358,
-'assignment_id' => 2359,
+'id' => 2477,
+'assignment_id' => 2478,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.id_card.label.members',
 'warning' => 'fannan.module.members::field.id_card.warning.members',
@@ -485,16 +485,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2360,
+'id' => 2479,
 'sort_order' => 213,
-'stream_id' => 307,
-'field_id' => 2361,
+'stream_id' => 321,
+'field_id' => 2481,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2361',
+'id' => '2481',
 'namespace' => 'members',
 'slug' => 'card_positive_pic',
 'type' => 'anomaly.field_type.file',
@@ -502,8 +502,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2361,
-'field_id' => 2361,
+'id' => 2481,
+'field_id' => 2481,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.card_positive_pic.name',
 'placeholder' => 'fannan.module.members::field.card_positive_pic.placeholder',
@@ -514,8 +514,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2359,
-'assignment_id' => 2360,
+'id' => 2478,
+'assignment_id' => 2479,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.card_positive_pic.label.members',
 'warning' => 'fannan.module.members::field.card_positive_pic.warning.members',
@@ -525,16 +525,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2361,
+'id' => 2480,
 'sort_order' => 214,
-'stream_id' => 307,
-'field_id' => 2362,
+'stream_id' => 321,
+'field_id' => 2482,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2362',
+'id' => '2482',
 'namespace' => 'members',
 'slug' => 'card_negative_pic',
 'type' => 'anomaly.field_type.file',
@@ -542,8 +542,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2362,
-'field_id' => 2362,
+'id' => 2482,
+'field_id' => 2482,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.card_negative_pic.name',
 'placeholder' => 'fannan.module.members::field.card_negative_pic.placeholder',
@@ -554,8 +554,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2360,
-'assignment_id' => 2361,
+'id' => 2479,
+'assignment_id' => 2480,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.card_negative_pic.label.members',
 'warning' => 'fannan.module.members::field.card_negative_pic.warning.members',
@@ -565,16 +565,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2362,
+'id' => 2481,
 'sort_order' => 215,
-'stream_id' => 307,
-'field_id' => 2363,
+'stream_id' => 321,
+'field_id' => 2483,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2363',
+'id' => '2483',
 'namespace' => 'members',
 'slug' => 'card_pic',
 'type' => 'anomaly.field_type.file',
@@ -582,8 +582,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2363,
-'field_id' => 2363,
+'id' => 2483,
+'field_id' => 2483,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.card_pic.name',
 'placeholder' => 'fannan.module.members::field.card_pic.placeholder',
@@ -594,8 +594,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2361,
-'assignment_id' => 2362,
+'id' => 2480,
+'assignment_id' => 2481,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.card_pic.label.members',
 'warning' => 'fannan.module.members::field.card_pic.warning.members',
@@ -605,16 +605,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2363,
+'id' => 2482,
 'sort_order' => 216,
-'stream_id' => 307,
-'field_id' => 2364,
+'stream_id' => 321,
+'field_id' => 2484,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2364',
+'id' => '2484',
 'namespace' => 'members',
 'slug' => 'results',
 'type' => 'anomaly.field_type.text',
@@ -622,8 +622,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2364,
-'field_id' => 2364,
+'id' => 2484,
+'field_id' => 2484,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.results.name',
 'placeholder' => 'fannan.module.members::field.results.placeholder',
@@ -634,8 +634,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2362,
-'assignment_id' => 2363,
+'id' => 2481,
+'assignment_id' => 2482,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.results.label.members',
 'warning' => 'fannan.module.members::field.results.warning.members',
@@ -645,16 +645,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2364,
+'id' => 2483,
 'sort_order' => 217,
-'stream_id' => 307,
-'field_id' => 2365,
+'stream_id' => 321,
+'field_id' => 2485,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2365',
+'id' => '2485',
 'namespace' => 'members',
 'slug' => 'integral',
 'type' => 'anomaly.field_type.integer',
@@ -662,8 +662,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2365,
-'field_id' => 2365,
+'id' => 2485,
+'field_id' => 2485,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.integral.name',
 'placeholder' => 'fannan.module.members::field.integral.placeholder',
@@ -674,8 +674,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2363,
-'assignment_id' => 2364,
+'id' => 2482,
+'assignment_id' => 2483,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.integral.label.members',
 'warning' => 'fannan.module.members::field.integral.warning.members',
@@ -685,16 +685,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2365,
+'id' => 2484,
 'sort_order' => 218,
-'stream_id' => 307,
-'field_id' => 2366,
+'stream_id' => 321,
+'field_id' => 2486,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2366',
+'id' => '2486',
 'namespace' => 'members',
 'slug' => 'gold',
 'type' => 'anomaly.field_type.integer',
@@ -702,8 +702,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2366,
-'field_id' => 2366,
+'id' => 2486,
+'field_id' => 2486,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.gold.name',
 'placeholder' => 'fannan.module.members::field.gold.placeholder',
@@ -714,8 +714,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2364,
-'assignment_id' => 2365,
+'id' => 2483,
+'assignment_id' => 2484,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.gold.label.members',
 'warning' => 'fannan.module.members::field.gold.warning.members',
@@ -725,16 +725,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2366,
+'id' => 2485,
 'sort_order' => 219,
-'stream_id' => 307,
-'field_id' => 2367,
+'stream_id' => 321,
+'field_id' => 2487,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2367',
+'id' => '2487',
 'namespace' => 'members',
 'slug' => 'parent_id',
 'type' => 'anomaly.field_type.relationship',
@@ -742,8 +742,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2367,
-'field_id' => 2367,
+'id' => 2487,
+'field_id' => 2487,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.parent_id.name',
 'placeholder' => 'fannan.module.members::field.parent_id.placeholder',
@@ -754,8 +754,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2365,
-'assignment_id' => 2366,
+'id' => 2484,
+'assignment_id' => 2485,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.parent_id.label.members',
 'warning' => 'fannan.module.members::field.parent_id.warning.members',
@@ -765,16 +765,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2367,
+'id' => 2486,
 'sort_order' => 220,
-'stream_id' => 307,
-'field_id' => 2368,
+'stream_id' => 321,
+'field_id' => 2488,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2368',
+'id' => '2488',
 'namespace' => 'members',
 'slug' => 'grand_id',
 'type' => 'anomaly.field_type.relationship',
@@ -782,8 +782,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2368,
-'field_id' => 2368,
+'id' => 2488,
+'field_id' => 2488,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.grand_id.name',
 'placeholder' => 'fannan.module.members::field.grand_id.placeholder',
@@ -794,8 +794,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2366,
-'assignment_id' => 2367,
+'id' => 2485,
+'assignment_id' => 2486,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.grand_id.label.members',
 'warning' => 'fannan.module.members::field.grand_id.warning.members',
@@ -805,16 +805,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2368,
+'id' => 2487,
 'sort_order' => 221,
-'stream_id' => 307,
-'field_id' => 2369,
+'stream_id' => 321,
+'field_id' => 2489,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2369',
+'id' => '2489',
 'namespace' => 'members',
 'slug' => 'great_grand_id',
 'type' => 'anomaly.field_type.relationship',
@@ -822,8 +822,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2369,
-'field_id' => 2369,
+'id' => 2489,
+'field_id' => 2489,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.great_grand_id.name',
 'placeholder' => 'fannan.module.members::field.great_grand_id.placeholder',
@@ -834,8 +834,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2367,
-'assignment_id' => 2368,
+'id' => 2486,
+'assignment_id' => 2487,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.great_grand_id.label.members',
 'warning' => 'fannan.module.members::field.great_grand_id.warning.members',
@@ -845,16 +845,16 @@ class MembersMembersEntryModel extends EntryModel
 ],
 ],
 [
-'id' => 2369,
+'id' => 2488,
 'sort_order' => 222,
-'stream_id' => 307,
-'field_id' => 2370,
+'stream_id' => 321,
+'field_id' => 2490,
 'config' => 'a:0:{}',
 'unique' => 0,
 'required' => 0,
 'translatable' => 0,
 'field' => [
-'id' => '2370',
+'id' => '2490',
 'namespace' => 'members',
 'slug' => 'qrcode',
 'type' => 'anomaly.field_type.text',
@@ -862,8 +862,8 @@ class MembersMembersEntryModel extends EntryModel
 'locked' => '1',
 'translations' => [
 [
-'id' => 2370,
-'field_id' => 2370,
+'id' => 2490,
+'field_id' => 2490,
 'locale' => 'en',
 'name' => 'fannan.module.members::field.qrcode.name',
 'placeholder' => 'fannan.module.members::field.qrcode.placeholder',
@@ -874,8 +874,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 2368,
-'assignment_id' => 2369,
+'id' => 2487,
+'assignment_id' => 2488,
 'locale' => 'en',
 'label' => 'fannan.module.members::field.qrcode.label.members',
 'warning' => 'fannan.module.members::field.qrcode.warning.members',
@@ -887,8 +887,8 @@ class MembersMembersEntryModel extends EntryModel
 ],
 'translations' => [
 [
-'id' => 307,
-'stream_id' => 307,
+'id' => 321,
+'stream_id' => 321,
 'locale' => 'en',
 'name' => 'fannan.module.members::stream.members.name',
 'description' => 'fannan.module.members::stream.members.description',

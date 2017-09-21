@@ -11,7 +11,8 @@ return [
         'name' => 'openid'
     ],
     'invitation_code'  => [
-        'name' => '邀请码'
+        'name' => '邀请码',
+        'instructions' => '请输入八位的字符（字母+数字），区分大小写',
     ],
     'nickname'  => [
         'name' => '昵称'
@@ -63,6 +64,12 @@ return [
     ],
     'great_grand_id'  => [
         'name' => '查询三级会员'
+    ],
+    'qrcode'  => [
+        'name' => '二维码'
+    ],
+    'verified_status'  => [
+        'name' => '认证状态'
     ],
     'access_token'  => [
         'name' => 'Token'
