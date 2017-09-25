@@ -65,6 +65,7 @@ $api->version('v1', function ($api) {
         $api->post('/first-customer','HomeController@firstCustomer');
         $api->post('/second-customer','HomeController@secondCustomer');
         $api->post('/three-customer','HomeController@threeCustomer');
+        $api->post('/first-list-sub','HomeController@firstListSub');
         $api->post('/integral','HomeController@integral');
         $api->post('/gold','HomeController@gold');
         $api->post('/withdraw','HomeController@withdraw');

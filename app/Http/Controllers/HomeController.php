@@ -105,53 +105,61 @@ class HomeController extends Controller
         $mobile = $request->mobile;
         $password = $request->password;
         $invitation_code = $request->invitation_code;
-        if(MemberModel::where('mobile',$mobile)->first()){
-            return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
-        }else{
-            $str_time = $this->dec62($this->msectime());
-            $code = $this->randChar().$str_time;
-            $member = new MemberModel;
-            $member->mobile = $mobile;
-            $member->password = bcrypt($password);
-            $member->invitation_code = $code;
-            if($invitation_code){
-                $father = MemberModel::where('invitation_code',$invitation_code)->first();
-                if($father){
-                    //邀请人积分记录
-                    $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
-
-                    //邀请人积分变化
-                    $this->updateIntegral($father->id,10);
-
-                    //被邀请人（注册人）层级获取
-                    $member->parent_id_id = $father->id;
-                    $member->grand_id_id = $father->parent_id_id;
-                    $member->great_grand_id_id = $father->grand_id_id;
-
-
-                }/*else{
-                    return $this->response->array(['status'=>'error','msg' => '邀请码不正确','code'=>401]);
-                }*/
-                $member->save();
-                $member = MemberModel::find($member->id);
-                if($member){
-                    $image_name = md5(date('ymdhis')).'.png';
-                    $this->qrcode(268,0,$_SERVER['HTTP_HOST'].'/home/h5-register-view?invitation_code='.$member->invitation_code,'qrcodes/'.$image_name);
-                    $member->qrcode = 'qrcodes/'.$image_name;
-                    $member->save();
-                    $result = array(
-                        'code' => 100,
-                        'status' => 'success',
-                        'data' => $member
-                    );
-                    return $this->response->array($result);
+        $captcha = $request->captcha;
+        if(Redis::exists($mobile)){
+            if(Redis::get($mobile) == $captcha){
+                if(MemberModel::where('mobile',$mobile)->first()){
+                    return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
                 }else{
-                    return $this->response->array(['status'=>'error','msg' => '注册失败','code'=>401]);
+                    $str_time = $this->dec62($this->msectime());
+                    $code = $this->randChar().$str_time;
+                    $member = new MemberModel;
+                    $member->mobile = $mobile;
+                    $member->password = bcrypt($password);
+                    $member->invitation_code = $code;
+                    if($invitation_code){
+                        $father = MemberModel::where('invitation_code',$invitation_code)->first();
+                        if($father){
+                            Redis::del($mobile);//清除redis验证码
+
+                            //邀请人积分记录
+                            $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
+
+                            //邀请人积分变化
+                            $this->updateIntegral($father->id,10);
+
+                            //被邀请人（注册人）层级获取
+                            $member->parent_id_id = $father->id;
+                            $member->grand_id_id = $father->parent_id_id;
+                            $member->great_grand_id_id = $father->grand_id_id;
+                            $member->save();
+                            $member = MemberModel::find($member->id);
+                            if($member){
+                                $image_name = md5(date('ymdhis')).'.png';
+                                $this->qrcode(268,0,'http://'.$_SERVER['HTTP_HOST'].'/home/h5-register-view?invitation_code='.$member->invitation_code,'qrcodes/'.$image_name);
+                                $member->qrcode = 'qrcodes/'.$image_name;
+                                $member->save();
+                                $result = array(
+                                    'code' => 100,
+                                    'status' => 'success',
+                                    'data' => $member
+                                );
+                                return $this->response->array($result);
+                            }else{
+                                return $this->response->array(['status'=>'error','msg' => '注册失败','code'=>401]);
+                            }
+                        }else{
+                            return $this->response->array(['status'=>'error','msg' => '请输入正确的邀请码','code'=>401]);
+                        }
+                    }else{
+                        return $this->response->array(['status'=>'error','msg' => '邀请码不能为空','code'=>401]);
+                    }
                 }
             }else{
-                return $this->response->array(['status'=>'error','msg' => '邀请码不能为空','code'=>401]);
+                return $this->response->array(['status'=>'error','msg' => '验证码错误','code'=>401]);
             }
-
+        }else{
+            return $this->response->array(['status'=>'error','msg' => '验证码已失效','code'=>401]);
         }
     }
 
@@ -284,7 +292,7 @@ class HomeController extends Controller
             }else{
                 $has_member->card_negative_path = null;
             }
-
+            $has_member->qrcode = 'http://'.$_SERVER['HTTP_HOST'].'/'.$has_member->qrcode;
             if(Hash::check($password, $has_member->password)){
                 $result = array(
                     'code' => 100,
@@ -307,15 +315,23 @@ class HomeController extends Controller
         $password = $request->password;
         $has_member = MemberModel::where('mobile',$mobile)->first();
         if($has_member){
-            $member = MemberModel::find($has_member->id);
-            $member->password = bcrypt($password);
-            $member->save();
-            $result = array(
-                'code' => 100,
-                'status' => 'success',
-                'data' => $member
-            );
-            return $this->response->array($result);
+            if(Redis::exists($mobile)){
+                if(Redis::get($mobile) == $captcha){
+                    $member = MemberModel::find($has_member->id);
+                    $member->password = bcrypt($password);
+                    $member->save();
+                    $result = array(
+                        'code' => 100,
+                        'status' => 'success',
+                        'data' => $member
+                    );
+                    return $this->response->array($result);
+                }else{
+                    return $this->response->array(['status'=>'error','msg' => '验证码错误','code'=>401]);
+                }
+            }else{
+                return $this->response->array(['status'=>'error','msg' => '验证码失效','code'=>401]);
+            }
         }else{
             return $this->response->array(['status'=>'error','msg' => '用户不存在','code'=>401]);
         }
@@ -487,6 +503,19 @@ class HomeController extends Controller
             'code' => 100,
             'status' => 'success',
             'data' => $three_customers
+        );
+        return $this->response->array($result);
+    }
+
+    //会员列表的下级会员
+    public function firstListSub(Request $request){
+        $member_id = $request->member_id;
+        $customer_id = $request->customer_id;
+        $subordinate_customers = MemberModel::where('parent_id_id',$customer_id)->get();
+        $result = array(
+            'code' => 100,
+            'status' => 'success',
+            'data' => $subordinate_customers
         );
         return $this->response->array($result);
     }
@@ -1171,7 +1200,6 @@ class HomeController extends Controller
             $period_status = 2;//正常
         }
 
-
         return view('lottery')
             ->with('prizes',$prizes)
             ->with('winnings',$winnings)
@@ -1395,11 +1423,11 @@ class HomeController extends Controller
         $invitation_code = $request->invitation_code;
         $captcha = $request->captcha;
         if(empty($mobile) || empty($password) || empty($captcha) || empty($invitation_code)){
-            var_dump('信息不能为空');die;
+            $msg = '信息不能为空';
+            return view('error')->with('msg',$msg);
         }else{
             if(Redis::exists($mobile) == 1){
                 if(Redis::get($mobile) == $captcha){
-                    Redis::del($mobile);
                     if(MemberModel::where('mobile',$mobile)->first()){
                         return $this->response->array(['status'=>'error','msg' => '手机号已注册','code'=>401]);
                     }else{
@@ -1412,6 +1440,8 @@ class HomeController extends Controller
                         if($invitation_code){
                             $father = MemberModel::where('invitation_code',$invitation_code)->first();
                             if($father){
+                                Redis::del($mobile);//清除redis验证码
+
                                 //邀请人积分记录
                                 $this->integralLogAdd(10,'邀请会员',$father->mobile,$father->id);
 
@@ -1428,7 +1458,7 @@ class HomeController extends Controller
                                 $member = MemberModel::find($member->id);
                                 if($member){
                                     $image_name = md5(date('ymdhis')).'.png';
-                                    $this->qrcode(268,0,'http://baidu.com','qrcodes/'.$image_name);
+                                    $this->qrcode(268,0,'http://'.$_SERVER['HTTP_HOST'].'/home/h5-register-view?invitation_code='.$member->invitation_code,'qrcodes/'.$image_name);
                                     $member->qrcode = 'qrcodes/'.$image_name;
                                     $member->save();
                                     $msg = '注册成功';
@@ -1523,7 +1553,6 @@ class HomeController extends Controller
             'data'    =>  $data,
         );
         return $this->response->array($result);
-
     }
 
     //认证状态

@@ -16,11 +16,6 @@
 </head>
 <body class="yellowbg">
 <div class="outer_wrap">
-    {{--<header class="content_wrap">
-        <a href="javascript:;" class="hdleft" onclick="history.back();"></a>
-        抽奖
-        <a href="#zhongjiangJilu" class="hdright">中奖纪录</a>
-    </header>--}}
     <div class="g-content">
         <div class="g-lottery-case">
             <p><a href="/home/single-page/6" class="guize fr">活动规则</a></p>
@@ -31,7 +26,13 @@
                     </div>
                 </div>
                 <p>
-                    <a href="javascript:;" class="cishu">可抽取<span class="playnum">{{$lottery_times}}</span>次</a>
+                    <a href="javascript:;" class="cishu">可抽取<span class="playnum">{{$ticket_num}}</span>次</a>
+                            {{--@if($lottery_activity->lottery_is_open == true && $period_status ==2 && $ticket_num > 0)
+                                {{$lottery_times}}
+                            @else
+                                0
+                            @endif--}}
+
                     <span class="ticket_num" style="display: none;">{{$ticket_num}}</span>
                     <span class="is_open" style="display: none;">{{$lottery_activity->lottery_is_open}}</span>
                     <span class="period_status" style="display: none;">{{$period_status}}</span>

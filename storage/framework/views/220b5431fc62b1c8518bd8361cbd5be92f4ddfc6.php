@@ -16,7 +16,6 @@
 </head>
 <body class="yellowbg">
 <div class="outer_wrap">
-    
     <div class="g-content">
         <div class="g-lottery-case">
             <p><a href="/home/single-page/6" class="guize fr">活动规则</a></p>
@@ -27,7 +26,9 @@
                     </div>
                 </div>
                 <p>
-                    <a href="javascript:;" class="cishu">可抽取<span class="playnum"><?php echo e($lottery_times); ?></span>次</a>
+                    <a href="javascript:;" class="cishu">可抽取<span class="playnum"><?php echo e($ticket_num); ?></span>次</a>
+                            
+
                     <span class="ticket_num" style="display: none;"><?php echo e($ticket_num); ?></span>
                     <span class="is_open" style="display: none;"><?php echo e($lottery_activity->lottery_is_open); ?></span>
                     <span class="period_status" style="display: none;"><?php echo e($period_status); ?></span>

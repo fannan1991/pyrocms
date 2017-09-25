@@ -1,0 +1,6 @@
+[2017-09-25 09:07:49] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\predis\predis\src\Connection\StreamConnection.php:36
+Stack trace:
+#0 {main} {"identification":{"id":"1378122a-88d3-47bf-8147-1e8d58e6bb64"}} 
+[2017-09-25 09:08:33] local.CRITICAL: Symfony\Component\Debug\Exception\FatalErrorException: Maximum execution time of 30 seconds exceeded in D:\phpstudy\WWW\pyrocms\vendor\laravel\framework\src\Illuminate\Contracts\Hashing\Hasher.php:5
+Stack trace:
+#0 {main} {"identification":{"id":"03afafc2-b4da-4dd4-baa5-1831d998ffa1"}} 

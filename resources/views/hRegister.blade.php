@@ -20,12 +20,33 @@
         window['adaptive'].init();
         mui.init()
     </script>
+    <script type="text/javascript">
+        $(window).bind("load", function() {
+            var footerHeight = 0;
+            var footerTop = 0;
+
+            positionFooter();
+
+            function positionFooter() {
+                // 获取页脚的高度
+                footerHeight = $(".footer").height();
+                // 获取页脚的高度
+                /*
+                 scrollTop() 设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离
+                 */
+                footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+                //如果页面内容高度小于屏幕高度，div#footer将绝对定位到屏幕底部，否则div#footer保留它的正常静态定位
+                if(($(document.body).height()+footerHeight) < $(window).height()) {
+                    $(".footer").css({ position: "absolute",left:"0" }).stop().css({top:footerTop});
+                }
+            }
+            $(window).scroll(positionFooter).resize(positionFooter);
+        });
+    </script>
 
 </head>
 <body>
-<header class="mui-bar mui-bar-nav">
-    <h1 class="mui-title">注册</h1>
-</header>
+
 <div class="mui-content">
     <form id='login-form' class="mui-input-group mui-input-group4 martop25rem" action="/home/h5-register" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -38,7 +59,7 @@
         <div class="mui-input-row mui-input-row4">
             <label>验证码</label>
             <span class="qr-yzm" onclick="getCode(this)" id="J_getCode">发送验证码</span>
-            <span class="qr-yzm" id="J_resetCode" style="display:none;"><span id="J_second">5</span>秒后重发</span>
+            <span class="qr-yzm" id="J_resetCode" style="display:none;"><span id="J_second">60</span>秒后重发</span>
             <input id='captcha' name="captcha" type="text" class="mui-input" placeholder="请输入验证码" required>
         </div>
         <div class="mui-input-row mui-input-row4 mui-password">
@@ -53,14 +74,18 @@
             <div class="cl-5" >注册即同意<a id="xieyiBtn" href="/home/single-page/8">《用户注册协议》</a></div>
         </div>
         <div class="mui-content-padded">
-            <input type="submit" class="mui-btn mui-btn-block  mui-btn-primary" value="注册">
+            <input type="submit" class="mui-btn mui-btn-block  mui-btn-primary" value="注册"
+                   style="line-height: 40px;
+    margin-bottom: 14px;
+    background-color: #fb2931;
+    font-size: 18px;">
         </div>
     </form>
 
 </div>
 
-<div class="dibucaozuobox">
-    <a href="index.html"><img src="/lottery/images/di.png"/></a>
+<div class="footer dibucaozuobox" style="height: 110px;">
+    <a href="index.html"><img src="/lottery/images/di.png" style="width: 100%;"/></a>
 </div>
 </body>
 <script src="http://js.3conline.com/min/temp/v1/lib-jquery1.4.2.js"></script>
@@ -129,9 +154,9 @@
     //倒计时
     function resetCode(){
         $('#J_getCode').hide();
-        $('#J_second').html('5');
+        $('#J_second').html('60');
         $('#J_resetCode').show();
-        var second = 5;
+        var second = 60;
         var timer = null;
         timer = setInterval(function(){
             second -= 1;
